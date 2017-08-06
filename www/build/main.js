@@ -1,12 +1,12 @@
 webpackJsonp([19],{
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TourGuidePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,19 +59,19 @@ TourGuidePage = __decorate([
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_profile_data_profile_data__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tour_guide_tour_guide__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tabs_tabs__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tour_guide_tour_guide__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tabs_tabs__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__login_login__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -135,7 +135,7 @@ var HomePage = (function () {
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <ion-row>\n      <!-- <img src="assets/img/welcome-logo.png" class="welcome-logo slideRight delay-2" /> -->\n      <img src="assets/img/logo-car.png" class="welcome-logo logo-car slideRight delay-1" />\n      <img src="assets/img/logo-text1.png" class="welcome-logo logo-text expandOpen delay-2" />\n    </ion-row>\n\n    <ion-row>\n      <ion-card class="welcome-card">\n      <ion-card-header>\n        <div class="welcome-title">Welcome to One Racing League</div>\n      </ion-card-header>\n        <p>Manage your very own Formula One racing team. With a starting budget purchase a driver, chassis and power unit for each of your cars. Points are awarded after each Formula One race weekend.</p>\n        \n        <ion-row class="flex-right">\n          <ion-col width-50 class="button-left">\n            <button ion-button icon-right class="tour-guide-button" color="primary" block (click)="goToTourGuide()">\n              Tour guide\n              <ion-icon name="arrow-forward"></ion-icon>\n            </button>\n          </ion-col>  \n        </ion-row>\n      </ion-card>\n    </ion-row>\n\n    <ion-row class="margin-bottom">\n      <ion-col width-33>\n        <button ion-button class="log-out-btn" color="secondary" block (click)="logMeOut()">\n          <ion-icon name="md-log-out" class="welcome-icon"></ion-icon>\n          Log out\n        </button>\n      </ion-col>\n\n      <ion-col width-33 class="margin-left">\n        <button ion-button class="log-out-btn" color="secondary" block (click)="mailto()">\n          <ion-icon name="mail" class="welcome-icon"></ion-icon>\n          Feedback\n        </button>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/,
+        selector: 'page-home',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <ion-row>\n      <img src="assets/img/logo-car.png" class="welcome-logo logo-car slideRight delay-1" />\n      <img src="assets/img/logo-text1.png" class="welcome-logo logo-text expandOpen delay-2" />\n    </ion-row>\n\n    <ion-row>\n      <ion-card class="welcome-card">\n      <ion-card-header>\n        <div class="welcome-title">Welcome to One Racing League</div>\n      </ion-card-header>\n        <p>Manage your very own Formula One racing team. With a starting budget purchase a driver, chassis and power unit for each of your cars. Points are awarded after each Formula One race weekend.</p>\n        \n        <ion-row class="flex-right">\n          <ion-col col-6 class="button-left">\n            <button ion-button icon-right class="tour-guide-button" color="primary" block (click)="goToTourGuide()">\n              Tour guide\n              <ion-icon name="arrow-forward"></ion-icon>\n            </button>\n          </ion-col>  \n        </ion-row>\n      </ion-card>\n    </ion-row>\n\n    <ion-col col-6 class="center small-layout top-space">\n      <button ion-button block outline class="log-out-btn" color="secondary" block (click)="logMeOut()">\n        <ion-icon name="md-log-out" class="welcome-icon"></ion-icon>\n        Log out\n      </button>\n    </ion-col>\n\n    <ion-col col-6 class="center less-margin">\n      <button ion-button block outline class="log-out-btn" color="secondary" block (click)="mailto()">\n        <ion-icon name="mail" class="welcome-icon"></ion-icon>\n        Feedback\n      </button>\n    </ion-col>\n\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -150,13 +150,13 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RacePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
@@ -300,24 +300,24 @@ RacePage = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_one_driver_one__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__driver_two_driver_two__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__chassis_one_chassis_one__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chassis_two_chassis_two__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pu_one_pu_one__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pu_two_pu_two__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__buy_trades_buy_trades__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_one_driver_one__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__driver_two_driver_two__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__chassis_one_chassis_one__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chassis_two_chassis_two__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pu_one_pu_one__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pu_two_pu_two__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__buy_trades_buy_trades__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -780,13 +780,13 @@ TeamPage = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
@@ -1122,13 +1122,13 @@ DriverOnePage = __decorate([
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
@@ -1458,13 +1458,13 @@ DriverTwoPage = __decorate([
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
@@ -1765,13 +1765,13 @@ ChassisOnePage = __decorate([
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
@@ -2071,13 +2071,13 @@ ChassisTwoPage = __decorate([
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
@@ -2383,13 +2383,13 @@ PuOnePage = __decorate([
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
@@ -2695,13 +2695,13 @@ PuTwoPage = __decorate([
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyTradesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2845,13 +2845,13 @@ BuyTradesPage = __decorate([
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RankingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
@@ -2960,13 +2960,13 @@ RankingPage = __decorate([
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RulesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3012,17 +3012,17 @@ RulesPage = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3125,7 +3125,115 @@ SignupPage = __decorate([
 
 /***/ }),
 
-/***/ 138:
+/***/ 132:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(95);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ResetPasswordPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ResetPasswordPage = (function () {
+    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
+        this.nav = nav;
+        this.authData = authData;
+        this.formBuilder = formBuilder;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.emailChanged = false;
+        this.passwordChanged = false;
+        this.submitAttempt = false;
+        this.resetPasswordForm = formBuilder.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
+        });
+    } //end constructor
+    ResetPasswordPage.prototype.elementChanged = function (input) {
+        var field = input.ngControl.name;
+        this[field + "Changed"] = true;
+    };
+    /**
+     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
+     *  component while the user waits.
+     *
+     * If the form is invalid it will just log the form value, feel free to handle that as you like.
+     */
+    ResetPasswordPage.prototype.resetPassword = function () {
+        var _this = this;
+        this.submitAttempt = true;
+        if (!this.resetPasswordForm.valid) {
+            console.log(this.resetPasswordForm.value);
+        }
+        else {
+            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
+                var alert = _this.alertCtrl.create({
+                    message: "We just sent you a reset link to your email",
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel',
+                            handler: function () {
+                                _this.nav.pop();
+                            }
+                        }
+                    ]
+                });
+                alert.present();
+            }, function (error) {
+                var errorMessage = error.message;
+                var errorAlert = _this.alertCtrl.create({
+                    message: errorMessage,
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel'
+                        }
+                    ]
+                });
+                errorAlert.present();
+            });
+        }
+    };
+    return ResetPasswordPage;
+}());
+ResetPasswordPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
+], ResetPasswordPage);
+
+//# sourceMappingURL=reset-password.js.map
+
+/***/ }),
+
+/***/ 140:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3134,7 +3242,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 138;
+webpackEmptyAsyncContext.id = 140;
 
 /***/ }),
 
@@ -3226,85 +3334,85 @@ CurrentRoundDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 180:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/buy-trades/buy-trades.module": [
-		480,
+		481,
 		18
 	],
 	"../pages/chassis-one/chassis-one.module": [
-		475,
+		476,
 		17
 	],
 	"../pages/chassis-stats/chassis-stats.module": [
-		474,
+		475,
 		16
 	],
 	"../pages/chassis-two/chassis-two.module": [
-		476,
+		477,
 		15
 	],
 	"../pages/driver-one/driver-one.module": [
-		472,
+		473,
 		14
 	],
 	"../pages/driver-stats/driver-stats.module": [
-		471,
+		472,
 		13
 	],
 	"../pages/driver-two/driver-two.module": [
-		473,
+		474,
 		12
 	],
 	"../pages/home/home.module": [
-		469,
+		470,
 		11
 	],
 	"../pages/login/login.module": [
-		485,
+		487,
 		10
 	],
 	"../pages/pu-one/pu-one.module": [
-		478,
+		479,
 		9
 	],
 	"../pages/pu-stats/pu-stats.module": [
-		477,
+		478,
 		8
 	],
 	"../pages/pu-two/pu-two.module": [
-		479,
+		480,
 		7
 	],
 	"../pages/race/race.module": [
-		470,
+		471,
 		6
 	],
 	"../pages/ranking/ranking.module": [
-		482,
+		483,
 		5
 	],
 	"../pages/reset-password/reset-password.module": [
 		486,
-		0
-	],
-	"../pages/rules/rules.module": [
-		483,
 		4
 	],
-	"../pages/signup/signup.module": [
+	"../pages/rules/rules.module": [
 		484,
 		3
 	],
-	"../pages/team/team.module": [
-		481,
+	"../pages/signup/signup.module": [
+		485,
 		2
 	],
-	"../pages/tour-guide/tour-guide.module": [
-		468,
+	"../pages/team/team.module": [
+		482,
 		1
+	],
+	"../pages/tour-guide/tour-guide.module": [
+		469,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -3319,7 +3427,7 @@ webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
 module.exports = webpackAsyncContext;
-webpackAsyncContext.id = 180;
+webpackAsyncContext.id = 182;
 
 /***/ }),
 
@@ -3864,35 +3972,13 @@ TeamDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 298:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailValidator; });
-var EmailValidator = (function () {
-    function EmailValidator() {
-    }
-    EmailValidator.isValid = function (control) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(control.value);
-        if (re) {
-            return null;
-        }
-        return { "invalidEmail": true };
-    };
-    return EmailValidator;
-}());
-
-//# sourceMappingURL=email.js.map
-
-/***/ }),
-
-/***/ 342:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(362);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -3900,40 +3986,40 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 361:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_race_race__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_team_team__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_race_race__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_team_team__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_auth_data_auth_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_auth_data_auth_data__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_profile_data_profile_data__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_admin_data_admin_data__ = __webpack_require__(20);
@@ -4037,8 +4123,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/ranking/ranking.module#RankingPageModule', name: 'RankingPage', segment: 'ranking', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/rules/rules.module#RulesPageModule', name: 'RulesPage', segment: 'rules', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -4085,240 +4171,240 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 425:
+/***/ 426:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 183,
-	"./af.js": 183,
-	"./ar": 184,
-	"./ar-dz": 185,
-	"./ar-dz.js": 185,
-	"./ar-kw": 186,
-	"./ar-kw.js": 186,
-	"./ar-ly": 187,
-	"./ar-ly.js": 187,
-	"./ar-ma": 188,
-	"./ar-ma.js": 188,
-	"./ar-sa": 189,
-	"./ar-sa.js": 189,
-	"./ar-tn": 190,
-	"./ar-tn.js": 190,
-	"./ar.js": 184,
-	"./az": 191,
-	"./az.js": 191,
-	"./be": 192,
-	"./be.js": 192,
-	"./bg": 193,
-	"./bg.js": 193,
-	"./bn": 194,
-	"./bn.js": 194,
-	"./bo": 195,
-	"./bo.js": 195,
-	"./br": 196,
-	"./br.js": 196,
-	"./bs": 197,
-	"./bs.js": 197,
-	"./ca": 198,
-	"./ca.js": 198,
-	"./cs": 199,
-	"./cs.js": 199,
-	"./cv": 200,
-	"./cv.js": 200,
-	"./cy": 201,
-	"./cy.js": 201,
-	"./da": 202,
-	"./da.js": 202,
-	"./de": 203,
-	"./de-at": 204,
-	"./de-at.js": 204,
-	"./de-ch": 205,
-	"./de-ch.js": 205,
-	"./de.js": 203,
-	"./dv": 206,
-	"./dv.js": 206,
-	"./el": 207,
-	"./el.js": 207,
-	"./en-au": 208,
-	"./en-au.js": 208,
-	"./en-ca": 209,
-	"./en-ca.js": 209,
-	"./en-gb": 210,
-	"./en-gb.js": 210,
-	"./en-ie": 211,
-	"./en-ie.js": 211,
-	"./en-nz": 212,
-	"./en-nz.js": 212,
-	"./eo": 213,
-	"./eo.js": 213,
-	"./es": 214,
-	"./es-do": 215,
-	"./es-do.js": 215,
-	"./es.js": 214,
-	"./et": 216,
-	"./et.js": 216,
-	"./eu": 217,
-	"./eu.js": 217,
-	"./fa": 218,
-	"./fa.js": 218,
-	"./fi": 219,
-	"./fi.js": 219,
-	"./fo": 220,
-	"./fo.js": 220,
-	"./fr": 221,
-	"./fr-ca": 222,
-	"./fr-ca.js": 222,
-	"./fr-ch": 223,
-	"./fr-ch.js": 223,
-	"./fr.js": 221,
-	"./fy": 224,
-	"./fy.js": 224,
-	"./gd": 225,
-	"./gd.js": 225,
-	"./gl": 226,
-	"./gl.js": 226,
-	"./gom-latn": 227,
-	"./gom-latn.js": 227,
-	"./he": 228,
-	"./he.js": 228,
-	"./hi": 229,
-	"./hi.js": 229,
-	"./hr": 230,
-	"./hr.js": 230,
-	"./hu": 231,
-	"./hu.js": 231,
-	"./hy-am": 232,
-	"./hy-am.js": 232,
-	"./id": 233,
-	"./id.js": 233,
-	"./is": 234,
-	"./is.js": 234,
-	"./it": 235,
-	"./it.js": 235,
-	"./ja": 236,
-	"./ja.js": 236,
-	"./jv": 237,
-	"./jv.js": 237,
-	"./ka": 238,
-	"./ka.js": 238,
-	"./kk": 239,
-	"./kk.js": 239,
-	"./km": 240,
-	"./km.js": 240,
-	"./kn": 241,
-	"./kn.js": 241,
-	"./ko": 242,
-	"./ko.js": 242,
-	"./ky": 243,
-	"./ky.js": 243,
-	"./lb": 244,
-	"./lb.js": 244,
-	"./lo": 245,
-	"./lo.js": 245,
-	"./lt": 246,
-	"./lt.js": 246,
-	"./lv": 247,
-	"./lv.js": 247,
-	"./me": 248,
-	"./me.js": 248,
-	"./mi": 249,
-	"./mi.js": 249,
-	"./mk": 250,
-	"./mk.js": 250,
-	"./ml": 251,
-	"./ml.js": 251,
-	"./mr": 252,
-	"./mr.js": 252,
-	"./ms": 253,
-	"./ms-my": 254,
-	"./ms-my.js": 254,
-	"./ms.js": 253,
-	"./my": 255,
-	"./my.js": 255,
-	"./nb": 256,
-	"./nb.js": 256,
-	"./ne": 257,
-	"./ne.js": 257,
-	"./nl": 258,
-	"./nl-be": 259,
-	"./nl-be.js": 259,
-	"./nl.js": 258,
-	"./nn": 260,
-	"./nn.js": 260,
-	"./pa-in": 261,
-	"./pa-in.js": 261,
-	"./pl": 262,
-	"./pl.js": 262,
-	"./pt": 263,
-	"./pt-br": 264,
-	"./pt-br.js": 264,
-	"./pt.js": 263,
-	"./ro": 265,
-	"./ro.js": 265,
-	"./ru": 266,
-	"./ru.js": 266,
-	"./sd": 267,
-	"./sd.js": 267,
-	"./se": 268,
-	"./se.js": 268,
-	"./si": 269,
-	"./si.js": 269,
-	"./sk": 270,
-	"./sk.js": 270,
-	"./sl": 271,
-	"./sl.js": 271,
-	"./sq": 272,
-	"./sq.js": 272,
-	"./sr": 273,
-	"./sr-cyrl": 274,
-	"./sr-cyrl.js": 274,
-	"./sr.js": 273,
-	"./ss": 275,
-	"./ss.js": 275,
-	"./sv": 276,
-	"./sv.js": 276,
-	"./sw": 277,
-	"./sw.js": 277,
-	"./ta": 278,
-	"./ta.js": 278,
-	"./te": 279,
-	"./te.js": 279,
-	"./tet": 280,
-	"./tet.js": 280,
-	"./th": 281,
-	"./th.js": 281,
-	"./tl-ph": 282,
-	"./tl-ph.js": 282,
-	"./tlh": 283,
-	"./tlh.js": 283,
-	"./tr": 284,
-	"./tr.js": 284,
-	"./tzl": 285,
-	"./tzl.js": 285,
-	"./tzm": 286,
-	"./tzm-latn": 287,
-	"./tzm-latn.js": 287,
-	"./tzm.js": 286,
-	"./uk": 288,
-	"./uk.js": 288,
-	"./ur": 289,
-	"./ur.js": 289,
-	"./uz": 290,
-	"./uz-latn": 291,
-	"./uz-latn.js": 291,
-	"./uz.js": 290,
-	"./vi": 292,
-	"./vi.js": 292,
-	"./x-pseudo": 293,
-	"./x-pseudo.js": 293,
-	"./yo": 294,
-	"./yo.js": 294,
-	"./zh-cn": 295,
-	"./zh-cn.js": 295,
-	"./zh-hk": 296,
-	"./zh-hk.js": 296,
-	"./zh-tw": 297,
-	"./zh-tw.js": 297
+	"./af": 185,
+	"./af.js": 185,
+	"./ar": 186,
+	"./ar-dz": 187,
+	"./ar-dz.js": 187,
+	"./ar-kw": 188,
+	"./ar-kw.js": 188,
+	"./ar-ly": 189,
+	"./ar-ly.js": 189,
+	"./ar-ma": 190,
+	"./ar-ma.js": 190,
+	"./ar-sa": 191,
+	"./ar-sa.js": 191,
+	"./ar-tn": 192,
+	"./ar-tn.js": 192,
+	"./ar.js": 186,
+	"./az": 193,
+	"./az.js": 193,
+	"./be": 194,
+	"./be.js": 194,
+	"./bg": 195,
+	"./bg.js": 195,
+	"./bn": 196,
+	"./bn.js": 196,
+	"./bo": 197,
+	"./bo.js": 197,
+	"./br": 198,
+	"./br.js": 198,
+	"./bs": 199,
+	"./bs.js": 199,
+	"./ca": 200,
+	"./ca.js": 200,
+	"./cs": 201,
+	"./cs.js": 201,
+	"./cv": 202,
+	"./cv.js": 202,
+	"./cy": 203,
+	"./cy.js": 203,
+	"./da": 204,
+	"./da.js": 204,
+	"./de": 205,
+	"./de-at": 206,
+	"./de-at.js": 206,
+	"./de-ch": 207,
+	"./de-ch.js": 207,
+	"./de.js": 205,
+	"./dv": 208,
+	"./dv.js": 208,
+	"./el": 209,
+	"./el.js": 209,
+	"./en-au": 210,
+	"./en-au.js": 210,
+	"./en-ca": 211,
+	"./en-ca.js": 211,
+	"./en-gb": 212,
+	"./en-gb.js": 212,
+	"./en-ie": 213,
+	"./en-ie.js": 213,
+	"./en-nz": 214,
+	"./en-nz.js": 214,
+	"./eo": 215,
+	"./eo.js": 215,
+	"./es": 216,
+	"./es-do": 217,
+	"./es-do.js": 217,
+	"./es.js": 216,
+	"./et": 218,
+	"./et.js": 218,
+	"./eu": 219,
+	"./eu.js": 219,
+	"./fa": 220,
+	"./fa.js": 220,
+	"./fi": 221,
+	"./fi.js": 221,
+	"./fo": 222,
+	"./fo.js": 222,
+	"./fr": 223,
+	"./fr-ca": 224,
+	"./fr-ca.js": 224,
+	"./fr-ch": 225,
+	"./fr-ch.js": 225,
+	"./fr.js": 223,
+	"./fy": 226,
+	"./fy.js": 226,
+	"./gd": 227,
+	"./gd.js": 227,
+	"./gl": 228,
+	"./gl.js": 228,
+	"./gom-latn": 229,
+	"./gom-latn.js": 229,
+	"./he": 230,
+	"./he.js": 230,
+	"./hi": 231,
+	"./hi.js": 231,
+	"./hr": 232,
+	"./hr.js": 232,
+	"./hu": 233,
+	"./hu.js": 233,
+	"./hy-am": 234,
+	"./hy-am.js": 234,
+	"./id": 235,
+	"./id.js": 235,
+	"./is": 236,
+	"./is.js": 236,
+	"./it": 237,
+	"./it.js": 237,
+	"./ja": 238,
+	"./ja.js": 238,
+	"./jv": 239,
+	"./jv.js": 239,
+	"./ka": 240,
+	"./ka.js": 240,
+	"./kk": 241,
+	"./kk.js": 241,
+	"./km": 242,
+	"./km.js": 242,
+	"./kn": 243,
+	"./kn.js": 243,
+	"./ko": 244,
+	"./ko.js": 244,
+	"./ky": 245,
+	"./ky.js": 245,
+	"./lb": 246,
+	"./lb.js": 246,
+	"./lo": 247,
+	"./lo.js": 247,
+	"./lt": 248,
+	"./lt.js": 248,
+	"./lv": 249,
+	"./lv.js": 249,
+	"./me": 250,
+	"./me.js": 250,
+	"./mi": 251,
+	"./mi.js": 251,
+	"./mk": 252,
+	"./mk.js": 252,
+	"./ml": 253,
+	"./ml.js": 253,
+	"./mr": 254,
+	"./mr.js": 254,
+	"./ms": 255,
+	"./ms-my": 256,
+	"./ms-my.js": 256,
+	"./ms.js": 255,
+	"./my": 257,
+	"./my.js": 257,
+	"./nb": 258,
+	"./nb.js": 258,
+	"./ne": 259,
+	"./ne.js": 259,
+	"./nl": 260,
+	"./nl-be": 261,
+	"./nl-be.js": 261,
+	"./nl.js": 260,
+	"./nn": 262,
+	"./nn.js": 262,
+	"./pa-in": 263,
+	"./pa-in.js": 263,
+	"./pl": 264,
+	"./pl.js": 264,
+	"./pt": 265,
+	"./pt-br": 266,
+	"./pt-br.js": 266,
+	"./pt.js": 265,
+	"./ro": 267,
+	"./ro.js": 267,
+	"./ru": 268,
+	"./ru.js": 268,
+	"./sd": 269,
+	"./sd.js": 269,
+	"./se": 270,
+	"./se.js": 270,
+	"./si": 271,
+	"./si.js": 271,
+	"./sk": 272,
+	"./sk.js": 272,
+	"./sl": 273,
+	"./sl.js": 273,
+	"./sq": 274,
+	"./sq.js": 274,
+	"./sr": 275,
+	"./sr-cyrl": 276,
+	"./sr-cyrl.js": 276,
+	"./sr.js": 275,
+	"./ss": 277,
+	"./ss.js": 277,
+	"./sv": 278,
+	"./sv.js": 278,
+	"./sw": 279,
+	"./sw.js": 279,
+	"./ta": 280,
+	"./ta.js": 280,
+	"./te": 281,
+	"./te.js": 281,
+	"./tet": 282,
+	"./tet.js": 282,
+	"./th": 283,
+	"./th.js": 283,
+	"./tl-ph": 284,
+	"./tl-ph.js": 284,
+	"./tlh": 285,
+	"./tlh.js": 285,
+	"./tr": 286,
+	"./tr.js": 286,
+	"./tzl": 287,
+	"./tzl.js": 287,
+	"./tzm": 288,
+	"./tzm-latn": 289,
+	"./tzm-latn.js": 289,
+	"./tzm.js": 288,
+	"./uk": 290,
+	"./uk.js": 290,
+	"./ur": 291,
+	"./ur.js": 291,
+	"./uz": 292,
+	"./uz-latn": 293,
+	"./uz-latn.js": 293,
+	"./uz.js": 292,
+	"./vi": 294,
+	"./vi.js": 294,
+	"./x-pseudo": 295,
+	"./x-pseudo.js": 295,
+	"./yo": 296,
+	"./yo.js": 296,
+	"./zh-cn": 297,
+	"./zh-cn.js": 297,
+	"./zh-hk": 298,
+	"./zh-hk.js": 298,
+	"./zh-tw": 299,
+	"./zh-tw.js": 299
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4334,21 +4420,21 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 425;
+webpackContext.id = 426;
 
 /***/ }),
 
-/***/ 459:
+/***/ 460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4413,352 +4499,7 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 487:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(298);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the ResetPasswordPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ResetPasswordPage = (function () {
-    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
-        this.nav = nav;
-        this.authData = authData;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.emailChanged = false;
-        this.passwordChanged = false;
-        this.submitAttempt = false;
-        this.resetPasswordForm = formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
-        });
-    } //end constructor
-    ResetPasswordPage.prototype.elementChanged = function (input) {
-        var field = input.ngControl.name;
-        this[field + "Changed"] = true;
-    };
-    /**
-     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
-     *  component while the user waits.
-     *
-     * If the form is invalid it will just log the form value, feel free to handle that as you like.
-     */
-    ResetPasswordPage.prototype.resetPassword = function () {
-        var _this = this;
-        this.submitAttempt = true;
-        if (!this.resetPasswordForm.valid) {
-            console.log(this.resetPasswordForm.value);
-        }
-        else {
-            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
-                var alert = _this.alertCtrl.create({
-                    message: "We just sent you a reset link to your email",
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel',
-                            handler: function () {
-                                _this.nav.pop();
-                            }
-                        }
-                    ]
-                });
-                alert.present();
-            }, function (error) {
-                var errorMessage = error.message;
-                var errorAlert = _this.alertCtrl.create({
-                    message: errorMessage,
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel'
-                        }
-                    ]
-                });
-                errorAlert.present();
-            });
-        }
-    };
-    return ResetPasswordPage;
-}());
-ResetPasswordPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _e || Object])
-], ResetPasswordPage);
-
-var _a, _b, _c, _d, _e;
-//# sourceMappingURL=reset-password.js.map
-
-/***/ }),
-
-/***/ 49:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__race_race__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__team_team__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__rules_rules__ = __webpack_require__(129);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-var TabsPage = (function () {
-    function TabsPage(navCtrl, navParams, storage, adminData, currentRoundData, profileData, alertCtrl) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.adminData = adminData;
-        this.currentRoundData = currentRoundData;
-        this.profileData = profileData;
-        this.alertCtrl = alertCtrl;
-        this.tab1Root = __WEBPACK_IMPORTED_MODULE_6__home_home__["a" /* HomePage */];
-        this.tab2Root = __WEBPACK_IMPORTED_MODULE_7__race_race__["a" /* RacePage */];
-        this.tab3Root = __WEBPACK_IMPORTED_MODULE_8__team_team__["a" /* TeamPage */];
-        this.tab4Root = __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__["a" /* RankingPage */];
-        this.tab5Root = __WEBPACK_IMPORTED_MODULE_10__rules_rules__["a" /* RulesPage */];
-        this.raceTime = 0;
-        this.gameState = "lockout";
-        this.tabEnabled = false;
-        //call to firebase to retrieve currentRound
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.currentRound = rawList[0].currentRound;
-            console.log('TABS - this round:', _this.currentRound);
-            //call to firebase to retrieve lockout list data 
-            _this.adminData.getRoundDataList(_this.currentRound).on('value', function (snapshot) {
-                var rawList = [];
-                snapshot.forEach(function (snap) {
-                    rawList.push({
-                        id: snap.key,
-                        lockoutDate: snap.val().lockoutDate,
-                    });
-                });
-                _this.roundDataList = rawList;
-                console.log('lockout', _this.roundDataList[0]);
-                var raceDate = _this.roundDataList[0].lockoutDate;
-                var timeOfRace = Math.round(new Date(raceDate).getTime() / 1000);
-                var timeNow = Math.round(new Date().getTime() / 1000);
-                _this.raceTime = _this.getRaceTime(timeOfRace, timeNow);
-                //start timer
-                _this.initTimer(_this.raceTime);
-                // console.log("raceTime tabs", this.raceTime);
-            });
-            //Save currentRound to localstorage
-            _this.storage.set('currentRound', _this.currentRound);
-        });
-        this.currentRoundData.getGameState().on('value', function (snapshot) {
-            console.log('game state-tabs:', snapshot.val().gameState);
-            _this.gameState = snapshot.val().gameState;
-        });
-        this.profileData.getUserProfile().on('value', function (data) {
-            _this.userProfile = data.val();
-            if (_this.userProfile.teamName) {
-                _this.tabEnabled = true;
-            }
-        });
-        //get length of user list
-        this.profileData.getUsersList().on('value', function (snapshot) {
-            var counter = 0;
-            console.log("checking:", snapshot.val());
-            snapshot.forEach(function (snap) {
-                if (snap.val().teamName == undefined) {
-                }
-                else {
-                    counter = counter + 1;
-                }
-            });
-            _this.userCount = counter + 1;
-        });
-        this.navParams = navParams;
-        this.navParams.data = this.userProfile;
-    } // end constructor
-    TabsPage.prototype.updateName = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: "Enter your team name",
-            inputs: [
-                {
-                    name: 'teamName',
-                    placeholder: 'Your team name',
-                    value: ''
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                },
-                {
-                    text: 'Save',
-                    handler: function (data) {
-                        _this.profileData.updateRank(_this.userCount);
-                        _this.profileData.updateName(data.teamName);
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    // function that caluclates time to next lockout
-    TabsPage.prototype.getRaceTime = function (timeOfRace, timeNow) {
-        var timeToRace = timeOfRace - timeNow;
-        return timeToRace;
-    };
-    // sets timer properties and starts timer
-    TabsPage.prototype.initTimer = function (timeInSeconds) {
-        if (!timeInSeconds) {
-            timeInSeconds = 0;
-        }
-        console.log("initTimer");
-        this.timer = {
-            seconds: timeInSeconds,
-            runTimer: false,
-            hasStarted: false,
-            hasFinished: false,
-            secondsRemaining: timeInSeconds
-        };
-        this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
-        this.timer.hasStarted = true;
-        this.timer.runTimer = true;
-        console.log("Call timerTick");
-        this.timerTick();
-    };
-    TabsPage.prototype.startTimer = function () {
-        this.timer.hasStarted = true;
-        this.timer.runTimer = true;
-        this.timerTick();
-    };
-    TabsPage.prototype.timerTick = function () {
-        var _this = this;
-        setTimeout(function () {
-            if (!_this.timer.runTimer) {
-                return;
-            }
-            _this.timer.secondsRemaining--;
-            _this.timer.displayTime = _this.getSecondsAsDigitalClock(_this.timer.secondsRemaining);
-            if (_this.timer.secondsRemaining > 0) {
-                _this.timerTick();
-            }
-            else {
-                _this.hasFinished();
-                // this.timer.hasFinished = true;
-            }
-        }, 1000);
-    };
-    TabsPage.prototype.getSecondsAsDigitalClock = function (inputSeconds) {
-        var sec_num = parseInt(inputSeconds.toString(), 10); // don't forget the second param
-        var days = Math.floor(sec_num / 86400);
-        var lessHours = Math.ceil((sec_num - (days * 86400)) / 3600);
-        var hours = Math.floor(sec_num / 3600);
-        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-        var seconds = sec_num - (hours * 3600) - (minutes * 60);
-        var daysString = '';
-        var hoursString = '';
-        var lessHoursString = '';
-        var minutesString = '';
-        var secondsString = '';
-        daysString = (days < 10) ? "0" + days : days.toString();
-        if (days == 0) {
-            lessHours = lessHours - 1;
-        }
-        lessHoursString = (lessHours < 10) ? "0" + lessHours : lessHours.toString();
-        hoursString = (hours < 10) ? "0" + hours : hours.toString();
-        minutesString = (minutes < 10) ? "0" + minutes : minutes.toString();
-        secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
-        return daysString + ':' + lessHoursString + ':' + minutesString + ':' + secondsString + ' ';
-    };
-    //function sets timer to finished and changes state to lockout
-    TabsPage.prototype.hasFinished = function () {
-        this.changeState();
-        return this.timer.hasFinished;
-    };
-    //change game state sitewide
-    TabsPage.prototype.changeState = function () {
-        this.currentRoundData.changeState("lockout");
-    };
-    TabsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad TabsPage');
-    };
-    return TabsPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-    __metadata("design:type", Number)
-], TabsPage.prototype, "timeInSeconds", void 0);
-TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/'<!-- <ion-header id="tabs" class="tabs-header">\n  <ion-navbar color="primary">\n    <ion-row class="text-align-right">\n      <ion-col class="enter-team" *ngIf="userProfile?.teamName">\n        <div class="team-text">\n          {{userProfile?.teamName}}\n        </div>\n      </ion-col>\n      <ion-col *ngIf="!userProfile?.teamName">\n        <ion-card tappable class="team-card"  (click)="updateName()">\n          <div class="instruction pulse">\n            Tap to enter your team name\n          </div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n    		<div *ngIf="raceTime" class="timer-right">\n          <div *ngIf="gameState !== \'lockout\'">\n            <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">\n  						<div class="timer-button timer-text timer-card">\n  							{{timer.displayTime}}\n    						<div class="time-type" style="font-size: 9px;"> \n    							<span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>\n    						</div>\n  						</div>\n							</ion-col>\n          </div>\n          <div *ngIf="gameState == \'lockout\'" class="lockout">\n            <div class="lockout-text">LOCK OUT</div>\n          </div>\n        </div>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content padding no-bounce>\n\n\n\n    <ion-row class="text-align-right tab-content">\n      <ion-col class="enter-team" *ngIf="userProfile?.teamName">\n        <div class="team-text">\n          {{userProfile?.teamName}}\n        </div>\n      </ion-col>\n      <ion-col *ngIf="!userProfile?.teamName">\n        <ion-card tappable class="team-card"  (click)="updateName()">\n          <div class="instruction pulse">\n            Tap to enter your team name\n          </div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <div *ngIf="raceTime" class="timer-right">\n          <div *ngIf="gameState !== \'lockout\'">\n            <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">\n              <div class="timer-button timer-text timer-card">\n                {{timer.displayTime}}\n                <div class="time-type" style="font-size: 9px;"> \n                  <span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>\n                </div>\n              </div>\n              </ion-col>\n          </div>\n          <div *ngIf="gameState == \'lockout\'" class="lockout">\n            <div class="lockout-text">LOCK OUT</div>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n\n\n\n\n\n	<ion-tabs>\n    <ion-tab [root]="tab1Root" tappable tabTitle="Welcome" tabIcon="md-home"></ion-tab>\n    <ion-tab [root]="tab2Root" tappable tabTitle="Race" tabIcon="md-speedometer"></ion-tab>\n	  <ion-tab [root]="tab3Root" tappable tabTitle="Team" tabIcon="md-people"></ion-tab>\n    <ion-tab [root]="tab4Root" tappable [enabled]="tabEnabled" [rootParams]="userProfile" tabTitle="Rank" tabIcon="md-trending-up"></ion-tab>\n	  <ion-tab [root]="tab5Root" tappable tabTitle="Rules" tabIcon="md-book"></ion-tab>\n	</ion-tabs>\n</ion-content>\n\n\n<!-- <ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs> -->\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], TabsPage);
-
-//# sourceMappingURL=tabs.js.map
-
-/***/ }),
-
-/***/ 56:
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4858,6 +4599,245 @@ AuthDataProvider = __decorate([
 
 /***/ }),
 
+/***/ 50:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__race_race__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__team_team__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__rules_rules__ = __webpack_require__(130);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+var TabsPage = (function () {
+    function TabsPage(navCtrl, navParams, storage, adminData, currentRoundData, profileData, alertCtrl) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.adminData = adminData;
+        this.currentRoundData = currentRoundData;
+        this.profileData = profileData;
+        this.alertCtrl = alertCtrl;
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_6__home_home__["a" /* HomePage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_7__race_race__["a" /* RacePage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_8__team_team__["a" /* TeamPage */];
+        this.tab4Root = __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__["a" /* RankingPage */];
+        this.tab5Root = __WEBPACK_IMPORTED_MODULE_10__rules_rules__["a" /* RulesPage */];
+        this.raceTime = 0;
+        this.gameState = "lockout";
+        this.tabEnabled = false;
+        //call to firebase to retrieve currentRound
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.currentRound = rawList[0].currentRound;
+            console.log('TABS - this round:', _this.currentRound);
+            //call to firebase to retrieve lockout list data 
+            _this.adminData.getRoundDataList(_this.currentRound).on('value', function (snapshot) {
+                var rawList = [];
+                snapshot.forEach(function (snap) {
+                    rawList.push({
+                        id: snap.key,
+                        lockoutDate: snap.val().lockoutDate,
+                    });
+                });
+                _this.roundDataList = rawList;
+                console.log('lockout', _this.roundDataList[0]);
+                var raceDate = _this.roundDataList[0].lockoutDate;
+                var timeOfRace = Math.round(new Date(raceDate).getTime() / 1000);
+                var timeNow = Math.round(new Date().getTime() / 1000);
+                _this.raceTime = _this.getRaceTime(timeOfRace, timeNow);
+                //start timer
+                _this.initTimer(_this.raceTime);
+                // console.log("raceTime tabs", this.raceTime);
+            });
+            //Save currentRound to localstorage
+            _this.storage.set('currentRound', _this.currentRound);
+        });
+        this.currentRoundData.getGameState().on('value', function (snapshot) {
+            console.log('game state-tabs:', snapshot.val().gameState);
+            _this.gameState = snapshot.val().gameState;
+        });
+        this.profileData.getUserProfile().on('value', function (data) {
+            _this.userProfile = data.val();
+            if (_this.userProfile.teamName) {
+                _this.tabEnabled = true;
+                _this.hasTeamName = true;
+            }
+            else {
+                _this.hasTeamName = false;
+            }
+        });
+        if (this.hasTeamName == false) {
+            this.updateName();
+        }
+        //get length of user list
+        this.profileData.getUsersList().on('value', function (snapshot) {
+            var counter = 0;
+            console.log("checking:", snapshot.val());
+            snapshot.forEach(function (snap) {
+                if (snap.val().teamName == undefined) {
+                }
+                else {
+                    counter = counter + 1;
+                }
+            });
+            _this.userCount = counter + 1;
+        });
+        this.navParams = navParams;
+        this.navParams.data = this.userProfile;
+    } // end constructor
+    TabsPage.prototype.updateName = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: "Enter your team name",
+            inputs: [
+                {
+                    name: 'teamName',
+                    placeholder: 'Your team name',
+                    value: ''
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        _this.profileData.updateRank(_this.userCount);
+                        _this.profileData.updateName(data.teamName);
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    // function that caluclates time to next lockout
+    TabsPage.prototype.getRaceTime = function (timeOfRace, timeNow) {
+        var timeToRace = timeOfRace - timeNow;
+        return timeToRace;
+    };
+    // sets timer properties and starts timer
+    TabsPage.prototype.initTimer = function (timeInSeconds) {
+        if (!timeInSeconds) {
+            timeInSeconds = 0;
+        }
+        console.log("initTimer");
+        this.timer = {
+            seconds: timeInSeconds,
+            runTimer: false,
+            hasStarted: false,
+            hasFinished: false,
+            secondsRemaining: timeInSeconds
+        };
+        this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
+        this.timer.hasStarted = true;
+        this.timer.runTimer = true;
+        console.log("Call timerTick");
+        this.timerTick();
+    };
+    TabsPage.prototype.startTimer = function () {
+        this.timer.hasStarted = true;
+        this.timer.runTimer = true;
+        this.timerTick();
+    };
+    TabsPage.prototype.timerTick = function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!_this.timer.runTimer) {
+                return;
+            }
+            _this.timer.secondsRemaining--;
+            _this.timer.displayTime = _this.getSecondsAsDigitalClock(_this.timer.secondsRemaining);
+            if (_this.timer.secondsRemaining > 0) {
+                _this.timerTick();
+            }
+            else {
+                _this.hasFinished();
+                // this.timer.hasFinished = true;
+            }
+        }, 1000);
+    };
+    TabsPage.prototype.getSecondsAsDigitalClock = function (inputSeconds) {
+        var sec_num = parseInt(inputSeconds.toString(), 10); // don't forget the second param
+        var days = Math.floor(sec_num / 86400);
+        var lessHours = Math.ceil((sec_num - (days * 86400)) / 3600);
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+        var daysString = '';
+        var hoursString = '';
+        var lessHoursString = '';
+        var minutesString = '';
+        var secondsString = '';
+        daysString = (days < 10) ? "0" + days : days.toString();
+        if (days == 0) {
+            lessHours = lessHours - 1;
+        }
+        lessHoursString = (lessHours < 10) ? "0" + lessHours : lessHours.toString();
+        hoursString = (hours < 10) ? "0" + hours : hours.toString();
+        minutesString = (minutes < 10) ? "0" + minutes : minutes.toString();
+        secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
+        return daysString + ':' + lessHoursString + ':' + minutesString + ':' + secondsString + ' ';
+    };
+    //function sets timer to finished and changes state to lockout
+    TabsPage.prototype.hasFinished = function () {
+        this.changeState();
+        return this.timer.hasFinished;
+    };
+    //change game state sitewide
+    TabsPage.prototype.changeState = function () {
+        this.currentRoundData.changeState("lockout");
+    };
+    TabsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad TabsPage');
+    };
+    return TabsPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Number)
+], TabsPage.prototype, "timeInSeconds", void 0);
+TabsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/'<ion-content padding no-bounce>\n  <ion-row class="text-align-right tab-content">\n    <ion-col *ngIf="userProfile?.teamName">\n      <div class="team-text">\n        {{userProfile?.teamName}}\n      </div>\n    </ion-col>\n    <ion-col>\n      <div *ngIf="raceTime" class="timer-right">\n        <div *ngIf="gameState !== \'lockout\'">\n          <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">\n            <div class="timer-button timer-text timer-card">\n              {{timer.displayTime}}\n              <div class="time-type" style="font-size: 9px;"> \n                <span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>\n              </div>\n            </div>\n            </ion-col>\n        </div>\n        <div *ngIf="gameState == \'lockout\'" class="lockout">\n          <div class="lockout-text">LOCK OUT</div>\n        </div>\n      </div>\n    </ion-col>\n  </ion-row>\n\n	<ion-tabs>\n    <ion-tab [root]="tab1Root" tappable tabTitle="Welcome" tabIcon="md-home"></ion-tab>\n    <ion-tab [root]="tab2Root" tappable tabTitle="Race" tabIcon="md-speedometer"></ion-tab>\n	  <ion-tab [root]="tab3Root" tappable tabTitle="Team" tabIcon="md-people"></ion-tab>\n    <ion-tab [root]="tab4Root" tappable [enabled]="tabEnabled" [rootParams]="userProfile" tabTitle="Rank" tabIcon="md-trending-up"></ion-tab>\n	  <ion-tab [root]="tab5Root" tappable tabTitle="Rules" tabIcon="md-book"></ion-tab>\n	</ion-tabs>\n</ion-content>\n\n\n<!-- <ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs> -->\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__["a" /* ProfileDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__["a" /* ProfileDataProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _g || Object])
+], TabsPage);
+
+var _a, _b, _c, _d, _e, _f, _g;
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
 /***/ 57:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4913,7 +4893,7 @@ StatsDataProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverStatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(94);
@@ -5170,7 +5150,7 @@ DriverStatsPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisStatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(94);
@@ -5415,7 +5395,7 @@ ChassisStatsPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuStatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(94);
@@ -5650,13 +5630,13 @@ PuStatsPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validators_email__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validators_email__ = __webpack_require__(95);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5758,10 +5738,13 @@ LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-login',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n\n  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Login\n      </button>\n    </ion-card>\n  </form>\n\n \n    <ion-row col-6 class="center small-layout">\n      <button ion-button block class="create-btn"  (click)="goToSignup()">\n        Create account\n      </button>\n    </ion-row>\n\n    <ion-row col-6 class="center less-margin">\n      <button ion-button block outline class="white-button"  (click)="goToResetPassword()">\n        Forgot password?\n      </button>\n    </ion-row>\n\n\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
 ], LoginPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=login.js.map
 
 /***/ }),
@@ -5850,7 +5833,29 @@ ProfileDataProvider = __decorate([
 
 //# sourceMappingURL=profile-data.js.map
 
+/***/ }),
+
+/***/ 95:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailValidator; });
+var EmailValidator = (function () {
+    function EmailValidator() {
+    }
+    EmailValidator.isValid = function (control) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(control.value);
+        if (re) {
+            return null;
+        }
+        return { "invalidEmail": true };
+    };
+    return EmailValidator;
+}());
+
+//# sourceMappingURL=email.js.map
+
 /***/ })
 
-},[342]);
+},[343]);
 //# sourceMappingURL=main.js.map

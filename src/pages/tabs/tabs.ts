@@ -34,7 +34,7 @@ export class TabsPage {
   public tabEnabled:boolean = false;
   public userCount: number;
   public currentRound: number;
-
+  public hasTeamName:boolean;
   public timer: ITimer;
   public timeOfRace;
   public timeNow;
@@ -91,13 +91,19 @@ export class TabsPage {
       this.gameState = snapshot.val().gameState;
     });
 
-     this.profileData.getUserProfile().on('value', (data) => {
+    this.profileData.getUserProfile().on('value', (data) => {
       this.userProfile = data.val();
-
       if (this.userProfile.teamName) {
         this.tabEnabled = true;
+        this.hasTeamName = true;
+      } else {
+        this.hasTeamName = false;
       }
     });
+    
+    if (this.hasTeamName == false) {
+      this.updateName();
+    }
 
     //get length of user list
     this.profileData.getUsersList().on('value', snapshot => {
@@ -114,6 +120,7 @@ export class TabsPage {
 
     this.navParams = navParams;
     this.navParams.data = this.userProfile;
+
   } // end constructor
 
   updateName(){
@@ -127,9 +134,6 @@ export class TabsPage {
         }
       ],
       buttons: [
-        {
-          text: 'Cancel',
-        },
         {
           text: 'Save',
           handler: data => {

@@ -6,7 +6,6 @@ page-tabs {
 	position: absolute;
 	width: 100%;
 	z-index: 100;
-	pointer-events: none;
 }
 
 .timer-right {
@@ -15,15 +14,24 @@ page-tabs {
   margin: 7px 4px 0 auto;
 }
 
-.team-card {
-	background-color: #000 !important;
-  color: #fff;
-  height: 39px;
+.team-card {  
   font-size: 12px;
-  margin: 0 0 0 4px;
+  
   padding: 4px 8px;
   text-align: center;
-  width: 130px;
+  
+  
+  position: absolute;
+  width: 50%;
+  margin: 40% 25% 0;
+  height: 170px;
+}
+
+.enter-team-overlay {
+	background-color:rgba(0,0,0,0.4);
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
 }
 
 .team-text {
@@ -54,11 +62,6 @@ page-tabs {
 	height: 38px;
   line-height: 24px;
   margin: 0 0 0 auto;
-}
-
-.instruction {
-	line-height: 15px;
-	font-size: 10px!important;
 }
 
 .tabs {

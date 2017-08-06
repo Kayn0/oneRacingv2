@@ -1,78 +1,28 @@
-<!-- <ion-header id="tabs" class="tabs-header">
-  <ion-navbar color="primary">
-    <ion-row class="text-align-right">
-      <ion-col class="enter-team" *ngIf="userProfile?.teamName">
-        <div class="team-text">
-          {{userProfile?.teamName}}
-        </div>
-      </ion-col>
-      <ion-col *ngIf="!userProfile?.teamName">
-        <ion-card tappable class="team-card"  (click)="updateName()">
-          <div class="instruction pulse">
-            Tap to enter your team name
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-    		<div *ngIf="raceTime" class="timer-right">
-          <div *ngIf="gameState !== 'lockout'">
-            <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">
-  						<div class="timer-button timer-text timer-card">
-  							{{timer.displayTime}}
-    						<div class="time-type" style="font-size: 9px;"> 
-    							<span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>
-    						</div>
-  						</div>
-							</ion-col>
-          </div>
-          <div *ngIf="gameState == 'lockout'" class="lockout">
-            <div class="lockout-text">LOCK OUT</div>
-          </div>
-        </div>
-      </ion-col>
-  	</ion-row>
-  </ion-navbar>
-</ion-header> -->
-
 <ion-content padding no-bounce>
-
-
-
-    <ion-row class="text-align-right tab-content">
-      <ion-col class="enter-team" *ngIf="userProfile?.teamName">
-        <div class="team-text">
-          {{userProfile?.teamName}}
-        </div>
-      </ion-col>
-      <ion-col *ngIf="!userProfile?.teamName">
-        <ion-card tappable class="team-card"  (click)="updateName()">
-          <div class="instruction pulse">
-            Tap to enter your team name
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <div *ngIf="raceTime" class="timer-right">
-          <div *ngIf="gameState !== 'lockout'">
-            <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">
-              <div class="timer-button timer-text timer-card">
-                {{timer.displayTime}}
-                <div class="time-type" style="font-size: 9px;"> 
-                  <span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>
-                </div>
+  <ion-row class="text-align-right tab-content">
+    <ion-col *ngIf="userProfile?.teamName">
+      <div class="team-text">
+        {{userProfile?.teamName}}
+      </div>
+    </ion-col>
+    <ion-col>
+      <div *ngIf="raceTime" class="timer-right">
+        <div *ngIf="gameState !== 'lockout'">
+          <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">
+            <div class="timer-button timer-text timer-card">
+              {{timer.displayTime}}
+              <div class="time-type" style="font-size: 9px;"> 
+                <span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>
               </div>
-              </ion-col>
-          </div>
-          <div *ngIf="gameState == 'lockout'" class="lockout">
-            <div class="lockout-text">LOCK OUT</div>
-          </div>
+            </div>
+            </ion-col>
         </div>
-      </ion-col>
-    </ion-row>
-
-
-
-
+        <div *ngIf="gameState == 'lockout'" class="lockout">
+          <div class="lockout-text">LOCK OUT</div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
 
 	<ion-tabs>
     <ion-tab [root]="tab1Root" tappable tabTitle="Welcome" tabIcon="md-home"></ion-tab>

@@ -1,13 +1,11 @@
 <ion-header>
   <ion-navbar color="primary">
-    
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <div class="container">
     <ion-row>
-      <!-- <img src="assets/img/welcome-logo.png" class="welcome-logo slideRight delay-2" /> -->
       <img src="assets/img/logo-car.png" class="welcome-logo logo-car slideRight delay-1" />
       <img src="assets/img/logo-text1.png" class="welcome-logo logo-text expandOpen delay-2" />
     </ion-row>
@@ -20,7 +18,7 @@
         <p>Manage your very own Formula One racing team. With a starting budget purchase a driver, chassis and power unit for each of your cars. Points are awarded after each Formula One race weekend.</p>
         
         <ion-row class="flex-right">
-          <ion-col width-50 class="button-left">
+          <ion-col col-6 class="button-left">
             <button ion-button icon-right class="tour-guide-button" color="primary" block (click)="goToTourGuide()">
               Tour guide
               <ion-icon name="arrow-forward"></ion-icon>
@@ -30,20 +28,19 @@
       </ion-card>
     </ion-row>
 
-    <ion-row class="margin-bottom">
-      <ion-col width-33>
-        <button ion-button class="log-out-btn" color="secondary" block (click)="logMeOut()">
-          <ion-icon name="md-log-out" class="welcome-icon"></ion-icon>
-          Log out
-        </button>
-      </ion-col>
+    <ion-col col-6 class="center small-layout top-space">
+      <button ion-button block outline class="log-out-btn" color="secondary" block (click)="logMeOut()">
+        <ion-icon name="md-log-out" class="welcome-icon"></ion-icon>
+        Log out
+      </button>
+    </ion-col>
 
-      <ion-col width-33 class="margin-left">
-        <button ion-button class="log-out-btn" color="secondary" block (click)="mailto()">
-          <ion-icon name="mail" class="welcome-icon"></ion-icon>
-          Feedback
-        </button>
-      </ion-col>
-    </ion-row>
+    <ion-col col-6 class="center less-margin">
+      <button ion-button block outline class="log-out-btn" color="secondary" block (click)="mailto()">
+        <ion-icon name="mail" class="welcome-icon"></ion-icon>
+        Feedback
+      </button>
+    </ion-col>
+
   </div>
 </ion-content>
