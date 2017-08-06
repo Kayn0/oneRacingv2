@@ -1,0 +1,119 @@
+page-login {
+
+  .toolbar-title,
+  ion-title.center-text {
+    text-align: center !important;
+  }
+  
+  form {
+    margin-bottom: 32px;
+    button {
+      margin-top: 20px;
+    }
+  }
+
+  p {
+    font-size: 0.8em;
+    color: #d2d2d2;
+  }
+
+  ion-label {
+    margin-left: 5px;
+  }
+
+  ion-input {
+    padding: 5px;
+  }
+
+  .invalid {
+    border-bottom: 1px solid #FF6153;
+  }
+
+  .welcome-logo {
+    margin: 30px auto 0;
+  }
+
+  .margin-bottom {
+    margin: 15% auto 0;
+  }
+
+  .error-message .item-inner {
+    border-bottom: 0 !important;
+  }
+  .login-img {
+    border-radius: 2px;
+    width: 100%;
+    // left:10%;
+    // position: relative;
+  }
+
+  .login-btn {
+    background-color: #000;
+    border-radius: 2px;
+    border-bottom: 3px solid #d31411;
+    margin: 16px 0 0;
+  }
+
+  .create-btn {
+    background-color: #d31411;
+    border-radius: 2px;
+    margin: 0 8px;
+    width: calc(100% - 16px);
+  }
+
+  .login-btn.left-btn {
+    height: 50px;
+    margin: 0 4px 0 8px;
+    width: calc(100% - 12px);
+  }
+
+  .login-btn.right-btn {
+    height: 50px;
+    margin: 0 8px 0 4px;
+    width: calc(100% - 12px);
+  }
+  
+  // .to-bottom {
+  //   position: absolute;
+  //   bottom: 8px;
+  // }
+}
+
+
+@media only screen and (min-width: 520px) {
+  page-login {
+  
+    .container {
+      width: 70vw;
+      margin-left:15vw;
+    }
+    .card-header {
+      padding: 0px;
+    }
+    .login-img {
+      margin: 8px;
+      width: calc(100% - 16px); 
+    }
+
+  }
+
+}
+
+@media only screen and (max-width: 340px) {
+  page-login {
+  
+    .card-header {
+      padding: 0px;
+    }
+
+    .login-img {
+      margin: 8px 8px 0 8px;
+      width: calc(100% - 16px); 
+    }
+    
+    form {
+      margin-bottom: 0;
+    }
+  }
+
+}

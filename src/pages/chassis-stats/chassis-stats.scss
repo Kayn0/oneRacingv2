@@ -1,0 +1,181 @@
+page-chassis-stats {
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+  
+  .fixed-content {
+    margin-bottom: 0 !important;
+  }
+
+	.ios, .md {
+    page-home {
+      .scroll-content {
+          background-color: map-get($colors, light);
+      }
+
+      ion-card-header {
+          font-weight: bold;
+      }
+    }
+	}
+
+  .horizontal-pad {
+    margin-bottom: 0;
+  }
+
+  ion-card img {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  button.back-button {
+    position: absolute;
+    z-index: 9999;
+  }
+
+  img.chassis-image {
+    height: auto;
+    margin-left: 4px;
+    padding: 0 20px;
+    max-width: 84px;
+  }
+
+  .chassis-value {
+    color: #fff;
+    font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+    font-size: 22px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .chassis-change {
+    color: #fff;
+    font-family: 'ubuntu-regular', helvetica, sans-serif !important;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    span {
+      display: block;
+      font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+  }
+
+  .chassis-points {
+    color: #fff;
+    font-family: 'ubuntu-regular', helvetica, sans-serif !important;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 4px;
+    span {
+      display: block;
+      font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+      font-size: 18px;
+      margin-top: 2px;
+    }
+  }
+
+  .header-text {
+    margin: 16px auto 0 auto;
+    border-bottom: none;
+    font-size: 16px!important;
+  }
+
+  .chart-card ion-card {
+    background-color: #000!important;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  page-chassis-stats {
+    .container {
+      width: 70vw;
+      margin-left:15vw;
+      margin-top: 7vh;
+    }
+
+    .toolbar-title {
+      text-align: center!important;
+      font-size: 20px;
+    }
+
+    .outline {
+      height: 73vh;
+    }
+
+    .driver-name {
+      font-size: 18px;
+    }
+
+    .pu-name,
+    .chassis-name {
+      font-size: 20px;
+    }
+
+    .driver-value {
+      font-size: 22px;
+    }
+
+    .driver-points,
+    .driver-change {
+      font-size: 18px;
+    }
+
+    .to-bottom {
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    h2.chassis-name {
+      font-size: 24px;
+    }
+
+    h3.points {
+      font-size: 22px;
+    }
+    
+    .title-text {
+      font-size: 20px;
+    }
+
+    .header-text {
+      font-size: 18px;
+    }
+
+    .user-stats {
+      font-size: 18px;
+    }
+
+    .chassis-points,
+    .chassis-change {
+      font-size: 18px;
+    }
+
+    .chassis-value {
+      font-size: 24px;
+    }   
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  page-chassis-stats {
+    .toolbar-title {
+      font-size: 18px;
+    }
+
+    ion-title {
+      padding: 0 90px 1px 75px !important;
+    }
+
+    .driver-name {
+      font-size: 14px;
+    }
+
+    .pu-name,
+    .chassis-name {
+      font-size: 18px;
+    }
+  }
+}

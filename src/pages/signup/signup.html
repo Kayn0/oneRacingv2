@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Create an account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="signup">
+  <div class="container">
+    <ion-row>
+      <img src="assets/img/welcome-logo1.png" class="welcome-logo" />
+    </ion-row>
+    <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+    <ion-card>
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
+          placeholder="Your email address"
+          [class.invalid]="!signupForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && (emailChanged || submitAttempt)">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"
+          placeholder="Your password"
+          [class.invalid]="!signupForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && (passwordChanged || submitAttempt)">
+        <p>Your password needs more than 6 characters.</p>
+      </ion-item>
+
+      <button ion-button block type="submit" class="login-btn">
+        Create an Account
+      </button>
+    </ion-card>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="container">
+		<ion-row *ngIf="noStats !== true || firstRound !== true" class="header-marg">
+			<ion-col>
+	    	<div class="stat slideExpandUp delay-3">
+        	Last Round<span>{{ pointsLastRound }}</span>
+      	</div>
+      </ion-col>
+
+      <ion-col>
+        <div class="stat slideExpandUp delay-4">
+          Total Score<span>{{userStats.totalPoints}}</span>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="stat slideExpandUp delay-5">
+          Rank<span>{{userStats.rank}}</span>
+        </div>
+      </ion-col>
+	  </ion-row>
+
+	  <ion-row class="header-marg">
+	    <div class="header-text slideExpandUp delay-2">Team Ranking</div>
+	  </ion-row>
+
+		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">
+		  <ion-item *ngIf="user.teamName"
+		   	[ngClass]="{'highlight-item': userData == user.email}">
+		   	<ion-row>
+		   	
+			   	<ion-col>
+				   	<div class="team-name">{{ user.teamName}}</div>
+				  	<div class="team-cash">Cash: {{ user.money | currency:'USD':true:'1.0' }}</div>
+			   		<div class="team-trades">Trades: {{ user.trades }}</div>
+			   	</ion-col>
+
+			   	<ion-col class="right-col rel-position">
+				   	<div class="team-rank">{{ user.rank }}</div>
+
+						<div class="points-text">
+							Total points: 
+							<span class="number-points"> 
+								{{ user.totalPoints }}
+							</span>
+						</div>
+					</ion-col>
+				</ion-row>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

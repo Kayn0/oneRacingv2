@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+	  <ion-row *ngIf="driverInfo">
+	    <div class="nav-heading">{{ driverInfo.firstName }} {{ driverInfo.lastName }}</div>
+	  </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <div *ngIf="driverInfo">
+      <ion-row>
+        <ion-col width-25>
+          <div class="horizontal-pad">
+    		    <img class="driver-image" [src]="driverInfo.driverImage" />
+           </div>
+        </ion-col>
+        <ion-col width-50>
+      	  <div class="driver-value">
+            {{ driverInfo.driverValue | currency:'USD':true:'1.0'}}
+          </div>
+      	  <div class="driver-change">
+            Last value change
+            <span>{{ driverValueChange | currency:'USD':true:'1.0'}}</span>
+          </div> 
+        </ion-col>
+        <ion-col width-25>
+          <div class="driver-points">Average points<span>{{ averagePoints }}</span></div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="chart-card">
+      <ion-row>
+        <div class="header-text slideExpandUp delay-3">Points per round</div>
+      </ion-row>
+      <ion-card>
+        <ion-card-content>
+          <canvas #lineCanvasPoints></canvas>
+        </ion-card-content>
+      </ion-card>
+      <ion-row>
+        <div class="header-text slideExpandUp delay-5">Value per round</div>
+      </ion-row>
+      <ion-card>
+        <ion-card-content>
+          <canvas #lineCanvasValue></canvas>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

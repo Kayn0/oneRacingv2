@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-row>
+      <div class="absolute-pos trades-heading">Buy trades</div>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div class="container">
+  <ion-row>
+    <ion-col>
+      <ion-card class="relative-pos card-left card-height">
+        <img class="bank-img" src="assets/img/bank-icon.png" />
+        <div class="text-height">
+          <span class="title-text">
+            {{teamCash | currency:'USD':true:'1.0'}}
+          </span>
+        </div>
+      </ion-card>
+    </ion-col>
+    
+    <ion-col>
+      <ion-card class="relative-pos card-height">
+        <img class="trades-img" src="assets/img/trade-icon-dark.png" />
+        <div class="text-height">
+          Trades: 
+          <span class="title-text">
+            {{userTrades}}
+          </span>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="gameState != 'lockout'">  
+    <ion-row>
+      <ion-col class="flex-center">
+        <ion-card class="clear-bg">
+          <div id="banner">
+            <div class="no-fill" [ngClass]="{'fill': buyOneTrade === 1, 'fill1': buyThreeTrades === 1, 'fill2': buyFiveTrades === 1}">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                <path fill="#04ACFF" id="waveShape" class="color-1" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z" fill-opacity="0.5"/>
+              </svg>
+            </div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="flex-center">
+        <div class="trades-center">
+          <div class="trades-counter" [ngClass]="{'slideDown': buyOneTrade === 1, 'pullUp': buyThreeTrades === 1, 'bounce': buyFiveTrades === 1}"> 
+            <span>Trades: {{ userTrades }}</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-33>
+        <div class="trade-button slideExpandUp delay-3" (click)="confirmTrade(1);">
+          <div class="trade-text">Buy one trade</div>
+          <span>$500,000</span>
+        </div>
+      </ion-col>
+
+      <ion-col width-33>
+        <div class="trade-button middle-btn slideExpandUp delay-5" (click)="confirmTrade(3);">
+          <div class="trade-text">Buy three trades</div>
+          <span>1 million</span>
+        </div>
+      </ion-col>
+
+      <ion-col width-33>
+        <div class="trade-button slideExpandUp delay-7" (click)="confirmTrade(5);">
+          <div class="trade-text">Buy five trades</div>
+          <span>2 million</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>
+</ion-content>
+

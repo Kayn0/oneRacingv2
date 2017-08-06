@@ -1,0 +1,183 @@
+page-driver-stats {
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+  
+  .fixed-content {
+    margin-bottom: 0 !important;
+  }
+
+	.ios, .md {
+    .scroll-content {
+      background-color: map-get($colors, light);
+    }
+
+    ion-card-header {
+      font-weight: bold;
+    }
+  }
+  
+  button.back-button {
+    position: absolute;
+    z-index: 9999;
+  }
+
+  .horizontal-pad {
+    padding: 0 8px;
+    margin-bottom: 0;
+  }
+
+  img.driver-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .driver-value {
+    color: #fff;
+    font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+    font-size: 22px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .driver-change {
+    color: #fff;
+    font-family: 'ubuntu-regular', helvetica, sans-serif !important;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    span {
+      display: block;
+      font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+  }
+
+  .driver-points {
+    color: #fff;
+    font-family: 'ubuntu-regular', helvetica, sans-serif !important;
+    font-size: 14px;
+    margin-top: 0;
+    text-align: center;
+    padding: 0 4px;
+    span {
+      display: block;
+      font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+      font-size: 18px;
+      margin-top: 2px;
+    }
+  }
+  .card-label {
+    border-radius: 2px;
+    font-size: 16px;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin: 8px 8px 0 8px;
+    padding: 4px;
+  }
+
+  .header-text {
+    margin: 16px auto 0 auto;
+    border-bottom: none;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  
+  .nav-heading {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    font-family: 'ubuntu-bold', helvetica, sans-serif;
+  }
+
+  .chart-card ion-card {
+    background-color: #000!important;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  page-driver-stats { 
+    .container {
+      width: 70vw;
+      margin-left:15vw;
+      margin-top: 7vh;
+    }
+
+    .toolbar-title {
+      text-align: center!important;
+      font-size: 20px;
+    }
+
+     .outline {
+      height: 73vh;
+    }
+
+    .driver-name {
+      font-size: 18px;
+    }
+
+    .pu-name,
+    .chassis-name {
+      font-size: 20px;
+    }
+
+    .driver-value {
+      font-size: 22px;
+    }
+
+    .driver-points,
+    .driver-change {
+      font-size: 18px;
+    }
+
+    .to-bottom {
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    h2.chassis-name {
+      font-size: 24px;
+    }
+
+    h3.points {
+      font-size: 22px;
+    }
+    
+    .title-text {
+      font-size: 20px;
+    }
+
+    .header-text {
+      font-size: 18px;
+    }
+
+    .user-stats {
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  page-driver-stats {
+
+    .toolbar-title {
+      font-size: 18px;
+    }
+    ion-title {
+      padding: 0 90px 1px 75px !important;
+    }
+    
+    .driver-name {
+      font-size: 14px;
+    }
+
+    .pu-name,
+    .chassis-name {
+      font-size: 18px;
+    }
+  }
+}

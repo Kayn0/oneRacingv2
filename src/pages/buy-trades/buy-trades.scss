@@ -1,0 +1,428 @@
+page-buy-trades {
+	.scroll-content {
+		margin-bottom: 0 !important;
+	}
+	
+	.fixed-content {
+		margin-bottom: 0 !important;
+	}
+
+	.trades-heading {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    margin: 0 auto;
+  }
+
+	.card-android, .card, .card-ios .card-wp {
+		margin: 8px 8px 0 8px;
+		padding: 0;
+	}
+
+	button.back-button {
+		position: absolute;
+	}
+
+	.card-height {
+		height: 60px;
+	}
+
+	.bank-img {
+		float: left;
+		margin: 10px;
+		position: relative;
+	  width: 30px;  
+	}
+
+	.trades-img {
+		float: left;
+    margin: 17px 15px;
+    width: 28px;
+	}
+
+	.add-trade-btn {
+		height: 30px;
+		position: absolute;
+	  right: 1px;
+	  top: 61px;
+	  width: 30px;
+	}
+
+	.title-text {
+		color: #d31411;
+		font-size: 16px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	.text-height {
+		line-height: 60px;
+	}
+
+	.clear-bg {
+		background-color: rgba(255,255,255,0) !important;
+		width: 120px;
+	}
+
+	.description {
+		margin:4px 8px 8px;
+	}
+	
+	.flex-center {
+		display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-direction: row; /* works with row or column */
+   	flex-direction: row;
+   	-webkit-align-items: center;
+   	align-items: center;
+   	-webkit-justify-content: center;
+   	justify-content: center;
+	}
+
+	.header-text {
+  	margin: 16px auto 8px auto;
+  	border-bottom: none;
+  }
+
+	.trades-center {
+    border-radius: 2px;
+    width: 120px;
+	}
+
+	.trades-counter {
+		background-color: #000;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		color: #fff;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		margin-bottom: 8px;
+		position: relative;
+		height: 60px;
+		text-align: center;
+		width: 100%;
+		z-index: 9999;
+
+		span {
+			position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    line-height: 45px;
+	    left: 0;
+	    right: 0;
+	    width: calc(100% - 16px);
+	    height: 100%;
+	    padding: 8px;
+	    font-size: 16px;
+	    margin: auto;
+		}
+	}
+
+	.trade-button {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		margin-left: 8px;
+		border-radius:2px;
+		border-bottom: 3px solid #d31411;
+		position: relative;
+		height: 55px;
+		background-color: #000;
+		color: #fff;
+		text-align: center;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		font-size: 12px;		
+		line-height: 1.2;
+		width: calc(100% - 16px);
+		
+		span {
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    width: calc(100% - 16px);
+	    height: 78%;
+	    margin: auto;
+	    font-size: 16px;
+		}
+	}
+
+	.trade-text {
+		margin-bottom: 2px;
+		padding-top: 10px;
+	}
+
+	.middle-btn {
+    margin-left: 0px;
+    width: 100%;
+    span {
+    	width: calc(100% - 32px);
+    }
+	}
+
+	// sweeet animation
+	#banner {
+    border-radius: 2px;
+    width: 120px;
+    height: 200px;
+    background: rgba(0,0,0,0.2);
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    animation-delay: 0.8s;
+    -webkit-animation-delay: 0.8s;
+	}
+	
+	#banner  * .fill,
+	#banner  * .fill1,
+	#banner  * .fill2 {
+		height: 200px;
+	}
+
+	#banner .fill,
+	#banner .fill1,
+	#banner .fill2 {
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+    -webkit-animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+	}
+
+	#banner .fill {
+ 		animation-name: fillAction;
+ 		-webkit-animation-name: fillAction;
+	}
+
+	#banner .fill1 {
+    animation-name: fillActionOne;
+    -webkit-animation-name: fillActionOne;
+	}
+
+	#banner .fill2 {
+    animation-name: fillActionTwo;
+    -webkit-animation-name: fillActionTwo;
+	}
+
+	#banner #waveShape {
+    animation-name: waveAction;
+    -webkit-animation-name: waveAction;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    width: 300px;
+    height: 150px;
+	}
+
+	#banner #waveShape.color-1 {
+		fill: #d31411;
+	}	
+ 
+	.no-fill {
+		animation-name: noFill;
+		-webkit-animation-name: noFill;
+
+	  animation-iteration-count: 1;
+	  -webkit-animation-iteration-count: 1;
+	  
+	  animation-timing-function: ease;
+	  -webkit-animation-timing-function: ease;
+	  
+	  animation-duration: 0.1s;
+	  -webkit-animation-duration: 0.1s;
+	  
+	  animation-direction: normal;
+	  -webkit-animation-direction: normal;
+	  -webkit-animation-fill-mode: forwards;
+	}
+
+	@keyframes noFill {
+	  0% {
+      transform: translate3d(0, -5px, 0);
+	  }
+	  100% {
+  		transform: translate3d(0, 190px, 0);
+	  }
+	}
+
+	@keyframes fillAction {
+    0% {
+      transform: translate3d(0, 190px, 0);
+    }
+    100% {
+      transform: translate3d(0, 130px, 0);
+    }
+	}
+
+	@keyframes fillActionOne {
+    0% {
+      transform: translate3d(0, 190px, 0);
+    }
+    100% {
+     	transform: translate3d(0, 90px, 0);
+    }
+	}
+
+	@keyframes fillActionTwo {
+    0% {
+      transform: translate3d(0, 190px, 0);
+    }
+    100% {
+      transform: translate3d(0, -5px, 0);
+    }
+	}
+
+	@keyframes waveAction {
+    0% {
+      transform: translate3d(-150px, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+	}
+
+
+	@-webkit-keyframes noFill {
+	  0% {
+      -webkit-transform: translate3d(0, -5px, 0);
+	  }
+	  100% {
+  		-webkit-transform: translate3d(0, 190px, 0);
+	  }
+	}
+
+	@-webkit-keyframes fillAction {
+    0% {
+      -webkit-transform: translate3d(0, 190px, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(0, 130px, 0);
+    }
+	}
+
+	@-webkit-keyframes fillActionOne {
+    0% {
+      -webkit-transform: translate3d(0, 190px, 0);
+    }
+    100% {
+     	-webkit-transform: translate3d(0, 90px, 0);
+    }
+	}
+
+	@-webkit-keyframes fillActionTwo {
+    0% {
+      -webkit-transform: translate3d(0, 190px, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(0, -5px, 0);
+    }
+	}
+
+	@-webkit-keyframes waveAction {
+    0% {
+        -webkit-transform: translate3d(-150px, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+	}
+}
+
+@media only screen and (min-width: 520px) {
+  page-buy-trades {
+    .container {
+      width: 70vw;
+      margin-left:15vw;
+      margin-top: 7vh;
+    }
+
+    .trade-button span {
+    	height: 40%;
+    }
+
+    div.title-text {
+    	font-size: 20px!important;
+    }
+
+    .trades-heading {
+    	font-size: 20px;
+    }
+
+  	.user-stats {
+  		font-size: 16px;
+  	}
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  page-buy-trades {
+		#banner {
+	    height: 120px;
+	  }
+
+	  .no-fill {
+			animation-name: noFillmini;
+			-webkit-animation-name: noFillmini;
+
+		  animation-iteration-count: 1;
+		  -webkit-animation-iteration-count: 1;
+		  
+		  animation-timing-function: ease;
+		  -webkit-animation-timing-function: ease;
+		  
+		  animation-duration: 0.1s;
+		  -webkit-animation-duration: 0.1s;
+		  
+		  animation-direction: normal;
+		  -webkit-animation-direction: normal;
+		  -webkit-animation-fill-mode: forwards;
+		}
+
+		#banner .fill1 {
+	    animation-name: fillActionOneMini;
+	    -webkit-animation-name: fillActionOneMini;
+		}
+
+		#banner .fill {
+	 		animation-name: fillActionMini;
+	 		-webkit-animation-name: fillActionMini;
+		}
+
+		@-webkit-keyframes fillActionMini {
+	    0% {
+	      -webkit-transform: translate3d(0, 100px, 0);
+	    }
+	    100% {
+	      -webkit-transform: translate3d(0, 75px, 0);
+	    }
+		}
+
+		@-webkit-keyframes fillActionOneMini {
+	    0% {
+	      -webkit-transform: translate3d(0, 100px, 0);
+	    }
+	    100% {
+	     	-webkit-transform: translate3d(0, 50px, 0);
+	    }
+		}
+
+	  @-webkit-keyframes noFillmini {
+		  0% {
+	      -webkit-transform: translate3d(0, -5px, 0);
+		  }
+		  100% {
+	  		-webkit-transform: translate3d(0, 100px, 0);
+		  }
+		}
+	}
+}
+
+// .fixed-content,
+// .scroll-content {
+// 	margin-top: 0!important;
+// }

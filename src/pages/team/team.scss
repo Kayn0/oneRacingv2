@@ -1,0 +1,404 @@
+page-team {
+	.text-center {
+		background-color: #000;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    display: block;
+    font-family: 'ubuntu-bold', helvetica, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 auto;
+    padding: 6px 35px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+	}
+
+ 	button[disabled], [ion-button][disabled] {  
+    display: none;
+  }
+
+	button[disabled].add-btn, [ion-button][disabled].add-btn {
+		display: block;
+	}
+
+	.top-space-lg {
+		margin-top: 30px;
+	}
+
+	.top-space-xlg {
+		margin-top: 40px;
+	}
+	
+	ion-row .top-space ion-col {
+		min-height: 225px;
+	}
+
+	.top-space {
+		margin-top: 8px;
+    position: relative;
+    z-index: 10;
+	}
+	
+	.car-bg {
+		opacity: 0.5;
+		position: absolute;
+  	left: 0;
+  	right: 0;
+  	margin: -18px auto 0;
+  	z-index: 0;
+	}
+
+	.empty-card {
+		margin-bottom: 30px!important;
+	}
+
+	.margin-bottom {
+		margin-bottom: 20px;
+	}
+
+	.primary-bg {
+		background-color: #d31411;
+	}
+
+	//***** card spacing ******//
+	.card-holder,
+	.card-layout.card-android, 
+	.card-layout.card, 
+	.card-layout.card-ios {
+	  // margin: 8px 8px 0 8px;
+	  padding: 0px!important;
+	  width: 100%;
+	  background-color: #eff1f3;
+	}
+
+	.card-1 {
+		margin: 0 0 0 8px;
+		width: calc(100% - 8px);
+	}
+
+	.card-2 {
+		margin: 0 8px;
+		width: calc(100% - 16px);
+		position: relative;
+	}
+
+	.card-3 {
+		margin: 0 8px 0 0;
+		width: calc(100% - 8px);
+	}
+
+	.hq-card {
+		min-height: 215px;
+		padding: 0;
+		position: relative;
+	}
+
+	.upgrade-btn {
+		position: relative;
+    z-index: 20;
+    bottom: 18px;
+    left: 14px;
+    text-transform: none;
+    width: calc(100% - 25px);
+	}
+
+	//******* Card elements ********//
+	.driver-img,
+	.driver-img.img-loaded {
+		height: 40px;
+    margin: 5px auto;
+    min-height: 60px;
+    width: initial;
+	}
+
+	.chassis-img.img-loaded {
+    height: 80px;
+    width: auto;
+    margin: -14px auto -16px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+	}
+
+	.pu-image,	
+	.pu-image.img-loaded {
+    height: 45px;
+    width: initial;
+    margin: 2px auto 3px;
+	}
+	
+
+	.driver-default {
+		margin: 45px auto 8px;
+	}
+
+	.chassis-default {
+		width: auto;
+		height: 35px;
+		margin: 50px auto 8px;
+	}
+
+	.pu-default {
+		margin-top: 45px;
+	}
+
+
+	.car-one-icon {
+		color: #000;
+		font-size: 32px;    
+	  margin-top: 20px;
+	  opacity: 0.4;
+	  text-align: center;
+	  text-shadow: 0px 2px 1px rgba(0,0,0,0.2);
+	 	width: 100%;
+	}
+
+	.car-two-icon {
+		color: #d31411;
+		font-size: 32px;    
+	  margin-top: 20px;
+	  opacity: 0.4;
+	  text-align: center;
+	  text-shadow: 0px 2px 1px rgba(0,0,0,0.2);
+	 	width: 100%;
+	}
+	.card-header, 
+	.car-two-header {
+		color: #fff;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 8px 6px;
+		text-align: center;
+		border-top-right-radius: 2px;
+		border-top-left-radius: 2px;
+	}
+	
+	.card-header {
+		background-color: #000;
+	}
+
+	.car-two-header {
+		background-color: #d31411;
+	}
+
+	.name {
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 1.1;
+		margin-top: 4px;
+		text-align: center;
+		min-height: 38px;
+	}
+
+	.points {
+		display: block;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+		width: 100%;
+		margin-top: 5px;
+	}
+
+	.card-2-points {
+		margin-top: 79px;
+	}
+
+	.value {
+		color: grey;
+		font-size: 15px;
+		margin-top: 4px;
+		text-align: center;
+	}
+
+ 	.val-change {
+ 		font-size: 12px!important;
+ 		margin: 2px 0 0 0;
+		text-align: center;
+ 	}
+	
+	.offset-bg {
+		background-color: #000;
+	}
+
+	.positive {
+		color: green;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	.negative {
+		color: red;
+	} 	
+
+	.position-rel {
+		position:relative;
+	}
+
+	.bump-1 {
+		left: 10px;
+	}
+	
+	.bump-2 {
+		left: 7px;
+	}
+	// ***** Icons *******??
+
+	ion-icon.leader {
+		color: #e0b507;
+		font-size: 28px;
+    text-align: right;
+    margin-top: 12px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -webkit-text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	}
+
+	.hide-icon {
+		visibility: hidden;
+	}
+
+	//***** spinner ******//
+	.img-loaded + ion-spinner {
+  	display: none;
+	}
+	
+	.center-spinner.car-one-spinner {
+		height: 80px;
+    width: auto;
+    margin: -14px auto -16px;
+		circle,
+		line {
+			stroke: #333;
+		}
+	}
+
+	.center-spinner.car-two-spinner {
+		height: 80px;
+    width: auto;
+    margin: -14px auto -16px;
+		circle,
+		line {
+			stroke: #d31411;
+		}
+	}
+
+	.center-spinner {
+		margin: auto;
+		display: block;
+		min-height: 60px;
+		circle,
+		line {
+			stroke: #d31411;
+		}
+	}
+	
+	.outline {
+		border-radius: 2px;
+		position: absolute;
+		height: 101vh;
+		z-index: -1;
+		background-color: rgba(255,255,255, 0.1);
+ 		left: 50%;
+  	transform: translateX(-50%);
+  	-webkit-transform: translateX(-50%);
+  	margin-top: 0;
+  	width: 100px;
+  	margin-bottom: 16px;
+	}
+
+	// userinfo
+	.card-md + ion-card {
+		margin-top: 8px;
+	}
+
+	.card + ion-card {
+		margin-top: 8px;
+	}
+
+	.card-height {
+		height: 60px;
+	}
+
+	.card-left {
+	  margin: 8px 0 8px 8px;
+	  width: calc(100% - 8px);
+	}
+
+	.bank-img {
+		float: left;
+		margin: 5px 10px;
+		position: relative;
+	  width: 26px;  
+	}
+
+	.trades-img {
+	  float: left;
+	  margin: 9px 10px 10px 5px;
+	  width: 28px;
+	}
+
+	.add-trade-btn {
+		background-color: #d31411;
+		height: 25px;
+		position: absolute;
+		top: 0;
+    right: 2px;
+	  width: 25px;
+	}
+
+	.add-trade-btn span.button-inner {
+		position: relative;
+		top: -1px;
+	}
+
+	.title-text {
+		color: #d31411;
+		font-size: 16px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	.text-height {
+		line-height: 44px;
+	}
+
+	.offset-color {
+		color: #2e2e2e;
+		font-family: 'ubuntu-medium', helvetica, sans-serif;
+	}
+
+	.positive {
+		color: green;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		position: relative;
+		font-size: 11px!important;
+	}
+
+	.negative {
+		color: #d31411;
+		font-size: 11px!important;
+	}
+
+	.positive::before {
+		content:  '\25b2';
+		font-size: 10px;
+		margin-right: -2px;
+	}
+
+	.negative::before {
+		content: '\25bc';
+		font-size: 10px;
+		margin-right: -2px;
+		margin-left: 2px;
+		position: relative;
+		top: 1px;
+	}
+}
+@media only screen and (min-width: 520px) {
+
+	page-team {
+		.add-trade-btn {
+		  top: 0;
+		}
+	}
+}

@@ -1,0 +1,114 @@
+page-ranking {
+	.container {
+		padding-top: 8px;
+	}
+
+	ion-list.list {
+		margin: 0 8px;
+	}
+
+	.list ion-item.item.item-block {
+		border-radius: 2px;
+		margin-bottom: 4px;
+	}
+
+	.list .item-block .item-inner {
+		border-bottom:0;
+	}
+
+ 	.border {
+    border: solid 1px #d31411;
+    border-radius: 2px;
+  }
+
+	.header-text {
+		margin: 8px auto;
+		border-bottom: 0;
+	}
+
+	.right-col {
+		text-align: right;
+	}
+
+	.rel-position {
+		position: relative;
+	}
+
+	.team-name {
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		color: #2e2e2e;
+		font-size: 20px;
+		margin-bottom: 4px;
+		text-transform: capitalize;
+	}
+
+	.team-cash {
+		color: grey;
+		font-size: 14px;
+		margin-bottom: 1px;
+	}
+	
+	.stat {
+		text-align: center;
+		color: #fff;
+		font-family:'ubuntu-regular', helvetica, sans-serif;
+		font-size: 14px;
+    margin-bottom: 16px;
+	}
+
+	.stat span {
+		display: block;
+		font-family:'ubuntu-bold', helvetica, sans-serif;
+		font-size: 18px;
+    margin-top: 4px;
+	}
+
+.highlight-item {
+	background-color: #d31411 !important;
+	.team-name,
+	.team-cash,
+	.team-trades,
+	.team-points,
+	.team-rank,
+	.points-text,
+	.number-points {
+		color: #fff;
+	}
+}
+	.team-trades {
+		color: grey;
+		font-size: 14px;
+	}
+
+	.team-rank {
+		color: #d31411;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		font-weight: 600;
+		font-size: 28px;
+		margin-top: -5px;
+	}
+
+	.team-points {
+		color: grey;
+		font-size: 15px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+	
+	.points-text {
+		color: grey;
+		font-size: 15px;
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+	}
+	
+	.number-points {
+		color: #2e2e2e;
+		font-size: 16px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	.highlight-item {
+		background-color: #ccc;
+	}
+}

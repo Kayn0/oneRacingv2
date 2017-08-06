@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-row class="info-header">
+      <ion-col>
+        <ion-card class="relative-pos card-left">
+         <img class="title-icon" src="assets/img/bank-icon.png" />
+          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:'USD':true:'1.0'}}</span></div>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class="relative-pos">
+         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />
+          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>
+        </ion-card>
+      </ion-col>
+  	</ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="child-header">
+	<div class="container">
+		<!-- Chassis one -->
+		<ion-row>
+			<ion-card class="card-layout left pullUp delay-2 card-min-height" *ngIf="(userChassisOne?.length > 0)">
+			  <div class="relative-pos" *ngFor="let user of userChassisOne">
+		  		<ion-row> 
+	          <ion-col width-20>
+	            <img class="chassis-image" [src]="user.chassisImage" />
+	          </ion-col>
+
+						<ion-col width-60 class="vert-center">
+					   	<div class="chassis-name"> 
+					   		{{user.chassisName}}
+					   	</div>
+
+					   	<div class="chassis-value">
+					   		{{ user?.chassisValue | currency:'USD':true:'1.0' }}
+              </div>
+      		   	<span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> 
+                {{ user.valChange | currency:'USD':true:'1.0' }}
+              </span>
+					  </ion-col>
+
+						<ion-col width-20 class="relative-pos">
+              <h3 class="points"> {{ user.chassisPoints }} </h3>
+							<div class="to-bottom">
+	              <img class="car-img" src="assets/img/black-car.png" />
+	              <div class="car-number">CAR ONE</div>
+	            </div>
+            </ion-col>
+					</ion-row>
+			  </div>
+			</ion-card>
+		</ion-row>
+
+		<ion-row class="header-marg">
+		  <div class="text-center relative-pos slideExpandUp delay-3"> 
+		  	Available chassis
+		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>
+		  </div>
+		</ion-row>
+
+		<ion-list *ngIf="chassisList">
+		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{'highlight-one': chassis.chassisName == chassisOneName ? 'highlight-two': chassis.chassisName == chassisTwoName}">
+		   	
+		   	<ion-thumbnail item-left>
+		   		<img [src]="chassis.chassisImage" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" class="chassis-size" />
+
+	      	<ion-spinner name="crescent" [ngClass]="{'center-spinner ':true}" *ngIf="!loaded"></ion-spinner>
+		   	</ion-thumbnail>
+		   	
+		   	<ion-row class="v-center">
+			   	<ion-col class="vert-center">
+				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>
+				   	<h5 class="list-value">
+				   		{{ chassis.chassisValue | currency:'USD':true:'1.0' }}
+				   	</h5>
+				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> 
+		   	 			{{ chassis.valChange | currency:'USD':true:'1.0' }}
+		   	 		</span>
+					</ion-col>
+
+					<ion-col class="align-right">
+						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [ngClass]="{'hide-button': this.round < 2}">
+				   		<ion-icon name="stats"></ion-icon>
+				   	</button>
+				   	
+				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis('one', chassis)" [disabled]="chassis.chassisName == chassisOneName || chassis.chassisValue > (teamCash + userChassisOneValue)" [hidden]="gameState == 'lockout'">
+				   		<ion-icon>
+				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />
+				   		</ion-icon>
+				   	</button>
+				  </ion-col>
+			  </ion-row>
+
+			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">
+	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">
+	          <div class="tag-text bumpRight">CAR ONE</div>
+	          <img class="car-tag slideRight" src="assets/img/black-car.png" />
+	        </div>
+
+	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">
+	        	<div class="tag-text-two bumpRight">CAR TWO</div>
+	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />
+	        </div>
+	      </div>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title class="text-center" *ngIf="puInfo">{{ puInfo.puName }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="stats-page">
+  <div class="container">
+    <div *ngIf="puInfo">
+      <ion-row>
+        <ion-col width-25>
+          <div class="horizontal-pad">
+  		      <img [src]="puInfo.puImage" />
+          </div>
+        </ion-col>
+        <ion-col width-50>
+    		  <div class="pu-value">
+            {{ puInfo.puValue | currency:'USD':true:'1.0'}}
+          </div>
+          <div class="pu-change">
+            Last value change
+            <span>{{ puValueChange | currency:'USD':true:'1.0'}}</span>
+          </div> 
+  	    </ion-col>
+  	    <ion-col width-25>
+          <div class="pu-points">
+            Average points
+            <span>{{ averagePoints }}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="chart-card">
+      <ion-row>
+        <div class="header-text slideExpandUp delay-3">Points per round</div>
+      </ion-row>
+    	<ion-card>
+        <ion-card-content>
+          <canvas #lineCanvasPoints></canvas>
+        </ion-card-content>
+      </ion-card>
+      <ion-row>
+        <div class="header-text slideExpandUp delay-5">Value per round</div>
+      </ion-row>
+      <ion-card>
+        <ion-card-content>
+          <canvas #lineCanvasValue></canvas>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

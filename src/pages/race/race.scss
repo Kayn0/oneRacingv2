@@ -1,0 +1,304 @@
+page-race {
+
+	ion-header {
+		text-align: center;
+	}
+
+	.toolbar-ios-primary .toolbar-title-ios, .toolbar-ios-primary .bar-button-clear-ios, .toolbar-ios-primary .bar-button-default-ios {
+    color: #fff;
+    font-family: 'ubuntu-bold', helvetica, sans-serif !important;
+    font-size: 16px;
+    text-align: center;
+  }
+	
+	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+		border-bottom: none;
+	}
+	
+	.round {
+		color: #fff;
+		font-family:'ubuntu-bold', helvetica, sans-serif;
+		font-size: 24px;
+    margin: 8px 0px 0 8px;
+    padding: 8px 8px 4px; 
+	}
+	
+	.header-marg {
+		margin: 12px 0 8px;
+	}
+
+	.lockout-text {
+		color: #fff;
+		position: absolute;
+    right: 160px;
+    top: 10px;
+    font-size: 13px;
+    font-weight: 400;
+	}
+
+	.track {
+		min-height: 125px;
+		padding: 8px;
+	}
+
+	.location {
+		color: #fff;
+		font-family:'ubuntu-bold', helvetica, sans-serif;
+		font-size: 15px;
+		margin: 0 8px;
+    padding: 0 8px; 
+	}
+
+	.list ion-item:first-child {
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+	}
+
+	.list ion-item:last-child {
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+	}
+	
+	.seg-header {
+		margin: 0 16px;
+    width: calc(100% - 32px);
+	}
+
+	.chassis-img {
+		height: auto !important;
+		margin-left: 20px;
+		width: 18px !important;
+	}
+
+	.pu-img {
+		height: auto !important;
+    margin: 6px 0 0 14px;
+    width: 34px !important;
+	}
+
+	.stat {
+		text-align: center;
+		color: #fff;
+		font-family:'ubuntu-regular', helvetica, sans-serif;
+		font-size: 14px;
+    margin-bottom: 16px;
+	}
+	
+	.segment-button {
+		color: #fff!important;
+	}
+
+	.segment-button.segment-activated {
+		color: #d31411!important;
+		font-size: 14px;
+		font-weight: 800;
+	}
+
+	.stat span {
+		display: block;
+		font-family:'ubuntu-bold', helvetica, sans-serif;
+		font-size: 14px;
+	}
+
+	.tall-col {
+		display: flex;
+	  justify-content: space-around;
+	  flex-direction: column;
+	}
+
+	.inner-button {
+		border-radius: 2px;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.home-btn {
+		border-radius: 2px;
+    font-size: 16px;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin: 8px;
+    padding: 0;
+    width: calc(100% - 16px);
+    height: 60px;
+    text-align: center;
+	}
+
+	.btn-title {
+		font-size: 16px;
+		line-height: 60px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		background-color: #000000;
+		color:#fff;
+		padding-left: 30px;
+		text-align: left;
+		text-transform: none;
+	}
+
+	.btn-icon {
+		background-color: #d31411;
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 2px;
+		padding-top: 8px;
+	}
+
+	.btn-border {
+		border-bottom: 3px solid #d31411;
+	}
+
+	.margin-left {
+		margin-left: 8px;
+	}
+	
+	.margin-right {
+		margin-right: 8px;
+	}
+  
+  .margin-bottom {
+		margin-bottom: 10px;
+	}
+
+	//spinner 
+	.img-loaded + ion-spinner {
+  	display: none;
+	}
+
+	.center-spinner {
+		margin: auto;
+		display: block;
+		min-height: 125px;
+		circle,
+		line {
+			stroke: #d31411;
+		}
+	}
+
+	.text-center {
+		background-color: #000;
+		border-radius: 2px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		display: block;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		font-size: 16px;	
+		color: #eff1f3;
+		margin: 0 auto;
+		padding: 6px 16px;
+		text-align: center;
+	}
+
+	.position {
+		text-align: right;
+		font-size: 18px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	// ************* LIST STYLING ***********//
+
+	.list-image {
+		margin-left: 16px;
+		position: relative;
+	  // top: 2px;
+	  width: 34px !important;
+	}
+	
+	ion-list.list {
+		margin: 0 16px;
+		border-radius: 2px;
+	}
+
+	.list ion-item.item.item-block {
+		// border-radius: 2px;
+		// margin-bottom: 4px;
+		border-bottom: 1px solid #ddd;
+		height: 58px;
+		padding: 0 !important;
+	}
+
+	.list .item-block .item-inner {
+		border-bottom:0;
+	}
+
+	ion-thumbnail {
+		min-height: 20px!important;
+		min-width: 20px!important;
+	}
+
+	ion-label.label {
+		margin: 4px 0!important;
+	}
+
+	.list-value {
+    font-size: 12px;
+    color: grey;
+	}
+
+	.list-name {
+		color: #2e2e2e;
+		font-size: 16px;
+		line-height: 40px;
+		margin-top: 2px !important;
+	}
+	
+	.driver-points {
+		color: #d31411;
+		margin-right: 10px;
+		text-align: right;
+		font-size: 16px;
+		line-height: 45px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	.driver-position {
+    color: grey;
+    font-size: 24px;
+    font-family: 'ubuntu-bold', helvetica, sans-serif;
+    line-height: 45px;
+    margin: 0;
+    text-align: right;
+    padding-left: 4px;
+    opacity: 0.4;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  page-race {
+  
+    .container {
+      width: 70vw;
+      margin-left:15vw;
+      margin-top: 8vh;
+    }
+
+    .stat {
+    	font-size: 16px;
+    	span {
+    		font-size: 16px;
+    	}
+    }
+
+    .round {
+    	font-size: 32px;
+    }
+
+    .location {
+    	font-size: 18px;
+    }
+
+  	.btn-title {
+    	font-size: 22px;
+  	}
+
+  	.button {
+    	font-size: 18px;
+		}
+	}
+}
+
+@media only screen and (max-width: 340px) {
+  page-race {
+
+  }
+}
