@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //Auth pages
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 
 //Tab pages
 import { TabsPage } from '../pages/tabs/tabs';
@@ -46,6 +47,7 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     MyApp,
     LoginPage,
     SignupPage,
+    ResetPasswordPage,
 
     TabsPage,
     HomePage,
@@ -80,6 +82,7 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     MyApp,
     LoginPage,
     SignupPage,
+    ResetPasswordPage,
 
     TabsPage,
     HomePage,

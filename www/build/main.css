@@ -29176,7 +29176,7 @@ page-login ion-title.center-text {
 }
 
 page-login form {
-  margin-bottom: 32px;
+  margin-bottom: 68px;
 }
 
 page-login form button {
@@ -29186,6 +29186,18 @@ page-login form button {
 page-login p {
   font-size: 0.8em;
   color: #d2d2d2;
+}
+
+page-login .center {
+  margin: 0 auto;
+}
+
+page-login .white-button {
+  color: #fff;
+  border-color: transparent;
+  border-radius: 2px;
+  margin: 0 8px;
+  width: calc(100% - 16px);
 }
 
 page-login ion-label {
@@ -29204,10 +29216,6 @@ page-login .welcome-logo {
   margin: 30px auto 0;
 }
 
-page-login .margin-bottom {
-  margin: 15% auto 0;
-}
-
 page-login .error-message .item-inner {
   border-bottom: 0 !important;
 }
@@ -29220,14 +29228,14 @@ page-login .login-img {
 page-login .login-btn {
   background-color: #000;
   border-radius: 2px;
-  border-bottom: 3px solid #d31411;
+  border-bottom: 2px solid #d31411;
   margin: 16px 0 0;
 }
 
 page-login .create-btn {
   background-color: #d31411;
   border-radius: 2px;
-  margin: 0 8px;
+  margin: 0 8px 4px;
   width: calc(100% - 16px);
 }
 
@@ -29264,6 +29272,26 @@ page-login .login-btn.right-btn {
   page-login .login-img {
     margin: 8px 8px 0 8px;
     width: calc(100% - 16px);
+  }
+  page-login .small-layout {
+    float: left;
+  }
+  page-login .less-margin {
+    margin: 0;
+  }
+  page-login .welcome-logo {
+    margin: 20px auto 0;
+    width: 50%;
+    height: 50%;
+  }
+  page-login .white-button {
+    margin: 0 4px 0 0;
+    width: 100%;
+    border-color: #fff;
+  }
+  page-login .create-btn {
+    margin: 0 0 0 4px;
+    width: 100%;
   }
   page-login form {
     margin-bottom: 0;
@@ -30498,6 +30526,87 @@ page-ranking .highlight-item {
   background-color: #ccc;
 }
 
+page-reset-password form button {
+  margin-top: 32px;
+}
+
+page-reset-password p {
+  font-size: 0.8em;
+  color: #d2d2d2;
+}
+
+page-reset-password ion-label {
+  margin-left: 5px;
+}
+
+page-reset-password ion-input {
+  padding: 5px;
+}
+
+page-reset-password .login-btn {
+  background-color: #d31411;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+page-reset-password .welcome-logo {
+  margin: 30px auto 0;
+}
+
+page-reset-password .invalid {
+  border-bottom: 1px solid #FF6153;
+}
+
+page-reset-password .error-message .item-inner {
+  border-bottom: 0 !important;
+}
+
+@media only screen and (min-width: 520px) {
+  page-reset-password .container {
+    width: 70vw;
+    margin-left: 15vw;
+  }
+  page-reset-password .card-header {
+    padding: 0px;
+  }
+  page-reset-password .login-img {
+    margin: 8px;
+    width: calc(100% - 16px);
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  page-reset-password .card-header {
+    padding: 0px;
+  }
+  page-reset-password .login-img {
+    margin: 8px 8px 0 8px;
+    width: calc(100% - 16px);
+  }
+  page-reset-password .small-layout {
+    float: left;
+  }
+  page-reset-password .less-margin {
+    margin: 0;
+  }
+  page-reset-password .welcome-logo {
+    margin: 20px auto 0;
+    width: 50%;
+    height: 50%;
+  }
+  page-reset-password .white-button {
+    margin: 0 4px 0 0;
+    width: 100%;
+  }
+  page-reset-password .create-btn {
+    margin: 0 0 0 4px;
+    width: 100%;
+  }
+  page-reset-password form {
+    margin-bottom: 0;
+  }
+}
+
 page-rules .container {
   margin-top: 8px;
 }
@@ -30684,9 +30793,7 @@ page-signup .to-bottom {
 .timer-right {
   display: block;
   width: 132px;
-  margin-left: auto;
-  margin-right: 4px;
-  margin-top: 7px;
+  margin: 7px 4px 0 auto;
 }
 
 .team-card {

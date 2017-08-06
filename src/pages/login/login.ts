@@ -3,6 +3,7 @@ import { IonicPage, NavController, LoadingController, AlertController } from 'io
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthDataProvider } from '../../providers/auth-data/auth-data';
 import { SignupPage } from '../signup/signup';
+import { ResetPasswordPage } from '../reset-password/reset-password';
 
 import { TabsPage } from '../tabs/tabs';
 import { EmailValidator } from '../../validators/email';
@@ -98,4 +99,7 @@ export class LoginPage {
     this.nav.push(SignupPage);
   }
 
+  goToResetPassword(){
+    this.nav.push(ResetPasswordPage);
+  }
 }

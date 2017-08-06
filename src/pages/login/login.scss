@@ -6,7 +6,7 @@ page-login {
   }
   
   form {
-    margin-bottom: 32px;
+    margin-bottom: 68px;
     button {
       margin-top: 20px;
     }
@@ -15,6 +15,18 @@ page-login {
   p {
     font-size: 0.8em;
     color: #d2d2d2;
+  }
+  
+  .center {
+    margin: 0 auto;
+  }
+
+  .white-button {
+    color: #fff;
+    border-color: rgba(0,0,0,0);
+    border-radius: 2px;
+    margin: 0 8px;
+    width: calc(100% - 16px);
   }
 
   ion-label {
@@ -33,31 +45,26 @@ page-login {
     margin: 30px auto 0;
   }
 
-  .margin-bottom {
-    margin: 15% auto 0;
-  }
-
   .error-message .item-inner {
     border-bottom: 0 !important;
   }
+
   .login-img {
     border-radius: 2px;
     width: 100%;
-    // left:10%;
-    // position: relative;
   }
 
   .login-btn {
     background-color: #000;
     border-radius: 2px;
-    border-bottom: 3px solid #d31411;
+    border-bottom: 2px solid #d31411;
     margin: 16px 0 0;
   }
 
   .create-btn {
     background-color: #d31411;
     border-radius: 2px;
-    margin: 0 8px;
+    margin: 0 8px 4px;
     width: calc(100% - 16px);
   }
 
@@ -72,36 +79,29 @@ page-login {
     margin: 0 8px 0 4px;
     width: calc(100% - 12px);
   }
-  
-  // .to-bottom {
-  //   position: absolute;
-  //   bottom: 8px;
-  // }
 }
 
 
 @media only screen and (min-width: 520px) {
   page-login {
-  
     .container {
       width: 70vw;
       margin-left:15vw;
     }
+
     .card-header {
       padding: 0px;
     }
+
     .login-img {
       margin: 8px;
       width: calc(100% - 16px); 
     }
-
   }
-
 }
 
 @media only screen and (max-width: 340px) {
   page-login {
-  
     .card-header {
       padding: 0px;
     }
@@ -111,9 +111,33 @@ page-login {
       width: calc(100% - 16px); 
     }
     
+    .small-layout {
+      float: left;
+    }
+
+    .less-margin {
+      margin: 0;
+    }
+
+    .welcome-logo {
+      margin: 20px auto 0;
+      width: 50%;
+      height: 50%;
+    }
+
+    .white-button {
+      margin: 0 4px 0 0;
+      width: 100%;
+      border-color: #fff;
+    }
+
+    .create-btn {
+      margin: 0 0 0 4px;
+      width: 100%;
+    }
+
     form {
       margin-bottom: 0;
     }
   }
-
 }

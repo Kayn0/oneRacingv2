@@ -14,7 +14,6 @@
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-card>
-
       <ion-item>
         <ion-label stacked>Email</ion-label>
         <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
@@ -24,7 +23,6 @@
       <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">
         <p>Please enter a valid email.</p>
       </ion-item>
-
       <ion-item>
         <ion-label stacked>Password</ion-label>
         <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"
@@ -41,12 +39,19 @@
     </ion-card>
   </form>
 
-  <ion-row>
-    <ion-col width-50 class="margin-bottom">
+ 
+    <ion-row col-6 class="center small-layout">
       <button ion-button block class="create-btn"  (click)="goToSignup()">
         Create account
       </button>
-    </ion-col>
-  </ion-row>
+    </ion-row>
+
+    <ion-row col-6 class="center less-margin">
+      <button ion-button block outline class="white-button"  (click)="goToResetPassword()">
+        Forgot password?
+      </button>
+    </ion-row>
+
+
 </div>
 </ion-content>

@@ -1,4 +1,4 @@
-webpackJsonp([18],{
+webpackJsonp([19],{
 
 /***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -3232,75 +3232,79 @@ CurrentRoundDataProvider = __decorate([
 var map = {
 	"../pages/buy-trades/buy-trades.module": [
 		480,
-		17
+		18
 	],
 	"../pages/chassis-one/chassis-one.module": [
 		475,
-		16
+		17
 	],
 	"../pages/chassis-stats/chassis-stats.module": [
 		474,
-		15
+		16
 	],
 	"../pages/chassis-two/chassis-two.module": [
 		476,
-		14
+		15
 	],
 	"../pages/driver-one/driver-one.module": [
 		472,
-		13
+		14
 	],
 	"../pages/driver-stats/driver-stats.module": [
 		471,
-		12
+		13
 	],
 	"../pages/driver-two/driver-two.module": [
 		473,
-		11
+		12
 	],
 	"../pages/home/home.module": [
 		469,
-		10
+		11
 	],
 	"../pages/login/login.module": [
 		485,
-		9
+		10
 	],
 	"../pages/pu-one/pu-one.module": [
 		478,
-		8
+		9
 	],
 	"../pages/pu-stats/pu-stats.module": [
 		477,
-		7
+		8
 	],
 	"../pages/pu-two/pu-two.module": [
 		479,
-		6
+		7
 	],
 	"../pages/race/race.module": [
 		470,
-		5
+		6
 	],
 	"../pages/ranking/ranking.module": [
 		482,
-		4
+		5
+	],
+	"../pages/reset-password/reset-password.module": [
+		486,
+		0
 	],
 	"../pages/rules/rules.module": [
 		483,
-		3
+		4
 	],
 	"../pages/signup/signup.module": [
 		484,
-		2
+		3
 	],
 	"../pages/team/team.module": [
 		481,
-		1
+		2
 	],
 	"../pages/tour-guide/tour-guide.module": [
 		468,
-		0
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -3911,29 +3915,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_race_race__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_team_team__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_ranking_ranking__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_rules_rules__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tour_guide_tour_guide__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_buy_trades_buy_trades__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_driver_one_driver_one__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_two_driver_two__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_chassis_one_chassis_one__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_two_chassis_two__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_pu_one_pu_one__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_two_pu_two__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_driver_stats_driver_stats__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_chassis_stats_chassis_stats__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_pu_stats_pu_stats__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_auth_data_auth_data__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_profile_data_profile_data__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_stats_data_stats_data__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_race_race__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_team_team__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_auth_data_auth_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_profile_data_profile_data__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_admin_data_admin_data__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_team_data_team_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_stats_data_stats_data__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3949,6 +3954,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 //Auth pages
+
 
 
 //Tab pages
@@ -3988,23 +3994,24 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__["a" /* SignupPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_race_race__["a" /* RacePage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_team_team__["a" /* TeamPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_ranking_ranking__["a" /* RankingPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_rules_rules__["a" /* RulesPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_tour_guide_tour_guide__["a" /* TourGuidePage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_driver_one_driver_one__["a" /* DriverOnePage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_pu_one_pu_one__["a" /* PuOnePage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_pu_two_pu_two__["a" /* PuTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_race_race__["a" /* RacePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_team_team__["a" /* TeamPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__["a" /* RankingPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__["a" /* RulesPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__["a" /* TourGuidePage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__["a" /* PuOnePage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__["a" /* PuTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -4030,7 +4037,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/ranking/ranking.module#RankingPageModule', name: 'RankingPage', segment: 'ranking', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/rules/rules.module#RulesPageModule', name: 'RulesPage', segment: 'rules', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -4040,34 +4048,35 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__["a" /* SignupPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_race_race__["a" /* RacePage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_team_team__["a" /* TeamPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_ranking_ranking__["a" /* RankingPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_rules_rules__["a" /* RulesPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_tour_guide_tour_guide__["a" /* TourGuidePage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_driver_one_driver_one__["a" /* DriverOnePage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_pu_one_pu_one__["a" /* PuOnePage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_pu_two_pu_two__["a" /* PuTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_race_race__["a" /* RacePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_team_team__["a" /* TeamPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__["a" /* RankingPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__["a" /* RulesPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__["a" /* TourGuidePage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__["a" /* PuOnePage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__["a" /* PuTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_27__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_28__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_29__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_30__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_31__providers_team_data_team_data__["a" /* TeamDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_32__providers_stats_data_stats_data__["a" /* StatsDataProvider */]
+            __WEBPACK_IMPORTED_MODULE_28__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_29__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_30__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_31__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_32__providers_team_data_team_data__["a" /* TeamDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_33__providers_stats_data_stats_data__["a" /* StatsDataProvider */]
         ]
     })
 ], AppModule);
@@ -4401,6 +4410,111 @@ MyApp = __decorate([
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 487:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(298);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ResetPasswordPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ResetPasswordPage = (function () {
+    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
+        this.nav = nav;
+        this.authData = authData;
+        this.formBuilder = formBuilder;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.emailChanged = false;
+        this.passwordChanged = false;
+        this.submitAttempt = false;
+        this.resetPasswordForm = formBuilder.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
+        });
+    } //end constructor
+    ResetPasswordPage.prototype.elementChanged = function (input) {
+        var field = input.ngControl.name;
+        this[field + "Changed"] = true;
+    };
+    /**
+     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
+     *  component while the user waits.
+     *
+     * If the form is invalid it will just log the form value, feel free to handle that as you like.
+     */
+    ResetPasswordPage.prototype.resetPassword = function () {
+        var _this = this;
+        this.submitAttempt = true;
+        if (!this.resetPasswordForm.valid) {
+            console.log(this.resetPasswordForm.value);
+        }
+        else {
+            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
+                var alert = _this.alertCtrl.create({
+                    message: "We just sent you a reset link to your email",
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel',
+                            handler: function () {
+                                _this.nav.pop();
+                            }
+                        }
+                    ]
+                });
+                alert.present();
+            }, function (error) {
+                var errorMessage = error.message;
+                var errorAlert = _this.alertCtrl.create({
+                    message: errorMessage,
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel'
+                        }
+                    ]
+                });
+                errorAlert.present();
+            });
+        }
+    };
+    return ResetPasswordPage;
+}());
+ResetPasswordPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _e || Object])
+], ResetPasswordPage);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=reset-password.js.map
 
 /***/ }),
 
@@ -5540,8 +5654,9 @@ PuStatsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__validators_email__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validators_email__ = __webpack_require__(298);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5551,6 +5666,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -5575,7 +5691,7 @@ var LoginPage = (function () {
         this.passwordChanged = false;
         this.submitAttempt = false;
         this.loginForm = formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_6__validators_email__["a" /* EmailValidator */].isValid])],
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_7__validators_email__["a" /* EmailValidator */].isValid])],
             password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(6), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
         });
     }
@@ -5592,7 +5708,7 @@ var LoginPage = (function () {
         }
         else {
             this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then(function (authData) {
-                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_5__tabs_tabs__["a" /* TabsPage */]);
+                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_6__tabs_tabs__["a" /* TabsPage */]);
             }, function (error) {
                 _this.loading.dismiss().then(function () {
                     var alert = _this.alertCtrl.create({
@@ -5632,20 +5748,20 @@ var LoginPage = (function () {
     LoginPage.prototype.goToSignup = function () {
         this.nav.push(__WEBPACK_IMPORTED_MODULE_4__signup_signup__["a" /* SignupPage */]);
     };
+    LoginPage.prototype.goToResetPassword = function () {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__["a" /* ResetPasswordPage */]);
+    };
     return LoginPage;
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n\n  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>\n    <ion-card>\n\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Login\n      </button>\n    </ion-card>\n  </form>\n\n  <ion-row>\n    <ion-col width-50 class="margin-bottom">\n      <button ion-button block class="create-btn"  (click)="goToSignup()">\n        Create account\n      </button>\n    </ion-col>\n  </ion-row>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n\n  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Login\n      </button>\n    </ion-card>\n  </form>\n\n \n    <ion-row col-6 class="center small-layout">\n      <button ion-button block class="create-btn"  (click)="goToSignup()">\n        Create account\n      </button>\n    </ion-row>\n\n    <ion-row col-6 class="center less-margin">\n      <button ion-button block outline class="white-button"  (click)="goToResetPassword()">\n        Forgot password?\n      </button>\n    </ion-row>\n\n\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _e || Object])
 ], LoginPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=login.js.map
 
 /***/ }),
