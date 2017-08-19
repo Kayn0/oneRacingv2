@@ -25,11 +25,11 @@
 			<ion-card *ngIf="(userChassisTwo != 0)" class="card-layout left pullUp delay-3 card-min-height">
 			  <div class="relative-pos" *ngFor="let user of userChassisTwo">
 		  		<ion-row> 
-	          <ion-col width-20>
+	          <ion-col col-2>
 	            <img class="chassis-image" [src]="user.chassisImage" />
 	          </ion-col>
 
-						<ion-col width-60 class="vert-center">
+						<ion-col col-7 class="vert-center">
 					   	<div class="chassis-name"> 
 					   		{{user.chassisName}}
 					   	</div>
@@ -42,9 +42,9 @@
 	            </span>
 					  </ion-col>
 
-						<ion-col width-20 class="relative-pos">
+						<ion-col col-3 class="relative-pos">
               <h3 class="points"> {{ user.chassisPoints }} </h3>
-							<div class="to-bottom">
+							<div class="to-bottom align-right">
 	              <img class="car-img" src="assets/img/red-car.png" />
 	              <div class="car-number car-two">CAR TWO</div>
 	            </div>

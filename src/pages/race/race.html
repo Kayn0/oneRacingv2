@@ -1,6 +1,5 @@
 <ion-header>
   <ion-navbar color="primary">
-    
   </ion-navbar>
 </ion-header>
 
@@ -8,7 +7,7 @@
   <div class="container">
     <div *ngIf="roundDataList">
       <ion-row *ngFor="let round of roundDataList">
-        <ion-col width-67>
+        <ion-col col-8>
           <div class="round stretchRight delay-2">  
             Round: {{ round?.lockoutRound }}
           </div>
@@ -21,7 +20,7 @@
           </div>
         </ion-col>
 
-        <ion-col width-33 margin-top class="tall-col">
+        <ion-col col-4 margin-top class="tall-col">
           <div class="stat slideExpandUp delay-3">
             <span>Track length</span> {{ round.trackLength }}
           </div>
@@ -41,7 +40,7 @@
     <div *ngIf="this.round > 1">
       <ion-row class="header-marg">
         <div class="text-center relative-pos">
-            Last Race Results
+          Last Race Results
         </div>
       </ion-row>
       <div padding>
@@ -62,10 +61,10 @@
         <ion-list *ngSwitchCase="'drivers'">
           <ion-item class="relative-pos min-list-height expandUp" *ngFor="let driver of driversList">
             <ion-row>
-              <ion-col width-10>
+              <ion-col col-2>
                 <div class="driver-position">{{ driver.position }}</div>
               </ion-col>
-              <ion-col width-20>
+              <ion-col col-2>
                 <ion-thumbnail item-left>
                   <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" />
                   <ion-spinner name="crescent" [ngClass]="{'center-spinner ':true}" *ngIf="!loaded"></ion-spinner>
@@ -84,10 +83,10 @@
         <ion-list *ngSwitchCase="'chassis'">
           <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let chassis of chassisList">
             <ion-row>
-              <ion-col width-10>
+              <ion-col col-2>
                 <div class="driver-position">{{ chassis.position }}</div>
               </ion-col>
-              <ion-col width-20>
+              <ion-col col-3>
                 <ion-thumbnail >
                   <img class="chassis-img" [src]="chassis.chassisImage" (load)="loaded1 = true" [ngClass]="{'img-loaded':loaded1}" [hidden]="!loaded1" />
                   <ion-spinner name="crescent" [ngClass]="{'center-spinner ':true}" *ngIf="!loaded1"></ion-spinner>
@@ -106,11 +105,11 @@
         <ion-list *ngSwitchCase="'pu'">
           <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let pu of puList">
             <ion-row>
-              <ion-col width-10>
+              <ion-col col-2>
                 <div class="driver-position">{{ pu.position }}</div>
               </ion-col>
-              <ion-col width-20>
-                <ion-thumbnail >
+              <ion-col col-3>
+                <ion-thumbnail>
                   <img class="pu-img" [src]="pu.puImage" (load)="loaded2 = true" [ngClass]="{'img-loaded':loaded2}" [hidden]="!loaded2" />
                   <ion-spinner name="crescent" [ngClass]="{'center-spinner ':true}" *ngIf="!loaded2"></ion-spinner>
                 </ion-thumbnail>

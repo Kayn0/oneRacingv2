@@ -252,6 +252,10 @@ page-driver-two {
 	.align-right {
 		text-align: right;
 	}
+
+	ion-thumbnail[item-left] {
+		margin: 8px 8px 8px 0 !important;
+	}
 }
 
 @media only screen and (min-width: 520px) {
@@ -308,11 +312,19 @@ page-driver-two {
  		}
 
  		.list-name {
+ 			font-size: 16px;
     	margin: 4px 0 0 0;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
 		}
 		
-		.list-points {
-    	top: 27px;
-    }
+		.list-image {
+		  height: auto;
+		  width: 42px;
+		}
+
+		.v-center {
+			justify-content: left;
+		}
 	}
 }

@@ -20,6 +20,16 @@ page-buy-trades {
 		padding: 0;
 	}
 
+	.card-left {
+	  margin: 8px 0 8px 8px;
+	  width: calc(100% - 8px);
+	}
+	
+	.card-right {
+	  margin: 8px 8px 8px 0;
+	  width: calc(100% - 8px);
+	}
+
 	button.back-button {
 		position: absolute;
 	}

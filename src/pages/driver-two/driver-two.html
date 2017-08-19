@@ -4,9 +4,12 @@
       <ion-col>
         <ion-card class="relative-pos card-left">
          <img class="title-icon" src="assets/img/bank-icon.png" />
-          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:'USD':true:'1.0'}}</span></div>
+          <div class="title-text-bank">
+            <span class="title-val">{{teamCash | currency:'USD':true:'1.0'}}</span>
+          </div>
         </ion-card>
       </ion-col>
+
       <ion-col>
         <ion-card class="relative-pos">
          <img class="trades-icon" src="assets/img/trade-icon-dark.png" />
@@ -24,10 +27,10 @@
       <ion-card *ngIf="(userDriverTwo != 0)" class="card-layout pullUp delay-3">
         <div class="relative-pos" *ngFor="let user of userDriverTwo">  
           <ion-row> 
-            <ion-col width-20 class="margin-image">
+            <ion-col col-2 class="margin-image">
               <img [src]="user.driverImage" class="driver-image" />
             </ion-col>
-            <ion-col width-60 class="vert-center">
+            <ion-col col-7 class="vert-center">
               <div class="margin-left">
                 <div class="driver-name">
                   {{user.firstName}} {{user.lastName}}
@@ -40,8 +43,9 @@
                 </span>
               </div>
             </ion-col>
-            <ion-col width-20>
-              <h3 class="points"> {{ user.driverPoints }} </h3>
+
+            <ion-col col-3>
+              <h3 class="points">{{ user.driverPoints }}</h3>
               <div class="to-bottom">
                 <img class="car-img" src="assets/img/red-car.png" />
                 <div class="car-number car-two">CAR TWO</div>
@@ -66,14 +70,19 @@
         <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" />
         <ion-spinner name="crescent" [ngClass]="{'center-spinner ':true}" *ngIf="!loaded"></ion-spinner>
       </ion-thumbnail>
+
       <ion-row class="v-center">
-        <ion-col>
+        <ion-col col-7>
           <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>
           <h5 class="list-value">
             {{ driver.driverValue | currency:'USD':true:'1.0' }}
-          </h5> <span class="val-change positive" [ngClass]="{negative: driver.valChange < 0}"> {{ driver.valChange | currency:'USD':true:'1.0' }}</span>
+          </h5>
+          <h5 [ngClass]="{negative: driver.valChange < 0}" class="val-change positive">
+            {{ driver.valChange | currency:'USD':true:'1.0' }}
+          </h5>
         </ion-col>
-        <ion-col class="align-right">
+
+        <ion-col col-4 class="align-right">
           <button class="stats-btn" ion-button (click)="goToDriverStats(driver.abrev);" [ngClass]="{'hide-button': this.round < 2}">
             <ion-icon name="stats"></ion-icon>
           </button>

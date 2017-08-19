@@ -7,6 +7,10 @@ page-driver-stats {
     margin-bottom: 0 !important;
   }
 
+  .container {
+    margin-top: 12px;
+  }
+
 	.ios, .md {
     .scroll-content {
       background-color: map-get($colors, light);

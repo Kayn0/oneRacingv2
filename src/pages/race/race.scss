@@ -65,9 +65,12 @@ page-race {
 	}
 
 	.chassis-img {
-		height: auto !important;
-		margin-left: 20px;
-		width: 18px !important;
+    height: auto !important;
+    margin-left: 20px;
+    position: relative;
+    top: -2px;
+    transform: rotate(90deg);
+    width: 20px !important;
 	}
 
 	.pu-img {
@@ -198,10 +201,9 @@ page-race {
 	// ************* LIST STYLING ***********//
 
 	.list-image {
-		margin-left: 16px;
+		margin-left: 4px;
 		position: relative;
-	  // top: 2px;
-	  width: 34px !important;
+	  width: 32px !important;
 	}
 	
 	ion-list.list {
@@ -256,16 +258,15 @@ page-race {
     font-size: 24px;
     font-family: 'ubuntu-bold', helvetica, sans-serif;
     line-height: 45px;
-    margin: 0;
-    text-align: right;
-    padding-left: 4px;
+    margin-left: 20px;
     opacity: 0.4;
+    padding-left: 0;
+		text-align: left;
   }
 }
 
 @media only screen and (min-width: 520px) {
   page-race {
-  
     .container {
       width: 70vw;
       margin-left:15vw;

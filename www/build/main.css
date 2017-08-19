@@ -27137,6 +27137,16 @@ page-buy-trades .card-android, page-buy-trades .card, page-buy-trades .card-ios 
   padding: 0;
 }
 
+page-buy-trades .card-left {
+  margin: 8px 0 8px 8px;
+  width: calc(100% - 8px);
+}
+
+page-buy-trades .card-right {
+  margin: 8px 8px 8px 0;
+  width: calc(100% - 8px);
+}
+
 page-buy-trades button.back-button {
   position: absolute;
 }
@@ -27605,8 +27615,13 @@ page-chassis-one .car-one-number {
 
 page-chassis-one img.car-img {
   height: auto;
-  margin: 4px 0 -2px;
+  margin: 8px 0 -2px 4px;
+  max-width: 60px;
   width: 100%;
+}
+
+page-chassis-one .align-right {
+  right: 0;
 }
 
 page-chassis-one .img-loaded + ion-spinner {
@@ -27858,6 +27873,10 @@ page-chassis-stats .ios page-home ion-card-header, page-chassis-stats .md page-h
   font-weight: bold;
 }
 
+page-chassis-stats .container {
+  margin-top: 12px;
+}
+
 page-chassis-stats .horizontal-pad {
   margin-bottom: 0;
 }
@@ -28069,8 +28088,13 @@ page-chassis-two .car-one-number {
 
 page-chassis-two img.car-img {
   height: auto;
-  margin: 4px 0 -2px;
+  margin: 8px 0 -2px 4px;
+  max-width: 60px;
   width: 100%;
+}
+
+page-chassis-two .align-right {
+  right: 0;
 }
 
 page-chassis-two .img-loaded + ion-spinner {
@@ -28366,8 +28390,13 @@ page-driver-one .text-center {
 
 page-driver-one img.car-img {
   height: auto;
-  margin: 8px 0 -2px;
+  margin: 8px 0 -2px 4px;
+  max-width: 60px;
   width: 100%;
+}
+
+page-driver-one .align-right {
+  right: 0;
 }
 
 page-driver-one .img-loaded + ion-spinner {
@@ -28444,7 +28473,6 @@ page-driver-one .driver-name {
 
 page-driver-one .driver-image {
   max-height: 50px;
-  padding-left: 10px;
   width: auto !important;
 }
 
@@ -28561,6 +28589,10 @@ page-driver-one .align-right {
   text-align: right;
 }
 
+page-driver-one ion-thumbnail[item-left] {
+  margin: 8px 8px 8px 0 !important;
+}
+
 @media only screen and (min-width: 520px) {
   page-driver-one .container {
     width: 70vw;
@@ -28604,10 +28636,20 @@ page-driver-one .align-right {
     font-size: 20px;
   }
   page-driver-one .list-name {
+    font-size: 16px;
     margin: 4px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  page-driver-one .list-points {
-    top: 27px;
+  page-driver-one .list-image {
+    height: auto;
+    width: 42px;
+  }
+  page-driver-one .v-center {
+    -webkit-box-pack: left;
+    -webkit-justify-content: left;
+    -ms-flex-pack: left;
+    justify-content: left;
   }
 }
 
@@ -28617,6 +28659,10 @@ page-driver-stats .scroll-content {
 
 page-driver-stats .fixed-content {
   margin-bottom: 0 !important;
+}
+
+page-driver-stats .container {
+  margin-top: 12px;
 }
 
 page-driver-stats .ios ion-card-header, page-driver-stats .md ion-card-header {
@@ -29019,6 +29065,10 @@ page-driver-two .align-right {
   text-align: right;
 }
 
+page-driver-two ion-thumbnail[item-left] {
+  margin: 8px 8px 8px 0 !important;
+}
+
 @media only screen and (min-width: 520px) {
   page-driver-two .container {
     width: 70vw;
@@ -29062,10 +29112,20 @@ page-driver-two .align-right {
     font-size: 20px;
   }
   page-driver-two .list-name {
+    font-size: 16px;
     margin: 4px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  page-driver-two .list-points {
-    top: 27px;
+  page-driver-two .list-image {
+    height: auto;
+    width: 42px;
+  }
+  page-driver-two .v-center {
+    -webkit-box-pack: left;
+    -webkit-justify-content: left;
+    -ms-flex-pack: left;
+    justify-content: left;
   }
 }
 
@@ -29398,8 +29458,13 @@ page-pu-one .car-one-number {
 
 page-pu-one img.car-img {
   height: auto;
-  margin: 4px 0 -2px;
+  margin: 8px 0 -2px 4px;
+  max-width: 60px;
   width: 100%;
+}
+
+page-pu-one .align-right {
+  right: 0;
 }
 
 page-pu-one .img-loaded + ion-spinner {
@@ -29552,6 +29617,13 @@ page-pu-one .hide-icon {
   visibility: hidden;
 }
 
+page-pu-one .pu-name,
+page-pu-one .pu-value,
+page-pu-one .bump {
+  left: 12px;
+  position: relative;
+}
+
 page-pu-one ion-list.list {
   margin: 0 8px 0px 8px;
 }
@@ -29658,8 +29730,11 @@ page-pu-one .highlight-item {
   page-pu-one ion-title {
     padding: 0 90px 1px 75px !important;
   }
-  page-pu-one .pu-name {
-    font-size: 18px;
+  page-pu-one .pu-name,
+  page-pu-one .pu-value,
+  page-pu-one .bump {
+    left: 16px;
+    position: relative;
   }
   page-pu-one .list-abrev {
     font-size: 20px;
@@ -29682,6 +29757,10 @@ page-pu-stats .fixed-content {
 
 page-pu-stats .ios page-home ion-card-header, page-pu-stats .md page-home ion-card-header {
   font-weight: bold;
+}
+
+page-pu-stats .container {
+  margin-top: 12px;
 }
 
 page-pu-stats button.back-button {
@@ -29884,8 +29963,13 @@ page-pu-two .car-one-number {
 
 page-pu-two img.car-img {
   height: auto;
-  margin: 4px 0 -2px;
+  margin: 8px 0 -2px 4px;
+  max-width: 60px;
   width: 100%;
+}
+
+page-pu-two .align-right {
+  right: 0;
 }
 
 page-pu-two .img-loaded + ion-spinner {
@@ -30038,6 +30122,13 @@ page-pu-two .hide-icon {
   visibility: hidden;
 }
 
+page-pu-two .pu-name,
+page-pu-two .pu-value,
+page-pu-two .bump {
+  left: 12px;
+  position: relative;
+}
+
 page-pu-two ion-list.list {
   margin: 0 8px 0px 8px;
 }
@@ -30144,8 +30235,11 @@ page-pu-two .highlight-item {
   page-pu-two ion-title {
     padding: 0 90px 1px 75px !important;
   }
-  page-pu-two .pu-name {
-    font-size: 18px;
+  page-pu-two .pu-name,
+  page-pu-two .pu-value,
+  page-pu-two .bump {
+    left: 16px;
+    position: relative;
   }
   page-pu-two .list-abrev {
     font-size: 20px;
@@ -30225,7 +30319,11 @@ page-race .seg-header {
 page-race .chassis-img {
   height: auto !important;
   margin-left: 20px;
-  width: 18px !important;
+  position: relative;
+  top: -2px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  width: 20px !important;
 }
 
 page-race .pu-img {
@@ -30363,9 +30461,9 @@ page-race .position {
 }
 
 page-race .list-image {
-  margin-left: 16px;
+  margin-left: 4px;
   position: relative;
-  width: 34px !important;
+  width: 32px !important;
 }
 
 page-race ion-list.list {
@@ -30418,10 +30516,10 @@ page-race .driver-position {
   font-size: 24px;
   font-family: 'ubuntu-bold', helvetica, sans-serif;
   line-height: 45px;
-  margin: 0;
-  text-align: right;
-  padding-left: 4px;
+  margin-left: 20px;
   opacity: 0.4;
+  padding-left: 0;
+  text-align: left;
 }
 
 @media only screen and (min-width: 520px) {

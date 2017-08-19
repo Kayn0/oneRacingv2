@@ -10,12 +10,12 @@
   <div class="container">
     <div *ngIf="driverInfo">
       <ion-row>
-        <ion-col width-25>
+        <ion-col col-3>
           <div class="horizontal-pad">
     		    <img class="driver-image" [src]="driverInfo.driverImage" />
            </div>
         </ion-col>
-        <ion-col width-50>
+        <ion-col col-6>
       	  <div class="driver-value">
             {{ driverInfo.driverValue | currency:'USD':true:'1.0'}}
           </div>
@@ -24,7 +24,7 @@
             <span>{{ driverValueChange | currency:'USD':true:'1.0'}}</span>
           </div> 
         </ion-col>
-        <ion-col width-25>
+        <ion-col col-3>
           <div class="driver-points">Average points<span>{{ averagePoints }}</span></div>
         </ion-col>
       </ion-row>

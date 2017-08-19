@@ -24,23 +24,23 @@
 			<ion-card *ngIf="(userPuOne != 0)" class="card-layout left pullUp delay-3">
 			  <div class="relative-pos" *ngFor="let user of userPuOne" (click)="goToPu()">
 				  <ion-row> 
-						<ion-col width-20 class="margin-image">
+						<ion-col col-2 class="margin-image">
 							<img [src]="user.puImage" class="pu-image" />
 					  </ion-col>
-					  <ion-col width-60 class="vert-center">
+					  <ion-col col-7 class="vert-center">
 					  	<div class="pu-name"> 
 					   		{{user.puName}}
 					   	</div>
 					   	<div class="pu-value">
 					  		{{ user.puValue | currency:'USD':true:'1.0' }}
 					  	</div>
-					  	<span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> 
+					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> 
 								{{ user.valChange | currency:'USD':true:'1.0' }}
 							</span>
 					  </ion-col>
-				  	<ion-col width-20 class="relative-pos">
+				  	<ion-col col-3 class="relative-pos">
             	<h3 class="points"> {{ user.puPoints }} </h3>
-            	<div class="to-bottom">
+            	<div class="to-bottom align-right">
             		<img class="car-img" src="assets/img/black-car.png" />
             		<div class="car-number">CAR ONE</div>
             	</div>

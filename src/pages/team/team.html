@@ -1,12 +1,10 @@
 <ion-header>
   <ion-navbar color="primary">
-    
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 	<div class="container margin-bottom">
-
 	<!-- Info Panel -->
 	<div *ngFor="let user of userList">
     <ion-row>
@@ -32,23 +30,20 @@
 	      	</div>
 				</ion-card>
 			</ion-col>
-
 			<button ion-button class="add-trade-btn add-btn" (click)="goToBuyTrades()" [disabled]="gameState == 'lockout'">+</button>
   	</ion-row>
 	</div>
 
 	<ion-row class="top-space-lg">
-
 		<img class="car-bg" src="assets/img/team-car.png" />
 		<div class="text-center positive-rel slideExpandUp delay-2">
 			CAR ONE
 			<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>
 		</div>
 	</ion-row>
-
 	<ion-row class="top-space">
-		<!-- Driver: car one -->
 		
+		<!-- Driver: car one -->
 		<ion-col width-33 class="pullUp delay-1">
 			<ion-card tappable (click)="goToDriverOne()" class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">
 				<ion-card-header class="card-header">
@@ -99,11 +94,9 @@
 				<ion-card-header class="card-header">
 					<div>Chassis</div>
 				</ion-card-header>
-	
 				<ion-row>
 					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />
 				</ion-row>
-
 				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>
 			</ion-card>
 
@@ -111,9 +104,7 @@
 				<ion-card-header class="card-header">
 					<div>Chassis</div>
 				</ion-card-header>
-
 				<div class="name">{{user.chassisName}}</div>
-				
 				<ion-row>
 					<img [src]="user.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" />
 	    		<ion-spinner name="crescent" [ngClass]="{'center-spinner car-one-spinner':true}" *ngIf="!loaded"></ion-spinner>

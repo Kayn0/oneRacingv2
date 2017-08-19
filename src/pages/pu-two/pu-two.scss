@@ -60,8 +60,13 @@ page-pu-two {
 	
 	img.car-img {
 		height: auto;
-		margin: 4px 0 -2px;
+		margin: 8px 0 -2px 4px;
+		max-width: 60px;
 		width: 100%;
+	}
+	
+	.align-right {
+		right: 0;
 	}
 
 	//****** spinner *******//
@@ -205,6 +210,13 @@ page-pu-two {
 		visibility: hidden;
 	}
 
+	.pu-name,
+  .pu-value,
+  .bump {
+  	left: 12px;
+  	position: relative;
+  }
+
 // ************* LIST STYLING ***********//
 	ion-list.list {
 		margin: 0 8px 0px 8px;
@@ -320,8 +332,11 @@ page-pu-two {
 	 		padding: 0 90px 1px 75px !important;
 	 	}
 
-	  .pu-name {
-	  	font-size: 18px;
+	  .pu-name,
+	  .pu-value,
+	  .bump {
+	  	left: 16px;
+	  	position: relative;
 	  }
  		
  		.list-abrev {

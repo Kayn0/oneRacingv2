@@ -8,12 +8,12 @@
   <div class="container">
     <div *ngIf="puInfo">
       <ion-row>
-        <ion-col width-25>
+        <ion-col col-3>
           <div class="horizontal-pad">
   		      <img [src]="puInfo.puImage" />
           </div>
         </ion-col>
-        <ion-col width-50>
+        <ion-col col-6>
     		  <div class="pu-value">
             {{ puInfo.puValue | currency:'USD':true:'1.0'}}
           </div>
@@ -22,7 +22,7 @@
             <span>{{ puValueChange | currency:'USD':true:'1.0'}}</span>
           </div> 
   	    </ion-col>
-  	    <ion-col width-25>
+  	    <ion-col col-3>
           <div class="pu-points">
             Average points
             <span>{{ averagePoints }}</span>

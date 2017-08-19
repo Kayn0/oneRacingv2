@@ -70,8 +70,13 @@ page-chassis-one {
 	
 	img.car-img {
 		height: auto;
-		margin: 4px 0 -2px;
+		margin: 8px 0 -2px 4px;
+		max-width: 60px;
 		width: 100%;
+	}
+	
+	.align-right {
+		right: 0;
 	}
 
 	//****** spinner *******//
