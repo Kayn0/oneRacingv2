@@ -30920,10 +30920,30 @@ page-signup .to-bottom {
   bottom: 8px;
 }
 
+.tabs-md .tab-button {
+  background: -webkit-linear-gradient(top, #333333, #000000);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+  background: -webkit-linear-gradient(top, #222222, #000000);
+  box-shadow: 0 0px 3px black, 0 1px 2px black;
+  -webkit-box-shadow: 0 0px 3px black, 0 1px 2px black;
+  margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  font-size: 3rem;
+}
+
 .tab-content {
   position: absolute;
   width: 100%;
   z-index: 100;
+  height: 54px;
 }
 
 .timer-right {
@@ -30950,26 +30970,28 @@ page-signup .to-bottom {
 }
 
 .team-text {
-  text-align: center;
+  display: inline-block;
   color: #fff;
-  font-size: 16px;
-  height: 100%;
-  line-height: 18px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-flex-direction: column;
+  font-size: 17px;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
-  text-transform: capitalize;
+  text-overflow: ellipsis;
+  width: 95%;
+  margin-left: 5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 52px;
 }
 
 .lockout {
@@ -30992,9 +31014,11 @@ page-signup .to-bottom {
   background: #000;
 }
 
-.tabs .tab-button-text,
+.tabs .tab-button-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .tabs .tab-button-icon {
-  font-weight: bold;
   color: rgba(255, 255, 255, 0.6);
 }
 

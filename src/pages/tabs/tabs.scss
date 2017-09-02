@@ -2,10 +2,33 @@ page-tabs {
 
 }
 
+.tabs-md .tab-button {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#000000));
+	background: -webkit-linear-gradient(top, #333333, #000000);
+	transition: all 0.3s ease;
+
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#000000));
+	background: -webkit-linear-gradient(top, #222222, #000000);
+	box-shadow: 0 0px 3px rgba(0,0,0,1), 0 1px 2px rgba(0,0,0,1	);
+  -webkit-box-shadow: 0 0px 3px rgba(0,0,0,1), 0 1px 2px rgba(0,0,0,1	);
+  margin-top: -20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+	font-size: 3rem;
+}
+
 .tab-content {
 	position: absolute;
 	width: 100%;
 	z-index: 100;
+	height: 54px;
 }
 
 .timer-right {
@@ -16,11 +39,8 @@ page-tabs {
 
 .team-card {  
   font-size: 12px;
-  
   padding: 4px 8px;
   text-align: center;
-  
-  
   position: absolute;
   width: 50%;
   margin: 40% 25% 0;
@@ -35,17 +55,22 @@ page-tabs {
 }
 
 .team-text {
-	text-align: center;
+	display: inline-block;
 	color: #fff;
-  font-size: 16px;
-  height: 100%;
-  line-height: 18px;
-	display: flex;
-  justify-content: center;
-  flex-direction: column;
+	font-family: 'ubuntu-bold', helvetica, sans-serif;
+	flex-direction: column;
   -webkit-flex-direction: column;
+  font-size: 17px;
+  height: 100%;
+  justify-content: center;
   text-align: center;
-  text-transform: capitalize;
+  text-overflow: ellipsis;
+  width: 95%;
+  margin-left: 5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 52px;
 }
 
 .lockout {
@@ -68,9 +93,10 @@ page-tabs {
 	.tabbar {
 		background: #000;
 	}
-	.tab-button-text,
+	.tab-button-text {
+		color: rgba(255, 255, 255, 0.5);
+	}
 	.tab-button-icon {
-		font-weight: bold;
 		color: rgba(255, 255, 255, 0.6);
 	}
 }
