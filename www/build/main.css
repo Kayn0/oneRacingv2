@@ -30773,6 +30773,15 @@ page-rules .rules-card .hidden {
   display: none;
 }
 
+page-rules .rules-card .hidden1 {
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
 page-rules .showing {
   animation-name: pullDown;
   -webkit-animation-name: pullDown;
@@ -30787,6 +30796,7 @@ page-rules .showing {
   height: auto;
   font-size: 16px;
   background: #eff1f3;
+  display: block;
 }
 
 page-rules .rules-header {

@@ -15,7 +15,7 @@
 			</button>
 
 			<div class="rules-content" [ngClass]="{'showing': overviewToggle,
-				'hidden': !overviewToggle}">
+				'hidden': !overviewToggle, 'hidden1': tradesToggle}">
 				<p>As the manager of your own Formula One race team, with a starting budget you need to purchase a driver, chassis and power unit for both of your cars. After each F1 race weekend your drivers, chassis and power units will recieve points based on the race results. In addition the value of each part will rise or fall depending on its performance in the race.</p>
 				<p>Just before the start of each Formula One race weekend a lockout will be established, no longer allowing trades or upgrades.</p>
 				<p>
@@ -61,17 +61,43 @@
 			</div>
 		</div>
 		
-		<!-- bank card -->
-		<!-- <div class="rules-card slideExpandUp delay-5">
-			<button class="rules-header" (click)="bankToggle = !bankToggle;">
-				Bank
-				 <ion-icon class="header-icon" ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"[ngClass]="{'spin': bankToggle}"></ion-icon>
+		<!-- lockout card -->
+		<div class="rules-card slideExpandUp delay-6">
+			<button class="rules-header" (click)="lockoutToggle = !lockoutToggle;">
+				Lock out
+				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{'spin': lockoutToggle}"></ion-icon>
 			</button>
-			<div class="rules-content" [ngClass]="{'showing': bankToggle,
-			'hidden': !bankToggle}">
-				<p>If your running low on trades you can use the bank to purchase additional trades. Trades can be bought in three separate amounts: 1, 3 or 5.</p>
+			<div class="rules-content" [ngClass]="{'showing': lockoutToggle,
+			'hidden': !lockoutToggle}">
+				<p>Just before each race weekend the app will enter a lockout status. During this time you will not be able to make trades or upgrades until the race weekend is completed. The timer shows how long until the next lock out.</p>
 			</div>
 		</div>
- -->
+
+		<!-- point card -->
+		<div class="rules-card slideExpandUp delay-7">
+			<button class="rules-header" (click)="pointsToggle = !pointsToggle;">
+				Points
+				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{'spin': pointsToggle}"></ion-icon>
+			</button>
+			<div class="rules-content" [ngClass]="{'showing': pointsToggle,
+			'hidden': !pointsToggle}">
+				<p>The points allocated to drivers, chassis and power units after each race weekend is calculated from a combination of results. Drivers points are calculated by their quallifying position, race result and how many positions were gained during the race. Chassis points are calculated by the position each chassis qualified and race result of both chassis. Lastly power unit points are calulated by the best qualifying result of each brand and their race result. </p>
+			</div>
+		</div>
+
+		<!-- misc card -->
+		<div class="rules-card slideExpandUp delay-7">
+			<button class="rules-header" (click)="extraToggle = !extraToggle;">
+				Extra information
+				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{'spin': extraToggle}"></ion-icon>
+			</button>
+			<div class="rules-content" [ngClass]="{'showing': extraToggle,
+			'hidden': !extraToggle}">
+				<p>Once the Formula one race results have been released and pushed into the app the dollar values and scores of drivers, chassis, power units and player teams are final.</p>
+
+				<p>If during the Formula One race season a driver is unable to drive and is replaced for a race, the replacment driver will race under the usual drivers alias. Any teams effected by this will automatically be awared the results of the replacment driver after the race.</p>
+			</div>
+		</div>
+
 	</div>
 </ion-content>

@@ -29,6 +29,15 @@ page-rules {
 		display: none;
 	}
 
+	.rules-card .hidden1 {
+		visibility: hidden;
+		font-size: 0;
+		height: 0;
+		padding: 0;
+		margin: 0;
+		display: none;
+	}
+
 	.showing {
 		animation-name: pullDown;
 		-webkit-animation-name: pullDown;	
@@ -46,6 +55,7 @@ page-rules {
 		height:auto;
 		font-size: 16px;
 		background: #eff1f3;	
+		display: block;
 	}
 
 	.rules-header {

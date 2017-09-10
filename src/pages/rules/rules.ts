@@ -14,9 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class RulesPage {
 	public overviewToggle:boolean = false;
 	public tradesToggle:boolean = false;
-	public bankToggle:boolean = false;
-	public statusToggle:boolean = false;
-	public upgradesToggle:boolean = false;
+  public upgradesToggle:boolean = false;
+
+	public lockoutToggle:boolean = false;
+	public pointsToggle:boolean = false;
+	
 
   constructor(
   	public navCtrl: NavController,
