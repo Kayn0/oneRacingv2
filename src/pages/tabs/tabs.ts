@@ -117,10 +117,8 @@ export class TabsPage {
       });
       this.userCount = counter + 1;
     });
-
     this.navParams = navParams;
     this.navParams.data = this.userProfile;
-
   } // end constructor
 
   updateName(){

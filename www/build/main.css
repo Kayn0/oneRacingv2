@@ -25164,6 +25164,10 @@ ion-navbar.toolbar {
   font-style: normal;
 }
 
+.enable-hover a:hover {
+  opacity: 1;
+}
+
 .canAfford {
   background-color: green !important;
 }
@@ -25704,6 +25708,27 @@ ion-label.info-panel {
 .alert-ios .alert-button,
 .alert-md .alert-button {
   color: #333;
+}
+
+.alert-sub-title h3 {
+  font-size: 18px;
+}
+
+.alert-sub-title h5 {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.alert-wrapper {
+  overflow: scroll;
+}
+
+.alert-md .alert-button-group {
+  padding: 24px 8px 16px 24px;
+}
+
+.alert-md .alert-button {
+  padding-bottom: 16px;
 }
 
 @media only screen and (min-width: 520px) {
@@ -29179,10 +29204,20 @@ page-home .center {
   margin: 0 auto;
 }
 
-page-home .button-left {
-  font-size: 10px !important;
+page-home .rel-pos {
   position: relative;
-  top: 4px;
+}
+
+page-home .log-out {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+
+page-home .button-right .log-out-btn {
+  width: calc(100% - 16px) !important;
 }
 
 page-home .next-btn,
@@ -29394,6 +29429,390 @@ page-login .login-btn.right-btn {
   }
   page-login form {
     margin-bottom: 0;
+  }
+}
+
+page-player-team .text-center {
+  background-color: #000;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  display: block;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  margin: 0 auto;
+  padding: 6px 35px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+page-player-team button[disabled], page-player-team [ion-button][disabled] {
+  display: none;
+}
+
+page-player-team button[disabled].add-btn, page-player-team [ion-button][disabled].add-btn {
+  display: block;
+}
+
+page-player-team .top-space-lg {
+  margin-top: 30px;
+}
+
+page-player-team .top-space-xlg {
+  margin-top: 40px;
+}
+
+page-player-team ion-row .top-space ion-col {
+  min-height: 225px;
+}
+
+page-player-team .top-space {
+  margin-top: 8px;
+  position: relative;
+  z-index: 10;
+}
+
+page-player-team .car-bg {
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: -18px auto 0;
+  z-index: 0;
+}
+
+page-player-team .empty-card {
+  margin-bottom: 30px !important;
+}
+
+page-player-team .margin-bottom {
+  margin-bottom: 20px;
+}
+
+page-player-team .primary-bg {
+  background-color: #d31411;
+}
+
+page-player-team .card-holder,
+page-player-team .card-layout.card-android,
+page-player-team .card-layout.card,
+page-player-team .card-layout.card-ios {
+  padding: 0px !important;
+  width: 100%;
+  background-color: #eff1f3;
+}
+
+page-player-team .card-1 {
+  margin: 0 0 0 8px;
+  width: calc(100% - 8px);
+}
+
+page-player-team .card-2 {
+  margin: 0 8px;
+  width: calc(100% - 16px);
+  position: relative;
+}
+
+page-player-team .card-3 {
+  margin: 0 8px 0 0;
+  width: calc(100% - 8px);
+}
+
+page-player-team .hq-card {
+  min-height: 215px;
+  padding: 0;
+  position: relative;
+}
+
+page-player-team .driver-img,
+page-player-team .driver-img.img-loaded {
+  height: 40px;
+  margin: 5px auto;
+  min-height: 60px;
+  width: initial;
+}
+
+page-player-team .chassis-img.img-loaded {
+  height: 80px;
+  width: auto;
+  margin: -14px auto -16px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+
+page-player-team .pu-image,
+page-player-team .pu-image.img-loaded {
+  height: 45px;
+  width: initial;
+  margin: 2px auto 3px;
+}
+
+page-player-team .driver-default {
+  margin: 45px auto 8px;
+}
+
+page-player-team .chassis-default {
+  width: auto;
+  height: 35px;
+  margin: 50px auto 8px;
+}
+
+page-player-team .pu-default {
+  margin-top: 45px;
+}
+
+page-player-team .car-one-icon {
+  color: #000;
+  font-size: 32px;
+  margin-top: 20px;
+  opacity: 0.4;
+  text-align: center;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+page-player-team .car-two-icon {
+  color: #d31411;
+  font-size: 32px;
+  margin-top: 20px;
+  opacity: 0.4;
+  text-align: center;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+page-player-team .card-header,
+page-player-team .car-two-header {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 6px;
+  text-align: center;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+page-player-team .card-header {
+  background-color: #000;
+}
+
+page-player-team .car-two-header {
+  background-color: #d31411;
+}
+
+page-player-team .name {
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 4px;
+  text-align: center;
+  min-height: 38px;
+}
+
+page-player-team .points {
+  display: block;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+}
+
+page-player-team .card-2-points {
+  margin-top: 79px;
+}
+
+page-player-team .value {
+  color: grey;
+  font-size: 15px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+page-player-team .val-change {
+  font-size: 12px !important;
+  margin: 2px 0 0 0;
+  text-align: center;
+}
+
+page-player-team .offset-bg {
+  background-color: #000;
+}
+
+page-player-team .positive {
+  color: green;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+}
+
+page-player-team .negative {
+  color: red;
+}
+
+page-player-team .position-rel {
+  position: relative;
+}
+
+page-player-team .back-button.show-back-button {
+  position: absolute;
+}
+
+page-player-team ion-icon.leader {
+  color: #e0b507;
+  font-size: 28px;
+  text-align: right;
+  margin-top: 12px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+page-player-team .hide-icon {
+  visibility: hidden;
+}
+
+page-player-team .img-loaded + ion-spinner {
+  display: none;
+}
+
+page-player-team .center-spinner.car-one-spinner {
+  height: 80px;
+  width: auto;
+  margin: -14px auto -16px;
+}
+
+page-player-team .center-spinner.car-one-spinner circle,
+page-player-team .center-spinner.car-one-spinner line {
+  stroke: #333;
+}
+
+page-player-team .center-spinner.car-two-spinner {
+  height: 80px;
+  width: auto;
+  margin: -14px auto -16px;
+}
+
+page-player-team .center-spinner.car-two-spinner circle,
+page-player-team .center-spinner.car-two-spinner line {
+  stroke: #d31411;
+}
+
+page-player-team .center-spinner {
+  margin: auto;
+  display: block;
+  min-height: 60px;
+}
+
+page-player-team .center-spinner circle,
+page-player-team .center-spinner line {
+  stroke: #d31411;
+}
+
+page-player-team .outline {
+  border-radius: 2px;
+  position: absolute;
+  height: 101vh;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.1);
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  margin-top: 0;
+  width: 100px;
+  margin-bottom: 16px;
+}
+
+page-player-team .card-md + ion-card {
+  margin-top: 8px;
+}
+
+page-player-team .card + ion-card {
+  margin-top: 8px;
+}
+
+page-player-team .card-height {
+  height: 60px;
+}
+
+page-player-team .card-left {
+  margin: 8px 0 8px 8px;
+  width: calc(100% - 8px);
+}
+
+page-player-team .bank-img {
+  float: left;
+  margin: 5px 10px;
+  position: relative;
+  width: 26px;
+}
+
+page-player-team .trades-img {
+  float: left;
+  margin: 9px 10px 10px 5px;
+  width: 28px;
+}
+
+page-player-team .add-trade-btn {
+  background-color: #d31411;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 25px;
+}
+
+page-player-team .add-trade-btn span.button-inner {
+  position: relative;
+  top: -1px;
+}
+
+page-player-team .title-text {
+  color: #d31411;
+  font-size: 16px;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+}
+
+page-player-team .text-height {
+  line-height: 44px;
+}
+
+page-player-team .offset-color {
+  color: #2e2e2e;
+  font-family: 'ubuntu-medium', helvetica, sans-serif;
+}
+
+page-player-team .positive {
+  color: green;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  position: relative;
+  font-size: 11px !important;
+}
+
+page-player-team .negative {
+  color: #d31411;
+  font-size: 11px !important;
+}
+
+page-player-team .positive::before {
+  content: '\25b2';
+  font-size: 10px;
+  margin-right: -2px;
+}
+
+page-player-team .negative::before {
+  content: '\25bc';
+  font-size: 10px;
+  margin-right: -2px;
+  margin-left: 2px;
+  position: relative;
+  top: 1px;
+}
+
+@media only screen and (min-width: 520px) {
+  page-team .add-trade-btn {
+    top: 0;
   }
 }
 
@@ -30575,6 +30994,10 @@ page-ranking .header-text {
   border-bottom: 0;
 }
 
+page-ranking .inline-elem {
+  display: inline;
+}
+
 page-ranking .right-col {
   text-align: right;
 }
@@ -30943,6 +31366,8 @@ page-signup .to-bottom {
   margin-top: -20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  transform: translate3d(0, -3px, 0);
+  -webkit-transform: translate3d(0, -3px, 0);
 }
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {

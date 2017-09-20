@@ -43,13 +43,26 @@ page-home {
     bottom: -8px;
     left: 0;
 	}
+
   .center {
     margin: 0 auto;
   }
-	.button-left {
-    font-size: 10px !important;
-    position: relative;
-    top: 4px;
+
+	.rel-pos {
+		position: relative;
+	}
+	
+	.log-out {
+		color:  #fff;
+		font-size: 16px;
+		position: absolute;
+		top: 0;
+		width: 40px;
+	}
+
+	.button-right .log-out-btn {
+		// margin-right: 12px;
+		width: calc(100% - 16px) !important;
 	}
 
 	.next-btn,

@@ -33,6 +33,7 @@ import { PuTwoPage } from '../pages/pu-two/pu-two';
 import { DriverStatsPage } from '../pages/driver-stats/driver-stats';
 import { ChassisStatsPage } from '../pages/chassis-stats/chassis-stats';
 import { PuStatsPage } from '../pages/pu-stats/pu-stats';
+import { PlayerTeamPage } from '../pages/player-team/player-team';
 
 //Providers
 import { AuthDataProvider } from '../providers/auth-data/auth-data';
@@ -68,6 +69,7 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     DriverStatsPage,
     ChassisStatsPage,
     PuStatsPage,
+    PlayerTeamPage,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +105,7 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     DriverStatsPage,
     ChassisStatsPage,
     PuStatsPage,
+    PlayerTeamPage,
   ],
   providers: [
     StatusBar,

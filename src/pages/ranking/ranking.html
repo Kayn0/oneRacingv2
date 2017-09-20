@@ -20,7 +20,12 @@
 
       <ion-col>
         <div class="stat slideExpandUp delay-5">
-          Rank<span>{{userStats.rank}}</span>
+          Rank
+          <span>{{userStats.rank}}
+          	<div [ngClass]="{negative: userStats.rankDiff < 0}" class="positive val-change inline-elem"> 
+							{{ userStats.rankDiff }}
+						</div>
+					</span>
         </div>
       </ion-col>
 	  </ion-row>
@@ -49,6 +54,9 @@
 								{{ user.totalPoints }}
 							</span>
 						</div>
+						<button class="team-btn" ion-button (click)="goToPlayerTeam(user);">
+              <ion-icon name="md-people"></ion-icon>
+            </button>
 					</ion-col>
 				</ion-row>
 			</ion-item>

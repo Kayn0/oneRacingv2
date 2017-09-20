@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TeamDataProvider } from '../../providers/team-data/team-data';
 import { CurrentRoundDataProvider } from '../../providers/current-round-data/current-round-data';
+
+import { PlayerTeamPage } from '../player-team/player-team';
+
 /**
  * Generated class for the RankingPage page.
  *
@@ -63,7 +66,9 @@ export class RankingPage {
 	        rankDiff: snapshot.val().rankDiff,
 	        totalPoints: snapshot.val().totalPoints,
 	        trades: snapshot.val().trades,
-	        points: snapshot.val().points
+          points: snapshot.val().points,
+          carOne: snapshot.val().carOne,
+	        carTwo: snapshot.val().carTwo,
 		    });
 		  });
 		  this.usersList = rawList;
@@ -88,6 +93,10 @@ export class RankingPage {
   		}
   	}
   } //end constructor
+
+  goToPlayerTeam(player){
+    this.navCtrl.push(PlayerTeamPage, player);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RankingPage');

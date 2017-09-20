@@ -20,6 +20,10 @@
   font-style: normal;
 }
 
+.enable-hover a:hover {
+	opacity:1;
+}
+
 .canAfford {
 	background-color: green!important;
 }
@@ -437,29 +441,6 @@ ion-label.info-panel {
 	color: #d31411!important;
 }
 
-// ion-col .points {
-// 	text-align: right;
-// 	font-size: 20px;
-// 	font-weight: 900;
-// 	color: #414042;
-// }
-
-// ion-col .name {
-// 	color: #414042;
-// 	font-size: 16px;
-// 	font-weight: 600;
-// 	text-align: right;
-// 	padding: 8px 0 0;
-// 	width: 100%;
-// 	margin: 0;
-// }
-
-// ion-item .points {
-// 	font-size: 20px;
-// 	font-weight: 800;
-// 	color: #414042;
-// }
-
 .item {
 	background-color: #eff1f3;
 }
@@ -481,7 +462,7 @@ ion-label.info-panel {
     top: -8px;
 	}
 	
-//alerts
+	//alerts
 	.alert-head {
 		background-color: #333;
 		color: #fff;
@@ -576,6 +557,27 @@ ion-label.info-panel {
 	.alert-ios .alert-button,
 	.alert-md .alert-button {
 		color: #333;
+	}
+
+	.alert-sub-title h3 {
+		font-size: 18px;
+	}
+
+	.alert-sub-title h5 {
+		font-weight: 900;
+		font-size: 16px;
+	}
+
+	.alert-wrapper {
+		overflow: scroll;
+	}
+
+	.alert-md .alert-button-group {
+		padding: 24px 8px 16px 24px;
+	}
+
+	.alert-md .alert-button {
+		padding-bottom: 16px;
 	}
 
 	$alert-input-placeholder-color: #000;
