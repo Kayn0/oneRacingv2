@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 488:
+/***/ 470:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlayerTeamPageModule", function() { return PlayerTeamPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TourGuidePageModule", function() { return TourGuidePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player_team__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tour_guide__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PlayerTeamPageModule = (function () {
-    function PlayerTeamPageModule() {
+var TourGuidePageModule = (function () {
+    function TourGuidePageModule() {
     }
-    return PlayerTeamPageModule;
+    return TourGuidePageModule;
 }());
-PlayerTeamPageModule = __decorate([
+TourGuidePageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__player_team__["a" /* PlayerTeamPage */],
+            __WEBPACK_IMPORTED_MODULE_2__tour_guide__["a" /* TourGuidePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__player_team__["a" /* PlayerTeamPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tour_guide__["a" /* TourGuidePage */]),
         ],
     })
-], PlayerTeamPageModule);
+], TourGuidePageModule);
 
-//# sourceMappingURL=player-team.module.js.map
+//# sourceMappingURL=tour-guide.module.js.map
 
 /***/ })
 

@@ -25189,6 +25189,14 @@ ion-navbar.toolbar {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.stats-btn,
+.buy-btn,
+.log-out-btn,
+.tour-guide-button {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
 .bar {
   background-image: none !important;
 }
@@ -29521,8 +29529,7 @@ page-player-team .card-3 {
 }
 
 page-player-team .hq-card {
-  min-height: 215px;
-  padding: 0;
+  padding: 0 0 8px 0;
   position: relative;
 }
 
@@ -31035,6 +31042,19 @@ page-ranking .stat span {
   margin-top: 4px;
 }
 
+page-ranking .team-btn {
+  background-color: #000;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  bottom: 0;
+  color: #fff;
+  height: 40px;
+  margin: 0.1rem 0.1rem;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
 page-ranking .highlight-item {
   background-color: #d31411 !important;
 }
@@ -31060,25 +31080,21 @@ page-ranking .team-rank {
   font-weight: 600;
   font-size: 28px;
   margin-top: -5px;
+  text-align: right;
 }
 
-page-ranking .team-points {
-  color: grey;
-  font-size: 15px;
-  font-family: 'ubuntu-bold', helvetica, sans-serif;
+page-ranking .button-wrapper {
+  position: relative;
 }
 
 page-ranking .points-text {
-  color: grey;
+  color: #333;
   font-size: 15px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
 }
 
 page-ranking .number-points {
-  color: #2e2e2e;
-  font-size: 16px;
+  color: #d31411;
+  font-size: 15px;
   font-family: 'ubuntu-bold', helvetica, sans-serif;
 }
 
@@ -31436,6 +31452,8 @@ page-signup .to-bottom {
 .lockout-text {
   background-color: #fff;
   border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   font-family: 'ubuntu-bold', helvetica, sans-serif;
   padding: 8px 0;
   text-align: center;

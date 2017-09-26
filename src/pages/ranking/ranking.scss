@@ -68,8 +68,18 @@ page-ranking {
 	}
 	
 	.team-btn {
-		
+		background-color: #000;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+   	bottom: 0;
+		color: #fff;
+		height: 40px;
+		margin: 0.1rem 0.1rem;
+		position: absolute;
+		right: 0;
+		width: 40px;
 	}
+
 
 .highlight-item {
 	background-color: #d31411 !important;
@@ -94,25 +104,29 @@ page-ranking {
 		font-weight: 600;
 		font-size: 28px;
 		margin-top: -5px;
-	}
-
-	.team-points {
-		color: grey;
-		font-size: 15px;
-		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		text-align: right;
 	}
 	
+	.button-wrapper {
+		position:relative;
+	}
+
+	// .team-points {
+	// 	color: #d31411;
+	// 	font-family: 'ubuntu-bold', helvetica, sans-serif;
+	// 	font-size: 15px;
+	// }
+	
 	.points-text {
-		color: grey;
+		color: #333;
+		// font-family: 'ubuntu-bold', helvetica, sans-serif;
 		font-size: 15px;
-		position: absolute;
-		bottom: 0px;
-		right: 0px;
+		// font-weight: bold;
 	}
 	
 	.number-points {
-		color: #2e2e2e;
-		font-size: 16px;
+		color: #d31411;
+		font-size: 15px;
 		font-family: 'ubuntu-bold', helvetica, sans-serif;
 	}
 
