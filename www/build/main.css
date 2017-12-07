@@ -25164,6 +25164,11 @@ ion-navbar.toolbar {
   font-style: normal;
 }
 
+h4.question {
+  color: #d31411 !important;
+  font-size: 18px !important;
+}
+
 .enable-hover a:hover {
   opacity: 1;
 }
@@ -25437,6 +25442,103 @@ page-ranking .list ion-item.item.item-block {
   margin: 0 !important;
 }
 
+.tutorial-overlay {
+  opacity: 0;
+}
+
+.show-tutorial {
+  opacity: 1 !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  opacity: 0;
+}
+
+.tutorial-card {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transition: all 0.3 ease;
+  -webkit-transition: all 0.3 ease;
+  width: 80%;
+  max-width: 520px;
+  opacity: 0;
+  height: 0;
+}
+
+.step-one {
+  top: 20%;
+}
+
+.step-two {
+  top: 20%;
+}
+
+.step-three {
+  top: 25%;
+}
+
+.step-four {
+  top: 15%;
+}
+
+.tutorial-text {
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 6px;
+  padding-left: 4px;
+  position: relative;
+  top: 4px;
+}
+
+.tutorial-highlight {
+  z-index: 100;
+  position: absolute !important;
+}
+
+.button-highlight {
+  z-index: 100 !important;
+  width: 40px;
+}
+
+a[disabled].tutorial-highlight,
+button[disabled].tutorial-highlight,
+[ion-button][disabled].tutorial-highlight {
+  opacity: 1;
+}
+
+.tutorial-align-right {
+  display: block;
+  margin: 0 2px 0 auto;
+  z-index: 100;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.show-step {
+  opacity: 1 !important;
+  height: auto !important;
+  z-index: 100 !important;
+}
+
+.not-visible {
+  opacity: 0;
+  height: 0;
+  font-size: 0;
+  z-index: 0;
+}
+
 .tag-holder-one,
 .tag-holder-two {
   width: auto;
@@ -25629,6 +25731,7 @@ ion-label.info-panel {
   background-color: #333;
   color: #fff;
   text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5);
+  -webkit-text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .alert-md .alert-title {
@@ -25708,9 +25811,18 @@ ion-label.info-panel {
 }
 
 .alert-button-group {
-  background-color: #eee;
-  color: #000;
+  color: #fff !important;
   font-family: 'ubuntu-regular', helvetica, sans-serif;
+  padding: 0 !important;
+  min-height: 50px;
+}
+
+.alert-wrapper .alert-md .alert-button,
+.alert-wrapper .alert-ios .alert-button {
+  overflow: visible;
+  height: 30px;
+  padding: 0;
+  margin: 10px;
 }
 
 .alert-ios .alert-button,
@@ -25729,14 +25841,6 @@ ion-label.info-panel {
 
 .alert-wrapper {
   overflow: scroll;
-}
-
-.alert-md .alert-button-group {
-  padding: 24px 8px 16px 24px;
-}
-
-.alert-md .alert-button {
-  padding-bottom: 16px;
 }
 
 @media only screen and (min-width: 520px) {
@@ -29162,6 +29266,11 @@ page-driver-two ion-thumbnail[item-left] {
   }
 }
 
+page-home h4.question {
+  color: #d31411 !important;
+  font-size: 18px !important;
+}
+
 page-home .vert-text {
   border-radius: 2px;
   border-left: 4px solid #d31411;
@@ -29528,6 +29637,10 @@ page-player-team .card-3 {
   width: calc(100% - 8px);
 }
 
+page-player-team .empty-card {
+  min-height: 198px;
+}
+
 page-player-team .hq-card {
   padding: 0 0 8px 0;
   position: relative;
@@ -29557,17 +29670,17 @@ page-player-team .pu-image.img-loaded {
 }
 
 page-player-team .driver-default {
-  margin: 45px auto 8px;
+  margin: 55px auto 8px;
 }
 
 page-player-team .chassis-default {
   width: auto;
   height: 35px;
-  margin: 50px auto 8px;
+  margin: 58px auto 8px;
 }
 
 page-player-team .pu-default {
-  margin-top: 45px;
+  margin-top: 55px;
 }
 
 page-player-team .car-one-icon {
@@ -31382,8 +31495,6 @@ page-signup .to-bottom {
   margin-top: -20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  transform: translate3d(0, -3px, 0);
-  -webkit-transform: translate3d(0, -3px, 0);
 }
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
@@ -31567,7 +31678,6 @@ page-team ion-row .top-space ion-col {
 page-team .top-space {
   margin-top: 8px;
   position: relative;
-  z-index: 10;
 }
 
 page-team .car-bg {
@@ -31843,6 +31953,8 @@ page-team .card + ion-card {
 
 page-team .card-height {
   height: 60px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
 }
 
 page-team .card-left {

@@ -49,6 +49,10 @@ export class DriverOnePage {
   
   public raceTime: number = 0;
   public gameState = "lockout";
+  
+  public firstTime: boolean;
+  public closeTutorial: boolean;
+  public tutorialStep:number = 1;
 
   constructor(
   	public navCtrl: NavController,
@@ -63,6 +67,8 @@ export class DriverOnePage {
 		this.navCtrl = navCtrl;
     this.adminData = adminData;
     this.teamData = teamData;
+
+    this.firstTime = this.navParams.data;
 
     //get team cash amount
     this.teamData.getTheMoney().on('value', (snapshot) => {
@@ -201,6 +207,12 @@ export class DriverOnePage {
     });
   } //end constructor
 
+  nextStep() {
+    this.tutorialStep++;
+    console.log("step number:", this.tutorialStep);
+  }
+
+
   // add driver to firebase from list
   addDriver(carNum, carData) {
     let confirm = this.alertCtrl.create({
@@ -282,6 +294,10 @@ export class DriverOnePage {
       ]
     });
     confirm.present(); 
+  } //end constructor
+
+  closeOverlay() {
+    this.closeTutorial = true;
   }
 
   noTradeAlert() {

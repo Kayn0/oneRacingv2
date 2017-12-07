@@ -53,36 +53,29 @@ export class PlayerTeamPage {
       this.userChassisOneEmpty = true;
       this.userPuOneEmpty = true;
     } else {
-
   		//car one
-  		var carOneDriverHolder = Object.keys(this.carOne.driver).map(key => this.carOne.driver[key]); //convert to array of objects
-      console.log('driverOne', carOneDriverHolder);
-      this.carOneDriver = carOneDriverHolder[0];
-
-      if (this.carOneDriver.length == 0) {
-        this.userDriverOneEmpty = true;
-      } else {
+      if (this.carOne.driver) {
+        var carOneDriverHolder = Object.keys(this.carOne.driver).map(key => this.carOne.driver[key]); //convert to array of objects
+        this.carOneDriver = carOneDriverHolder[0];
         this.userDriverOneEmpty = false;
-      }
-
-      var carOneChassisHolder = Object.keys(this.carOne.chassis).map(key => this.carOne.chassis[key]); //convert to array of objects
-      console.log('ChassisOne', carOneChassisHolder[0]);
-  		this.carOneChassis = carOneChassisHolder[0];
-
-  		if (this.carOneChassis.length == 0) {
-        this.userChassisOneEmpty = true;
       } else {
-        this.userChassisOneEmpty = false;
+        this.userDriverOneEmpty = true;
       }
 
-      var carOnePuHolder = Object.keys(this.carOne.powerUnit).map(key => this.carOne.powerUnit[key]); //convert to array of objects
-      console.log('PuOne', carOnePuHolder[0]);
-      this.carOnePu = carOnePuHolder[0];
-      
-      if (this.carOnePu.length == 0) {
-          this.userPuOneEmpty = true;
-        } else {
-          this.userPuOneEmpty = false;
+      if (this.carOne.chassis) {
+        var carOneChassisHolder = Object.keys(this.carOne.chassis).map(key => this.carOne.chassis[key]); //convert to array of objects
+  		  this.carOneChassis = carOneChassisHolder[0];
+        this.userChassisOneEmpty = false;
+      } else {
+        this.userChassisOneEmpty = true;
+      }
+
+      if (this.carOne.powerUnit) {
+        var carOnePuHolder = Object.keys(this.carOne.powerUnit).map(key => this.carOne.powerUnit[key]); //convert to array of objects
+        this.carOnePu = carOnePuHolder[0];
+        this.userPuOneEmpty = false;
+      } else {
+        this.userPuOneEmpty = true;
       }
     }
 
@@ -93,37 +86,30 @@ export class PlayerTeamPage {
 
     } else {
     	//car two
-      var carTwoDriverHolder = Object.keys(this.carTwo.driver).map(key => this.carTwo.driver[key]); //convert to array of objects
-      console.log('driverTwo', carTwoDriverHolder[0]);
-      this.carTwoDriver = carTwoDriverHolder[0];
-
-      if (this.carTwoDriver.length == 0) {
-        this.userDriverTwoEmpty = true;
-      } else {
+      if (this.carTwo.driver) {
+        var carTwoDriverHolder = Object.keys(this.carTwo.driver).map(key => this.carTwo.driver[key]); //convert to array of objects
+        this.carTwoDriver = carTwoDriverHolder[0];
         this.userDriverTwoEmpty = false;
+      } else {
+        this.userDriverTwoEmpty = true;
       }
 
-      var carTwoChassisHolder = Object.keys(this.carTwo.chassis).map(key => this.carTwo.chassis[key]); //convert to array of objects
-      console.log('ChassisTwo', carTwoChassisHolder[0]);
-      this.carTwoChassis = carTwoChassisHolder[0];
-
-      if (this.carTwoChassis.length == 0) {
-        this.userChassisTwoEmpty = true;
-      } else {
+      if (this.carTwo.chassis) {
+        var carTwoChassisHolder = Object.keys(this.carTwo.chassis).map(key => this.carTwo.chassis[key]); //convert to array of objects
+        this.carTwoChassis = carTwoChassisHolder[0];
         this.userChassisTwoEmpty = false;
+      } else {
+        this.userChassisTwoEmpty = true;
       }
 
-      var carTwoPuHolder = Object.keys(this.carTwo.powerUnit).map(key => this.carTwo.powerUnit[key]); //convert to array of objects
-      console.log('PuTwo', carTwoPuHolder[0]);
-      this.carTwoPu = carTwoPuHolder[0];
-
-      if (this.carTwoPu.length == 0) {
-        this.userPuTwoEmpty = true;
-      } else {
+      if (this.carTwo.powerUnit) {
+        var carTwoPuHolder = Object.keys(this.carTwo.powerUnit).map(key => this.carTwo.powerUnit[key]); //convert to array of objects
+        this.carTwoPu = carTwoPuHolder[0];
         this.userPuTwoEmpty = false;
+      } else {
+        this.userPuTwoEmpty = true;
       }
     }
-
   } //end constructor
 
   ngAfterViewInit() {

@@ -4,12 +4,59 @@
 </ion-header>
 
 <ion-content>
+	<div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime && tutorialStep !== 6}">
+		<ion-row [ngClass]="{'show-step': tutorialStep === 1}" class="tutorial-card not-visible step-one">
+			<ion-col col-9>
+				<h4 class="tutorial-text">It's time to start building your team!</h4>
+			</ion-col>
+			<ion-col>
+				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>
+			</ion-col>
+		</ion-row>
+
+		<ion-row [ngClass]="{'show-step': tutorialStep === 2}" class="tutorial-card not-visible step-two">
+			<ion-col col-9>
+				<h4 class="tutorial-text">This is your available funds.</h4>
+			</ion-col>
+			<ion-col>
+				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>
+			</ion-col>
+		</ion-row>
+
+		<ion-row [ngClass]="{'show-step': tutorialStep === 3}" class="tutorial-card not-visible step-three">
+			<ion-col col-9>
+				<h4 class="tutorial-text">This is the amount of trades you currently have, you wont be charged for trades in your first round.</h4>
+			</ion-col>
+			<ion-col>
+				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>
+			</ion-col>
+		</ion-row>
+
+		<ion-row [ngClass]="{'show-step': tutorialStep === 4}" class="tutorial-card not-visible step-four">
+			<ion-col col-9>
+				<h4 class="tutorial-text">If your getting low during the season you can buy additional trades here.</h4>
+			</ion-col>
+			<ion-col>
+				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>
+			</ion-col>	
+		</ion-row>
+
+		<ion-row [ngClass]="{'show-step': tutorialStep === 5}" class="tutorial-card not-visible step-four">
+			<ion-col col-12>
+				<h4 class="tutorial-text">Lets start by purchasing a driver, click on the driver card for car one.</h4>
+			</ion-col>
+			<ion-col>
+				<!-- <button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >OK</button> -->
+			</ion-col>
+		</ion-row>
+	</div>
+
 	<div class="container margin-bottom">
 	<!-- Info Panel -->
 	<div *ngFor="let user of userList">
     <ion-row>
     	<ion-col>
-	      <ion-card class="relative-pos card-left card-height">
+	      <ion-card [ngClass]="{'tutorial-highlight': tutorialStep === 2}" class="relative-pos card-left card-height">
 	     		<img class="bank-img" src="assets/img/bank-icon.png" />
 	      	<div class="text-height">
 	      		<span class="title-text">
@@ -20,7 +67,7 @@
     	</ion-col>
 
     	<ion-col>
-	      <ion-card class="relative-pos card-height">
+	      <ion-card [ngClass]="{'tutorial-highlight': tutorialStep === 3}" class="relative-pos card-height">
 	     		<img class="trades-img" src="assets/img/trade-icon-dark.png" />
 	      	<div class="text-height">
 	      		Trades: 
@@ -30,7 +77,7 @@
 	      	</div>
 				</ion-card>
 			</ion-col>
-			<button ion-button class="add-trade-btn add-btn" (click)="goToBuyTrades()" [disabled]="gameState == 'lockout'">+</button>
+			<button ion-button class="add-trade-btn add-btn" [ngClass]="{'tutorial-highlight': tutorialStep === 4}" (click)="goToBuyTrades()" [disabled]="gameState == 'lockout'">+</button>
   	</ion-row>
 	</div>
 
@@ -42,10 +89,9 @@
 		</div>
 	</ion-row>
 	<ion-row class="top-space">
-		
 		<!-- Driver: car one -->
-		<ion-col width-33 class="pullUp delay-1">
-			<ion-card tappable (click)="goToDriverOne()" class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">
+		<ion-col class="pullUp delay-1">
+			<ion-card tappable (click)="goToDriverOne(firstTime)" [ngClass]="{'tutorial-highlight': tutorialStep === 5}" class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">
 				<ion-card-header class="card-header">
 					<div>Driver</div>
 				</ion-card-header>
@@ -59,29 +105,23 @@
 				<ion-card-header class="card-header">
 					<div>Driver</div>
 				</ion-card-header>
-
 				<div class="name">
 					{{user.firstName}}<br />
 				 	{{user.lastName}}
 				</div>
-
 				<ion-row> 
 	        <img [src]="user.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" />
 	        <ion-spinner name="crescent" [ngClass]="{'center-spinner car-one-spinner':true}" *ngIf="!loaded"></ion-spinner>
 			  </ion-row>
-
 			  <ion-row>
 			  	<div class="points">{{ user.driverPoints }}</div>
 				</ion-row>
-
 				<div class="value">
 					{{ +user.driverValue | currency:'USD':true:'1.0' }}
 				</div>
-
 				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> 
 					{{ user.valChange | currency:'USD':true:'1.0' }}
 				</h5>
-
 				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{'show-icon': user.driverUpgrade === true}" name="star"></ion-icon>
 			</ion-card>
 		
@@ -89,7 +129,7 @@
 		</ion-col>
 
 		<!-- Chassis: car one -->
-		<ion-col width-33 class="pullUp delay-2">
+		<ion-col class="pullUp delay-2">
 			<ion-card tappable (click)="goToChassisOne()" class="hq-card card-2 empty-card" *ngIf="userChassisOneEmpty">
 				<ion-card-header class="card-header">
 					<div>Chassis</div>
@@ -109,27 +149,21 @@
 					<img [src]="user.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" />
 	    		<ion-spinner name="crescent" [ngClass]="{'center-spinner car-one-spinner':true}" *ngIf="!loaded"></ion-spinner>
 				</ion-row>
-				
 				<ion-row>
 					<div class="points">{{ user.chassisPoints }}</div>
 				</ion-row>
-
 				<div class="value">
 					{{ +user.chassisValue | currency:'USD':true:'1.0' }}
 				</div>
-	  		
 	  		<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> {{ user.valChange | currency:'USD':true:'1.0' }}
 				</h5>	
-					
 				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{'show-icon': user.chassisUpgrade === true}" name="star"></ion-icon>
-
 			</ion-card>
 			<button ion-button class="upgrade-btn offset-bg bump-1" [hidden]="gameState == 'lockout' || chassisOneUpgrade == true" (click)="confirmChassisAlert('one');">Upgrade</button>
 		</ion-col>
 
-
 		<!-- Pu: car one -->
-		<ion-col width-33 class="pullUp delay-5">
+		<ion-col class="pullUp delay-5">
 			<ion-card tappable (click)="goToPuOne()" class="hq-card card-3 empty-card" *ngIf="userPuOneEmpty">
 				<ion-card-header class="card-header">
 					<div>Power unit</div>
@@ -183,7 +217,7 @@
 	<!-- Driver: car two -->
 
 	<ion-row class="top-space">
-		<ion-col width-33 class="pullUp delay-4">
+		<ion-col class="pullUp delay-4">
 			<ion-card tappable (click)="goToDriverTwo()" class="hq-card card-1" *ngIf="userDriverTwoEmpty">
 				<ion-card-header class="car-two-header">
 					<div>Driver</div>
@@ -224,7 +258,7 @@
 		</ion-col>
 
 		<!-- Chassis: car two -->
-		<ion-col width-33 class="pullUp delay-5">
+		<ion-col class="pullUp delay-5">
 			<ion-card tappable (click)="goToChassisTwo()" class="hq-card card-2" *ngIf="userChassisTwoEmpty">
 				<ion-card-header class="car-two-header">
 					<div>Chassis</div>
@@ -258,7 +292,7 @@
 		</ion-col>
 
 		<!-- Pu: car two -->
-		<ion-col width-33 class="pullUp delay-6">
+		<ion-col class="pullUp delay-6">
 			<ion-card tappable (click)="goToPuTwo()" class="hq-card card-3" *ngIf="userPuTwoEmpty">
 				<ion-card-header class="car-two-header">
 					<div>Power Unit</div>

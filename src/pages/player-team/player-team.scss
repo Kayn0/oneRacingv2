@@ -88,7 +88,9 @@ page-player-team {
 		margin: 0 8px 0 0;
 		width: calc(100% - 8px);
 	}
-
+	.empty-card {
+		min-height: 198px;
+	}
 	.hq-card {
 		padding: 0 0 8px 0;
 		position: relative;
@@ -118,19 +120,18 @@ page-player-team {
     margin: 2px auto 3px;
 	}
 	
-
 	.driver-default {
-		margin: 45px auto 8px;
+		margin: 55px auto 8px;
 	}
 
 	.chassis-default {
 		width: auto;
 		height: 35px;
-		margin: 50px auto 8px;
+		margin: 58px auto 8px;
 	}
 
 	.pu-default {
-		margin-top: 45px;
+		margin-top: 55px;
 	}
 
 

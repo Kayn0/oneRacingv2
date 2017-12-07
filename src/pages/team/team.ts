@@ -42,7 +42,7 @@ export class TeamPage {
   public userChassisTwoEmpty:boolean = true;
   public userPuOneEmpty:boolean = true;
   public userPuTwoEmpty:boolean = true;
-
+  public firstTime:boolean = false;
   public driverOneUpgrade:boolean = true;
   public driverTwoUpgrade:boolean = true;
 
@@ -59,6 +59,7 @@ export class TeamPage {
   public userList: any;
   public teamCash: any;
   public gameState: string = 'lockout';
+  public tutorialStep:number = 1;
 
   constructor(
   	public navCtrl: NavController,
@@ -282,9 +283,26 @@ export class TeamPage {
       console.log('game state Team page:', snapshot.val().gameState);
       this.gameState = snapshot.val().gameState;
     });
+
+    if (this.userDriverOneEmpty === true && 
+    this.userDriverTwoEmpty === true && 
+    this.userChassisOneEmpty === true && 
+    this.userChassisTwoEmpty === true && 
+    this.userPuOneEmpty === true && 
+    this.userPuTwoEmpty === true) {
+      this.firstTime = true;
+    } else {
+      this.firstTime = false;
+    }
+    
+    console.log("first-timer", this.firstTime);
   } //end constructor
 
- confirmDriverAlert(driver) {
+  nextStep() {
+    this.tutorialStep++;
+  }
+
+  confirmDriverAlert(driver) {
     var decimalSeperator = this.driverUpgradeCost;
     decimalSeperator = this.numberWithCommas(decimalSeperator);
     let confirm = this.alertCtrl.create({
@@ -333,8 +351,7 @@ export class TeamPage {
     confirm.present();
   }
 
-
-   confirmChassisAlert(chassis) {
+  confirmChassisAlert(chassis) {
     var decimalSeperator = this.chassisUpgradeCost;
     decimalSeperator = this.numberWithCommas(decimalSeperator);
     let confirm = this.alertCtrl.create({
@@ -454,8 +471,11 @@ export class TeamPage {
     return dollarValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  goToDriverOne(){
-    this.navCtrl.push(DriverOnePage);
+  goToDriverOne(firstTime){
+    if (firstTime === true) {
+      this.tutorialStep++;  
+    }
+    this.navCtrl.push(DriverOnePage, firstTime);
   }
 
   goToDriverTwo(){

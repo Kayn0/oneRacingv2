@@ -21,6 +21,28 @@
 </ion-header>
 
 <ion-content padding class="child-header">
+<div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime === true && gameState === 'lockout' && closeTutorial !== true}">
+    <ion-row class="show-step tutorial-card step-one">
+      <ion-col col-9>
+        <h4 class="tutorial-text">Unfortunately trades are not possible while the game is in lockout. Please try again later.</h4>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" (click)="closeOverlay()" class="tutorial-align-right">OK</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime === true && gameState !== 'lockout' && closeTutorial !== true}">
+    <ion-row [ngClass]="{'show-step': tutorialStep === 1}" class="tutorial-card not-visible step-two">
+      <ion-col col-9>
+        <h4 class="tutorial-text">Browse through the drivers and add one to your team by clicking on the money icon.</h4>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" (click)="closeOverlay()" class="tutorial-align-right" >OK</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
   <div class="container">
   <!-- Driver one -->
     <ion-row>
