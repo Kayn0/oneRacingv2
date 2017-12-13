@@ -4,8 +4,8 @@
 </ion-header>
 
 <ion-content>
-	<div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime && tutorialStep !== 6}">
-		<ion-row [ngClass]="{'show-step': tutorialStep === 1}" class="tutorial-card not-visible step-one">
+	<div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime && tutorialStep !== 6 && gameState !== 'lockout'}">
+		<ion-row [ngClass]="{'show-step': tutorialStep === 1}" class="tutorial-card not-visible step-two">
 			<ion-col col-9>
 				<h4 class="tutorial-text">It's time to start building your team!</h4>
 			</ion-col>

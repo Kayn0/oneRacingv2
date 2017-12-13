@@ -33,31 +33,28 @@
 	  <ion-row class="header-marg">
 	    <div class="header-text slideExpandUp delay-2">Team Ranking</div>
 	  </ion-row>
-
+		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>
 		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">
 		  <ion-item *ngIf="user.teamName"
-		   	[ngClass]="{'highlight-item': userData == user.email}">
+		   	[ngClass]="{'highlight-item': userData === user.email}" id="user-details">
 		   	<ion-row>
-		   	
 			   	<ion-col>
 				   	<div class="team-name">{{ user.teamName}}</div>
 				  	<div class="team-cash">Cash: {{ user.money | currency:'USD':true:'1.0' }}</div>
 			   		<div class="team-trades">Trades: {{ user.trades }}</div>
 			   		<div class="points-text">
-								Total points: 
-								<span class="number-points"> 
-									{{ user.totalPoints }}
-								</span>
-							</div>
+							Total points: 
+							<span class="number-points"> 
+								{{ user.totalPoints }}
+							</span>
+						</div>
 			   	</ion-col>
 
 			   	<ion-col class="right-col rel-position">
 					  <div class="team-rank">{{ user.rank }}</div>
-					  
 							<button class="team-btn" ion-button (click)="goToPlayerTeam(user);">
 		            <ion-icon name="md-people"></ion-icon>
 							</button>
-						
 					</ion-col>
 				</ion-row>
 			</ion-item>

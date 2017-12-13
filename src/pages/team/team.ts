@@ -36,13 +36,15 @@ export class TeamPage {
  	public userPuOne: any;
   public userPuTwo: any;
 
-  public userDriverOneEmpty:boolean = true;
-  public userDriverTwoEmpty:boolean = true;
-  public userChassisOneEmpty:boolean = true;
-  public userChassisTwoEmpty:boolean = true;
-  public userPuOneEmpty:boolean = true;
-  public userPuTwoEmpty:boolean = true;
+  public userDriverOneEmpty:boolean;
+  public userDriverTwoEmpty:boolean;
+  public userChassisOneEmpty:boolean;
+  public userChassisTwoEmpty:boolean;
+  public userPuOneEmpty:boolean;
+  public userPuTwoEmpty:boolean;
+
   public firstTime:boolean = false;
+
   public driverOneUpgrade:boolean = true;
   public driverTwoUpgrade:boolean = true;
 
@@ -284,18 +286,7 @@ export class TeamPage {
       this.gameState = snapshot.val().gameState;
     });
 
-    if (this.userDriverOneEmpty === true && 
-    this.userDriverTwoEmpty === true && 
-    this.userChassisOneEmpty === true && 
-    this.userChassisTwoEmpty === true && 
-    this.userPuOneEmpty === true && 
-    this.userPuTwoEmpty === true) {
-      this.firstTime = true;
-    } else {
-      this.firstTime = false;
-    }
-    
-    console.log("first-timer", this.firstTime);
+  
   } //end constructor
 
   nextStep() {
@@ -503,6 +494,12 @@ export class TeamPage {
   }
   
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TeamPage');
+    if (this.userDriverOneEmpty === true && this.userDriverTwoEmpty === true && this.userChassisOneEmpty === true && 
+    this.userChassisTwoEmpty === true && this.userPuOneEmpty === true && this.userPuTwoEmpty === true) {
+      this.firstTime = true;
+    } else {
+      this.firstTime = false;
+    }
+    console.log("first-timer", this.firstTime);
   }
 }

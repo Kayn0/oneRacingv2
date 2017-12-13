@@ -18,8 +18,11 @@ import { PlayerTeamPage } from '../player-team/player-team';
   selector: 'page-ranking',
   templateUrl: 'ranking.html',
 })
+
 export class RankingPage {
-	public usersList: any;
+  public usersList: any;
+	public usersLoadedList: any;
+
  	public userData: string;
   public allUsers: number;
   public round: number;
@@ -27,6 +30,9 @@ export class RankingPage {
   public noStats: boolean = true;
   public firstRound: boolean;
   public pointsLastRound: number = 0;
+  
+  public elements: any[];
+  public userSearchList: any[];
 
   constructor(
   	public navCtrl: NavController,
@@ -72,6 +78,7 @@ export class RankingPage {
 		    });
 		  });
 		  this.usersList = rawList;
+      this.usersLoadedList = rawList;
 		  console.log('1st: Userslist Ranking Page', this.usersList);
 		  this.allUsers = this.usersList.length;
 		});
@@ -98,7 +105,39 @@ export class RankingPage {
     this.navCtrl.push(PlayerTeamPage, player);
   }
 
+  initializeItems(): void {
+    this.usersList = this.usersLoadedList;
+  }
+
+  getItems(searchbar) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set searchbarInput to the value of the searchbar
+    var searchbarInput = searchbar.srcElement.value;
+
+    // if the value is an empty string don't filter the items
+    if (!searchbarInput) {
+      return;
+    }
+
+    this.usersList = this.usersList.filter((check) => {
+      if(check.teamName && searchbarInput) {
+        if (check.teamName.toLowerCase().indexOf(searchbarInput.toLowerCase()) > -1) {
+          return true;
+        }
+        return false;
+      }
+    });
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad RankingPage');
+    //scroll to user
+    var target = document.querySelector('#user-details.highlight-item');
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
   }
 }
