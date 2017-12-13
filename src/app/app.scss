@@ -578,8 +578,13 @@ ion-label.info-panel {
 	.alert-head {
 		background-color: #333;
 		color: #fff;
+		text-align: left !important;
 		text-shadow: 1px 0 1px rgba(0,0,0,0.5);
 		-webkit-text-shadow: 1px 0 1px rgba(0,0,0,0.5);
+	}
+	
+	.alert-md .alert-head {
+		padding-bottom: 0;
 	}
 
 	.alert-md .alert-title {
@@ -644,7 +649,6 @@ ion-label.info-panel {
 		border-radius: 2px;
 	}
 
-
 	.alert-md .alert-message {
   	color: #fff;
   	margin: 0;
@@ -687,16 +691,24 @@ ion-label.info-panel {
 
 	.alert-wrapper .alert-md .alert-button,
 	.alert-wrapper .alert-ios .alert-button {
-		overflow:visible;
 		height: 30px;
 		padding: 0;
 		margin: 10px;
+	}
+
+	.alert-ios .alert-wrapper {
+		overflow: visible;
+		overflow-x: scroll;
 	}
 
 	.alert-ios .alert-button,
 	.alert-md .alert-button {
 		color: #333;
 		background-color: #fff;
+	}
+	
+	.alert-md .alert-button {
+		margin-bottom: 8px;
 	}
 
 	.alert-sub-title h3 {
