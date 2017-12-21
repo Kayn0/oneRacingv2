@@ -25867,6 +25867,9 @@ ion-label.info-panel {
     margin-top: 8vh;
     position: relative;
   }
+  .content-ios .scroll-content .tab-content {
+    top: 4px !important;
+  }
 }
 
 /*

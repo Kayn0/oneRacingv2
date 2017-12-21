@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { AdminDataProvider } from '../../providers/admin-data/admin-data';
@@ -15,7 +15,6 @@ import { ChassisStatsPage } from '../chassis-stats/chassis-stats';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-chassis-two',
   templateUrl: 'chassis-two.html',

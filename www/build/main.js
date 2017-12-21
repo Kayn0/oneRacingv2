@@ -1,12 +1,18 @@
-webpackJsonp([20],{
+webpackJsonp([0],{
 
 /***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TourGuidePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validators_email__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,44 +24,103 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
+
 /**
- * Generated class for the TourGuidePage page.
+ * Generated class for the LoginPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var TourGuidePage = (function () {
-    function TourGuidePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    } //end constructor
-    TourGuidePage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
+var LoginPage = (function () {
+    function LoginPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
+        this.nav = nav;
+        this.authData = authData;
+        this.formBuilder = formBuilder;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.emailChanged = false;
+        this.passwordChanged = false;
+        this.submitAttempt = false;
+        this.loginForm = formBuilder.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_7__validators_email__["a" /* EmailValidator */].isValid])],
+            password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(6), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
+        });
+    }
+    LoginPage.prototype.elementChanged = function (input) {
+        console.log(input);
+        var field = input.ngControl.name;
+        this[field + "Changed"] = true;
+    };
+    LoginPage.prototype.loginUser = function () {
+        var _this = this;
+        this.submitAttempt = true;
+        if (!this.loginForm.valid) {
+            console.log(this.loginForm.value);
+        }
+        else {
+            this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then(function (authData) {
+                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_6__tabs_tabs__["a" /* TabsPage */]);
+            }, function (error) {
+                _this.loading.dismiss().then(function () {
+                    var alert = _this.alertCtrl.create({
+                        message: error.message,
+                        buttons: [
+                            {
+                                text: "Ok",
+                                role: 'cancel'
+                            }
+                        ]
+                    });
+                    alert.present();
+                });
+            });
+            // this.loading = this.loadingCtrl.create({
+            //   dismissOnPageChange: true,
+            // });
+            // this.loading.present();
+            this.showLoading();
         }
     };
-    TourGuidePage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
+    LoginPage.prototype.showLoading = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.loading = _this.loadingCtrl.create({
+                spinner: 'crescent'
+            });
+            _this.loading.present()
+                .then(function () {
+                setTimeout(function () {
+                    _this.loading.dismiss();
+                }, 2000);
+                resolve('loaded');
+            });
+        });
     };
-    TourGuidePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad TourGuidePage');
+    LoginPage.prototype.goToSignup = function () {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_4__signup_signup__["a" /* SignupPage */]);
     };
-    return TourGuidePage;
+    LoginPage.prototype.goToResetPassword = function () {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__["a" /* ResetPasswordPage */]);
+    };
+    return LoginPage;
 }());
-TourGuidePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-tour-guide',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tour-guide/tour-guide.html"*/'<!--\n  Generated template for the TourGuidePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header id="tabs" class="tabs-header">\n  <ion-navbar color="primary">\n    <ion-title>Tour Guide</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tour-guide/tour-guide.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n\n  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Login\n      </button>\n    </ion-card>\n  </form>\n \n  <ion-row col-6 class="center small-layout">\n    <button ion-button block class="create-btn"  (click)="goToSignup()">\n      Create account\n    </button>\n  </ion-row>\n\n  <ion-row col-6 class="center less-margin">\n    <button ion-button block outline class="white-button"  (click)="goToResetPassword()">\n      Forgot password?\n    </button>\n  </ion-row>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-], TourGuidePage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+], LoginPage);
 
-//# sourceMappingURL=tour-guide.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ }),
 
@@ -63,16 +128,1091 @@ TourGuidePage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailValidator; });
+var EmailValidator = (function () {
+    function EmailValidator() {
+    }
+    EmailValidator.isValid = function (control) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(control.value);
+        if (re) {
+            return null;
+        }
+        return { "invalidEmail": true };
+    };
+    return EmailValidator;
+}());
+
+//# sourceMappingURL=email.js.map
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileDataProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the ProfileDataProvider provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular DI.
+*/
+var ProfileDataProvider = (function () {
+    function ProfileDataProvider(http) {
+        this.http = http;
+        //Create the references
+        this.currentUser = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser;
+        this.userProfile = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/userProfile');
+    }
+    ProfileDataProvider.prototype.getUserProfile = function () {
+        return this.userProfile.child(this.currentUser.uid);
+    };
+    ProfileDataProvider.prototype.getUsersList = function () {
+        return this.userProfile;
+    };
+    ProfileDataProvider.prototype.updateRank = function (rank) {
+        return this.userProfile.child(this.currentUser.uid).update({
+            rank: rank,
+        });
+    };
+    ProfileDataProvider.prototype.updateName = function (teamName) {
+        return this.userProfile.child(this.currentUser.uid).update({
+            teamName: teamName,
+        });
+    };
+    ProfileDataProvider.prototype.updateDOB = function (birthDate) {
+        return this.userProfile.child(this.currentUser.uid).update({
+            birthDate: birthDate,
+        });
+    };
+    ProfileDataProvider.prototype.updateEmail = function (newEmail) {
+        var _this = this;
+        this.currentUser.updateEmail(newEmail).then(function () {
+            _this.userProfile.child(_this.currentUser.uid).update({
+                email: newEmail
+            });
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    ProfileDataProvider.prototype.updatePassword = function (newPassword) {
+        this.currentUser.updatePassword(newPassword).then(function () {
+            console.log("Password Changed");
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    return ProfileDataProvider;
+}());
+ProfileDataProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], ProfileDataProvider);
+
+//# sourceMappingURL=profile-data.js.map
+
+/***/ }),
+
+/***/ 121:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverStatsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the DriverStatsPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var DriverStatsPage = (function () {
+    function DriverStatsPage(navCtrl, navParams, storage, statsData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.statsData = statsData;
+        this.driverValueChange = 0;
+        console.log("passed driver", this.navParams.data);
+        this.selectedDriver = this.navParams.data;
+        // call local to get round number
+        storage.get('currentRound').then(function (val) {
+            _this.round = val;
+            console.log('1 - The Current Round is: ', _this.round);
+            //call to firebase to retrieve drivers list data 
+            _this.statsData.getStats().on('value', function (snapshot) {
+                var rawList = [];
+                var selectedDriver = [];
+                var arrayHolder = [];
+                var rootNode = snapshot.val();
+                var driversNode = [];
+                var i;
+                //get race result data and find drivers node.
+                for (i = 0; i < rootNode.length; i++) {
+                    if (rootNode[i].drivers) {
+                        arrayHolder = rootNode[i].drivers;
+                        driversNode = Object.keys(arrayHolder).map(function (key) { return arrayHolder[key]; });
+                        selectedDriver.push(driversNode);
+                    }
+                }
+                //loop through all drivers for each round and get selected drivers data
+                for (i = 0; i < selectedDriver.length; i++) {
+                    for (var k = 0; k < selectedDriver[i].length; k++) {
+                        if (selectedDriver[i][k].abrev == _this.selectedDriver) {
+                            rawList.push(selectedDriver[i][k]);
+                        }
+                    }
+                }
+                _this.driverStats = rawList;
+                console.log('Driver stats', _this.driverStats);
+                _this.driverInfo = _this.driverStats[_this.driverStats.length - 1];
+                console.log('Driver stats', _this.driverInfo);
+                //pass driver data to chart
+                _this.chartData(_this.driverStats);
+            });
+        });
+    } //end constructor
+    //add drivers data to chart
+    DriverStatsPage.prototype.chartData = function (driverStats) {
+        var driverPoints = [];
+        var driverValue = [];
+        var roundCounter = [];
+        var qualRaceCounter = [];
+        var qualified = [];
+        var finished = [];
+        var totalPoints = 0;
+        console.log('DriverStatsPage', driverStats);
+        for (var i = 0; i < driverStats.length; i++) {
+            console.log('round stats', driverStats[i]);
+            driverPoints.push(driverStats[i].driverPoints);
+            driverValue.push(parseInt(driverStats[i].driverValue));
+            roundCounter.push([i]);
+            //calc drivers total value change
+            this.driverValueChange = driverStats[0].valChange + driverStats[i].valChange;
+            //exclude round 0 data
+            if (i > 0) {
+                //calc average points per race
+                totalPoints = totalPoints + driverStats[i].driverPoints;
+                console.log('totalPoints', totalPoints);
+                //store qualified and finished data for charts
+                qualRaceCounter.push([i]);
+                qualified.push(driverStats[i].qualified);
+                finished.push(driverStats[i].position);
+            }
+        }
+        this.averagePoints = Math.floor(totalPoints / (driverStats.length - 1));
+        //Drivers points chart
+        this.chartPoints = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasPoints.nativeElement, {
+            type: 'line',
+            data: {
+                labels: roundCounter,
+                datasets: [
+                    {
+                        label: "Points: ",
+                        fill: true,
+                        lineTension: 0.2,
+                        backgroundColor: "rgba(211,20,17,0.5)",
+                        borderColor: "rgba(211,20,17,1)",
+                        borderCapStyle: 'round',
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'round',
+                        pointBorderColor: "rgba(211,20,17,1)",
+                        pointBackgroundColor: "rgba(211,20,17,1)",
+                        pointBorderWidth: 2,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: driverPoints,
+                        spanGaps: false,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                            gridLines: {
+                                color: "rgba(0,0,0,1)",
+                                zeroLineColor: "rgba(0,0,0,0.4)",
+                                zeroLineWidth: 2,
+                            },
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                            }
+                        }],
+                    yAxes: [{
+                            gridLines: {
+                                color: "rgba(0,0,0,1)",
+                                zeroLineColor: "rgba(0,0,0,0.4)",
+                                zeroLineWidth: 2,
+                            },
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                            }
+                        }],
+                }
+            }
+        });
+        //Drivers value chart
+        this.chartValue = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasValue.nativeElement, {
+            type: 'line',
+            data: {
+                labels: roundCounter,
+                datasets: [
+                    {
+                        label: "Value: ",
+                        fill: true,
+                        lineTension: 0.2,
+                        backgroundColor: "rgba(29,155,160,0.4)",
+                        borderColor: "rgba(29,155,160,1)",
+                        borderCapStyle: 'round',
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'round',
+                        pointBorderColor: "rgba(29,155,160,1)",
+                        pointBackgroundColor: "rgba(29,155,160,1)",
+                        pointBorderWidth: 2,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: driverValue,
+                        spanGaps: false,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                            ticks: {
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                                fontColor: "rgba(255,255,255,0.7)",
+                            }
+                        }],
+                    yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                                callback: function (value, index, values) {
+                                    if (parseInt(value) >= 1000) {
+                                        value = value / 1000000;
+                                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'M';
+                                    }
+                                    else {
+                                        return '$' + value;
+                                    }
+                                }
+                            }
+                        }]
+                }
+            }
+        });
+    }; //end chart data
+    DriverStatsPage.prototype.ionViewWillEnter = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    DriverStatsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DriverStatsPage');
+    };
+    return DriverStatsPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasPoints'),
+    __metadata("design:type", Object)
+], DriverStatsPage.prototype, "lineCanvasPoints", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasValue'),
+    __metadata("design:type", Object)
+], DriverStatsPage.prototype, "lineCanvasValue", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('barCanvasQualRace'),
+    __metadata("design:type", Object)
+], DriverStatsPage.prototype, "barCanvasQualRace", void 0);
+DriverStatsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-driver-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-stats/driver-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n	  <ion-row *ngIf="driverInfo">\n	    <div class="nav-heading">{{ driverInfo.firstName }} {{ driverInfo.lastName }}</div>\n	  </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <div *ngIf="driverInfo">\n      <ion-row>\n        <ion-col col-3>\n          <div class="horizontal-pad">\n    		    <img class="driver-image" [src]="driverInfo.driverImage" />\n           </div>\n        </ion-col>\n        <ion-col col-6>\n      	  <div class="driver-value">\n            {{ driverInfo.driverValue | currency:\'USD\':true:\'1.0\'}}\n          </div>\n      	  <div class="driver-change">\n            Last value change\n            <span>{{ driverValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n          </div> \n        </ion-col>\n        <ion-col col-3>\n          <div class="driver-points">Average points<span>{{ averagePoints }}</span></div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div class="chart-card">\n      <ion-row>\n        <div class="header-text slideExpandUp delay-3">Points per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasPoints></canvas>\n        </ion-card-content>\n      </ion-card>\n      <ion-row>\n        <div class="header-text slideExpandUp delay-5">Value per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasValue></canvas>\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-stats/driver-stats.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
+], DriverStatsPage);
+
+//# sourceMappingURL=driver-stats.js.map
+
+/***/ }),
+
+/***/ 123:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisStatsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ChassisStatsPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ChassisStatsPage = (function () {
+    function ChassisStatsPage(navCtrl, navParams, storage, statsData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.statsData = statsData;
+        this.chassisValueChange = 0;
+        console.log("passed driver", this.navParams.data);
+        this.selectedChassis = this.navParams.data;
+        // call local to get round number
+        storage.get('currentRound').then(function (val) {
+            _this.round = val;
+            console.log('1 - The Current Round is: ', _this.round);
+            var i;
+            //call to firebase to retrieve drivers list data 
+            _this.statsData.getStats().on('value', function (snapshot) {
+                var rawList = [];
+                var selected = [];
+                var arrayHolder = [];
+                var rootNode = snapshot.val();
+                var chassisNode = [];
+                //get race result data and find chassis node.
+                for (i = 0; i < rootNode.length; i++) {
+                    if (rootNode[i].chassis) {
+                        arrayHolder = rootNode[i].chassis;
+                        chassisNode = Object.keys(arrayHolder).map(function (key) { return arrayHolder[key]; });
+                        selected.push(chassisNode);
+                    }
+                }
+                //loop through all drivers for each round and get selected drivers data
+                for (i = 0; i < selected.length; i++) {
+                    for (var k = 0; k < selected[i].length; k++) {
+                        if (selected[i][k].chassisName == _this.selectedChassis) {
+                            rawList.push(selected[i][k]);
+                        }
+                    }
+                }
+                _this.chassisStats = rawList;
+                _this.chassisInfo = _this.chassisStats[_this.chassisStats.length - 1];
+                //pass driver data to chart
+                _this.chartData(_this.chassisStats);
+            });
+        });
+    } // end constructor
+    //add drivers data to chart
+    ChassisStatsPage.prototype.chartData = function (chassisStats) {
+        var chassisPoints = [];
+        var chassisValue = [];
+        var roundCounter = [];
+        var totalPoints = 0;
+        console.log('chassisStatsPage', chassisStats);
+        for (var i = 0; i < chassisStats.length; i++) {
+            console.log('round stats', chassisStats[i]);
+            chassisPoints.push(chassisStats[i].chassisPoints);
+            chassisValue.push(parseInt(chassisStats[i].chassisValue));
+            roundCounter.push([i]);
+            totalPoints = totalPoints + chassisStats[i].chassisPoints;
+            //calc chassis total value change
+            this.chassisValueChange = chassisStats[0].valChange + chassisStats[i].valChange;
+        }
+        //calc average points per race
+        this.averagePoints = Math.floor(totalPoints / (chassisStats.length - 1));
+        console.log('this.averagePoints', this.averagePoints);
+        console.log('driverValueChange', this.chassisValueChange);
+        console.log('driverPoints', chassisPoints);
+        console.log('driverValue', chassisValue);
+        console.log('roundCounter', roundCounter);
+        //Drivers points chart
+        this.chartPoints = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasPoints.nativeElement, {
+            type: 'line',
+            data: {
+                labels: roundCounter,
+                datasets: [
+                    {
+                        label: "Constructor points",
+                        fill: true,
+                        lineTension: 0.2,
+                        backgroundColor: "rgba(211,20,17,0.5)",
+                        borderColor: "rgba(211,20,17,1)",
+                        borderCapStyle: 'round',
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'round',
+                        pointBorderColor: "rgba(211,20,17,1)",
+                        pointBackgroundColor: "rgba(211,20,17,1)",
+                        pointBorderWidth: 2,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: chassisPoints,
+                        spanGaps: false,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                            gridLines: {
+                                color: "rgba(0,0,0,1)",
+                                zeroLineColor: "rgba(0,0,0,0.4)",
+                                zeroLineWidth: 2,
+                            },
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                            }
+                        }],
+                    yAxes: [{
+                            gridLines: {
+                                color: "rgba(0,0,0,1)",
+                                zeroLineColor: "rgba(0,0,0,0.4)",
+                                zeroLineWidth: 2,
+                            },
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                            }
+                        }],
+                }
+            }
+        });
+        //Drivers value chart
+        this.chartValue = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasValue.nativeElement, {
+            type: 'line',
+            data: {
+                labels: roundCounter,
+                datasets: [
+                    {
+                        label: "Constructor value",
+                        fill: true,
+                        lineTension: 0.2,
+                        backgroundColor: "rgba(29,155,160,0.4)",
+                        borderColor: "rgba(29,155,160,1)",
+                        borderCapStyle: 'round',
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'round',
+                        pointBorderColor: "rgba(29,155,160,1)",
+                        pointBackgroundColor: "rgba(29,155,160,1)",
+                        pointBorderWidth: 2,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: chassisValue,
+                        spanGaps: false,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                            ticks: {
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                                fontColor: "rgba(255,255,255,0.7)",
+                            }
+                        }],
+                    yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                                callback: function (value, index, values) {
+                                    if (parseInt(value) >= 1000) {
+                                        value = value / 1000000;
+                                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'M';
+                                    }
+                                    else {
+                                        return '$' + value;
+                                    }
+                                }
+                            }
+                        }]
+                }
+            }
+        });
+    }; //end chart data
+    ChassisStatsPage.prototype.ionViewWillEnter = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    ChassisStatsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ChassisStatsPage');
+    };
+    return ChassisStatsPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasPoints'),
+    __metadata("design:type", Object)
+], ChassisStatsPage.prototype, "lineCanvasPoints", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasValue'),
+    __metadata("design:type", Object)
+], ChassisStatsPage.prototype, "lineCanvasValue", void 0);
+ChassisStatsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-chassis-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-stats/chassis-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="text-center" *ngIf="chassisInfo">{{ chassisInfo.chassisName }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n		<div *ngIf="chassisInfo">\n		  <ion-row>\n	      <ion-col col-3>\n	        <div class="horizontal-pad">\n			      <img class="chassis-image" [src]="chassisInfo.chassisImage" />\n	        </div>\n	      </ion-col>\n	      <ion-col col-6>\n	  		  <div class="chassis-value"> \n	          {{ chassisInfo.chassisValue | currency:\'USD\':true:\'1.0\'}}\n	        </div>\n	  		  <div class="chassis-change">\n	          Last value change\n	          <span>{{ chassisValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n	        </div>\n	      </ion-col>\n	      <ion-col col-3>\n	        <div class="chassis-points">\n	          Average points\n	          <span>{{ averagePoints }}</span>\n	        </div>\n	      </ion-col>\n	    </ion-row>\n		</div>\n\n		<div class="chart-card">\n		  <ion-row>\n		    <div class="header-text slideExpandUp delay-3">Points per round</div>\n		  </ion-row>\n			<ion-card>\n		    <ion-card-content>\n		      <canvas #lineCanvasPoints></canvas>\n		    </ion-card-content>\n		  </ion-card>\n		  <ion-row>\n		    <div class="header-text slideExpandUp delay-5">Value per round</div>\n		  </ion-row>\n		  <ion-card>\n		    <ion-card-content>\n		      <canvas #lineCanvasValue></canvas>\n		    </ion-card-content>\n		  </ion-card>\n		</div>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-stats/chassis-stats.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
+], ChassisStatsPage);
+
+//# sourceMappingURL=chassis-stats.js.map
+
+/***/ }),
+
+/***/ 124:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuStatsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the PuStatsPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var PuStatsPage = (function () {
+    function PuStatsPage(navCtrl, navParams, storage, statsData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.statsData = statsData;
+        this.puValueChange = 0;
+        this.selectedPu = this.navParams.data;
+        // call local to get round number
+        storage.get('currentRound').then(function (val) {
+            _this.round = val;
+            //call to firebase to retrieve drivers list data 
+            _this.statsData.getStats().on('value', function (snapshot) {
+                var rawList = [];
+                var selected = [];
+                var arrayHolder = [];
+                var rootNode = snapshot.val();
+                var puNode = [];
+                var i;
+                //get race result data and find drivers node.
+                for (i = 0; i < rootNode.length; i++) {
+                    if (rootNode[i].powerUnits) {
+                        arrayHolder = rootNode[i].powerUnits;
+                        puNode = Object.keys(arrayHolder).map(function (key) { return arrayHolder[key]; });
+                        selected.push(puNode);
+                    }
+                }
+                //loop through all pu's for each round and get selected drivers data
+                for (i = 0; i < selected.length; i++) {
+                    for (var k = 0; k < selected[i].length; k++) {
+                        if (selected[i][k].puName == _this.selectedPu) {
+                            rawList.push(selected[i][k]);
+                        }
+                    }
+                }
+                _this.puStats = rawList;
+                _this.puInfo = _this.puStats[_this.puStats.length - 1];
+                //pass pu data to chart
+                _this.chartData(_this.puStats);
+            });
+        });
+    } //end constructor
+    //add drivers data to chart
+    PuStatsPage.prototype.chartData = function (puStats) {
+        var puPoints = [];
+        var puValue = [];
+        var roundCounter = [];
+        var totalPoints = 0;
+        for (var i = 0; i < puStats.length; i++) {
+            puPoints.push(puStats[i].puPoints);
+            puValue.push(parseInt(puStats[i].puValue));
+            roundCounter.push([i]);
+            //calc drivers total value change
+            this.puValueChange = puStats[0].valChange + puStats[i].valChange;
+            totalPoints = totalPoints + puStats[i].puPoints;
+        }
+        this.averagePoints = Math.floor(totalPoints / (puStats.length - 1));
+        //Drivers points chart
+        this.chartPoints = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasPoints.nativeElement, {
+            type: 'line',
+            data: {
+                labels: roundCounter,
+                datasets: [
+                    {
+                        label: "Power unit points",
+                        fill: true,
+                        lineTension: 0.2,
+                        backgroundColor: "rgba(211,20,17,0.5)",
+                        borderColor: "rgba(211,20,17,1)",
+                        borderCapStyle: 'round',
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'round',
+                        pointBorderColor: "rgba(211,20,17,1)",
+                        pointBackgroundColor: "rgba(211,20,17,1)",
+                        pointBorderWidth: 2,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: puPoints,
+                        spanGaps: false,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                            gridLines: {
+                                color: "rgba(0,0,0,1)",
+                                zeroLineColor: "rgba(0,0,0,0.4)",
+                                zeroLineWidth: 2,
+                            },
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                            }
+                        }],
+                    yAxes: [{
+                            gridLines: {
+                                color: "rgba(0,0,0,1)",
+                                zeroLineColor: "rgba(0,0,0,0.4)",
+                                zeroLineWidth: 2,
+                            },
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                            }
+                        }],
+                }
+            }
+        });
+        //Drivers value chart
+        this.chartValue = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasValue.nativeElement, {
+            type: 'line',
+            data: {
+                labels: roundCounter,
+                datasets: [
+                    {
+                        label: "Power unit value",
+                        fill: true,
+                        lineTension: 0.2,
+                        backgroundColor: "rgba(29,155,160,0.4)",
+                        borderColor: "rgba(29,155,160,1)",
+                        borderCapStyle: 'round',
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'round',
+                        pointBorderColor: "rgba(29,155,160,1)",
+                        pointBackgroundColor: "rgba(29,155,160,1)",
+                        pointBorderWidth: 2,
+                        pointStyle: 'circle',
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: puValue,
+                        spanGaps: false,
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                            ticks: {
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                                fontColor: "rgba(255,255,255,0.7)",
+                            }
+                        }],
+                    yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(255,255,255,0.7)",
+                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
+                                callback: function (value, index, values) {
+                                    if (parseInt(value) >= 1000) {
+                                        value = value / 1000000;
+                                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'M';
+                                    }
+                                    else {
+                                        return '$' + value;
+                                    }
+                                }
+                            }
+                        }]
+                }
+            }
+        });
+    }; //end chart data
+    PuStatsPage.prototype.ionViewWillEnter = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    PuStatsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PuStatsPage');
+    };
+    return PuStatsPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasPoints'),
+    __metadata("design:type", Object)
+], PuStatsPage.prototype, "lineCanvasPoints", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasValue'),
+    __metadata("design:type", Object)
+], PuStatsPage.prototype, "lineCanvasValue", void 0);
+PuStatsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-pu-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-stats/pu-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="text-center" *ngIf="puInfo">{{ puInfo.puName }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="stats-page">\n  <div class="container">\n    <div *ngIf="puInfo">\n      <ion-row>\n        <ion-col col-3>\n          <div class="horizontal-pad">\n  		      <img [src]="puInfo.puImage" />\n          </div>\n        </ion-col>\n        <ion-col col-6>\n    		  <div class="pu-value">\n            {{ puInfo.puValue | currency:\'USD\':true:\'1.0\'}}\n          </div>\n          <div class="pu-change">\n            Last value change\n            <span>{{ puValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n          </div> \n  	    </ion-col>\n  	    <ion-col col-3>\n          <div class="pu-points">\n            Average points\n            <span>{{ averagePoints }}</span>\n          </div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div class="chart-card">\n      <ion-row>\n        <div class="header-text slideExpandUp delay-3">Points per round</div>\n      </ion-row>\n    	<ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasPoints></canvas>\n        </ion-card-content>\n      </ion-card>\n      <ion-row>\n        <div class="header-text slideExpandUp delay-5">Value per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasValue></canvas>\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-stats/pu-stats.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
+], PuStatsPage);
+
+//# sourceMappingURL=pu-stats.js.map
+
+/***/ }),
+
+/***/ 132:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 132;
+
+/***/ }),
+
+/***/ 174:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 174;
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurrentRoundDataProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the CurrentRoundDataProvider provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular DI.
+*/
+var CurrentRoundDataProvider = (function () {
+    function CurrentRoundDataProvider(http) {
+        this.http = http;
+        this.currentRound = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/currentRound/');
+        this.gameStateNode = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/gameState/');
+    }
+    //get currentRound val from firebase
+    CurrentRoundDataProvider.prototype.getCurrentRound = function () {
+        return this.currentRound;
+    };
+    //get gamestate val from firebase
+    CurrentRoundDataProvider.prototype.getGameState = function () {
+        return this.gameStateNode;
+    };
+    CurrentRoundDataProvider.prototype.createRound = function () {
+        var _this = this;
+        // create currentRound node in firebase
+        return this.currentRound.push({
+            currentRound: 0,
+        }).then(function (newEvent) {
+            _this.currentRound.child(newEvent.key).child('id').set(newEvent.key);
+        });
+    };
+    CurrentRoundDataProvider.prototype.changeRound = function (round) {
+        var _this = this;
+        console.log(round, 'newRound');
+        if (this.currentRound) {
+            this.currentRound.remove();
+        }
+        return this.currentRound.push({
+            currentRound: round,
+        }).then(function (newEvent) {
+            _this.currentRound.child(newEvent.key).child('id').set(newEvent.key);
+        });
+    };
+    CurrentRoundDataProvider.prototype.changeState = function (gameState) {
+        if (this.gameStateNode) {
+            this.gameStateNode.update({
+                gameState: gameState
+            });
+        }
+        else {
+            return this.gameStateNode.push({
+                gameState: gameState
+            });
+        }
+    };
+    return CurrentRoundDataProvider;
+}());
+CurrentRoundDataProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], CurrentRoundDataProvider);
+
+//# sourceMappingURL=current-round-data.js.map
+
+/***/ }),
+
+/***/ 218:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(54);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the SignupPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var SignupPage = (function () {
+    function SignupPage(nav, navParams, authData, formBuilder, loadingCtrl, alertCtrl) {
+        this.nav = nav;
+        this.navParams = navParams;
+        this.authData = authData;
+        this.formBuilder = formBuilder;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
+        this.emailChanged = false;
+        this.passwordChanged = false;
+        this.submitAttempt = false;
+        this.signupForm = formBuilder.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
+            password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(6), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
+        });
+    } //end constructor
+    SignupPage.prototype.elementChanged = function (input) {
+        var field = input.ngControl.name;
+        this[field + "Changed"] = true;
+    };
+    SignupPage.prototype.signupUser = function () {
+        var _this = this;
+        this.submitAttempt = true;
+        if (!this.signupForm.valid) {
+            console.log(this.signupForm.value);
+        }
+        else {
+            this.authData.signupUser(this.signupForm.value.email, this.signupForm.value.password).then(function () {
+                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_5__tabs_tabs__["a" /* TabsPage */]);
+            }, function (error) {
+                _this.loading.dismiss().then(function () {
+                    var errorMessage = error.message;
+                    var alert = _this.alertCtrl.create({
+                        message: errorMessage,
+                        buttons: [
+                            {
+                                text: "Ok",
+                                role: 'cancel'
+                            }
+                        ]
+                    });
+                    alert.present();
+                });
+            });
+            this.showLoading();
+        }
+    };
+    SignupPage.prototype.showLoading = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.loading = _this.loadingCtrl.create({
+                spinner: 'crescent'
+            });
+            _this.loading.present()
+                .then(function () {
+                setTimeout(function () {
+                    _this.loading.dismiss();
+                }, 2000);
+                resolve('loaded');
+            });
+        });
+    };
+    return SignupPage;
+}());
+SignupPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-signup',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/signup/signup.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Create an account\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="signup">\n  <div class="container">\n    <ion-row>\n      <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n    </ion-row>\n    <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!signupForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!signupForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Create an Account\n      </button>\n    </ion-card>\n    </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/signup/signup.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], SignupPage);
+
+//# sourceMappingURL=signup.js.map
+
+/***/ }),
+
+/***/ 219:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_profile_data_profile_data__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tour_guide_tour_guide__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tabs_tabs__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__login_login__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_profile_data_profile_data__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -90,13 +1230,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-/**
- * Generated class for the homePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 var HomePage = (function () {
     function HomePage(navCtrl, navParams, storage, authData, profileData, app, currentRoundData, alertCtrl) {
         this.navCtrl = navCtrl;
@@ -116,15 +1249,12 @@ var HomePage = (function () {
         window.open(this.email, "_system");
     };
     HomePage.prototype.goToHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__tabs_tabs__["a" /* TabsPage */]);
-    };
-    HomePage.prototype.goToTourGuide = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__tour_guide_tour_guide__["a" /* TourGuidePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__tabs_tabs__["a" /* TabsPage */]);
     };
     HomePage.prototype.logMeOut = function () {
         var _this = this;
         this.authData.logoutUser().then(function () {
-            _this.app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_8__login_login__["a" /* LoginPage */]);
+            _this.app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_7__login_login__["a" /* LoginPage */]);
             window.location.reload();
         });
     };
@@ -169,12 +1299,11 @@ var HomePage = (function () {
     return HomePage;
 }());
 HomePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <ion-row>\n      <img src="assets/img/logo-car.png" class="welcome-logo logo-car slideRight delay-1" />\n      <img src="assets/img/logo-text1.png" class="welcome-logo logo-text expandOpen delay-2" />\n    </ion-row>\n\n    <ion-row>\n      <ion-card class="welcome-card">\n      <ion-card-header>\n        <div class="welcome-title">Welcome to One Racing League</div>\n      </ion-card-header>\n        <p>Manage your very own Formula One racing team. With a starting budget purchase a driver, chassis and power unit for each of your cars. Points are awarded after each Formula One race weekend.</p>\n      </ion-card>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-4>\n        <button ion-button block class="log-out-btn slideExpandUp delay-4" color="secondary" block (click)="mailto()">\n          <ion-icon name="mail" class="welcome-icon"></ion-icon>\n          Feedback\n        </button>\n      </ion-col>\n\n      <ion-col col-4 class="small-layout slideExpandUp delay-5">\n        <button ion-button block class="log-out-btn" color="secondary" block (click)="termsConditionsAlert();">\n          <ion-icon name="md-clipboard" class="welcome-icon"></ion-icon>\n          T&amp;C\'s\n        </button>\n      </ion-col>\n\n       <ion-col col-4 class="small-layout button-right slideExpandUp delay-6">\n          <button ion-button block class="log-out-btn" color="secondary" block (click)="logMeOut()">\n            <ion-icon name="md-log-out" class="welcome-icon"></ion-icon>\n            Log out\n          </button>\n        </ion-col>\n      </ion-row>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
@@ -187,16 +1316,160 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 22:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDataProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the AdminDataProvider provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular DI.
+*/
+var AdminDataProvider = (function () {
+    function AdminDataProvider(http) {
+        this.http = http;
+        // Create a database reference to the driversList node.
+        this.driversList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/drivers');
+        // Create a database reference to the ChassisList node.
+        this.chassisList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/chassis');
+        // Create a database reference to the Power Unit list node.
+        this.puList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/powerUnits');
+        // Create a database reference to the Round data list node.
+        this.gameState = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/gameState');
+    } //end constructor
+    AdminDataProvider.prototype.getImage = function (node, name) {
+        console.log('node', node);
+        console.log('name', name);
+        this.storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.storage().ref(node + name + '.png');
+        return this.storageRef;
+    };
+    AdminDataProvider.prototype.createDriver = function (driverPos, firstName, lastName, abrev, driverValue, image) {
+        var _this = this;
+        return this.driversList.push({
+            position: driverPos,
+            firstName: firstName,
+            lastName: lastName,
+            abrev: abrev,
+            driverValue: driverValue,
+            driverImage: image,
+            driverUpgrade: false
+        }).then(function (newEvent) {
+            _this.driversList.child(newEvent.key).child('id').set(newEvent.key);
+        });
+    };
+    AdminDataProvider.prototype.createChassis = function (chassisPos, chassisName, chassisValue, image) {
+        var _this = this;
+        return this.chassisList.push({
+            position: chassisPos,
+            chassisName: chassisName,
+            chassisValue: chassisValue,
+            chassisImage: image,
+            chassisUpgrade: false
+        }).then(function (newEvent) {
+            _this.chassisList.child(newEvent.key).child('id').set(newEvent.key);
+        });
+    };
+    AdminDataProvider.prototype.createPU = function (puPosition, puName, puValue, image) {
+        var _this = this;
+        return this.puList.push({
+            position: puPosition,
+            puName: puName,
+            puValue: puValue,
+            puImage: image,
+            puUpgrade: false
+        }).then(function (newEvent) {
+            _this.puList.child(newEvent.key).child('id').set(newEvent.key);
+        });
+    };
+    AdminDataProvider.prototype.createRoundData = function (lockoutRound, lockoutDate, lockoutCountry, lockoutTrack, trackLength, laps, lapTime, raceWinner, trackImage) {
+        var _this = this;
+        this.roundDataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/roundData/' + lockoutRound);
+        return this.roundDataList.push({
+            lockoutRound: lockoutRound,
+            lockoutDate: lockoutDate,
+            lockoutCountry: lockoutCountry,
+            lockoutTrack: lockoutTrack,
+            trackLength: trackLength,
+            laps: laps,
+            lapTime: lapTime,
+            raceWinner: raceWinner,
+            trackImage: trackImage
+        }).then(function (newEvent) {
+            _this.roundDataList.child(newEvent.key).child('id').set(newEvent.key);
+        });
+    };
+    AdminDataProvider.prototype.getDriversList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/drivers');
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getChassisList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/chassis');
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getPUList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/powerUnits');
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getRoundDataList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('roundData/' + round);
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getGameState = function () {
+        console.log("current game state", this.gameState);
+        return this.gameState;
+    };
+    //Used to generate round 0 data.
+    AdminDataProvider.prototype.getInitialDriversList = function () {
+        return this.driversList;
+    };
+    AdminDataProvider.prototype.getInitialChassisList = function () {
+        return this.chassisList;
+    };
+    AdminDataProvider.prototype.getInitialPUList = function () {
+        return this.puList;
+    };
+    return AdminDataProvider;
+}());
+AdminDataProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], AdminDataProvider);
+
+//# sourceMappingURL=admin-data.js.map
+
+/***/ }),
+
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RacePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,12 +1595,11 @@ var RacePage = (function () {
     return RacePage;
 }());
 RacePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-race',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/race/race.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding no-bounce>\n  <div class="container">\n    <div *ngIf="roundDataList">\n      <ion-row *ngFor="let round of roundDataList">\n        <ion-col col-8>\n          <div class="round stretchRight delay-2">  \n            Round: {{ round?.lockoutRound }}\n          </div>\n          <div class="location stretchRight delay-3">\n            {{ round?.lockoutTrack }},  {{ round?.lockoutCountry }}\n          </div>\n          <div class="track">\n            <img [src]="round?.trackImage" class="track-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n          </div>\n        </ion-col>\n\n        <ion-col col-4 margin-top class="tall-col">\n          <div class="stat slideExpandUp delay-3">\n            <span>Track length</span> {{ round.trackLength }}\n          </div>\n          <div class="stat slideExpandUp delay-4">\n            <span>Laps</span> {{ round.laps }}\n          </div>\n          <div class="stat slideExpandUp delay-5">\n            <span>Lap record</span> {{ round.lapTime }}\n          </div>\n          <div class="stat slideExpandUp delay-6">\n            <span>Last winner</span> {{ round.raceWinner }}\n          </div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div *ngIf="this.round > 1">\n      <ion-row class="header-marg">\n        <div class="text-center relative-pos">\n          Last Race Results\n        </div>\n      </ion-row>\n      <div padding>\n        <ion-segment mode="md" [(ngModel)]="raceData" class="seg-header">\n          <ion-segment-button value="drivers">\n            Drivers\n          </ion-segment-button>\n          <ion-segment-button value="chassis">\n            Chassis\n          </ion-segment-button>\n          <ion-segment-button value="pu">\n            Power Units\n          </ion-segment-button>\n        </ion-segment>\n      </div>\n\n      <div [ngSwitch]="raceData">\n        <ion-list *ngSwitchCase="\'drivers\'">\n          <ion-item class="relative-pos min-list-height expandUp" *ngFor="let driver of driversList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ driver.position }}</div>\n              </ion-col>\n              <ion-col col-2>\n                <ion-thumbnail item-left>\n                  <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ driver.driverPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'chassis\'">\n          <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let chassis of chassisList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ chassis.position }}</div>\n              </ion-col>\n              <ion-col col-3>\n                <ion-thumbnail >\n                  <img class="chassis-img" [src]="chassis.chassisImage" (load)="loaded1 = true" [ngClass]="{\'img-loaded\':loaded1}" [hidden]="!loaded1" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded1"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ chassis.chassisName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ chassis.chassisPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'pu\'">\n          <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let pu of puList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ pu.position }}</div>\n              </ion-col>\n              <ion-col col-3>\n                <ion-thumbnail>\n                  <img class="pu-img" [src]="pu.puImage" (load)="loaded2 = true" [ngClass]="{\'img-loaded\':loaded2}" [hidden]="!loaded2" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded2"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ pu.puName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ pu.puPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </div>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/race/race.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */]])
@@ -337,24 +1609,24 @@ RacePage = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_one_driver_one__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__driver_two_driver_two__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__chassis_one_chassis_one__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chassis_two_chassis_two__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pu_one_pu_one__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pu_two_pu_two__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__buy_trades_buy_trades__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_one_driver_one__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__driver_two_driver_two__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__chassis_one_chassis_one__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chassis_two_chassis_two__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pu_one_pu_one__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pu_two_pu_two__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__buy_trades_buy_trades__ = __webpack_require__(346);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -809,12 +2081,11 @@ var TeamPage = (function () {
     return TeamPage;
 }());
 TeamPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-team',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/team/team.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n	<div class="tutorial-overlay" [ngClass]="{\'show-tutorial\': firstTime && tutorialStep !== 6 && gameState !== \'lockout\'}">\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 1}" class="tutorial-card not-visible step-two">\n			<ion-col col-9>\n				<h4 class="tutorial-text">It\'s time to start building your team!</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 2}" class="tutorial-card not-visible step-two">\n			<ion-col col-9>\n				<h4 class="tutorial-text">This is your available funds.</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 3}" class="tutorial-card not-visible step-three">\n			<ion-col col-9>\n				<h4 class="tutorial-text">This is the amount of trades you currently have, you wont be charged for trades in your first round.</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 4}" class="tutorial-card not-visible step-four">\n			<ion-col col-9>\n				<h4 class="tutorial-text">If your getting low during the season you can buy additional trades here.</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>	\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 5}" class="tutorial-card not-visible step-four">\n			<ion-col col-12>\n				<h4 class="tutorial-text">Lets start by purchasing a driver, click on the driver card for car one.</h4>\n			</ion-col>\n		</ion-row>\n	</div>\n\n	<div class="container margin-bottom">\n	<!-- Info Panel -->\n	<div *ngFor="let user of userList">\n    <ion-row>\n    	<ion-col>\n	      <ion-card [ngClass]="{\'tutorial-highlight\': tutorialStep === 2}" class="relative-pos card-left card-height">\n	     		<img class="bank-img" src="assets/img/bank-icon.png" />\n	      	<div class="text-height">\n	      		<span class="title-text">\n	      			{{user.money | currency:\'USD\':true:\'1.0\'}}\n	      		</span>\n	      	</div>\n	      </ion-card>\n    	</ion-col>\n\n    	<ion-col>\n	      <ion-card [ngClass]="{\'tutorial-highlight\': tutorialStep === 3}" class="relative-pos card-height">\n	     		<img class="trades-img" src="assets/img/trade-icon-dark.png" />\n	      	<div class="text-height">\n	      		Trades: \n	      		<span class="title-text">\n	      			{{user.trades }}\n	      		</span>\n	      	</div>\n				</ion-card>\n			</ion-col>\n			<button ion-button class="add-trade-btn add-btn" [ngClass]="{\'tutorial-highlight\': tutorialStep === 4}" (click)="goToBuyTrades()" [disabled]="gameState == \'lockout\'">+</button>\n  	</ion-row>\n	</div>\n\n	<ion-row class="top-space-lg">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center positive-rel slideExpandUp delay-2">\n			CAR ONE\n			<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		</div>\n	</ion-row>\n	<ion-row class="top-space">\n		<!-- Driver: car one -->\n		<ion-col class="pullUp delay-1">\n			<ion-card tappable (click)="goToDriverOne(firstTime)" [ngClass]="{\'tutorial-highlight\': tutorialStep === 5}" class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userDriverOne" (click)="goToDriverOne()" class="hq-card card-1">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<div class="name">\n					{{user.firstName}}<br />\n				 	{{user.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="user.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ user.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		\n			<button ion-button class="upgrade-btn offset-bg" [hidden]="gameState == \'lockout\' || driverOneUpgrade == true" (click)="confirmDriverAlert(\'one\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Chassis: car one -->\n		<ion-col class="pullUp delay-2">\n			<ion-card tappable (click)="goToChassisOne()" class="hq-card card-2 empty-card" *ngIf="userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userChassisOne" class="hq-card card-2" (click)="goToChassisOne()">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{user.chassisName}}</div>\n				<ion-row>\n					<img [src]="user.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ user.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>	\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n			<button ion-button class="upgrade-btn offset-bg bump-1" [hidden]="gameState == \'lockout\' || chassisOneUpgrade == true" (click)="confirmChassisAlert(\'one\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Pu: car one -->\n		<ion-col class="pullUp delay-5">\n			<ion-card tappable (click)="goToPuOne()" class="hq-card card-3 empty-card" *ngIf="userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power unit</div>\n				</ion-card-header>\n	\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />	    		\n				</ion-row>\n\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userPuOne" class="hq-card card-3" (click)="goToPuOne()">\n				<ion-card-header class="card-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n\n				<div class="name">{{user.puName}}</div>\n				<ion-row>\n					<img [src]="user.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ user.puPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +user.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n			<button ion-button class="upgrade-btn offset-bg bump-2" [hidden]="gameState == \'lockout\' || puOneUpgrade == true" (click)="confirmPuAlert(\'one\');">Upgrade</button>\n		</ion-col>		\n	</ion-row>\n\n	<!-- *********** Car Two **********-->\n	<ion-row class="top-space">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center primary-bg slideExpandUp delay-3">\n			CAR TWO\n			<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		</div>\n	</ion-row>\n\n	<!-- Driver: car two -->\n\n	<ion-row class="top-space">\n		<ion-col class="pullUp delay-4">\n			<ion-card tappable (click)="goToDriverTwo()" class="hq-card card-1" *ngIf="userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />	    		\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userDriverTwo" class="hq-card card-1 pullUp delay-4" (click)="goToDriverTwo()">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<!-- <div class="hide-icon" [ngClass]="{\'fadeIn\': user.driverStatus === \'first\'}">\n		      <ion-icon class="leader" name="star"></ion-icon>\n		    </div> -->\n				<div class="name">\n					{{user.firstName}}<br />\n				 	{{user.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="user.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ user.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n			<button ion-button class="upgrade-btn" [hidden]="gameState == \'lockout\' || driverTwoUpgrade == true" (click)="confirmDriverAlert(\'two\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Chassis: car two -->\n		<ion-col class="pullUp delay-5">\n			<ion-card tappable (click)="goToChassisTwo()" class="hq-card card-2" *ngIf="userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userChassisTwo" class="hq-card card-2" (click)="goToChassisTwo()">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{user.chassisName}}</div>\n				<ion-row>\n					<img [src]="user.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ user.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n			<button ion-button class="upgrade-btn bump-1" [hidden]="gameState == \'lockout\' || chassisTwoUpgrade == true" (click)="confirmChassisAlert(\'two\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Pu: car two -->\n		<ion-col class="pullUp delay-6">\n			<ion-card tappable (click)="goToPuTwo()" class="hq-card card-3" *ngIf="userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userPuTwo" class="hq-card card-3" (click)="goToPuTwo()" >\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<div class="name">{{user.puName}}</div>\n				<ion-row>\n					<img [src]="user.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ user.puPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n			<button ion-button class="upgrade-btn bump-2" [hidden]="gameState == \'lockout\' || puTwoUpgrade == true" (click)="confirmPuAlert(\'two\');">Upgrade</button>\n		</ion-col>\n	</ion-row>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/team/team.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
@@ -826,18 +2097,18 @@ TeamPage = __decorate([
 
 /***/ }),
 
-/***/ 122:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1160,12 +2431,11 @@ var DriverOnePage = (function () {
     return DriverOnePage;
 }());
 DriverOnePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-driver-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-one/driver-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank">\n            <span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span>\n          </div>    \n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n<div class="tutorial-overlay" [ngClass]="{\'show-tutorial\': firstTime === true && gameState === \'lockout\' && closeTutorial !== true}">\n    <ion-row class="show-step tutorial-card step-one">\n      <ion-col col-9>\n        <h4 class="tutorial-text">Unfortunately trades are not possible while the game is in lockout. Please try again later.</h4>\n      </ion-col>\n      <ion-col>\n        <button ion-button color="primary" (click)="closeOverlay()" class="tutorial-align-right">OK</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class="tutorial-overlay" [ngClass]="{\'show-tutorial\': firstTime === true && gameState !== \'lockout\' && closeTutorial !== true}">\n    <ion-row [ngClass]="{\'show-step\': tutorialStep === 1}" class="tutorial-card not-visible step-two">\n      <ion-col col-9>\n        <h4 class="tutorial-text">Browse through the drivers and add one to your team by clicking on the money icon.</h4>\n      </ion-col>\n      <ion-col>\n        <button ion-button color="primary" (click)="closeOverlay()" class="tutorial-align-right" >OK</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class="container">\n  <!-- Driver one -->\n    <ion-row>\n      <ion-card *ngIf="(userDriverOne != 0)" class="card-layout pullUp delay-3">\n        <div class="relative-pos" *ngFor="let user of userDriverOne">\n          <ion-row> \n            <ion-col col-2 class="margin-image">\n              <img [src]="user.driverImage" class="driver-image" />\n            </ion-col>\n            \n            <ion-col col-7 class="vert-center">\n              <div class="margin-left">\n                <div class="driver-name">\n                  {{user.firstName}} {{user.lastName}}\n                </div>\n                <div class="driver-value">\n                  {{ +user.driverValue | currency:\'USD\':true:\'1.0\' }} \n                </div>\n                <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}" > \n                  {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n                </span>\n              </div>\n            </ion-col>\n\n            <ion-col col-3>\n              <h3 class="points">{{ user.driverPoints }}</h3>\n              <div class="to-bottom align-right">\n                <img class="car-img" src="assets/img/black-car.png" />\n                <div class="car-number">CAR ONE</div>\n              </div>\n            </ion-col>\n          </ion-row>\n        </div>\n      </ion-card>\n    </ion-row>\n\n    <ion-row class="header-marg">\n      <div class="text-center relative-pos slideExpandUp delay-3">\n        Available drivers\n        <ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n      </div>\n    </ion-row>\n\n    <ion-list *ngIf="driversList">\n      <ion-item class="relative-pos min-list-height pullUp delay-{{i}}" *ngFor="let driver of driversList; let i=index" [ngClass]="{\'highlight-one\': driver.abrev == abrevOne ? \'highlight-two\': driver.abrev == abrevTwo}">\n\n        <ion-thumbnail item-left>\n          <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-thumbnail>\n      \n        <ion-row class="v-center">\n          <ion-col col-7>\n            <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n            <h5 class="list-value">\n              {{ driver.driverValue | currency:\'USD\':true:\'1.0\' }}\n            </h5>\n            <h5 [ngClass]="{negative: driver.valChange < 0}" class="positive val-change">\n              {{ driver.valChange | currency:\'USD\':true:\'1.0\' }}\n            </h5>\n          </ion-col>\n\n          <ion-col col-4 class="align-right">\n            <button class="stats-btn" ion-button (click)="goToDriverStats(driver.abrev);" [ngClass]="{\'hide-button\': this.round < 2}">\n              <ion-icon name="stats"></ion-icon>\n            </button>\n            <button class="cantAfford buy-btn" ion-button (click)="addDriver(\'one\', driver);" [disabled]="driver.abrev == abrevOne || driver.abrev == abrevTwo ||  driver.driverValue > (teamCash + userDriverOneValue)" [hidden]="gameState == \'lockout\'">\n              <ion-icon><img class="trade-icon" src="assets/img/bank-icon-light.png" /></ion-icon>\n            </button>\n          </ion-col>\n        </ion-row>\n\n        <div *ngIf="driver.abrev == abrevOne || driver.abrev == abrevTwo" class="to-bottom right-tag" >\n          <div class="tag-driver-one" *ngIf="driver.abrev == abrevOne">\n            <div class="tag-text bumpRight">CAR ONE</div>\n            <img class="car-tag slideRight" src="assets/img/black-car.png" [ngClass]="{\'move-it\': animateCar == true }" />\n          </div>\n          <div class="tag-holder-two" *ngIf="driver.abrev == abrevTwo">\n            <div class="tag-text-two bumpRight">CAR TWO</div>\n            <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n          </div>\n        </div>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-one/driver-one.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -1177,2642 +2447,16 @@ DriverOnePage = __decorate([
 
 /***/ }),
 
-/***/ 123:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverTwoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__ = __webpack_require__(62);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the DriverTwoPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var DriverTwoPage = (function () {
-    function DriverTwoPage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        this.currentRoundData = currentRoundData;
-        this.lastRound = 0;
-        this.driverOneId = "";
-        this.driverTwoId = "";
-        this.raceTime = 0;
-        this.gameState = "lockout";
-        this.navCtrl = navCtrl;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        //get team cash amount
-        this.teamData.getTheMoney().on('value', function (snapshot) {
-            _this.teamCash = snapshot.val().money;
-            _this.userTrades = snapshot.val().trades;
-            _this.userPoints = snapshot.val().totalPoints;
-            if (_this.teamCash == 0) {
-                _this.teamCash = "0";
-            }
-            console.log(_this.userPoints, 'userPoints');
-        });
-        //call to firebase to retrieve currentRound
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.currentRound = rawList[0].currentRound;
-            console.log('TABS - this round:', _this.currentRound);
-            //get last round value
-            if (_this.currentRound < 2) {
-                _this.lastRound = 0;
-            }
-            else {
-                _this.lastRound = _this.currentRound - 1;
-                console.log(_this.lastRound, 'this.lastRound');
-            }
-            //call to firebase to retrieve drivers list data 
-            _this.adminData.getDriversList(_this.lastRound).orderByChild("driverValue").on('value', function (snapshot) {
-                var rawList = [];
-                snapshot.forEach(function (snap) {
-                    rawList.push({
-                        id: snap.key,
-                        position: snap.val().position,
-                        firstName: snap.val().firstName,
-                        lastName: snap.val().lastName,
-                        driverValue: snap.val().driverValue,
-                        abrev: snap.val().abrev,
-                        driverImage: snap.val().driverImage,
-                        driverPoints: snap.val().driverPoints,
-                        posChange: snap.val().posChange,
-                        qualified: snap.val().qualified,
-                        valChange: snap.val().valChange,
-                        driverStatus: snap.val().driverStatus,
-                        driverUpgrade: snap.val().driverUpgrade
-                    });
-                });
-                _this.driversList = rawList.reverse();
-                console.log(_this.driversList, 'DL');
-            });
-        });
-        //call firebase to check driver one data
-        this.teamData.getDriverOne().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                if (snap.val().firstName !== undefined) {
-                    rawList.push({
-                        id: snap.key,
-                        abrev: snap.val().abrev,
-                        firstName: snap.val().firstName,
-                        lastName: snap.val().lastName,
-                        driverValue: snap.val().driverValue,
-                        driverImage: snap.val().driverImage,
-                        driverPoints: snap.val().driverPoints,
-                        posChange: snap.val().posChange,
-                        qualified: snap.val().qualified,
-                        valChange: snap.val().valChange,
-                        driverStatus: snap.val().driverStatus,
-                        driverUpgrade: snap.val().driverUpgrade
-                    });
-                }
-                if (snap.val().abrev !== undefined) {
-                    _this.abrevOne = snap.val().abrev;
-                    _this.driverOneId = snap.val().id;
-                }
-                if (snap.val().driverStatus !== undefined) {
-                    _this.driverStatusOne = snap.val().driverStatus;
-                }
-            });
-            _this.userDriverOne = rawList;
-            if (_this.userDriverOne.length > 0) {
-                _this.userDriverOne = Object.keys(_this.userDriverOne).map(function (key) { return _this.userDriverOne[key]; }); //convert to array of objects
-                _this.userDriverOneValue = parseInt(_this.userDriverOne[0].driverValue);
-            }
-            else {
-                _this.userDriverOneValue = 0;
-            }
-        });
-        //call firebase to check driver two data
-        this.teamData.getDriverTwo().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                if (snap.val().firstName !== undefined) {
-                    rawList.push({
-                        id: snap.key,
-                        abrev: snap.val().abrev,
-                        firstName: snap.val().firstName,
-                        lastName: snap.val().lastName,
-                        driverValue: snap.val().driverValue,
-                        driverImage: snap.val().driverImage,
-                        driverPoints: snap.val().driverPoints,
-                        posChange: snap.val().posChange,
-                        qualified: snap.val().qualified,
-                        valChange: snap.val().valChange,
-                        driverStatus: snap.val().driverStatus,
-                        driverUpgrade: snap.val().driverUpgrade
-                    });
-                }
-                if (snap.val().abrev !== undefined) {
-                    _this.abrevTwo = snap.val().abrev;
-                    _this.driverTwoId = snap.val().id;
-                }
-                if (snap.val().driverStatus !== undefined) {
-                    _this.driverStatusTwo = snap.val().driverStatus;
-                }
-            });
-            _this.userDriverTwo = rawList;
-            if (_this.userDriverTwo.length > 0) {
-                _this.userDriverTwo = Object.keys(_this.userDriverTwo).map(function (key) { return _this.userDriverTwo[key]; }); //convert to array of objects
-                _this.userDriverTwoValue = parseInt(_this.userDriverTwo[0].driverValue);
-            }
-            else {
-                _this.userDriverTwoValue = 0;
-            }
-        });
-        this.adminData.getGameState().on('value', function (snapshot) {
-            _this.gameState = snapshot.val().gameState;
-        });
-    } //end constructor
-    // add driver to firebase from list
-    DriverTwoPage.prototype.addDriver = function (carNum, carData) {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'Confirm',
-            message: 'Are you sure you want to make a trade?',
-            buttons: [
-                {
-                    text: 'No',
-                    handler: function () {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'Yes',
-                    handler: function () {
-                        var oldDriver;
-                        var newDriver;
-                        var newValue;
-                        //make sure user has trades
-                        if (_this.userTrades > 0) {
-                            if (carNum === 'two') {
-                                //check for first entry
-                                if (_this.userDriverTwo.length < 1) {
-                                    console.log('firstEntry');
-                                    //make sure driver one and two are not the same
-                                    if (_this.userDriverOne.length < 1) {
-                                        oldDriver = '';
-                                    }
-                                    else {
-                                        oldDriver = _this.userDriverOne[0].abrev;
-                                    }
-                                    newDriver = carData.abrev;
-                                    console.log('old and new 2', oldDriver, newDriver);
-                                    if (oldDriver == newDriver) {
-                                        _this.driverSameAlert();
-                                    }
-                                    else {
-                                        newValue = carData.driverValue;
-                                        //make sure user has enough money
-                                        if (newValue > _this.teamCash) {
-                                            var negVal = (_this.teamCash - newValue) * -1;
-                                            _this.negValueAlert(negVal);
-                                        }
-                                        else {
-                                            _this.teamData.addDriver(carData, _this.userDriverTwo, carNum, _this.userPoints, _this.driverOneId);
-                                        }
-                                    }
-                                }
-                                else {
-                                    //make sure driver one and two are not the same
-                                    oldDriver = _this.userDriverOne[0].abrev;
-                                    newDriver = carData.abrev;
-                                    console.log('old and new 2', oldDriver, newDriver);
-                                    if (oldDriver == newDriver) {
-                                        _this.driverSameAlert();
-                                    }
-                                    else {
-                                        var oldValue = parseInt(_this.userDriverTwo[0].driverValue);
-                                        newValue = carData.driverValue;
-                                        //check if user has enough money
-                                        if ((_this.teamCash + oldValue) >= newValue) {
-                                            _this.teamData.addDriver(carData, _this.userDriverTwo, carNum, _this.userPoints, _this.driverOneId);
-                                        }
-                                        else {
-                                            var negDriverVal = ((_this.teamCash + oldValue) - newValue) * -1;
-                                            _this.negValueAlert(negDriverVal);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        else {
-                            _this.noTradeAlert();
-                        }
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    };
-    DriverTwoPage.prototype.noTradeAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Out of trades',
-            subTitle: 'You are out of trades, purchase more to continue to make trades.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    DriverTwoPage.prototype.negValueAlert = function (negValue) {
-        var alert = this.alertCtrl.create({
-            title: 'Not enough money',
-            subTitle: 'You need an additional $' + negValue + ' to make the trade.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    DriverTwoPage.prototype.driverSameAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Not allowed',
-            subTitle: 'Driver 1 and 2 must be different drivers.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    DriverTwoPage.prototype.carHelp = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Hints and tips',
-            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
-                'When you make a trade you receive the value of your current driver.' + '<br /><br />' +
-                'Additional trades can be bought from the team page.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    DriverTwoPage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    DriverTwoPage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    DriverTwoPage.prototype.goToDriverStats = function (driver) {
-        console.log(driver, 'test');
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__["a" /* DriverStatsPage */], driver);
-    };
-    DriverTwoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DriverTwoPage');
-    };
-    return DriverTwoPage;
-}());
-DriverTwoPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-driver-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-two/driver-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank">\n            <span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span>\n          </div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n  <div class="container">\n	  <!-- Driver one -->\n	  <ion-row>\n      <ion-card *ngIf="(userDriverTwo != 0)" class="card-layout pullUp delay-3">\n        <div class="relative-pos" *ngFor="let user of userDriverTwo">  \n          <ion-row> \n            <ion-col col-2 class="margin-image">\n              <img [src]="user.driverImage" class="driver-image" />\n            </ion-col>\n            <ion-col col-7 class="vert-center">\n              <div class="margin-left">\n                <div class="driver-name">\n                  {{user.firstName}} {{user.lastName}}\n                </div>\n                <div class="driver-value">\n                  {{ +user.driverValue | currency:\'USD\':true:\'1.0\' }} \n                </div>\n                <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}" > \n                  {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n                </span>\n              </div>\n            </ion-col>\n\n            <ion-col col-3>\n              <h3 class="points">{{ user.driverPoints }}</h3>\n              <div class="to-bottom">\n                <img class="car-img" src="assets/img/red-car.png" />\n                <div class="car-number car-two">CAR TWO</div>\n              </div>\n            </ion-col>\n          </ion-row>\n        </div>\n      </ion-card>\n  </ion-row>\n\n  <ion-row class="header-marg">\n    <div class="text-center relative-pos slideExpandUp delay-3">\n      Available drivers\n      <ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n    </div>\n  </ion-row>\n\n  <ion-list *ngIf="driversList">\n    <ion-item class="relative-pos min-list-height pullUp delay-{{i}}" *ngFor="let driver of driversList; let i=index" [ngClass]="{\'highlight-one\': driver.abrev == abrevOne ? \'highlight-two\': driver.abrev == abrevTwo}">\n\n      <ion-thumbnail item-left>\n        <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n        <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n      </ion-thumbnail>\n\n      <ion-row class="v-center">\n        <ion-col col-7>\n          <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n          <h5 class="list-value">\n            {{ driver.driverValue | currency:\'USD\':true:\'1.0\' }}\n          </h5>\n          <h5 [ngClass]="{negative: driver.valChange < 0}" class="val-change positive">\n            {{ driver.valChange | currency:\'USD\':true:\'1.0\' }}\n          </h5>\n        </ion-col>\n\n        <ion-col col-4 class="align-right">\n          <button class="stats-btn" ion-button (click)="goToDriverStats(driver.abrev);" [ngClass]="{\'hide-button\': this.round < 2}">\n            <ion-icon name="stats"></ion-icon>\n          </button>\n          <button class="cantAfford buy-btn" ion-button (click)="addDriver(\'two\', driver);" [disabled]="driver.abrev == abrevOne || driver.abrev == abrevTwo ||  driver.driverValue > (teamCash + userDriverTwoValue)" [hidden]="gameState == \'lockout\'">\n            <ion-icon>\n            	<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n\n     	<div *ngIf="driver.abrev == abrevOne || driver.abrev == abrevTwo" class="to-bottom right-tag" >\n        <div class="tag-driver-one" *ngIf="driver.abrev == abrevOne">\n          <div class="tag-text bumpRight">CAR ONE</div>\n          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" [ngClass]="{\'move-it\': animateCar == true }" />\n        </div>\n        <div class="tag-holder-two" *ngIf="driver.abrev == abrevTwo">\n          <div class="tag-text-two bumpRight">CAR TWO</div>\n          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n        </div>\n      </div>\n    </ion-item>\n  </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-two/driver-two.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
-], DriverTwoPage);
-
-//# sourceMappingURL=driver-two.js.map
-
-/***/ }),
-
-/***/ 124:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisOnePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__ = __webpack_require__(63);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the ChassisOnePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ChassisOnePage = (function () {
-    function ChassisOnePage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        this.currentRoundData = currentRoundData;
-        this.lastRound = 0;
-        this.gameState = "lockout";
-        this.raceTime = 0;
-        this.navCtrl = navCtrl;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        //get team cash amount
-        this.teamData.getTheMoney().on('value', function (snapshot) {
-            _this.teamCash = snapshot.val().money;
-            _this.userTrades = snapshot.val().trades;
-            _this.userPoints = snapshot.val().totalPoints;
-            if (_this.teamCash == 0) {
-                _this.teamCash = "0";
-            }
-            console.log(_this.userPoints, 'userPoints');
-        });
-        //call to firebase to retrieve currentRound
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.currentRound = rawList[0].currentRound;
-            console.log('TABS - this round:', _this.currentRound);
-            //get last round value
-            if (_this.currentRound < 2) {
-                _this.lastRound = 0;
-            }
-            else {
-                _this.lastRound = _this.currentRound - 1;
-                console.log(_this.lastRound, 'this.lastRound');
-            }
-            //call to firebase to retrieve chassis list data
-            _this.adminData.getChassisList(_this.lastRound).orderByChild("chassisValue").on('value', function (snapshot) {
-                var rawList = [];
-                snapshot.forEach(function (snap) {
-                    rawList.push({
-                        id: snap.key,
-                        position: snap.val().position,
-                        chassisName: snap.val().chassisName,
-                        chassisValue: snap.val().chassisValue,
-                        chassisImage: snap.val().chassisImage,
-                        chassisPoints: snap.val().chassisPoints,
-                        valChange: snap.val().valChange,
-                        chassisUpgrade: snap.val().chassisUpgrade
-                    });
-                });
-                _this.chassisList = rawList.reverse();
-            });
-        });
-        //call firebase to check user chassis one data
-        this.teamData.getChassisOne().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    chassisName: snap.val().chassisName,
-                    chassisValue: snap.val().chassisValue,
-                    chassisImage: snap.val().chassisImage,
-                    chassisPoints: snap.val().chassisPoints,
-                    valChange: snap.val().valChange,
-                    chassisUpgrade: snap.val().chassisUpgrade
-                });
-                if (snap.val().chassisName !== undefined) {
-                    _this.chassisOneName = snap.val().chassisName;
-                }
-            });
-            _this.userChassisOne = rawList;
-            if (_this.userChassisOne.length > 0) {
-                _this.userChassisOne = Object.keys(_this.userChassisOne).map(function (key) { return _this.userChassisOne[key]; }); //convert to array of objects
-                _this.userChassisOneValue = parseInt(_this.userChassisOne[0].chassisValue);
-            }
-            else {
-                _this.userChassisOneValue = 0;
-            }
-        });
-        //call firebase to check user chassis two data
-        this.teamData.getChassisTwo().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    chassisName: snap.val().chassisName,
-                    chassisValue: snap.val().chassisValue,
-                    chassisImage: snap.val().chassisImage,
-                    chassisPoints: snap.val().chassisPoints,
-                    valChange: snap.val().valChange,
-                    chassisUpgrade: snap.val().chassisUpgrade
-                });
-                if (snap.val().chassisName !== undefined) {
-                    _this.chassisTwoName = snap.val().chassisName;
-                }
-            });
-            _this.userChassisTwo = rawList;
-            if (_this.userChassisTwo.length > 0) {
-                _this.userChassisTwo = Object.keys(_this.userChassisTwo).map(function (key) { return _this.userChassisTwo[key]; }); //convert to array of objects
-                _this.userChassisTwoValue = parseInt(_this.userChassisTwo[0].chassisValue);
-            }
-            else {
-                _this.userChassisTwoValue = 0;
-            }
-        });
-        this.adminData.getGameState().on('value', function (snapshot) {
-            _this.gameState = snapshot.val().gameState;
-            console.log(_this.gameState);
-        });
-    } //end constructor
-    //add chassis to firebase from list
-    ChassisOnePage.prototype.addChassis = function (carNum, carData) {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'Confirm',
-            message: 'Are you sure you want to make a trade?',
-            buttons: [
-                {
-                    text: 'No',
-                    handler: function () {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'Yes',
-                    handler: function () {
-                        console.log('Car Number', carNum);
-                        console.log('Car data', carData);
-                        var newValue;
-                        var oldValue;
-                        //make sure the user has trades
-                        if (_this.userTrades > 0) {
-                            if (carNum === 'one') {
-                                //check for first entry
-                                if (_this.userChassisOne.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.chassisValue;
-                                    //check that this.driverOne.driverValue > this.teamCash
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userChassisOne[0].chassisValue);
-                                    newValue = carData.chassisValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car one
-                            else {
-                                //check for first entry
-                                if (_this.userChassisTwo.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.chassisValue;
-                                    //check that driver one's value > teamCash
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userChassisTwo[0].chassisValue);
-                                    newValue = carData.chassisValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car two
-                        }
-                        else {
-                            _this.noTradeAlert();
-                        }
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    };
-    ChassisOnePage.prototype.getRaceTime = function (timeOfRace, timeNow) {
-        var timeToRace = timeOfRace - timeNow;
-        console.log("timeToRace Chassis", timeToRace);
-        return timeToRace;
-    };
-    ChassisOnePage.prototype.noTradeAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Out of trades',
-            subTitle: 'You are out of trades, purchase more to continue to make trades.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ChassisOnePage.prototype.negBalanceAlert = function (newValue, teamCash, oldValue) {
-        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
-        var alert = this.alertCtrl.create({
-            title: 'Not enough money',
-            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ChassisOnePage.prototype.carHelp = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Hints and tips',
-            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
-                'When you make a trade you receive the value of your current chassis.' + '<br /><br />' +
-                'Additional trades can be bought from the team page.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ChassisOnePage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    ChassisOnePage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    ChassisOnePage.prototype.goToChassisStats = function (chassis) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__["a" /* ChassisStatsPage */], chassis);
-    };
-    ChassisOnePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ChassisOnePage');
-    };
-    return ChassisOnePage;
-}());
-ChassisOnePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-chassis-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-one/chassis-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Chassis one -->\n		<ion-row>\n			<ion-card class="card-layout left pullUp delay-3 card-min-height" *ngIf="(userChassisOne?.length > 0)">\n			  <div class="relative-pos" *ngFor="let user of userChassisOne">\n		  		<ion-row> \n	          <ion-col col-2>\n	            <img class="chassis-image" [src]="user.chassisImage" />\n	          </ion-col>\n\n						<ion-col col-7 class="vert-center">\n					   	<div class="chassis-name"> \n					   		{{user.chassisName}}\n					   	</div>\n\n					   	<div class="chassis-value">\n					   		{{ user?.chassisValue | currency:\'USD\':true:\'1.0\' }}\n              </div>\n      		   	<span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> \n                {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n              </span>\n					  </ion-col>\n\n						<ion-col col-3 class="relative-pos">\n              <h3 class="points"> {{ user.chassisPoints }} </h3>\n							<div class="to-bottom align-right">\n	              <img class="car-img" src="assets/img/black-car.png" />\n	              <div class="car-number">CAR ONE</div>\n	            </div>\n            </ion-col>\n					</ion-row>\n			  </div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3"> \n		  	Available chassis\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="chassisList">\n		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{\'highlight-one\': chassis.chassisName == chassisOneName ? \'highlight-two\': chassis.chassisName == chassisTwoName}">\n		   	\n		   	<ion-thumbnail item-left>\n		   		<img [src]="chassis.chassisImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" class="chassis-size" />\n\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>\n				   	<h5 class="list-value">\n				   		{{ chassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> \n		   	 			{{ chassis.valChange | currency:\'USD\':true:\'1.0\' }}\n		   	 		</span>\n					</ion-col>\n\n					<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [ngClass]="{\'hide-button\': this.round < 2}">\n				   		<ion-icon name="stats"></ion-icon>\n				   	</button>\n				   	\n				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis(\'one\', chassis)" [disabled]="chassis.chassisName == chassisOneName || chassis.chassisValue > (teamCash + userChassisOneValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n				  </ion-col>\n			  </ion-row>\n\n			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">\n	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight" src="assets/img/black-car.png" />\n	        </div>\n\n	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">\n	        	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-one/chassis-one.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
-], ChassisOnePage);
-
-//# sourceMappingURL=chassis-one.js.map
-
-/***/ }),
-
-/***/ 125:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisTwoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__ = __webpack_require__(63);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the ChassisTwoPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ChassisTwoPage = (function () {
-    function ChassisTwoPage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        this.currentRoundData = currentRoundData;
-        this.lastRound = 0;
-        this.gameState = "lockout";
-        this.raceTime = 0;
-        this.navCtrl = navCtrl;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        //get team cash amount
-        this.teamData.getTheMoney().on('value', function (snapshot) {
-            _this.teamCash = snapshot.val().money;
-            _this.userTrades = snapshot.val().trades;
-            _this.userPoints = snapshot.val().totalPoints;
-            if (_this.teamCash == 0) {
-                _this.teamCash = "0";
-            }
-            console.log(_this.userPoints, 'userPoints');
-        });
-        //call to firebase to retrieve currentRound
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.currentRound = rawList[0].currentRound;
-            console.log('TABS - this round:', _this.currentRound);
-            //get last round value
-            if (_this.currentRound < 2) {
-                _this.lastRound = 0;
-            }
-            else {
-                _this.lastRound = _this.currentRound - 1;
-                console.log(_this.lastRound, 'this.lastRound');
-            }
-            //call to firebase to retrieve chassis list data
-            _this.adminData.getChassisList(_this.lastRound).orderByChild("chassisValue").on('value', function (snapshot) {
-                var rawList = [];
-                snapshot.forEach(function (snap) {
-                    rawList.push({
-                        id: snap.key,
-                        position: snap.val().position,
-                        chassisName: snap.val().chassisName,
-                        chassisValue: snap.val().chassisValue,
-                        chassisImage: snap.val().chassisImage,
-                        chassisPoints: snap.val().chassisPoints,
-                        valChange: snap.val().valChange,
-                        chassisUpgrade: snap.val().chassisUpgrade
-                    });
-                });
-                _this.chassisList = rawList.reverse();
-            });
-        });
-        //call firebase to check user chassis one data
-        this.teamData.getChassisOne().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    chassisName: snap.val().chassisName,
-                    chassisValue: snap.val().chassisValue,
-                    chassisImage: snap.val().chassisImage,
-                    chassisPoints: snap.val().chassisPoints,
-                    valChange: snap.val().valChange,
-                    chassisUpgrade: snap.val().chassisUpgrade
-                });
-                if (snap.val().chassisName !== undefined) {
-                    _this.chassisOneName = snap.val().chassisName;
-                }
-            });
-            _this.userChassisOne = rawList;
-            if (_this.userChassisOne.length > 0) {
-                _this.userChassisOne = Object.keys(_this.userChassisOne).map(function (key) { return _this.userChassisOne[key]; }); //convert to array of objects
-                _this.userChassisOneValue = parseInt(_this.userChassisOne[0].chassisValue);
-            }
-            else {
-                _this.userChassisOneValue = 0;
-            }
-        });
-        //call firebase to check user chassis two data
-        this.teamData.getChassisTwo().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    chassisName: snap.val().chassisName,
-                    chassisValue: snap.val().chassisValue,
-                    chassisImage: snap.val().chassisImage,
-                    chassisPoints: snap.val().chassisPoints,
-                    valChange: snap.val().valChange,
-                    chassisUpgrade: snap.val().chassisUpgrade
-                });
-                if (snap.val().chassisName !== undefined) {
-                    _this.chassisTwoName = snap.val().chassisName;
-                }
-            });
-            _this.userChassisTwo = rawList;
-            if (_this.userChassisTwo.length > 0) {
-                _this.userChassisTwo = Object.keys(_this.userChassisTwo).map(function (key) { return _this.userChassisTwo[key]; }); //convert to array of objects
-                _this.userChassisTwoValue = parseInt(_this.userChassisTwo[0].chassisValue);
-            }
-            else {
-                _this.userChassisTwoValue = 0;
-            }
-        });
-        this.adminData.getGameState().on('value', function (snapshot) {
-            _this.gameState = snapshot.val().gameState;
-            console.log(_this.gameState);
-        });
-    } //end constructor
-    //add chassis to firebase from list
-    ChassisTwoPage.prototype.addChassis = function (carNum, carData) {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'Confirm',
-            message: 'Are you sure you want to make a trade?',
-            buttons: [
-                {
-                    text: 'No',
-                    handler: function () {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'Yes',
-                    handler: function () {
-                        console.log('Car Number', carNum);
-                        console.log('Car data', carData);
-                        var newValue;
-                        var oldValue;
-                        //make sure the user has trades
-                        if (_this.userTrades > 0) {
-                            if (carNum === 'one') {
-                                //check for first entry
-                                if (_this.userChassisOne.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.chassisValue;
-                                    //check that this.driverOne.driverValue > this.teamCash
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userChassisOne[0].chassisValue);
-                                    newValue = carData.chassisValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car one
-                            else {
-                                //check for first entry
-                                if (_this.userChassisTwo.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.chassisValue;
-                                    //check that this.driverOne.driverValue > this.teamCash
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userChassisTwo[0].chassisValue);
-                                    newValue = carData.chassisValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car two
-                        }
-                        else {
-                            _this.noTradeAlert();
-                        }
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    };
-    ChassisTwoPage.prototype.getRaceTime = function (timeOfRace, timeNow) {
-        var timeToRace = timeOfRace - timeNow;
-        return timeToRace;
-    };
-    ChassisTwoPage.prototype.noTradeAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Out of trades',
-            subTitle: 'You are out of trades, purchase more to continue to make trades.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ChassisTwoPage.prototype.negBalanceAlert = function (newValue, teamCash, oldValue) {
-        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
-        var alert = this.alertCtrl.create({
-            title: 'Not enough money',
-            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ChassisTwoPage.prototype.carHelp = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Hints and tips',
-            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
-                'When you make a trade you receive the value of your current chassis.' + '<br /><br />' +
-                'Additional trades can be bought from the team page.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ChassisTwoPage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    ChassisTwoPage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    ChassisTwoPage.prototype.goToChassisStats = function (chassis) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__["a" /* ChassisStatsPage */], chassis);
-    };
-    ChassisTwoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ChassisTwoPage');
-    };
-    return ChassisTwoPage;
-}());
-ChassisTwoPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-chassis-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-two/chassis-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Chassis two -->\n		<ion-row>	\n			<ion-card *ngIf="(userChassisTwo != 0)" class="card-layout left pullUp delay-3 card-min-height">\n			  <div class="relative-pos" *ngFor="let user of userChassisTwo">\n		  		<ion-row> \n	          <ion-col col-2>\n	            <img class="chassis-image" [src]="user.chassisImage" />\n	          </ion-col>\n\n						<ion-col col-7 class="vert-center">\n					   	<div class="chassis-name"> \n					   		{{user.chassisName}}\n					   	</div>\n\n					   	<div class="chassis-value">\n					   		{{ user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n              </div>\n              <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> \n	              {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n	            </span>\n					  </ion-col>\n\n						<ion-col col-3 class="relative-pos">\n              <h3 class="points"> {{ user.chassisPoints }} </h3>\n							<div class="to-bottom align-right">\n	              <img class="car-img" src="assets/img/red-car.png" />\n	              <div class="car-number car-two">CAR TWO</div>\n	            </div>\n            </ion-col>\n					</ion-row>	\n			  </div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n				Available chassis\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="chassisList">\n		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{\'highlight-one\': chassis.chassisName == chassisOneName ? \'highlight-two\': chassis.chassisName == chassisTwoName}">\n		   	\n		   	<ion-thumbnail item-left>\n		   		<img [src]="chassis.chassisImage" class="chassis-size" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>\n				   	<h5 class="list-value">\n				   		{{ chassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n\n				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> \n		   	 			{{ chassis.valChange | currency:\'USD\':true:\'1.0\' }}\n		   	 		</span>\n					</ion-col>\n\n					<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [ngClass]="{\'hide-button\': this.round < 2}">\n				   		<ion-icon name="stats"></ion-icon>\n				   	</button>\n				   	\n				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis(\'two\', chassis)" [disabled]="chassis.chassisName == chassisTwoName || chassis.chassisValue > (teamCash + userChassisTwoValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n				  </ion-col>\n			  </ion-row>\n\n			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">\n	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" />\n	        </div>\n\n	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">\n	        	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-two/chassis-two.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
-], ChassisTwoPage);
-
-//# sourceMappingURL=chassis-two.js.map
-
-/***/ }),
-
-/***/ 126:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuOnePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__ = __webpack_require__(64);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the PuOnePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var PuOnePage = (function () {
-    function PuOnePage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        this.currentRoundData = currentRoundData;
-        this.lastRound = 0;
-        this.gameState = "lockout";
-        this.raceTime = 0;
-        this.navCtrl = navCtrl;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        //get team cash amount
-        this.teamData.getTheMoney().on('value', function (snapshot) {
-            _this.teamCash = snapshot.val().money;
-            _this.userTrades = snapshot.val().trades;
-            _this.userPoints = snapshot.val().totalPoints;
-            if (_this.teamCash == 0) {
-                _this.teamCash = "0";
-            }
-            console.log(_this.userPoints, 'userPoints');
-        });
-        //call to firebase to retrieve currentRound
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.currentRound = rawList[0].currentRound;
-            console.log('TABS - this round:', _this.currentRound);
-            //get last round value
-            if (_this.currentRound < 2) {
-                _this.lastRound = 0;
-            }
-            else {
-                _this.lastRound = _this.currentRound - 1;
-                console.log(_this.lastRound, 'this.lastRound');
-            }
-            //call to firebase to retrieve pu list data
-            _this.adminData.getPUList(_this.lastRound).orderByChild("puValue").on('value', function (snapshot) {
-                var rawList = [];
-                snapshot.forEach(function (snap) {
-                    rawList.push({
-                        id: snap.key,
-                        position: snap.val().position,
-                        puName: snap.val().puName,
-                        puValue: snap.val().puValue,
-                        puImage: snap.val().puImage,
-                        puPoints: snap.val().puPoints,
-                        valChange: snap.val().valChange,
-                        posChange: snap.val().posChange,
-                        puUpgrade: snap.val().puUpgrade
-                    });
-                });
-                _this.puList = rawList.reverse();
-                console.log('PUList', _this.puList);
-            });
-        });
-        //call firebase to check user power unit one data
-        this.teamData.getPuOne().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    puName: snap.val().puName,
-                    puValue: snap.val().puValue,
-                    puImage: snap.val().puImage,
-                    puPoints: snap.val().puPoints,
-                    valChange: snap.val().valChange,
-                    posChange: snap.val().posChange,
-                    puUpgrade: snap.val().puUpgrade
-                });
-                if (snap.val().puName !== undefined) {
-                    _this.puNameOne = snap.val().puName;
-                }
-            });
-            _this.userPuOne = rawList;
-            if (_this.userPuOne.length > 0) {
-                _this.userPuOne = Object.keys(_this.userPuOne).map(function (key) { return _this.userPuOne[key]; }); //convert to array of objects
-                _this.userPuOneValue = parseInt(_this.userPuOne[0].puValue);
-            }
-            else {
-                _this.userPuOneValue = 0;
-            }
-        });
-        //call firebase to check user power unit two data
-        this.teamData.getPuTwo().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    puName: snap.val().puName,
-                    puValue: snap.val().puValue,
-                    puImage: snap.val().puImage,
-                    puPoints: snap.val().puPoints,
-                    valChange: snap.val().valChange,
-                    posChange: snap.val().posChange,
-                    puUpgrade: snap.val().puUpgrade
-                });
-                if (snap.val().puName !== undefined) {
-                    _this.puNameTwo = snap.val().puName;
-                    console.log("ksjhfksjdfhksjfdh", _this.puNameTwo);
-                }
-            });
-            _this.userPuTwo = rawList;
-            if (_this.userPuTwo.length > 0) {
-                _this.userPuTwo = Object.keys(_this.userPuTwo).map(function (key) { return _this.userPuTwo[key]; }); //convert to array of objects
-                _this.userPuTwoValue = parseInt(_this.userPuTwo[0].puValue);
-            }
-            else {
-                _this.userPuTwoValue = 0;
-            }
-        });
-        this.adminData.getGameState().on('value', function (snapshot) {
-            _this.gameState = snapshot.val().gameState;
-            console.log(_this.gameState);
-        });
-    } //end constructor
-    PuOnePage.prototype.addPU = function (carNum, carData) {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'Confirm',
-            message: 'Are you sure you want to make a trade?',
-            buttons: [
-                {
-                    text: 'No',
-                    handler: function () {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'Yes',
-                    handler: function () {
-                        var newValue;
-                        var oldValue;
-                        //make sure the user has trades
-                        if (_this.userTrades > 0) {
-                            //power unit one
-                            if (carNum === 'one') {
-                                //check for first entry
-                                if (_this.userPuOne.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.puValue;
-                                    //not enough money
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalance(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        //add pu to car one
-                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userPuOne[0].puValue);
-                                    newValue = carData.puValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        //add pu to car one
-                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalance(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car one
-                            else {
-                                //check for first entry
-                                if (_this.userPuTwo.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.puValue;
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalance(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userPuTwo[0].puValue);
-                                    newValue = carData.puValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        //add pu to car two 
-                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalance(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car two
-                        }
-                        else {
-                            _this.noTradeAlert();
-                        }
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    };
-    PuOnePage.prototype.getRaceTime = function (timeOfRace, timeNow) {
-        var timeToRace = timeOfRace - timeNow;
-        console.log("timeToRace engine", timeToRace);
-        return timeToRace;
-    };
-    PuOnePage.prototype.noTradeAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Out of trades',
-            subTitle: 'You are out of trades, purchase more to continue to make trades.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    PuOnePage.prototype.negBalance = function (newValue, teamCash, oldValue) {
-        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
-        var alert = this.alertCtrl.create({
-            title: 'Not enough money',
-            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    PuOnePage.prototype.carHelp = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Hints and tips',
-            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
-                'When you make a trade you receive the value of your current power unit.' + '<br /><br />' +
-                'Additional trades can be bought from the team page.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    PuOnePage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    PuOnePage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    PuOnePage.prototype.goToPuStats = function (powerUnit) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__["a" /* PuStatsPage */], powerUnit);
-    };
-    PuOnePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PuOnePage');
-    };
-    return PuOnePage;
-}());
-PuOnePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-pu-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-one/pu-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Power unit One -->\n		<ion-row>\n			<ion-card *ngIf="(userPuOne != 0)" class="card-layout left pullUp delay-3">\n			  <div class="relative-pos" *ngFor="let user of userPuOne" (click)="goToPu()">\n				  <ion-row> \n						<ion-col col-2 class="margin-image">\n							<img [src]="user.puImage" class="pu-image" />\n					  </ion-col>\n					  <ion-col col-7 class="vert-center">\n					  	<div class="pu-name"> \n					   		{{user.puName}}\n					   	</div>\n					   	<div class="pu-value">\n					  		{{ user.puValue | currency:\'USD\':true:\'1.0\' }}\n					  	</div>\n					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> \n								{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n							</span>\n					  </ion-col>\n				  	<ion-col col-3 class="relative-pos">\n            	<h3 class="points"> {{ user.puPoints }} </h3>\n            	<div class="to-bottom align-right">\n            		<img class="car-img" src="assets/img/black-car.png" />\n            		<div class="car-number">CAR ONE</div>\n            	</div>\n          	</ion-col>\n					</ion-row>\n		  	</div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n		  	Available power units\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="puList">\n		  <ion-item class="relative-pos pu-item-height pullUp delay-{{i}}" *ngFor="let pu of puList; let i=index" [ngClass]="{\'highlight-one\': pu.puName == puNameOne ? \'highlight-two\': pu.puName == puNameTwo}">\n		   	<ion-thumbnail item-left>\n		   		<img class="margin-image" [src]="pu.puImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ pu.puName }}</h2>\n				  	<h5 class="list-value">\n				   		{{ pu.puValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: pu.valChange < 0}"> \n				   	 	{{ pu.valChange | currency:\'USD\':true:\'1.0\' }}\n				   	</span>\n			   	</ion-col>\n			   	<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [ngClass]="{\'hide-button\': this.round < 2}">\n			   			<ion-icon name="stats"></ion-icon>\n			   		</button>\n				   	<button class="cantAfford buy-btn" ion-button (click)="addPU(\'one\', pu);" [disabled]="pu.puName == puNameOne || pu.puValue > (teamCash + userPuOneValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n					</ion-col>\n				</ion-row>\n\n				<div *ngIf="pu.puName == puNameOne || pu.puName == puNameTwo" class="to-bottom right-tag">\n        	<div class="tag-driver-one" *ngIf="pu.puName == puNameOne">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight" src="assets/img/black-car.png" />\n	        </div>\n	        <div class="tag-holder-two" *ngIf="pu.puName == puNameTwo">\n	         	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-one/pu-one.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
-], PuOnePage);
-
-//# sourceMappingURL=pu-one.js.map
-
-/***/ }),
-
-/***/ 127:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuTwoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__ = __webpack_require__(64);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the PuTwoPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var PuTwoPage = (function () {
-    function PuTwoPage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        this.currentRoundData = currentRoundData;
-        this.lastRound = 0;
-        this.gameState = "lockout";
-        this.raceTime = 0;
-        this.navCtrl = navCtrl;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        //get team cash amount
-        this.teamData.getTheMoney().on('value', function (snapshot) {
-            _this.teamCash = snapshot.val().money;
-            _this.userTrades = snapshot.val().trades;
-            _this.userPoints = snapshot.val().totalPoints;
-            if (_this.teamCash == 0) {
-                _this.teamCash = "0";
-            }
-            console.log(_this.userPoints, 'userPoints');
-        });
-        //call to firebase to retrieve currentRound
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.currentRound = rawList[0].currentRound;
-            console.log('TABS - this round:', _this.currentRound);
-            //get last round value
-            if (_this.currentRound < 2) {
-                _this.lastRound = 0;
-            }
-            else {
-                _this.lastRound = _this.currentRound - 1;
-                console.log(_this.lastRound, 'this.lastRound');
-            }
-            //call to firebase to retrieve pu list data
-            _this.adminData.getPUList(_this.lastRound).orderByChild("puValue").on('value', function (snapshot) {
-                var rawList = [];
-                snapshot.forEach(function (snap) {
-                    rawList.push({
-                        id: snap.key,
-                        position: snap.val().position,
-                        puName: snap.val().puName,
-                        puValue: snap.val().puValue,
-                        puImage: snap.val().puImage,
-                        puPoints: snap.val().puPoints,
-                        valChange: snap.val().valChange,
-                        posChange: snap.val().posChange,
-                        puUpgrade: snap.val().puUpgrade
-                    });
-                });
-                _this.puList = rawList.reverse();
-                console.log('PUList', _this.puList);
-            });
-        });
-        //call firebase to check user power unit one data
-        this.teamData.getPuOne().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    puName: snap.val().puName,
-                    puValue: snap.val().puValue,
-                    puImage: snap.val().puImage,
-                    puPoints: snap.val().puPoints,
-                    valChange: snap.val().valChange,
-                    posChange: snap.val().posChange,
-                    puUpgrade: snap.val().puUpgrade
-                });
-                if (snap.val().puName !== undefined) {
-                    _this.puNameOne = snap.val().puName;
-                }
-            });
-            _this.userPuOne = rawList;
-            if (_this.userPuOne.length > 0) {
-                _this.userPuOne = Object.keys(_this.userPuOne).map(function (key) { return _this.userPuOne[key]; }); //convert to array of objects
-                _this.userPuOneValue = parseInt(_this.userPuOne[0].puValue);
-            }
-            else {
-                _this.userPuOneValue = 0;
-            }
-        });
-        //call firebase to check user power unit two data
-        this.teamData.getPuTwo().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    id: snap.key,
-                    position: snap.val().position,
-                    puName: snap.val().puName,
-                    puValue: snap.val().puValue,
-                    puImage: snap.val().puImage,
-                    puPoints: snap.val().puPoints,
-                    valChange: snap.val().valChange,
-                    posChange: snap.val().posChange,
-                    puUpgrade: snap.val().puUpgrade
-                });
-                if (snap.val().puName !== undefined) {
-                    _this.puNameTwo = snap.val().puName;
-                    console.log("ksjhfksjdfhksjfdh", _this.puNameTwo);
-                }
-            });
-            _this.userPuTwo = rawList;
-            if (_this.userPuTwo.length > 0) {
-                _this.userPuTwo = Object.keys(_this.userPuTwo).map(function (key) { return _this.userPuTwo[key]; }); //convert to array of objects
-                _this.userPuTwoValue = parseInt(_this.userPuTwo[0].puValue);
-            }
-            else {
-                _this.userPuTwoValue = 0;
-            }
-        });
-        this.adminData.getGameState().on('value', function (snapshot) {
-            _this.gameState = snapshot.val().gameState;
-            console.log(_this.gameState);
-        });
-    } //end constructor
-    PuTwoPage.prototype.addPU = function (carNum, carData) {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'Confirm',
-            message: 'Are you sure you want to make a trade?',
-            buttons: [
-                {
-                    text: 'No',
-                    handler: function () {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'Yes',
-                    handler: function () {
-                        var newValue;
-                        var oldValue;
-                        //make sure the user has trades
-                        if (_this.userTrades > 0) {
-                            //power unit one
-                            if (carNum === 'one') {
-                                //check for first entry
-                                if (_this.userPuOne.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.puValue;
-                                    //not enough money
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalance(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        //add pu to car one
-                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userPuOne[0].puValue);
-                                    newValue = carData.puValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        //add pu to car one
-                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalance(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car one
-                            else {
-                                //check for first entry
-                                if (_this.userPuTwo.length < 1) {
-                                    console.log('firstEntry');
-                                    newValue = carData.puValue;
-                                    if (newValue > _this.teamCash) {
-                                        _this.negBalance(newValue, _this.teamCash, 0);
-                                    }
-                                    else {
-                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
-                                    }
-                                }
-                                else {
-                                    oldValue = parseInt(_this.userPuTwo[0].puValue);
-                                    newValue = carData.puValue;
-                                    //check if user has enough money
-                                    if ((_this.teamCash + oldValue) >= newValue) {
-                                        //add pu to car two 
-                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
-                                    }
-                                    else {
-                                        _this.negBalance(newValue, _this.teamCash, oldValue);
-                                    }
-                                }
-                            } // end car two
-                        }
-                        else {
-                            _this.noTradeAlert();
-                        }
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    };
-    PuTwoPage.prototype.getRaceTime = function (timeOfRace, timeNow) {
-        var timeToRace = timeOfRace - timeNow;
-        console.log("timeToRace engine", timeToRace);
-        return timeToRace;
-    };
-    PuTwoPage.prototype.noTradeAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Out of trades',
-            subTitle: 'You are out of trades, purchase more to continue to make trades.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    PuTwoPage.prototype.negBalance = function (newValue, teamCash, oldValue) {
-        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
-        var alert = this.alertCtrl.create({
-            title: 'Not enough money',
-            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    PuTwoPage.prototype.carHelp = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Hints and tips',
-            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
-                'When you make a trade you receive the value of your current power unit.' + '<br /><br />' +
-                'Additional trades can be bought from the team page.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    PuTwoPage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    PuTwoPage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    PuTwoPage.prototype.goToPuStats = function (powerUnit) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__["a" /* PuStatsPage */], powerUnit);
-    };
-    PuTwoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PuTwoPage');
-    };
-    return PuTwoPage;
-}());
-PuTwoPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-pu-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-two/pu-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Power unit two -->\n		<ion-row>\n			<ion-card *ngIf="(userPuTwo != 0)" class="card-layout left pullUp delay-3">\n			  <div class="relative-pos" *ngFor="let user of userPuTwo" (click)="goToPu()"> \n				  <ion-row> \n						<ion-col col-2 class="margin-image">\n							<img [src]="user.puImage" class="pu-image" />\n					  </ion-col>\n					  <ion-col col-7 class="vert-center">\n					  	<div class="pu-name"> \n					   		{{user.puName}}\n					   	</div>\n					   	<div class="pu-value">\n					  		{{ user.puValue | currency:\'USD\':true:\'1.0\' }}\n					  	</div>\n					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> \n								{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n							</span>\n					  </ion-col>\n				  	<ion-col col-3 class="relative-pos">\n            	<h3 class="points"> {{ user.puPoints }} </h3>\n            	<div class="to-bottom align-right">\n            		<img class="car-img" src="assets/img/red-car.png" />\n            		<div class="car-number car-two">CAR TWO</div>\n            	</div>\n          	</ion-col>\n					</ion-row>\n		  	</div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n		  	Available power units\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="puList">\n		  <ion-item class="relative-pos pu-item-height pullUp delay-{{i}}" *ngFor="let pu of puList; let i=index" [ngClass]="{\'highlight-one\': pu.puName == puNameOne ? \'highlight-two\': pu.puName == puNameTwo}">\n		   	<ion-thumbnail item-left>\n		   		<img class="margin-image" [src]="pu.puImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ pu.puName }}</h2>\n				  	<h5 class="list-value">\n				   		{{ pu.puValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: pu.valChange < 0}"> \n				   	 	{{ pu.valChange | currency:\'USD\':true:\'1.0\' }}\n				   	</span>\n			   	</ion-col>\n\n			   	<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [ngClass]="{\'hide-button\': this.round < 2}">\n			   			<ion-icon name="stats"></ion-icon>\n			   		</button>\n				   	<button class="cantAfford buy-btn" ion-button (click)="addPU(\'two\', pu);" [disabled]="pu.puName == puNameTwo || pu.puValue > (teamCash + userPuTwoValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n					</ion-col>\n				</ion-row>\n\n				<div *ngIf="pu.puName == puNameOne || pu.puName == puNameTwo" class="to-bottom right-tag">\n        	<div class="tag-driver-one" *ngIf="pu.puName == puNameOne">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" />\n	        </div>\n	        <div class="tag-holder-two" *ngIf="pu.puName == puNameTwo">\n	         	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-two/pu-two.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
-], PuTwoPage);
-
-//# sourceMappingURL=pu-two.js.map
-
-/***/ }),
-
-/***/ 128:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyTradesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(23);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the BuyTradesPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var BuyTradesPage = (function () {
-    function BuyTradesPage(navCtrl, navParams, alertCtrl, adminData, teamData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.adminData = adminData;
-        this.teamData = teamData;
-        this.tradeCostOne = 500000;
-        this.tradeCostThree = 1000000;
-        this.tradeCostFive = 2000000;
-        this.gameState = "lockout";
-        this.buyOneTrade = 0;
-        this.buyThreeTrades = 0;
-        this.buyFiveTrades = 0;
-        this.tradeAnimate = false;
-        this.teamData.getTheMoney().on('value', function (snapshot) {
-            _this.teamCash = snapshot.val().money;
-            _this.userTrades = snapshot.val().trades;
-            console.log(_this.teamCash, 'woooooo2');
-        });
-        this.adminData.getGameState().on('value', function (snapshot) {
-            _this.gameState = snapshot.val().gameState;
-            console.log(_this.gameState);
-        });
-    } //end constructor
-    BuyTradesPage.prototype.confirmTrade = function (num) {
-        var _this = this;
-        console.log('num', num);
-        var tradeCost;
-        if (num === 5) {
-            tradeCost = this.tradeCostFive;
-        }
-        else if (num === 3) {
-            tradeCost = this.tradeCostThree;
-        }
-        else {
-            num = 1;
-            tradeCost = this.tradeCostOne;
-        }
-        if (this.teamCash >= tradeCost) {
-            var confirm_1 = this.alertCtrl.create({
-                title: 'Confirm',
-                message: 'Are you sure you want to buy a trade?',
-                buttons: [
-                    {
-                        text: 'No',
-                        handler: function () {
-                            console.log('Disagree clicked');
-                        }
-                    },
-                    {
-                        text: 'Yes',
-                        handler: function () {
-                            console.log('Agree clicked');
-                            if (num === 5) {
-                                _this.buyFiveTrades = 1;
-                            }
-                            else if (num === 3) {
-                                _this.buyThreeTrades = 1;
-                            }
-                            else {
-                                _this.buyOneTrade = 1;
-                            }
-                            _this.tradeAnimate = true;
-                            _this.teamData.addTrade(num, tradeCost);
-                        }
-                    }
-                ]
-            });
-            confirm_1.present();
-        }
-        else {
-            var negVal = (this.teamCash - tradeCost) * -1;
-            this.negValueAlert(negVal);
-        }
-    }; //end constructor
-    BuyTradesPage.prototype.negValueAlert = function (negValue) {
-        var decimalSeperator = this.numberWithCommas(negValue);
-        var alert = this.alertCtrl.create({
-            title: 'Not enough money',
-            message: 'You need an additional $' + decimalSeperator + ' to make the trade.',
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    BuyTradesPage.prototype.numberWithCommas = function (dollarValue) {
-        return dollarValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    };
-    BuyTradesPage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    BuyTradesPage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    BuyTradesPage.prototype.ionViewDidLoad = function () {
-        console.log('Hello Buy Trades Page');
-    };
-    return BuyTradesPage;
-}());
-BuyTradesPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-buy-trades',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/buy-trades/buy-trades.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row>\n      <div class="absolute-pos trades-heading">Buy trades</div>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<div class="container">\n  <ion-row>\n    <ion-col>\n      <ion-card class="relative-pos card-left card-height">\n        <img class="bank-img" src="assets/img/bank-icon.png" />\n        <div class="text-height">\n          <span class="title-text">\n            {{teamCash | currency:\'USD\':true:\'1.0\'}}\n          </span>\n        </div>\n      </ion-card>\n    </ion-col>\n    \n    <ion-col>\n      <ion-card class="relative-pos card-height">\n        <img class="trades-img" src="assets/img/trade-icon-dark.png" />\n        <div class="text-height">\n          Trades: \n          <span class="title-text">\n            {{userTrades}}\n          </span>\n        </div>\n      </ion-card>\n    </ion-col>\n  </ion-row>\n\n  <div *ngIf="gameState != \'lockout\'">  \n    <ion-row>\n      <ion-col class="flex-center">\n        <ion-card class="clear-bg">\n          <div id="banner">\n            <div class="no-fill" [ngClass]="{\'fill\': buyOneTrade === 1, \'fill1\': buyThreeTrades === 1, \'fill2\': buyFiveTrades === 1}">\n              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">\n                <path fill="#04ACFF" id="waveShape" class="color-1" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z" fill-opacity="0.5"/>\n              </svg>\n            </div>\n          </div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="flex-center">\n        <div class="trades-center">\n          <div class="trades-counter" [ngClass]="{\'slideDown\': buyOneTrade === 1, \'pullUp\': buyThreeTrades === 1, \'bounce\': buyFiveTrades === 1}"> \n            <span>Trades: {{ userTrades }}</span>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col width-33>\n        <div class="trade-button slideExpandUp delay-3" (click)="confirmTrade(1);">\n          <div class="trade-text">Buy one trade</div>\n          <span>$500,000</span>\n        </div>\n      </ion-col>\n\n      <ion-col width-33>\n        <div class="trade-button middle-btn slideExpandUp delay-5" (click)="confirmTrade(3);">\n          <div class="trade-text">Buy three trades</div>\n          <span>1 million</span>\n        </div>\n      </ion-col>\n\n      <ion-col width-33>\n        <div class="trade-button slideExpandUp delay-7" (click)="confirmTrade(5);">\n          <div class="trade-text">Buy five trades</div>\n          <span>2 million</span>\n        </div>\n      </ion-col>\n    </ion-row>\n  </div>\n</div>\n</ion-content>\n\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/buy-trades/buy-trades.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */]])
-], BuyTradesPage);
-
-//# sourceMappingURL=buy-trades.js.map
-
-/***/ }),
-
-/***/ 129:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RankingPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__player_team_player_team__ = __webpack_require__(130);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the RankingPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var RankingPage = (function () {
-    function RankingPage(navCtrl, navParams, teamData, storage, currentRoundData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.teamData = teamData;
-        this.storage = storage;
-        this.currentRoundData = currentRoundData;
-        this.noStats = true;
-        this.pointsLastRound = 0;
-        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snap) {
-                rawList.push({
-                    currentRound: snap.val().currentRound
-                });
-            });
-            _this.round = rawList[0].currentRound;
-            console.log('Ranking - this round:', _this.round);
-            if (_this.round > 1) {
-                _this.round = _this.round - 1;
-                _this.firstRound = false;
-            }
-            else {
-                _this.firstRound = true;
-            }
-        });
-        this.teamData.getUsersList().orderByChild("rank").on('value', function (snapshot) {
-            var rawList = [];
-            snapshot.forEach(function (snapshot) {
-                rawList.push({
-                    id: snapshot.key,
-                    email: snapshot.val().email,
-                    teamName: snapshot.val().teamName,
-                    money: snapshot.val().money,
-                    rank: snapshot.val().rank,
-                    rankDiff: snapshot.val().rankDiff,
-                    totalPoints: snapshot.val().totalPoints,
-                    trades: snapshot.val().trades,
-                    points: snapshot.val().points,
-                    carOne: snapshot.val().carOne,
-                    carTwo: snapshot.val().carTwo,
-                });
-            });
-            _this.usersList = rawList;
-            _this.usersLoadedList = rawList;
-            console.log('1st: Userslist Ranking Page', _this.usersList);
-            _this.allUsers = _this.usersList.length;
-        });
-        console.log("passed user", this.navParams.data);
-        this.userData = this.navParams.data.email;
-        for (var _i = 0, _a = this.usersList; _i < _a.length; _i++) {
-            var user = _a[_i];
-            if (this.userData == user.email) {
-                this.userStats = user;
-                if (user.points !== undefined) {
-                    console.log('user has a score');
-                    this.pointsLastRound = user.points[this.round].points;
-                    this.noStats = false;
-                }
-                else {
-                    console.log('user has no score');
-                    this.noStats = true;
-                }
-            }
-        }
-    } //end constructor
-    RankingPage.prototype.goToPlayerTeam = function (player) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__player_team_player_team__["a" /* PlayerTeamPage */], player);
-    };
-    RankingPage.prototype.initializeItems = function () {
-        this.usersList = this.usersLoadedList;
-    };
-    RankingPage.prototype.getItems = function (searchbar) {
-        // Reset items back to all of the items
-        this.initializeItems();
-        // set searchbarInput to the value of the searchbar
-        var searchbarInput = searchbar.srcElement.value;
-        // if the value is an empty string don't filter the items
-        if (!searchbarInput) {
-            return;
-        }
-        this.usersList = this.usersList.filter(function (check) {
-            if (check.teamName && searchbarInput) {
-                if (check.teamName.toLowerCase().indexOf(searchbarInput.toLowerCase()) > -1) {
-                    return true;
-                }
-                return false;
-            }
-        });
-    };
-    RankingPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RankingPage');
-        //scroll to user
-        var target = document.querySelector('#user-details.highlight-item');
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-        });
-    };
-    return RankingPage;
-}());
-RankingPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-ranking',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n		<ion-row *ngIf="noStats !== true || firstRound !== true" class="header-marg">\n			<ion-col>\n	    	<div class="stat slideExpandUp delay-3">\n        	Last Round<span>{{ pointsLastRound }}</span>\n      	</div>\n      </ion-col>\n\n      <ion-col>\n        <div class="stat slideExpandUp delay-4">\n          Total Score<span>{{userStats.totalPoints}}</span>\n        </div>\n      </ion-col>\n\n      <ion-col>\n        <div class="stat slideExpandUp delay-5">\n          Rank\n          <span>{{userStats.rank}}\n          	<div [ngClass]="{negative: userStats.rankDiff < 0}" class="positive val-change inline-elem"> \n							{{ userStats.rankDiff }}\n						</div>\n					</span>\n        </div>\n      </ion-col>\n	  </ion-row>\n\n	  <ion-row class="header-marg">\n	    <div class="header-text slideExpandUp delay-2">Team Ranking</div>\n	  </ion-row>\n		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>\n		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">\n		  <ion-item *ngIf="user.teamName"\n		   	[ngClass]="{\'highlight-item\': userData === user.email}" id="user-details">\n		   	<ion-row>\n			   	<ion-col>\n				   	<div class="team-name">{{ user.teamName}}</div>\n				  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n			   		<div class="team-trades">Trades: {{ user.trades }}</div>\n			   		<div class="points-text">\n							Total points: \n							<span class="number-points"> \n								{{ user.totalPoints }}\n							</span>\n						</div>\n			   	</ion-col>\n\n			   	<ion-col class="right-col rel-position">\n					  <div class="team-rank">{{ user.rank }}</div>\n							<button class="team-btn" ion-button (click)="goToPlayerTeam(user);">\n		            <ion-icon name="md-people"></ion-icon>\n							</button>\n					</ion-col>\n				</ion-row>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
-], RankingPage);
-
-//# sourceMappingURL=ranking.js.map
-
-/***/ }),
-
-/***/ 130:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlayerTeamPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the PlayerTeamPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var PlayerTeamPage = (function () {
-    function PlayerTeamPage(navCtrl, navParams) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.userDriverOneEmpty = true;
-        this.userDriverTwoEmpty = true;
-        this.userChassisOneEmpty = true;
-        this.userChassisTwoEmpty = true;
-        this.userPuOneEmpty = true;
-        this.userPuTwoEmpty = true;
-        this.playerTeam = this.navParams.data;
-        console.log("passed team", this.playerTeam);
-        this.carOne = this.playerTeam.carOne;
-        this.carTwo = this.playerTeam.carTwo;
-        if (!this.carOne) {
-            this.userDriverOneEmpty = true;
-            this.userChassisOneEmpty = true;
-            this.userPuOneEmpty = true;
-        }
-        else {
-            //car one
-            if (this.carOne.driver) {
-                var carOneDriverHolder = Object.keys(this.carOne.driver).map(function (key) { return _this.carOne.driver[key]; }); //convert to array of objects
-                this.carOneDriver = carOneDriverHolder[0];
-                this.userDriverOneEmpty = false;
-            }
-            else {
-                this.userDriverOneEmpty = true;
-            }
-            if (this.carOne.chassis) {
-                var carOneChassisHolder = Object.keys(this.carOne.chassis).map(function (key) { return _this.carOne.chassis[key]; }); //convert to array of objects
-                this.carOneChassis = carOneChassisHolder[0];
-                this.userChassisOneEmpty = false;
-            }
-            else {
-                this.userChassisOneEmpty = true;
-            }
-            if (this.carOne.powerUnit) {
-                var carOnePuHolder = Object.keys(this.carOne.powerUnit).map(function (key) { return _this.carOne.powerUnit[key]; }); //convert to array of objects
-                this.carOnePu = carOnePuHolder[0];
-                this.userPuOneEmpty = false;
-            }
-            else {
-                this.userPuOneEmpty = true;
-            }
-        }
-        if (!this.carTwo) {
-            this.userDriverOneEmpty = true;
-            this.userChassisOneEmpty = true;
-            this.userPuOneEmpty = true;
-        }
-        else {
-            //car two
-            if (this.carTwo.driver) {
-                var carTwoDriverHolder = Object.keys(this.carTwo.driver).map(function (key) { return _this.carTwo.driver[key]; }); //convert to array of objects
-                this.carTwoDriver = carTwoDriverHolder[0];
-                this.userDriverTwoEmpty = false;
-            }
-            else {
-                this.userDriverTwoEmpty = true;
-            }
-            if (this.carTwo.chassis) {
-                var carTwoChassisHolder = Object.keys(this.carTwo.chassis).map(function (key) { return _this.carTwo.chassis[key]; }); //convert to array of objects
-                this.carTwoChassis = carTwoChassisHolder[0];
-                this.userChassisTwoEmpty = false;
-            }
-            else {
-                this.userChassisTwoEmpty = true;
-            }
-            if (this.carTwo.powerUnit) {
-                var carTwoPuHolder = Object.keys(this.carTwo.powerUnit).map(function (key) { return _this.carTwo.powerUnit[key]; }); //convert to array of objects
-                this.carTwoPu = carTwoPuHolder[0];
-                this.userPuTwoEmpty = false;
-            }
-            else {
-                this.userPuTwoEmpty = true;
-            }
-        }
-    } //end constructor
-    PlayerTeamPage.prototype.ngAfterViewInit = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    PlayerTeamPage.prototype.ionViewWillLeave = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'flex';
-        }
-    };
-    PlayerTeamPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PlayerTeamPage');
-    };
-    return PlayerTeamPage;
-}());
-PlayerTeamPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-player-team',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/player-team/player-team.html"*/'<!--\n  Generated template for the PlayerTeamPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n  <div class="team-text">\n 	 The garage of {{ playerTeam.teamName }}\n 	</div>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n	<div class="container margin-bottom">\n	<!-- Info Panel -->\n	<div>\n    <ion-row>\n    	<ion-col>\n	      <ion-card class="relative-pos card-left card-height">\n	     		<img class="bank-img" src="assets/img/bank-icon.png" />\n	      	<div class="text-height">\n	      		<span class="title-text">\n	      			{{playerTeam.money | currency:\'USD\':true:\'1.0\'}}\n	      		</span>\n	      	</div>\n	      </ion-card>\n    	</ion-col>\n\n    	<ion-col>\n	      <ion-card class="relative-pos card-height">\n	     		<img class="trades-img" src="assets/img/trade-icon-dark.png" />\n	      	<div class="text-height">\n	      		Trades: \n	      		<span class="title-text">\n	      			{{playerTeam.trades }}\n	      		</span>\n	      	</div>\n				</ion-card>\n			</ion-col>\n  	</ion-row>\n	</div>\n\n	<ion-row class="top-space-lg">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center positive-rel slideExpandUp delay-2">\n			CAR ONE\n		</div>\n	</ion-row>\n	<ion-row class="top-space">\n		<!-- Driver: car one -->\n		<ion-col width-33 class="pullUp delay-1">\n			<ion-card class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-1" *ngIf="!userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n\n				<div class="name">\n					{{carOneDriver.firstName}}<br />\n				 	{{carOneDriver.lastName}}\n				</div>\n\n				<ion-row> \n	        <img [src]="carOneDriver.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n\n			  <ion-row>\n			  	<div class="points">{{ carOneDriver.driverPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOneDriver.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: carOneDriver.valChange < 0}" class="positive val-change"> \n					{{ carOneDriver.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOneDriver.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Chassis: car one -->\n		<ion-col width-33 class="pullUp delay-2">\n			<ion-card class="hq-card card-2 empty-card" *ngIf="userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n\n			</ion-card>\n\n			<ion-card class="hq-card card-2" *ngIf="!userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{carOneChassis.chassisName}}</div>\n				<ion-row>\n					<img [src]="carOneChassis.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				\n				<ion-row>\n					<div class="points">{{ carOneChassis.chassisPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOneChassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		\n	  		<h5 [ngClass]="{negative: carOneChassis.valChange < 0}" class="positive val-change"> {{ carOneChassis.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>	\n					\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOneChassis.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n\n		<!-- Pu: car one -->\n		<ion-col width-33 class="pullUp delay-5">\n			<ion-card class="hq-card card-3 empty-card" *ngIf="userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power unit</div>\n				</ion-card-header>\n	\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />	    		\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-3" *ngIf="!userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n\n				<div class="name">{{carOnePu.puName}}</div>\n				<ion-row>\n					<img [src]="carOnePu.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ carOnePu.puPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOnePu.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: carOnePu.valChange < 0}" class="positive val-change"> \n					{{ carOnePu.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOnePu.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n		</ion-col>		\n	</ion-row>\n\n	<!-- *********** Car Two **********-->\n	<ion-row class="top-space">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center primary-bg slideExpandUp delay-3">\n			CAR TWO\n		</div>\n	</ion-row>\n\n	<!-- Driver: car two -->\n		<ion-row class="top-space">\n		<ion-col width-33 class="pullUp delay-4">\n			<ion-card class="hq-card card-1 empty-card" *ngIf="userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />	    		\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-1 pullUp delay-4" *ngIf="!userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n\n				<div class="name">\n					{{carTwoDriver.firstName}}<br />\n				 	{{carTwoDriver.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="carTwoDriver.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ carTwoDriver.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoDriver.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: carTwoDriver.valChange < 0}" class="positive val-change"> \n					{{ carTwoDriver.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoDriver.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Chassis: car two -->\n		<ion-col width-33 class="pullUp delay-5">\n			<ion-card class="hq-card card-2 empty-card" *ngIf="userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-2" *ngIf="!userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{carTwoChassis.chassisName}}</div>\n				<ion-row>\n					<img [src]="carTwoChassis.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ carTwoChassis.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoChassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: carTwoChassis.valChange < 0}" class="positive val-change"> {{ carTwoChassis.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoChassis.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Pu: car two -->\n		<ion-col width-33 class="pullUp delay-6">\n			<ion-card class="hq-card card-3 empty-card" *ngIf="userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-3" *ngIf="!userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<div class="name">{{carTwoPu.puName}}</div>\n				<ion-row>\n					<img [src]="carTwoPu.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ carTwoPu.puPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoPu.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: carTwoPu.valChange < 0}" class="positive val-change"> \n					{{ carTwoPu.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoPu.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n		</ion-col>\n	</ion-row>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/player-team/player-team.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-], PlayerTeamPage);
-
-//# sourceMappingURL=player-team.js.map
-
-/***/ }),
-
-/***/ 131:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RulesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the RulesPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var RulesPage = (function () {
-    function RulesPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.overviewToggle = false;
-        this.tradesToggle = false;
-        this.upgradesToggle = false;
-        this.lockoutToggle = false;
-        this.pointsToggle = false;
-    } //end constructor
-    RulesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RulesPage');
-    };
-    return RulesPage;
-}());
-RulesPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-rules',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n\n		<!-- Overview card -->\n		<div class="rules-card slideExpandUp delay-3">\n			<button class="rules-header" (click)="overviewToggle = !overviewToggle;">\n				Overview\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': overviewToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': overviewToggle,\n				\'hidden\': !overviewToggle, \'hidden1\': tradesToggle}">\n				<p>As the manager of your own Formula One race team, with a starting budget you need to purchase a driver, chassis and power unit for both of your cars. After each F1 race weekend your drivers, chassis and power units will recieve points based on the race results. In addition the value of each part will rise or fall depending on its performance in the race.</p>\n				<p>Just before the start of each Formula One race weekend a lockout will be established, no longer allowing trades or upgrades.</p>\n				<p>\n					<span>Please note:</span><br />\n				 	If either of your cars are missing a part (driver, chassis, power unit), then no points are scored for that car.\n				 </p>\n			</div>\n		</div>\n\n		<!-- trades card -->\n		<div class="rules-card slideExpandUp delay-4">\n			<button class="rules-header" (click)="tradesToggle = !tradesToggle;">\n				Trades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': tradesToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': tradesToggle,\n			\'hidden\': !tradesToggle}">\n				<p>To maximise your score and rise in the rankings, you should always be looking to improve your team by making trades.</p>\n				<p>You start the season with twenty trades. Each time you swap a part, it will cost you one trade.</p>\n				<p>During your first round all trades are free, so experiment with different combinations of drivers, chassis and power units until you are happy with your team.</p> \n				<p>If you\'re running low on trades you can purchase additional trades, look for the + icon on the team page.</p>\n				\n				<p><span>Don\'t forget</span><br />\n					When you make a trade you recieve the value of the traded item.\n				</p>\n			</div>\n		</div>\n\n		<!-- upgrades card -->\n		<div class="rules-card slideExpandUp delay-5">\n			<button class="rules-header" (click)="upgradesToggle = !upgradesToggle;">\n				Upgrades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': upgradesToggle}"></ion-icon>\n			</button>\n\n\n			<div class="rules-content" [ngClass]="{\'showing\': upgradesToggle,\n			\'hidden\': !upgradesToggle}">\n				<p>Purchasing an upgrade will double that parts score in the next round.<p>\n				<span>Please note:</span> <br />\n				If you make an upgrade and then trade out that particular part, you will lose the upgrade!</p>\n			</div>\n		</div>\n		\n		<!-- lockout card -->\n		<div class="rules-card slideExpandUp delay-6">\n			<button class="rules-header" (click)="lockoutToggle = !lockoutToggle;">\n				Lock out\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': lockoutToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': lockoutToggle,\n			\'hidden\': !lockoutToggle}">\n				<p>Just before each race weekend the app will enter a lockout status. During this time you will not be able to make trades or upgrades until the race weekend is completed. The timer shows how long until the next lock out.</p>\n			</div>\n		</div>\n\n		<!-- point card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="pointsToggle = !pointsToggle;">\n				Points\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': pointsToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': pointsToggle,\n			\'hidden\': !pointsToggle}">\n				<p>The points allocated to drivers, chassis and power units after each race weekend is calculated from a combination of results.</p>\n				<h4>Drivers</h4>\n				<p>Drivers points are calculated by their quallifying position, race result and how many positions were gained during the race.</p>\n				<h4>Chassis</h4>\n				<p>Chassis points are calculated by the position each chassis qualified and race result of both chassis.</p>\n				<h4>Power Units</h4>\n				<p>Lastly power unit points are calulated by the best qualifying result of each brand and their race result. </p>\n			</div>\n		</div>\n\n		<!-- misc card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="extraToggle = !extraToggle;">\n				Extra information\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': extraToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': extraToggle,\n			\'hidden\': !extraToggle}">\n				<p>Once the Formula one race results have been released and pushed into the app the dollar values and scores of drivers, chassis, power units and player teams are final.</p>\n				\n				<h4>What happens if a driver is replaced?</h4>\n				<p>If during the Formula One race season a driver is unable to drive and is replaced for a race, the replacment driver will race under the usual drivers alias. Any teams effected by this will automatically be awared the results of the replacment driver after the race.</p>\n			</div>\n		</div>\n\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-], RulesPage);
-
-//# sourceMappingURL=rules.js.map
-
-/***/ }),
-
-/***/ 132:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(50);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the SignupPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var SignupPage = (function () {
-    function SignupPage(nav, navParams, authData, formBuilder, loadingCtrl, alertCtrl) {
-        this.nav = nav;
-        this.navParams = navParams;
-        this.authData = authData;
-        this.formBuilder = formBuilder;
-        this.loadingCtrl = loadingCtrl;
-        this.alertCtrl = alertCtrl;
-        this.emailChanged = false;
-        this.passwordChanged = false;
-        this.submitAttempt = false;
-        this.signupForm = formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
-            password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(6), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
-        });
-    } //end constructor
-    SignupPage.prototype.elementChanged = function (input) {
-        var field = input.ngControl.name;
-        this[field + "Changed"] = true;
-    };
-    SignupPage.prototype.signupUser = function () {
-        var _this = this;
-        this.submitAttempt = true;
-        if (!this.signupForm.valid) {
-            console.log(this.signupForm.value);
-        }
-        else {
-            this.authData.signupUser(this.signupForm.value.email, this.signupForm.value.password).then(function () {
-                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_5__tabs_tabs__["a" /* TabsPage */]);
-            }, function (error) {
-                _this.loading.dismiss().then(function () {
-                    var errorMessage = error.message;
-                    var alert = _this.alertCtrl.create({
-                        message: errorMessage,
-                        buttons: [
-                            {
-                                text: "Ok",
-                                role: 'cancel'
-                            }
-                        ]
-                    });
-                    alert.present();
-                });
-            });
-            this.showLoading();
-        }
-    };
-    SignupPage.prototype.showLoading = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.loading = _this.loadingCtrl.create({
-                spinner: 'crescent'
-            });
-            _this.loading.present()
-                .then(function () {
-                setTimeout(function () {
-                    _this.loading.dismiss();
-                }, 2000);
-                resolve('loaded');
-            });
-        });
-    };
-    return SignupPage;
-}());
-SignupPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-signup',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/signup/signup.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Create an account\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="signup">\n  <div class="container">\n    <ion-row>\n      <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n    </ion-row>\n    <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!signupForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!signupForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Create an Account\n      </button>\n    </ion-card>\n    </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/signup/signup.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], SignupPage);
-
-//# sourceMappingURL=signup.js.map
-
-/***/ }),
-
-/***/ 133:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(95);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the ResetPasswordPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ResetPasswordPage = (function () {
-    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
-        this.nav = nav;
-        this.authData = authData;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.emailChanged = false;
-        this.passwordChanged = false;
-        this.submitAttempt = false;
-        this.resetPasswordForm = formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
-        });
-    } //end constructor
-    ResetPasswordPage.prototype.elementChanged = function (input) {
-        var field = input.ngControl.name;
-        this[field + "Changed"] = true;
-    };
-    /**
-     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
-     *  component while the user waits.
-     *
-     * If the form is invalid it will just log the form value, feel free to handle that as you like.
-     */
-    ResetPasswordPage.prototype.resetPassword = function () {
-        var _this = this;
-        this.submitAttempt = true;
-        if (!this.resetPasswordForm.valid) {
-            console.log(this.resetPasswordForm.value);
-        }
-        else {
-            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
-                var alert = _this.alertCtrl.create({
-                    message: "We just sent you a reset link to your email",
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel',
-                            handler: function () {
-                                _this.nav.pop();
-                            }
-                        }
-                    ]
-                });
-                alert.present();
-            }, function (error) {
-                var errorMessage = error.message;
-                var errorAlert = _this.alertCtrl.create({
-                    message: errorMessage,
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel'
-                        }
-                    ]
-                });
-                errorAlert.present();
-            });
-        }
-    };
-    return ResetPasswordPage;
-}());
-ResetPasswordPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
-], ResetPasswordPage);
-
-//# sourceMappingURL=reset-password.js.map
-
-/***/ }),
-
-/***/ 141:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 141;
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurrentRoundDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the CurrentRoundDataProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var CurrentRoundDataProvider = (function () {
-    function CurrentRoundDataProvider(http) {
-        this.http = http;
-        this.currentRound = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/currentRound/');
-        this.gameStateNode = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/gameState/');
-    }
-    //get currentRound val from firebase
-    CurrentRoundDataProvider.prototype.getCurrentRound = function () {
-        return this.currentRound;
-    };
-    //get gamestate val from firebase
-    CurrentRoundDataProvider.prototype.getGameState = function () {
-        return this.gameStateNode;
-    };
-    CurrentRoundDataProvider.prototype.createRound = function () {
-        var _this = this;
-        // create currentRound node in firebase
-        return this.currentRound.push({
-            currentRound: 0,
-        }).then(function (newEvent) {
-            _this.currentRound.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    CurrentRoundDataProvider.prototype.changeRound = function (round) {
-        var _this = this;
-        console.log(round, 'newRound');
-        if (this.currentRound) {
-            this.currentRound.remove();
-        }
-        return this.currentRound.push({
-            currentRound: round,
-        }).then(function (newEvent) {
-            _this.currentRound.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    CurrentRoundDataProvider.prototype.changeState = function (gameState) {
-        if (this.gameStateNode) {
-            this.gameStateNode.update({
-                gameState: gameState
-            });
-        }
-        else {
-            return this.gameStateNode.push({
-                gameState: gameState
-            });
-        }
-    };
-    return CurrentRoundDataProvider;
-}());
-CurrentRoundDataProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], CurrentRoundDataProvider);
-
-//# sourceMappingURL=current-round-data.js.map
-
-/***/ }),
-
-/***/ 183:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"../pages/buy-trades/buy-trades.module": [
-		482,
-		19
-	],
-	"../pages/chassis-one/chassis-one.module": [
-		477,
-		18
-	],
-	"../pages/chassis-stats/chassis-stats.module": [
-		476,
-		17
-	],
-	"../pages/chassis-two/chassis-two.module": [
-		478,
-		16
-	],
-	"../pages/driver-one/driver-one.module": [
-		474,
-		15
-	],
-	"../pages/driver-stats/driver-stats.module": [
-		473,
-		14
-	],
-	"../pages/driver-two/driver-two.module": [
-		475,
-		13
-	],
-	"../pages/home/home.module": [
-		471,
-		12
-	],
-	"../pages/login/login.module": [
-		489,
-		11
-	],
-	"../pages/player-team/player-team.module": [
-		484,
-		10
-	],
-	"../pages/pu-one/pu-one.module": [
-		480,
-		9
-	],
-	"../pages/pu-stats/pu-stats.module": [
-		479,
-		8
-	],
-	"../pages/pu-two/pu-two.module": [
-		481,
-		7
-	],
-	"../pages/race/race.module": [
-		472,
-		6
-	],
-	"../pages/ranking/ranking.module": [
-		485,
-		5
-	],
-	"../pages/reset-password/reset-password.module": [
-		488,
-		4
-	],
-	"../pages/rules/rules.module": [
-		486,
-		3
-	],
-	"../pages/signup/signup.module": [
-		487,
-		2
-	],
-	"../pages/team/team.module": [
-		483,
-		1
-	],
-	"../pages/tour-guide/tour-guide.module": [
-		470,
-		0
-	]
-};
-function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids)
-		return Promise.reject(new Error("Cannot find module '" + req + "'."));
-	return __webpack_require__.e(ids[1]).then(function() {
-		return __webpack_require__(ids[0]);
-	});
-};
-webpackAsyncContext.keys = function webpackAsyncContextKeys() {
-	return Object.keys(map);
-};
-module.exports = webpackAsyncContext;
-webpackAsyncContext.id = 183;
-
-/***/ }),
-
-/***/ 20:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the AdminDataProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var AdminDataProvider = (function () {
-    function AdminDataProvider(http) {
-        this.http = http;
-        // Create a database reference to the driversList node.
-        this.driversList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/drivers');
-        // Create a database reference to the ChassisList node.
-        this.chassisList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/chassis');
-        // Create a database reference to the Power Unit list node.
-        this.puList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/powerUnits');
-        // Create a database reference to the Round data list node.
-        this.gameState = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/gameState');
-    } //end constructor
-    AdminDataProvider.prototype.getImage = function (node, name) {
-        console.log('node', node);
-        console.log('name', name);
-        this.storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.storage().ref(node + name + '.png');
-        return this.storageRef;
-    };
-    AdminDataProvider.prototype.createDriver = function (driverPos, firstName, lastName, abrev, driverValue, image) {
-        var _this = this;
-        return this.driversList.push({
-            position: driverPos,
-            firstName: firstName,
-            lastName: lastName,
-            abrev: abrev,
-            driverValue: driverValue,
-            driverImage: image,
-            driverUpgrade: false
-        }).then(function (newEvent) {
-            _this.driversList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.createChassis = function (chassisPos, chassisName, chassisValue, image) {
-        var _this = this;
-        return this.chassisList.push({
-            position: chassisPos,
-            chassisName: chassisName,
-            chassisValue: chassisValue,
-            chassisImage: image,
-            chassisUpgrade: false
-        }).then(function (newEvent) {
-            _this.chassisList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.createPU = function (puPosition, puName, puValue, image) {
-        var _this = this;
-        return this.puList.push({
-            position: puPosition,
-            puName: puName,
-            puValue: puValue,
-            puImage: image,
-            puUpgrade: false
-        }).then(function (newEvent) {
-            _this.puList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.createRoundData = function (lockoutRound, lockoutDate, lockoutCountry, lockoutTrack, trackLength, laps, lapTime, raceWinner, trackImage) {
-        var _this = this;
-        this.roundDataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/roundData/' + lockoutRound);
-        return this.roundDataList.push({
-            lockoutRound: lockoutRound,
-            lockoutDate: lockoutDate,
-            lockoutCountry: lockoutCountry,
-            lockoutTrack: lockoutTrack,
-            trackLength: trackLength,
-            laps: laps,
-            lapTime: lapTime,
-            raceWinner: raceWinner,
-            trackImage: trackImage
-        }).then(function (newEvent) {
-            _this.roundDataList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.getDriversList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/drivers');
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getChassisList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/chassis');
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getPUList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/powerUnits');
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getRoundDataList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('roundData/' + round);
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getGameState = function () {
-        console.log("current game state", this.gameState);
-        return this.gameState;
-    };
-    //Used to generate round 0 data.
-    AdminDataProvider.prototype.getInitialDriversList = function () {
-        return this.driversList;
-    };
-    AdminDataProvider.prototype.getInitialChassisList = function () {
-        return this.chassisList;
-    };
-    AdminDataProvider.prototype.getInitialPUList = function () {
-        return this.puList;
-    };
-    return AdminDataProvider;
-}());
-AdminDataProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], AdminDataProvider);
-
-//# sourceMappingURL=admin-data.js.map
-
-/***/ }),
-
-/***/ 23:
+/***/ 26:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4200,66 +2844,2224 @@ TeamDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 344:
+/***/ 341:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(363);
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
-
-/***/ }),
-
-/***/ 363:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_race_race__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_team_team__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_auth_data_auth_data__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_profile_data_profile_data__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_team_data_team_data__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_stats_data_stats_data__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the DriverTwoPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var DriverTwoPage = (function () {
+    function DriverTwoPage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        this.currentRoundData = currentRoundData;
+        this.lastRound = 0;
+        this.driverOneId = "";
+        this.driverTwoId = "";
+        this.raceTime = 0;
+        this.gameState = "lockout";
+        this.navCtrl = navCtrl;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        //get team cash amount
+        this.teamData.getTheMoney().on('value', function (snapshot) {
+            _this.teamCash = snapshot.val().money;
+            _this.userTrades = snapshot.val().trades;
+            _this.userPoints = snapshot.val().totalPoints;
+            if (_this.teamCash == 0) {
+                _this.teamCash = "0";
+            }
+            console.log(_this.userPoints, 'userPoints');
+        });
+        //call to firebase to retrieve currentRound
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.currentRound = rawList[0].currentRound;
+            console.log('TABS - this round:', _this.currentRound);
+            //get last round value
+            if (_this.currentRound < 2) {
+                _this.lastRound = 0;
+            }
+            else {
+                _this.lastRound = _this.currentRound - 1;
+                console.log(_this.lastRound, 'this.lastRound');
+            }
+            //call to firebase to retrieve drivers list data 
+            _this.adminData.getDriversList(_this.lastRound).orderByChild("driverValue").on('value', function (snapshot) {
+                var rawList = [];
+                snapshot.forEach(function (snap) {
+                    rawList.push({
+                        id: snap.key,
+                        position: snap.val().position,
+                        firstName: snap.val().firstName,
+                        lastName: snap.val().lastName,
+                        driverValue: snap.val().driverValue,
+                        abrev: snap.val().abrev,
+                        driverImage: snap.val().driverImage,
+                        driverPoints: snap.val().driverPoints,
+                        posChange: snap.val().posChange,
+                        qualified: snap.val().qualified,
+                        valChange: snap.val().valChange,
+                        driverStatus: snap.val().driverStatus,
+                        driverUpgrade: snap.val().driverUpgrade
+                    });
+                });
+                _this.driversList = rawList.reverse();
+                console.log(_this.driversList, 'DL');
+            });
+        });
+        //call firebase to check driver one data
+        this.teamData.getDriverOne().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                if (snap.val().firstName !== undefined) {
+                    rawList.push({
+                        id: snap.key,
+                        abrev: snap.val().abrev,
+                        firstName: snap.val().firstName,
+                        lastName: snap.val().lastName,
+                        driverValue: snap.val().driverValue,
+                        driverImage: snap.val().driverImage,
+                        driverPoints: snap.val().driverPoints,
+                        posChange: snap.val().posChange,
+                        qualified: snap.val().qualified,
+                        valChange: snap.val().valChange,
+                        driverStatus: snap.val().driverStatus,
+                        driverUpgrade: snap.val().driverUpgrade
+                    });
+                }
+                if (snap.val().abrev !== undefined) {
+                    _this.abrevOne = snap.val().abrev;
+                    _this.driverOneId = snap.val().id;
+                }
+                if (snap.val().driverStatus !== undefined) {
+                    _this.driverStatusOne = snap.val().driverStatus;
+                }
+            });
+            _this.userDriverOne = rawList;
+            if (_this.userDriverOne.length > 0) {
+                _this.userDriverOne = Object.keys(_this.userDriverOne).map(function (key) { return _this.userDriverOne[key]; }); //convert to array of objects
+                _this.userDriverOneValue = parseInt(_this.userDriverOne[0].driverValue);
+            }
+            else {
+                _this.userDriverOneValue = 0;
+            }
+        });
+        //call firebase to check driver two data
+        this.teamData.getDriverTwo().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                if (snap.val().firstName !== undefined) {
+                    rawList.push({
+                        id: snap.key,
+                        abrev: snap.val().abrev,
+                        firstName: snap.val().firstName,
+                        lastName: snap.val().lastName,
+                        driverValue: snap.val().driverValue,
+                        driverImage: snap.val().driverImage,
+                        driverPoints: snap.val().driverPoints,
+                        posChange: snap.val().posChange,
+                        qualified: snap.val().qualified,
+                        valChange: snap.val().valChange,
+                        driverStatus: snap.val().driverStatus,
+                        driverUpgrade: snap.val().driverUpgrade
+                    });
+                }
+                if (snap.val().abrev !== undefined) {
+                    _this.abrevTwo = snap.val().abrev;
+                    _this.driverTwoId = snap.val().id;
+                }
+                if (snap.val().driverStatus !== undefined) {
+                    _this.driverStatusTwo = snap.val().driverStatus;
+                }
+            });
+            _this.userDriverTwo = rawList;
+            if (_this.userDriverTwo.length > 0) {
+                _this.userDriverTwo = Object.keys(_this.userDriverTwo).map(function (key) { return _this.userDriverTwo[key]; }); //convert to array of objects
+                _this.userDriverTwoValue = parseInt(_this.userDriverTwo[0].driverValue);
+            }
+            else {
+                _this.userDriverTwoValue = 0;
+            }
+        });
+        this.adminData.getGameState().on('value', function (snapshot) {
+            _this.gameState = snapshot.val().gameState;
+        });
+    } //end constructor
+    // add driver to firebase from list
+    DriverTwoPage.prototype.addDriver = function (carNum, carData) {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'Confirm',
+            message: 'Are you sure you want to make a trade?',
+            buttons: [
+                {
+                    text: 'No',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        var oldDriver;
+                        var newDriver;
+                        var newValue;
+                        //make sure user has trades
+                        if (_this.userTrades > 0) {
+                            if (carNum === 'two') {
+                                //check for first entry
+                                if (_this.userDriverTwo.length < 1) {
+                                    console.log('firstEntry');
+                                    //make sure driver one and two are not the same
+                                    if (_this.userDriverOne.length < 1) {
+                                        oldDriver = '';
+                                    }
+                                    else {
+                                        oldDriver = _this.userDriverOne[0].abrev;
+                                    }
+                                    newDriver = carData.abrev;
+                                    console.log('old and new 2', oldDriver, newDriver);
+                                    if (oldDriver == newDriver) {
+                                        _this.driverSameAlert();
+                                    }
+                                    else {
+                                        newValue = carData.driverValue;
+                                        //make sure user has enough money
+                                        if (newValue > _this.teamCash) {
+                                            var negVal = (_this.teamCash - newValue) * -1;
+                                            _this.negValueAlert(negVal);
+                                        }
+                                        else {
+                                            _this.teamData.addDriver(carData, _this.userDriverTwo, carNum, _this.userPoints, _this.driverOneId);
+                                        }
+                                    }
+                                }
+                                else {
+                                    //make sure driver one and two are not the same
+                                    oldDriver = _this.userDriverOne[0].abrev;
+                                    newDriver = carData.abrev;
+                                    console.log('old and new 2', oldDriver, newDriver);
+                                    if (oldDriver == newDriver) {
+                                        _this.driverSameAlert();
+                                    }
+                                    else {
+                                        var oldValue = parseInt(_this.userDriverTwo[0].driverValue);
+                                        newValue = carData.driverValue;
+                                        //check if user has enough money
+                                        if ((_this.teamCash + oldValue) >= newValue) {
+                                            _this.teamData.addDriver(carData, _this.userDriverTwo, carNum, _this.userPoints, _this.driverOneId);
+                                        }
+                                        else {
+                                            var negDriverVal = ((_this.teamCash + oldValue) - newValue) * -1;
+                                            _this.negValueAlert(negDriverVal);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            _this.noTradeAlert();
+                        }
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    DriverTwoPage.prototype.noTradeAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Out of trades',
+            subTitle: 'You are out of trades, purchase more to continue to make trades.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    DriverTwoPage.prototype.negValueAlert = function (negValue) {
+        var alert = this.alertCtrl.create({
+            title: 'Not enough money',
+            subTitle: 'You need an additional $' + negValue + ' to make the trade.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    DriverTwoPage.prototype.driverSameAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Not allowed',
+            subTitle: 'Driver 1 and 2 must be different drivers.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    DriverTwoPage.prototype.carHelp = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Hints and tips',
+            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
+                'When you make a trade you receive the value of your current driver.' + '<br /><br />' +
+                'Additional trades can be bought from the team page.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    DriverTwoPage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    DriverTwoPage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    DriverTwoPage.prototype.goToDriverStats = function (driver) {
+        console.log(driver, 'test');
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__["a" /* DriverStatsPage */], driver);
+    };
+    DriverTwoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DriverTwoPage');
+    };
+    return DriverTwoPage;
+}());
+DriverTwoPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-driver-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-two/driver-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank">\n            <span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span>\n          </div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n  <div class="container">\n	  <!-- Driver one -->\n	  <ion-row>\n      <ion-card *ngIf="(userDriverTwo != 0)" class="card-layout pullUp delay-3">\n        <div class="relative-pos" *ngFor="let user of userDriverTwo">  \n          <ion-row> \n            <ion-col col-2 class="margin-image">\n              <img [src]="user.driverImage" class="driver-image" />\n            </ion-col>\n            <ion-col col-7 class="vert-center">\n              <div class="margin-left">\n                <div class="driver-name">\n                  {{user.firstName}} {{user.lastName}}\n                </div>\n                <div class="driver-value">\n                  {{ +user.driverValue | currency:\'USD\':true:\'1.0\' }} \n                </div>\n                <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}" > \n                  {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n                </span>\n              </div>\n            </ion-col>\n\n            <ion-col col-3>\n              <h3 class="points">{{ user.driverPoints }}</h3>\n              <div class="to-bottom">\n                <img class="car-img" src="assets/img/red-car.png" />\n                <div class="car-number car-two">CAR TWO</div>\n              </div>\n            </ion-col>\n          </ion-row>\n        </div>\n      </ion-card>\n  </ion-row>\n\n  <ion-row class="header-marg">\n    <div class="text-center relative-pos slideExpandUp delay-3">\n      Available drivers\n      <ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n    </div>\n  </ion-row>\n\n  <ion-list *ngIf="driversList">\n    <ion-item class="relative-pos min-list-height pullUp delay-{{i}}" *ngFor="let driver of driversList; let i=index" [ngClass]="{\'highlight-one\': driver.abrev == abrevOne ? \'highlight-two\': driver.abrev == abrevTwo}">\n\n      <ion-thumbnail item-left>\n        <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n        <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n      </ion-thumbnail>\n\n      <ion-row class="v-center">\n        <ion-col col-7>\n          <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n          <h5 class="list-value">\n            {{ driver.driverValue | currency:\'USD\':true:\'1.0\' }}\n          </h5>\n          <h5 [ngClass]="{negative: driver.valChange < 0}" class="val-change positive">\n            {{ driver.valChange | currency:\'USD\':true:\'1.0\' }}\n          </h5>\n        </ion-col>\n\n        <ion-col col-4 class="align-right">\n          <button class="stats-btn" ion-button (click)="goToDriverStats(driver.abrev);" [ngClass]="{\'hide-button\': this.round < 2}">\n            <ion-icon name="stats"></ion-icon>\n          </button>\n          <button class="cantAfford buy-btn" ion-button (click)="addDriver(\'two\', driver);" [disabled]="driver.abrev == abrevOne || driver.abrev == abrevTwo ||  driver.driverValue > (teamCash + userDriverTwoValue)" [hidden]="gameState == \'lockout\'">\n            <ion-icon>\n            	<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n\n     	<div *ngIf="driver.abrev == abrevOne || driver.abrev == abrevTwo" class="to-bottom right-tag" >\n        <div class="tag-driver-one" *ngIf="driver.abrev == abrevOne">\n          <div class="tag-text bumpRight">CAR ONE</div>\n          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" [ngClass]="{\'move-it\': animateCar == true }" />\n        </div>\n        <div class="tag-holder-two" *ngIf="driver.abrev == abrevTwo">\n          <div class="tag-text-two bumpRight">CAR TWO</div>\n          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n        </div>\n      </div>\n    </ion-item>\n  </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-two/driver-two.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], DriverTwoPage);
+
+//# sourceMappingURL=driver-two.js.map
+
+/***/ }),
+
+/***/ 342:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisOnePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__ = __webpack_require__(123);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the ChassisOnePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ChassisOnePage = (function () {
+    function ChassisOnePage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        this.currentRoundData = currentRoundData;
+        this.lastRound = 0;
+        this.gameState = "lockout";
+        this.raceTime = 0;
+        this.navCtrl = navCtrl;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        //get team cash amount
+        this.teamData.getTheMoney().on('value', function (snapshot) {
+            _this.teamCash = snapshot.val().money;
+            _this.userTrades = snapshot.val().trades;
+            _this.userPoints = snapshot.val().totalPoints;
+            if (_this.teamCash == 0) {
+                _this.teamCash = "0";
+            }
+            console.log(_this.userPoints, 'userPoints');
+        });
+        //call to firebase to retrieve currentRound
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.currentRound = rawList[0].currentRound;
+            console.log('TABS - this round:', _this.currentRound);
+            //get last round value
+            if (_this.currentRound < 2) {
+                _this.lastRound = 0;
+            }
+            else {
+                _this.lastRound = _this.currentRound - 1;
+                console.log(_this.lastRound, 'this.lastRound');
+            }
+            //call to firebase to retrieve chassis list data
+            _this.adminData.getChassisList(_this.lastRound).orderByChild("chassisValue").on('value', function (snapshot) {
+                var rawList = [];
+                snapshot.forEach(function (snap) {
+                    rawList.push({
+                        id: snap.key,
+                        position: snap.val().position,
+                        chassisName: snap.val().chassisName,
+                        chassisValue: snap.val().chassisValue,
+                        chassisImage: snap.val().chassisImage,
+                        chassisPoints: snap.val().chassisPoints,
+                        valChange: snap.val().valChange,
+                        chassisUpgrade: snap.val().chassisUpgrade
+                    });
+                });
+                _this.chassisList = rawList.reverse();
+            });
+        });
+        //call firebase to check user chassis one data
+        this.teamData.getChassisOne().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    chassisName: snap.val().chassisName,
+                    chassisValue: snap.val().chassisValue,
+                    chassisImage: snap.val().chassisImage,
+                    chassisPoints: snap.val().chassisPoints,
+                    valChange: snap.val().valChange,
+                    chassisUpgrade: snap.val().chassisUpgrade
+                });
+                if (snap.val().chassisName !== undefined) {
+                    _this.chassisOneName = snap.val().chassisName;
+                }
+            });
+            _this.userChassisOne = rawList;
+            if (_this.userChassisOne.length > 0) {
+                _this.userChassisOne = Object.keys(_this.userChassisOne).map(function (key) { return _this.userChassisOne[key]; }); //convert to array of objects
+                _this.userChassisOneValue = parseInt(_this.userChassisOne[0].chassisValue);
+            }
+            else {
+                _this.userChassisOneValue = 0;
+            }
+        });
+        //call firebase to check user chassis two data
+        this.teamData.getChassisTwo().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    chassisName: snap.val().chassisName,
+                    chassisValue: snap.val().chassisValue,
+                    chassisImage: snap.val().chassisImage,
+                    chassisPoints: snap.val().chassisPoints,
+                    valChange: snap.val().valChange,
+                    chassisUpgrade: snap.val().chassisUpgrade
+                });
+                if (snap.val().chassisName !== undefined) {
+                    _this.chassisTwoName = snap.val().chassisName;
+                }
+            });
+            _this.userChassisTwo = rawList;
+            if (_this.userChassisTwo.length > 0) {
+                _this.userChassisTwo = Object.keys(_this.userChassisTwo).map(function (key) { return _this.userChassisTwo[key]; }); //convert to array of objects
+                _this.userChassisTwoValue = parseInt(_this.userChassisTwo[0].chassisValue);
+            }
+            else {
+                _this.userChassisTwoValue = 0;
+            }
+        });
+        this.adminData.getGameState().on('value', function (snapshot) {
+            _this.gameState = snapshot.val().gameState;
+            console.log(_this.gameState);
+        });
+    } //end constructor
+    //add chassis to firebase from list
+    ChassisOnePage.prototype.addChassis = function (carNum, carData) {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'Confirm',
+            message: 'Are you sure you want to make a trade?',
+            buttons: [
+                {
+                    text: 'No',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        console.log('Car Number', carNum);
+                        console.log('Car data', carData);
+                        var newValue;
+                        var oldValue;
+                        //make sure the user has trades
+                        if (_this.userTrades > 0) {
+                            if (carNum === 'one') {
+                                //check for first entry
+                                if (_this.userChassisOne.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.chassisValue;
+                                    //check that this.driverOne.driverValue > this.teamCash
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userChassisOne[0].chassisValue);
+                                    newValue = carData.chassisValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car one
+                            else {
+                                //check for first entry
+                                if (_this.userChassisTwo.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.chassisValue;
+                                    //check that driver one's value > teamCash
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userChassisTwo[0].chassisValue);
+                                    newValue = carData.chassisValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car two
+                        }
+                        else {
+                            _this.noTradeAlert();
+                        }
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    ChassisOnePage.prototype.getRaceTime = function (timeOfRace, timeNow) {
+        var timeToRace = timeOfRace - timeNow;
+        console.log("timeToRace Chassis", timeToRace);
+        return timeToRace;
+    };
+    ChassisOnePage.prototype.noTradeAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Out of trades',
+            subTitle: 'You are out of trades, purchase more to continue to make trades.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ChassisOnePage.prototype.negBalanceAlert = function (newValue, teamCash, oldValue) {
+        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
+        var alert = this.alertCtrl.create({
+            title: 'Not enough money',
+            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ChassisOnePage.prototype.carHelp = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Hints and tips',
+            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
+                'When you make a trade you receive the value of your current chassis.' + '<br /><br />' +
+                'Additional trades can be bought from the team page.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ChassisOnePage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    ChassisOnePage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    ChassisOnePage.prototype.goToChassisStats = function (chassis) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__["a" /* ChassisStatsPage */], chassis);
+    };
+    ChassisOnePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ChassisOnePage');
+    };
+    return ChassisOnePage;
+}());
+ChassisOnePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-chassis-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-one/chassis-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Chassis one -->\n		<ion-row>\n			<ion-card class="card-layout left pullUp delay-3 card-min-height" *ngIf="(userChassisOne?.length > 0)">\n			  <div class="relative-pos" *ngFor="let user of userChassisOne">\n		  		<ion-row> \n	          <ion-col col-2>\n	            <img class="chassis-image" [src]="user.chassisImage" />\n	          </ion-col>\n\n						<ion-col col-7 class="vert-center">\n					   	<div class="chassis-name"> \n					   		{{user.chassisName}}\n					   	</div>\n\n					   	<div class="chassis-value">\n					   		{{ user?.chassisValue | currency:\'USD\':true:\'1.0\' }}\n              </div>\n      		   	<span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> \n                {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n              </span>\n					  </ion-col>\n\n						<ion-col col-3 class="relative-pos">\n              <h3 class="points"> {{ user.chassisPoints }} </h3>\n							<div class="to-bottom align-right">\n	              <img class="car-img" src="assets/img/black-car.png" />\n	              <div class="car-number">CAR ONE</div>\n	            </div>\n            </ion-col>\n					</ion-row>\n			  </div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3"> \n		  	Available chassis\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="chassisList">\n		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{\'highlight-one\': chassis.chassisName == chassisOneName ? \'highlight-two\': chassis.chassisName == chassisTwoName}">\n		   	\n		   	<ion-thumbnail item-left>\n		   		<img [src]="chassis.chassisImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" class="chassis-size" />\n\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>\n				   	<h5 class="list-value">\n				   		{{ chassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> \n		   	 			{{ chassis.valChange | currency:\'USD\':true:\'1.0\' }}\n		   	 		</span>\n					</ion-col>\n\n					<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [ngClass]="{\'hide-button\': this.round < 2}">\n				   		<ion-icon name="stats"></ion-icon>\n				   	</button>\n				   	\n				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis(\'one\', chassis)" [disabled]="chassis.chassisName == chassisOneName || chassis.chassisValue > (teamCash + userChassisOneValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n				  </ion-col>\n			  </ion-row>\n\n			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">\n	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight" src="assets/img/black-car.png" />\n	        </div>\n\n	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">\n	        	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-one/chassis-one.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], ChassisOnePage);
+
+//# sourceMappingURL=chassis-one.js.map
+
+/***/ }),
+
+/***/ 343:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisTwoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__ = __webpack_require__(123);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the ChassisTwoPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ChassisTwoPage = (function () {
+    function ChassisTwoPage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        this.currentRoundData = currentRoundData;
+        this.lastRound = 0;
+        this.gameState = "lockout";
+        this.raceTime = 0;
+        this.navCtrl = navCtrl;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        //get team cash amount
+        this.teamData.getTheMoney().on('value', function (snapshot) {
+            _this.teamCash = snapshot.val().money;
+            _this.userTrades = snapshot.val().trades;
+            _this.userPoints = snapshot.val().totalPoints;
+            if (_this.teamCash == 0) {
+                _this.teamCash = "0";
+            }
+            console.log(_this.userPoints, 'userPoints');
+        });
+        //call to firebase to retrieve currentRound
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.currentRound = rawList[0].currentRound;
+            console.log('TABS - this round:', _this.currentRound);
+            //get last round value
+            if (_this.currentRound < 2) {
+                _this.lastRound = 0;
+            }
+            else {
+                _this.lastRound = _this.currentRound - 1;
+                console.log(_this.lastRound, 'this.lastRound');
+            }
+            //call to firebase to retrieve chassis list data
+            _this.adminData.getChassisList(_this.lastRound).orderByChild("chassisValue").on('value', function (snapshot) {
+                var rawList = [];
+                snapshot.forEach(function (snap) {
+                    rawList.push({
+                        id: snap.key,
+                        position: snap.val().position,
+                        chassisName: snap.val().chassisName,
+                        chassisValue: snap.val().chassisValue,
+                        chassisImage: snap.val().chassisImage,
+                        chassisPoints: snap.val().chassisPoints,
+                        valChange: snap.val().valChange,
+                        chassisUpgrade: snap.val().chassisUpgrade
+                    });
+                });
+                _this.chassisList = rawList.reverse();
+            });
+        });
+        //call firebase to check user chassis one data
+        this.teamData.getChassisOne().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    chassisName: snap.val().chassisName,
+                    chassisValue: snap.val().chassisValue,
+                    chassisImage: snap.val().chassisImage,
+                    chassisPoints: snap.val().chassisPoints,
+                    valChange: snap.val().valChange,
+                    chassisUpgrade: snap.val().chassisUpgrade
+                });
+                if (snap.val().chassisName !== undefined) {
+                    _this.chassisOneName = snap.val().chassisName;
+                }
+            });
+            _this.userChassisOne = rawList;
+            if (_this.userChassisOne.length > 0) {
+                _this.userChassisOne = Object.keys(_this.userChassisOne).map(function (key) { return _this.userChassisOne[key]; }); //convert to array of objects
+                _this.userChassisOneValue = parseInt(_this.userChassisOne[0].chassisValue);
+            }
+            else {
+                _this.userChassisOneValue = 0;
+            }
+        });
+        //call firebase to check user chassis two data
+        this.teamData.getChassisTwo().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    chassisName: snap.val().chassisName,
+                    chassisValue: snap.val().chassisValue,
+                    chassisImage: snap.val().chassisImage,
+                    chassisPoints: snap.val().chassisPoints,
+                    valChange: snap.val().valChange,
+                    chassisUpgrade: snap.val().chassisUpgrade
+                });
+                if (snap.val().chassisName !== undefined) {
+                    _this.chassisTwoName = snap.val().chassisName;
+                }
+            });
+            _this.userChassisTwo = rawList;
+            if (_this.userChassisTwo.length > 0) {
+                _this.userChassisTwo = Object.keys(_this.userChassisTwo).map(function (key) { return _this.userChassisTwo[key]; }); //convert to array of objects
+                _this.userChassisTwoValue = parseInt(_this.userChassisTwo[0].chassisValue);
+            }
+            else {
+                _this.userChassisTwoValue = 0;
+            }
+        });
+        this.adminData.getGameState().on('value', function (snapshot) {
+            _this.gameState = snapshot.val().gameState;
+            console.log(_this.gameState);
+        });
+    } //end constructor
+    //add chassis to firebase from list
+    ChassisTwoPage.prototype.addChassis = function (carNum, carData) {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'Confirm',
+            message: 'Are you sure you want to make a trade?',
+            buttons: [
+                {
+                    text: 'No',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        console.log('Car Number', carNum);
+                        console.log('Car data', carData);
+                        var newValue;
+                        var oldValue;
+                        //make sure the user has trades
+                        if (_this.userTrades > 0) {
+                            if (carNum === 'one') {
+                                //check for first entry
+                                if (_this.userChassisOne.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.chassisValue;
+                                    //check that this.driverOne.driverValue > this.teamCash
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userChassisOne[0].chassisValue);
+                                    newValue = carData.chassisValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        _this.teamData.addChassis(carData, _this.userChassisOne, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car one
+                            else {
+                                //check for first entry
+                                if (_this.userChassisTwo.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.chassisValue;
+                                    //check that this.driverOne.driverValue > this.teamCash
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userChassisTwo[0].chassisValue);
+                                    newValue = carData.chassisValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        _this.teamData.addChassis(carData, _this.userChassisTwo, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalanceAlert(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car two
+                        }
+                        else {
+                            _this.noTradeAlert();
+                        }
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    ChassisTwoPage.prototype.getRaceTime = function (timeOfRace, timeNow) {
+        var timeToRace = timeOfRace - timeNow;
+        return timeToRace;
+    };
+    ChassisTwoPage.prototype.noTradeAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Out of trades',
+            subTitle: 'You are out of trades, purchase more to continue to make trades.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ChassisTwoPage.prototype.negBalanceAlert = function (newValue, teamCash, oldValue) {
+        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
+        var alert = this.alertCtrl.create({
+            title: 'Not enough money',
+            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ChassisTwoPage.prototype.carHelp = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Hints and tips',
+            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
+                'When you make a trade you receive the value of your current chassis.' + '<br /><br />' +
+                'Additional trades can be bought from the team page.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    ChassisTwoPage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    ChassisTwoPage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    ChassisTwoPage.prototype.goToChassisStats = function (chassis) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__["a" /* ChassisStatsPage */], chassis);
+    };
+    ChassisTwoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ChassisTwoPage');
+    };
+    return ChassisTwoPage;
+}());
+ChassisTwoPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-chassis-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-two/chassis-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Chassis two -->\n		<ion-row>	\n			<ion-card *ngIf="(userChassisTwo != 0)" class="card-layout left pullUp delay-3 card-min-height">\n			  <div class="relative-pos" *ngFor="let user of userChassisTwo">\n		  		<ion-row> \n	          <ion-col col-2>\n	            <img class="chassis-image" [src]="user.chassisImage" />\n	          </ion-col>\n\n						<ion-col col-7 class="vert-center">\n					   	<div class="chassis-name"> \n					   		{{user.chassisName}}\n					   	</div>\n\n					   	<div class="chassis-value">\n					   		{{ user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n              </div>\n              <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> \n	              {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n	            </span>\n					  </ion-col>\n\n						<ion-col col-3 class="relative-pos">\n              <h3 class="points"> {{ user.chassisPoints }} </h3>\n							<div class="to-bottom align-right">\n	              <img class="car-img" src="assets/img/red-car.png" />\n	              <div class="car-number car-two">CAR TWO</div>\n	            </div>\n            </ion-col>\n					</ion-row>	\n			  </div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n				Available chassis\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="chassisList">\n		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{\'highlight-one\': chassis.chassisName == chassisOneName ? \'highlight-two\': chassis.chassisName == chassisTwoName}">\n		   	\n		   	<ion-thumbnail item-left>\n		   		<img [src]="chassis.chassisImage" class="chassis-size" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>\n				   	<h5 class="list-value">\n				   		{{ chassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n\n				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> \n		   	 			{{ chassis.valChange | currency:\'USD\':true:\'1.0\' }}\n		   	 		</span>\n					</ion-col>\n\n					<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [ngClass]="{\'hide-button\': this.round < 2}">\n				   		<ion-icon name="stats"></ion-icon>\n				   	</button>\n				   	\n				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis(\'two\', chassis)" [disabled]="chassis.chassisName == chassisTwoName || chassis.chassisValue > (teamCash + userChassisTwoValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n				  </ion-col>\n			  </ion-row>\n\n			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">\n	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" />\n	        </div>\n\n	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">\n	        	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-two/chassis-two.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], ChassisTwoPage);
+
+//# sourceMappingURL=chassis-two.js.map
+
+/***/ }),
+
+/***/ 344:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuOnePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__ = __webpack_require__(124);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the PuOnePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var PuOnePage = (function () {
+    function PuOnePage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        this.currentRoundData = currentRoundData;
+        this.lastRound = 0;
+        this.gameState = "lockout";
+        this.raceTime = 0;
+        this.navCtrl = navCtrl;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        //get team cash amount
+        this.teamData.getTheMoney().on('value', function (snapshot) {
+            _this.teamCash = snapshot.val().money;
+            _this.userTrades = snapshot.val().trades;
+            _this.userPoints = snapshot.val().totalPoints;
+            if (_this.teamCash == 0) {
+                _this.teamCash = "0";
+            }
+            console.log(_this.userPoints, 'userPoints');
+        });
+        //call to firebase to retrieve currentRound
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.currentRound = rawList[0].currentRound;
+            console.log('TABS - this round:', _this.currentRound);
+            //get last round value
+            if (_this.currentRound < 2) {
+                _this.lastRound = 0;
+            }
+            else {
+                _this.lastRound = _this.currentRound - 1;
+                console.log(_this.lastRound, 'this.lastRound');
+            }
+            //call to firebase to retrieve pu list data
+            _this.adminData.getPUList(_this.lastRound).orderByChild("puValue").on('value', function (snapshot) {
+                var rawList = [];
+                snapshot.forEach(function (snap) {
+                    rawList.push({
+                        id: snap.key,
+                        position: snap.val().position,
+                        puName: snap.val().puName,
+                        puValue: snap.val().puValue,
+                        puImage: snap.val().puImage,
+                        puPoints: snap.val().puPoints,
+                        valChange: snap.val().valChange,
+                        posChange: snap.val().posChange,
+                        puUpgrade: snap.val().puUpgrade
+                    });
+                });
+                _this.puList = rawList.reverse();
+                console.log('PUList', _this.puList);
+            });
+        });
+        //call firebase to check user power unit one data
+        this.teamData.getPuOne().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    puName: snap.val().puName,
+                    puValue: snap.val().puValue,
+                    puImage: snap.val().puImage,
+                    puPoints: snap.val().puPoints,
+                    valChange: snap.val().valChange,
+                    posChange: snap.val().posChange,
+                    puUpgrade: snap.val().puUpgrade
+                });
+                if (snap.val().puName !== undefined) {
+                    _this.puNameOne = snap.val().puName;
+                }
+            });
+            _this.userPuOne = rawList;
+            if (_this.userPuOne.length > 0) {
+                _this.userPuOne = Object.keys(_this.userPuOne).map(function (key) { return _this.userPuOne[key]; }); //convert to array of objects
+                _this.userPuOneValue = parseInt(_this.userPuOne[0].puValue);
+            }
+            else {
+                _this.userPuOneValue = 0;
+            }
+        });
+        //call firebase to check user power unit two data
+        this.teamData.getPuTwo().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    puName: snap.val().puName,
+                    puValue: snap.val().puValue,
+                    puImage: snap.val().puImage,
+                    puPoints: snap.val().puPoints,
+                    valChange: snap.val().valChange,
+                    posChange: snap.val().posChange,
+                    puUpgrade: snap.val().puUpgrade
+                });
+                if (snap.val().puName !== undefined) {
+                    _this.puNameTwo = snap.val().puName;
+                    console.log("ksjhfksjdfhksjfdh", _this.puNameTwo);
+                }
+            });
+            _this.userPuTwo = rawList;
+            if (_this.userPuTwo.length > 0) {
+                _this.userPuTwo = Object.keys(_this.userPuTwo).map(function (key) { return _this.userPuTwo[key]; }); //convert to array of objects
+                _this.userPuTwoValue = parseInt(_this.userPuTwo[0].puValue);
+            }
+            else {
+                _this.userPuTwoValue = 0;
+            }
+        });
+        this.adminData.getGameState().on('value', function (snapshot) {
+            _this.gameState = snapshot.val().gameState;
+            console.log(_this.gameState);
+        });
+    } //end constructor
+    PuOnePage.prototype.addPU = function (carNum, carData) {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'Confirm',
+            message: 'Are you sure you want to make a trade?',
+            buttons: [
+                {
+                    text: 'No',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        var newValue;
+                        var oldValue;
+                        //make sure the user has trades
+                        if (_this.userTrades > 0) {
+                            //power unit one
+                            if (carNum === 'one') {
+                                //check for first entry
+                                if (_this.userPuOne.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.puValue;
+                                    //not enough money
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalance(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        //add pu to car one
+                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userPuOne[0].puValue);
+                                    newValue = carData.puValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        //add pu to car one
+                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalance(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car one
+                            else {
+                                //check for first entry
+                                if (_this.userPuTwo.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.puValue;
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalance(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userPuTwo[0].puValue);
+                                    newValue = carData.puValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        //add pu to car two 
+                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalance(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car two
+                        }
+                        else {
+                            _this.noTradeAlert();
+                        }
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    PuOnePage.prototype.getRaceTime = function (timeOfRace, timeNow) {
+        var timeToRace = timeOfRace - timeNow;
+        console.log("timeToRace engine", timeToRace);
+        return timeToRace;
+    };
+    PuOnePage.prototype.noTradeAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Out of trades',
+            subTitle: 'You are out of trades, purchase more to continue to make trades.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    PuOnePage.prototype.negBalance = function (newValue, teamCash, oldValue) {
+        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
+        var alert = this.alertCtrl.create({
+            title: 'Not enough money',
+            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    PuOnePage.prototype.carHelp = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Hints and tips',
+            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
+                'When you make a trade you receive the value of your current power unit.' + '<br /><br />' +
+                'Additional trades can be bought from the team page.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    PuOnePage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    PuOnePage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    PuOnePage.prototype.goToPuStats = function (powerUnit) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__["a" /* PuStatsPage */], powerUnit);
+    };
+    PuOnePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PuOnePage');
+    };
+    return PuOnePage;
+}());
+PuOnePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-pu-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-one/pu-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Power unit One -->\n		<ion-row>\n			<ion-card *ngIf="(userPuOne != 0)" class="card-layout left pullUp delay-3">\n			  <div class="relative-pos" *ngFor="let user of userPuOne" (click)="goToPu()">\n				  <ion-row> \n						<ion-col col-2 class="margin-image">\n							<img [src]="user.puImage" class="pu-image" />\n					  </ion-col>\n					  <ion-col col-7 class="vert-center">\n					  	<div class="pu-name"> \n					   		{{user.puName}}\n					   	</div>\n					   	<div class="pu-value">\n					  		{{ user.puValue | currency:\'USD\':true:\'1.0\' }}\n					  	</div>\n					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> \n								{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n							</span>\n					  </ion-col>\n				  	<ion-col col-3 class="relative-pos">\n            	<h3 class="points"> {{ user.puPoints }} </h3>\n            	<div class="to-bottom align-right">\n            		<img class="car-img" src="assets/img/black-car.png" />\n            		<div class="car-number">CAR ONE</div>\n            	</div>\n          	</ion-col>\n					</ion-row>\n		  	</div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n		  	Available power units\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="puList">\n		  <ion-item class="relative-pos pu-item-height pullUp delay-{{i}}" *ngFor="let pu of puList; let i=index" [ngClass]="{\'highlight-one\': pu.puName == puNameOne ? \'highlight-two\': pu.puName == puNameTwo}">\n		   	<ion-thumbnail item-left>\n		   		<img class="margin-image" [src]="pu.puImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ pu.puName }}</h2>\n				  	<h5 class="list-value">\n				   		{{ pu.puValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: pu.valChange < 0}"> \n				   	 	{{ pu.valChange | currency:\'USD\':true:\'1.0\' }}\n				   	</span>\n			   	</ion-col>\n			   	<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [ngClass]="{\'hide-button\': this.round < 2}">\n			   			<ion-icon name="stats"></ion-icon>\n			   		</button>\n				   	<button class="cantAfford buy-btn" ion-button (click)="addPU(\'one\', pu);" [disabled]="pu.puName == puNameOne || pu.puValue > (teamCash + userPuOneValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n					</ion-col>\n				</ion-row>\n\n				<div *ngIf="pu.puName == puNameOne || pu.puName == puNameTwo" class="to-bottom right-tag">\n        	<div class="tag-driver-one" *ngIf="pu.puName == puNameOne">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight" src="assets/img/black-car.png" />\n	        </div>\n	        <div class="tag-holder-two" *ngIf="pu.puName == puNameTwo">\n	         	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-one/pu-one.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], PuOnePage);
+
+//# sourceMappingURL=pu-one.js.map
+
+/***/ }),
+
+/***/ 345:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuTwoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__ = __webpack_require__(124);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the PuTwoPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var PuTwoPage = (function () {
+    function PuTwoPage(navCtrl, navParams, alertCtrl, storage, adminData, teamData, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        this.currentRoundData = currentRoundData;
+        this.lastRound = 0;
+        this.gameState = "lockout";
+        this.raceTime = 0;
+        this.navCtrl = navCtrl;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        //get team cash amount
+        this.teamData.getTheMoney().on('value', function (snapshot) {
+            _this.teamCash = snapshot.val().money;
+            _this.userTrades = snapshot.val().trades;
+            _this.userPoints = snapshot.val().totalPoints;
+            if (_this.teamCash == 0) {
+                _this.teamCash = "0";
+            }
+            console.log(_this.userPoints, 'userPoints');
+        });
+        //call to firebase to retrieve currentRound
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.currentRound = rawList[0].currentRound;
+            console.log('TABS - this round:', _this.currentRound);
+            //get last round value
+            if (_this.currentRound < 2) {
+                _this.lastRound = 0;
+            }
+            else {
+                _this.lastRound = _this.currentRound - 1;
+                console.log(_this.lastRound, 'this.lastRound');
+            }
+            //call to firebase to retrieve pu list data
+            _this.adminData.getPUList(_this.lastRound).orderByChild("puValue").on('value', function (snapshot) {
+                var rawList = [];
+                snapshot.forEach(function (snap) {
+                    rawList.push({
+                        id: snap.key,
+                        position: snap.val().position,
+                        puName: snap.val().puName,
+                        puValue: snap.val().puValue,
+                        puImage: snap.val().puImage,
+                        puPoints: snap.val().puPoints,
+                        valChange: snap.val().valChange,
+                        posChange: snap.val().posChange,
+                        puUpgrade: snap.val().puUpgrade
+                    });
+                });
+                _this.puList = rawList.reverse();
+                console.log('PUList', _this.puList);
+            });
+        });
+        //call firebase to check user power unit one data
+        this.teamData.getPuOne().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    puName: snap.val().puName,
+                    puValue: snap.val().puValue,
+                    puImage: snap.val().puImage,
+                    puPoints: snap.val().puPoints,
+                    valChange: snap.val().valChange,
+                    posChange: snap.val().posChange,
+                    puUpgrade: snap.val().puUpgrade
+                });
+                if (snap.val().puName !== undefined) {
+                    _this.puNameOne = snap.val().puName;
+                }
+            });
+            _this.userPuOne = rawList;
+            if (_this.userPuOne.length > 0) {
+                _this.userPuOne = Object.keys(_this.userPuOne).map(function (key) { return _this.userPuOne[key]; }); //convert to array of objects
+                _this.userPuOneValue = parseInt(_this.userPuOne[0].puValue);
+            }
+            else {
+                _this.userPuOneValue = 0;
+            }
+        });
+        //call firebase to check user power unit two data
+        this.teamData.getPuTwo().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    id: snap.key,
+                    position: snap.val().position,
+                    puName: snap.val().puName,
+                    puValue: snap.val().puValue,
+                    puImage: snap.val().puImage,
+                    puPoints: snap.val().puPoints,
+                    valChange: snap.val().valChange,
+                    posChange: snap.val().posChange,
+                    puUpgrade: snap.val().puUpgrade
+                });
+                if (snap.val().puName !== undefined) {
+                    _this.puNameTwo = snap.val().puName;
+                    console.log("ksjhfksjdfhksjfdh", _this.puNameTwo);
+                }
+            });
+            _this.userPuTwo = rawList;
+            if (_this.userPuTwo.length > 0) {
+                _this.userPuTwo = Object.keys(_this.userPuTwo).map(function (key) { return _this.userPuTwo[key]; }); //convert to array of objects
+                _this.userPuTwoValue = parseInt(_this.userPuTwo[0].puValue);
+            }
+            else {
+                _this.userPuTwoValue = 0;
+            }
+        });
+        this.adminData.getGameState().on('value', function (snapshot) {
+            _this.gameState = snapshot.val().gameState;
+            console.log(_this.gameState);
+        });
+    } //end constructor
+    PuTwoPage.prototype.addPU = function (carNum, carData) {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'Confirm',
+            message: 'Are you sure you want to make a trade?',
+            buttons: [
+                {
+                    text: 'No',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        var newValue;
+                        var oldValue;
+                        //make sure the user has trades
+                        if (_this.userTrades > 0) {
+                            //power unit one
+                            if (carNum === 'one') {
+                                //check for first entry
+                                if (_this.userPuOne.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.puValue;
+                                    //not enough money
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalance(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        //add pu to car one
+                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userPuOne[0].puValue);
+                                    newValue = carData.puValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        //add pu to car one
+                                        _this.teamData.addPU(carData, _this.userPuOne, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalance(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car one
+                            else {
+                                //check for first entry
+                                if (_this.userPuTwo.length < 1) {
+                                    console.log('firstEntry');
+                                    newValue = carData.puValue;
+                                    if (newValue > _this.teamCash) {
+                                        _this.negBalance(newValue, _this.teamCash, 0);
+                                    }
+                                    else {
+                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
+                                    }
+                                }
+                                else {
+                                    oldValue = parseInt(_this.userPuTwo[0].puValue);
+                                    newValue = carData.puValue;
+                                    //check if user has enough money
+                                    if ((_this.teamCash + oldValue) >= newValue) {
+                                        //add pu to car two 
+                                        _this.teamData.addPU(carData, _this.userPuTwo, carNum, _this.userPoints);
+                                    }
+                                    else {
+                                        _this.negBalance(newValue, _this.teamCash, oldValue);
+                                    }
+                                }
+                            } // end car two
+                        }
+                        else {
+                            _this.noTradeAlert();
+                        }
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    PuTwoPage.prototype.getRaceTime = function (timeOfRace, timeNow) {
+        var timeToRace = timeOfRace - timeNow;
+        console.log("timeToRace engine", timeToRace);
+        return timeToRace;
+    };
+    PuTwoPage.prototype.noTradeAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Out of trades',
+            subTitle: 'You are out of trades, purchase more to continue to make trades.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    PuTwoPage.prototype.negBalance = function (newValue, teamCash, oldValue) {
+        var negVal = ((this.teamCash + oldValue) - newValue) * -1;
+        var alert = this.alertCtrl.create({
+            title: 'Not enough money',
+            subTitle: 'You need an additional $' + negVal + ' to make the trade.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    PuTwoPage.prototype.carHelp = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Hints and tips',
+            subTitle: 'Trades are free in your first round.' + '<br /><br />' +
+                'When you make a trade you receive the value of your current power unit.' + '<br /><br />' +
+                'Additional trades can be bought from the team page.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    PuTwoPage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    PuTwoPage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    PuTwoPage.prototype.goToPuStats = function (powerUnit) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__["a" /* PuStatsPage */], powerUnit);
+    };
+    PuTwoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PuTwoPage');
+    };
+    return PuTwoPage;
+}());
+PuTwoPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-pu-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-two/pu-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Power unit two -->\n		<ion-row>\n			<ion-card *ngIf="(userPuTwo != 0)" class="card-layout left pullUp delay-3">\n			  <div class="relative-pos" *ngFor="let user of userPuTwo" (click)="goToPu()"> \n				  <ion-row> \n						<ion-col col-2 class="margin-image">\n							<img [src]="user.puImage" class="pu-image" />\n					  </ion-col>\n					  <ion-col col-7 class="vert-center">\n					  	<div class="pu-name"> \n					   		{{user.puName}}\n					   	</div>\n					   	<div class="pu-value">\n					  		{{ user.puValue | currency:\'USD\':true:\'1.0\' }}\n					  	</div>\n					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> \n								{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n							</span>\n					  </ion-col>\n				  	<ion-col col-3 class="relative-pos">\n            	<h3 class="points"> {{ user.puPoints }} </h3>\n            	<div class="to-bottom align-right">\n            		<img class="car-img" src="assets/img/red-car.png" />\n            		<div class="car-number car-two">CAR TWO</div>\n            	</div>\n          	</ion-col>\n					</ion-row>\n		  	</div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n		  	Available power units\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="puList">\n		  <ion-item class="relative-pos pu-item-height pullUp delay-{{i}}" *ngFor="let pu of puList; let i=index" [ngClass]="{\'highlight-one\': pu.puName == puNameOne ? \'highlight-two\': pu.puName == puNameTwo}">\n		   	<ion-thumbnail item-left>\n		   		<img class="margin-image" [src]="pu.puImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ pu.puName }}</h2>\n				  	<h5 class="list-value">\n				   		{{ pu.puValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: pu.valChange < 0}"> \n				   	 	{{ pu.valChange | currency:\'USD\':true:\'1.0\' }}\n				   	</span>\n			   	</ion-col>\n\n			   	<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [ngClass]="{\'hide-button\': this.round < 2}">\n			   			<ion-icon name="stats"></ion-icon>\n			   		</button>\n				   	<button class="cantAfford buy-btn" ion-button (click)="addPU(\'two\', pu);" [disabled]="pu.puName == puNameTwo || pu.puValue > (teamCash + userPuTwoValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n					</ion-col>\n				</ion-row>\n\n				<div *ngIf="pu.puName == puNameOne || pu.puName == puNameTwo" class="to-bottom right-tag">\n        	<div class="tag-driver-one" *ngIf="pu.puName == puNameOne">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" />\n	        </div>\n	        <div class="tag-holder-two" *ngIf="pu.puName == puNameTwo">\n	         	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-two/pu-two.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], PuTwoPage);
+
+//# sourceMappingURL=pu-two.js.map
+
+/***/ }),
+
+/***/ 346:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyTradesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(26);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the BuyTradesPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var BuyTradesPage = (function () {
+    function BuyTradesPage(navCtrl, navParams, alertCtrl, adminData, teamData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.adminData = adminData;
+        this.teamData = teamData;
+        this.tradeCostOne = 500000;
+        this.tradeCostThree = 1000000;
+        this.tradeCostFive = 2000000;
+        this.gameState = "lockout";
+        this.buyOneTrade = 0;
+        this.buyThreeTrades = 0;
+        this.buyFiveTrades = 0;
+        this.tradeAnimate = false;
+        this.teamData.getTheMoney().on('value', function (snapshot) {
+            _this.teamCash = snapshot.val().money;
+            _this.userTrades = snapshot.val().trades;
+        });
+        this.adminData.getGameState().on('value', function (snapshot) {
+            _this.gameState = snapshot.val().gameState;
+        });
+    } //end constructor
+    BuyTradesPage.prototype.confirmTrade = function (num) {
+        var _this = this;
+        var tradeCost;
+        if (num === 5) {
+            tradeCost = this.tradeCostFive;
+        }
+        else if (num === 3) {
+            tradeCost = this.tradeCostThree;
+        }
+        else {
+            num = 1;
+            tradeCost = this.tradeCostOne;
+        }
+        if (this.teamCash >= tradeCost) {
+            var confirm_1 = this.alertCtrl.create({
+                title: 'Confirm',
+                message: 'Are you sure you want to buy a trade?',
+                buttons: [
+                    {
+                        text: 'No',
+                        handler: function () {
+                            console.log('Disagree clicked');
+                        }
+                    },
+                    {
+                        text: 'Yes',
+                        handler: function () {
+                            console.log('Agree clicked');
+                            if (num === 5) {
+                                _this.buyFiveTrades = 1;
+                            }
+                            else if (num === 3) {
+                                _this.buyThreeTrades = 1;
+                            }
+                            else {
+                                _this.buyOneTrade = 1;
+                            }
+                            _this.tradeAnimate = true;
+                            _this.teamData.addTrade(num, tradeCost);
+                        }
+                    }
+                ]
+            });
+            confirm_1.present();
+        }
+        else {
+            var negVal = (this.teamCash - tradeCost) * -1;
+            this.negValueAlert(negVal);
+        }
+    }; //end constructor
+    BuyTradesPage.prototype.negValueAlert = function (negValue) {
+        var decimalSeperator = this.numberWithCommas(negValue);
+        var alert = this.alertCtrl.create({
+            title: 'Not enough money',
+            message: 'You need an additional $' + decimalSeperator + ' to make the trade.',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
+    BuyTradesPage.prototype.numberWithCommas = function (dollarValue) {
+        return dollarValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+    BuyTradesPage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    BuyTradesPage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    BuyTradesPage.prototype.ionViewDidLoad = function () {
+        console.log('Hello Buy Trades Page');
+    };
+    return BuyTradesPage;
+}());
+BuyTradesPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-buy-trades',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/buy-trades/buy-trades.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row>\n      <div class="absolute-pos trades-heading">Buy trades</div>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<div class="container">\n  <ion-row>\n    <ion-col>\n      <ion-card class="relative-pos card-left card-height">\n        <img class="bank-img" src="assets/img/bank-icon.png" />\n        <div class="text-height">\n          <span class="title-text">\n            {{teamCash | currency:\'USD\':true:\'1.0\'}}\n          </span>\n        </div>\n      </ion-card>\n    </ion-col>\n    \n    <ion-col>\n      <ion-card class="relative-pos card-height">\n        <img class="trades-img" src="assets/img/trade-icon-dark.png" />\n        <div class="text-height">\n          Trades: \n          <span class="title-text">\n            {{userTrades}}\n          </span>\n        </div>\n      </ion-card>\n    </ion-col>\n  </ion-row>\n\n  <div *ngIf="gameState != \'lockout\'">  \n    <ion-row>\n      <ion-col class="flex-center">\n        <ion-card class="clear-bg">\n          <div id="banner">\n            <div class="no-fill" [ngClass]="{\'fill\': buyOneTrade === 1, \'fill1\': buyThreeTrades === 1, \'fill2\': buyFiveTrades === 1}">\n              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">\n                <path fill="#04ACFF" id="waveShape" class="color-1" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z" fill-opacity="0.5"/>\n              </svg>\n            </div>\n          </div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="flex-center">\n        <div class="trades-center">\n          <div class="trades-counter" [ngClass]="{\'slideDown\': buyOneTrade === 1, \'pullUp\': buyThreeTrades === 1, \'bounce\': buyFiveTrades === 1}"> \n            <span>Trades: {{ userTrades }}</span>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col width-33>\n        <div class="trade-button slideExpandUp delay-3" (click)="confirmTrade(1);">\n          <div class="trade-text">Buy one trade</div>\n          <span>$500,000</span>\n        </div>\n      </ion-col>\n\n      <ion-col width-33>\n        <div class="trade-button middle-btn slideExpandUp delay-5" (click)="confirmTrade(3);">\n          <div class="trade-text">Buy three trades</div>\n          <span>1 million</span>\n        </div>\n      </ion-col>\n\n      <ion-col width-33>\n        <div class="trade-button slideExpandUp delay-7" (click)="confirmTrade(5);">\n          <div class="trade-text">Buy five trades</div>\n          <span>2 million</span>\n        </div>\n      </ion-col>\n    </ion-row>\n  </div>\n</div>\n</ion-content>\n\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/buy-trades/buy-trades.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */]])
+], BuyTradesPage);
+
+//# sourceMappingURL=buy-trades.js.map
+
+/***/ }),
+
+/***/ 347:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RankingPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__player_team_player_team__ = __webpack_require__(348);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the RankingPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var RankingPage = (function () {
+    function RankingPage(navCtrl, navParams, teamData, storage, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.teamData = teamData;
+        this.storage = storage;
+        this.currentRoundData = currentRoundData;
+        this.noStats = true;
+        this.pointsLastRound = 0;
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.round = rawList[0].currentRound;
+            console.log('Ranking - this round:', _this.round);
+            if (_this.round > 1) {
+                _this.round = _this.round - 1;
+                _this.firstRound = false;
+            }
+            else {
+                _this.firstRound = true;
+            }
+        });
+        this.teamData.getUsersList().orderByChild("rank").on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                rawList.push({
+                    id: snapshot.key,
+                    email: snapshot.val().email,
+                    teamName: snapshot.val().teamName,
+                    money: snapshot.val().money,
+                    rank: snapshot.val().rank,
+                    rankDiff: snapshot.val().rankDiff,
+                    totalPoints: snapshot.val().totalPoints,
+                    trades: snapshot.val().trades,
+                    points: snapshot.val().points,
+                    carOne: snapshot.val().carOne,
+                    carTwo: snapshot.val().carTwo,
+                });
+            });
+            _this.usersList = rawList;
+            _this.usersLoadedList = rawList;
+            console.log('1st: Userslist Ranking Page', _this.usersList);
+            _this.allUsers = _this.usersList.length;
+        });
+        console.log("passed user", this.navParams.data);
+        this.userData = this.navParams.data.email;
+        for (var _i = 0, _a = this.usersList; _i < _a.length; _i++) {
+            var user = _a[_i];
+            if (this.userData == user.email) {
+                this.userStats = user;
+                if (user.points !== undefined) {
+                    console.log('user has a score');
+                    this.pointsLastRound = user.points[this.round].points;
+                    this.noStats = false;
+                }
+                else {
+                    console.log('user has no score');
+                    this.noStats = true;
+                }
+            }
+        }
+    } //end constructor
+    RankingPage.prototype.goToPlayerTeam = function (player) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__player_team_player_team__["a" /* PlayerTeamPage */], player);
+    };
+    RankingPage.prototype.initializeItems = function () {
+        this.usersList = this.usersLoadedList;
+    };
+    RankingPage.prototype.getItems = function (searchbar) {
+        // Reset items back to all of the items
+        this.initializeItems();
+        // set searchbarInput to the value of the searchbar
+        var searchbarInput = searchbar.srcElement.value;
+        // if the value is an empty string don't filter the items
+        if (!searchbarInput) {
+            return;
+        }
+        this.usersList = this.usersList.filter(function (check) {
+            if (check.teamName && searchbarInput) {
+                if (check.teamName.toLowerCase().indexOf(searchbarInput.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            }
+        });
+    };
+    RankingPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RankingPage');
+        //scroll to user
+        var target = document.querySelector('#user-details.highlight-item');
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+        });
+    };
+    return RankingPage;
+}());
+RankingPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-ranking',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n		<ion-row *ngIf="noStats !== true || firstRound !== true" class="header-marg">\n			<ion-col>\n	    	<div class="stat slideExpandUp delay-3">\n        	Last Round<span>{{ pointsLastRound }}</span>\n      	</div>\n      </ion-col>\n\n      <ion-col>\n        <div class="stat slideExpandUp delay-4">\n          Total Score<span>{{userStats.totalPoints}}</span>\n        </div>\n      </ion-col>\n\n      <ion-col>\n        <div class="stat slideExpandUp delay-5">\n          Rank\n          <span>{{userStats.rank}}\n          	<div [ngClass]="{negative: userStats.rankDiff < 0}" class="positive val-change inline-elem"> \n							{{ userStats.rankDiff }}\n						</div>\n					</span>\n        </div>\n      </ion-col>\n	  </ion-row>\n\n	  <ion-row class="header-marg">\n	    <div class="header-text slideExpandUp delay-2">Team Ranking</div>\n	  </ion-row>\n		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>\n		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">\n		  <ion-item *ngIf="user.teamName"\n		   	[ngClass]="{\'highlight-item\': userData === user.email}" id="user-details">\n		   	<ion-row>\n			   	<ion-col>\n				   	<div class="team-name">{{ user.teamName}}</div>\n				  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n			   		<div class="team-trades">Trades: {{ user.trades }}</div>\n			   		<div class="points-text">\n							Total points: \n							<span class="number-points"> \n								{{ user.totalPoints }}\n							</span>\n						</div>\n			   	</ion-col>\n\n			   	<ion-col class="right-col rel-position">\n					  <div class="team-rank">{{ user.rank }}</div>\n							<button class="team-btn" ion-button (click)="goToPlayerTeam(user);">\n		            <ion-icon name="md-people"></ion-icon>\n							</button>\n					</ion-col>\n				</ion-row>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], RankingPage);
+
+//# sourceMappingURL=ranking.js.map
+
+/***/ }),
+
+/***/ 348:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlayerTeamPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the PlayerTeamPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var PlayerTeamPage = (function () {
+    function PlayerTeamPage(navCtrl, navParams) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.userDriverOneEmpty = true;
+        this.userDriverTwoEmpty = true;
+        this.userChassisOneEmpty = true;
+        this.userChassisTwoEmpty = true;
+        this.userPuOneEmpty = true;
+        this.userPuTwoEmpty = true;
+        this.playerTeam = this.navParams.data;
+        console.log("passed team", this.playerTeam);
+        this.carOne = this.playerTeam.carOne;
+        this.carTwo = this.playerTeam.carTwo;
+        if (!this.carOne) {
+            this.userDriverOneEmpty = true;
+            this.userChassisOneEmpty = true;
+            this.userPuOneEmpty = true;
+        }
+        else {
+            //car one
+            if (this.carOne.driver) {
+                var carOneDriverHolder = Object.keys(this.carOne.driver).map(function (key) { return _this.carOne.driver[key]; }); //convert to array of objects
+                this.carOneDriver = carOneDriverHolder[0];
+                this.userDriverOneEmpty = false;
+            }
+            else {
+                this.userDriverOneEmpty = true;
+            }
+            if (this.carOne.chassis) {
+                var carOneChassisHolder = Object.keys(this.carOne.chassis).map(function (key) { return _this.carOne.chassis[key]; }); //convert to array of objects
+                this.carOneChassis = carOneChassisHolder[0];
+                this.userChassisOneEmpty = false;
+            }
+            else {
+                this.userChassisOneEmpty = true;
+            }
+            if (this.carOne.powerUnit) {
+                var carOnePuHolder = Object.keys(this.carOne.powerUnit).map(function (key) { return _this.carOne.powerUnit[key]; }); //convert to array of objects
+                this.carOnePu = carOnePuHolder[0];
+                this.userPuOneEmpty = false;
+            }
+            else {
+                this.userPuOneEmpty = true;
+            }
+        }
+        if (!this.carTwo) {
+            this.userDriverOneEmpty = true;
+            this.userChassisOneEmpty = true;
+            this.userPuOneEmpty = true;
+        }
+        else {
+            //car two
+            if (this.carTwo.driver) {
+                var carTwoDriverHolder = Object.keys(this.carTwo.driver).map(function (key) { return _this.carTwo.driver[key]; }); //convert to array of objects
+                this.carTwoDriver = carTwoDriverHolder[0];
+                this.userDriverTwoEmpty = false;
+            }
+            else {
+                this.userDriverTwoEmpty = true;
+            }
+            if (this.carTwo.chassis) {
+                var carTwoChassisHolder = Object.keys(this.carTwo.chassis).map(function (key) { return _this.carTwo.chassis[key]; }); //convert to array of objects
+                this.carTwoChassis = carTwoChassisHolder[0];
+                this.userChassisTwoEmpty = false;
+            }
+            else {
+                this.userChassisTwoEmpty = true;
+            }
+            if (this.carTwo.powerUnit) {
+                var carTwoPuHolder = Object.keys(this.carTwo.powerUnit).map(function (key) { return _this.carTwo.powerUnit[key]; }); //convert to array of objects
+                this.carTwoPu = carTwoPuHolder[0];
+                this.userPuTwoEmpty = false;
+            }
+            else {
+                this.userPuTwoEmpty = true;
+            }
+        }
+    } //end constructor
+    PlayerTeamPage.prototype.ngAfterViewInit = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'none';
+        }
+    };
+    PlayerTeamPage.prototype.ionViewWillLeave = function () {
+        var tabHeader = document.querySelectorAll('.tab-content');
+        if (tabHeader !== null) {
+            tabHeader["0"].style.display = 'flex';
+        }
+    };
+    PlayerTeamPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PlayerTeamPage');
+    };
+    return PlayerTeamPage;
+}());
+PlayerTeamPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-player-team',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/player-team/player-team.html"*/'<!--\n  Generated template for the PlayerTeamPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n  <div class="team-text">\n 	 The garage of {{ playerTeam.teamName }}\n 	</div>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n	<div class="container margin-bottom">\n	<!-- Info Panel -->\n	<div>\n    <ion-row>\n    	<ion-col>\n	      <ion-card class="relative-pos card-left card-height">\n	     		<img class="bank-img" src="assets/img/bank-icon.png" />\n	      	<div class="text-height">\n	      		<span class="title-text">\n	      			{{playerTeam.money | currency:\'USD\':true:\'1.0\'}}\n	      		</span>\n	      	</div>\n	      </ion-card>\n    	</ion-col>\n\n    	<ion-col>\n	      <ion-card class="relative-pos card-height">\n	     		<img class="trades-img" src="assets/img/trade-icon-dark.png" />\n	      	<div class="text-height">\n	      		Trades: \n	      		<span class="title-text">\n	      			{{playerTeam.trades }}\n	      		</span>\n	      	</div>\n				</ion-card>\n			</ion-col>\n  	</ion-row>\n	</div>\n\n	<ion-row class="top-space-lg">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center positive-rel slideExpandUp delay-2">\n			CAR ONE\n		</div>\n	</ion-row>\n	<ion-row class="top-space">\n		<!-- Driver: car one -->\n		<ion-col width-33 class="pullUp delay-1">\n			<ion-card class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-1" *ngIf="!userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n\n				<div class="name">\n					{{carOneDriver.firstName}}<br />\n				 	{{carOneDriver.lastName}}\n				</div>\n\n				<ion-row> \n	        <img [src]="carOneDriver.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n\n			  <ion-row>\n			  	<div class="points">{{ carOneDriver.driverPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOneDriver.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: carOneDriver.valChange < 0}" class="positive val-change"> \n					{{ carOneDriver.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOneDriver.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Chassis: car one -->\n		<ion-col width-33 class="pullUp delay-2">\n			<ion-card class="hq-card card-2 empty-card" *ngIf="userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n\n			</ion-card>\n\n			<ion-card class="hq-card card-2" *ngIf="!userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{carOneChassis.chassisName}}</div>\n				<ion-row>\n					<img [src]="carOneChassis.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				\n				<ion-row>\n					<div class="points">{{ carOneChassis.chassisPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOneChassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		\n	  		<h5 [ngClass]="{negative: carOneChassis.valChange < 0}" class="positive val-change"> {{ carOneChassis.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>	\n					\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOneChassis.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n\n		<!-- Pu: car one -->\n		<ion-col width-33 class="pullUp delay-5">\n			<ion-card class="hq-card card-3 empty-card" *ngIf="userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power unit</div>\n				</ion-card-header>\n	\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />	    		\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-3" *ngIf="!userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n\n				<div class="name">{{carOnePu.puName}}</div>\n				<ion-row>\n					<img [src]="carOnePu.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ carOnePu.puPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOnePu.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: carOnePu.valChange < 0}" class="positive val-change"> \n					{{ carOnePu.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOnePu.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n		</ion-col>		\n	</ion-row>\n\n	<!-- *********** Car Two **********-->\n	<ion-row class="top-space">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center primary-bg slideExpandUp delay-3">\n			CAR TWO\n		</div>\n	</ion-row>\n\n	<!-- Driver: car two -->\n		<ion-row class="top-space">\n		<ion-col width-33 class="pullUp delay-4">\n			<ion-card class="hq-card card-1 empty-card" *ngIf="userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />	    		\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-1 pullUp delay-4" *ngIf="!userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n\n				<div class="name">\n					{{carTwoDriver.firstName}}<br />\n				 	{{carTwoDriver.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="carTwoDriver.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ carTwoDriver.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoDriver.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: carTwoDriver.valChange < 0}" class="positive val-change"> \n					{{ carTwoDriver.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoDriver.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Chassis: car two -->\n		<ion-col width-33 class="pullUp delay-5">\n			<ion-card class="hq-card card-2 empty-card" *ngIf="userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-2" *ngIf="!userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{carTwoChassis.chassisName}}</div>\n				<ion-row>\n					<img [src]="carTwoChassis.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ carTwoChassis.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoChassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: carTwoChassis.valChange < 0}" class="positive val-change"> {{ carTwoChassis.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoChassis.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Pu: car two -->\n		<ion-col width-33 class="pullUp delay-6">\n			<ion-card class="hq-card card-3 empty-card" *ngIf="userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-3" *ngIf="!userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<div class="name">{{carTwoPu.puName}}</div>\n				<ion-row>\n					<img [src]="carTwoPu.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ carTwoPu.puPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoPu.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: carTwoPu.valChange < 0}" class="positive val-change"> \n					{{ carTwoPu.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoPu.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n		</ion-col>\n	</ion-row>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/player-team/player-team.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+], PlayerTeamPage);
+
+//# sourceMappingURL=player-team.js.map
+
+/***/ }),
+
+/***/ 349:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RulesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the RulesPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var RulesPage = (function () {
+    function RulesPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.overviewToggle = false;
+        this.tradesToggle = false;
+        this.upgradesToggle = false;
+        this.lockoutToggle = false;
+        this.pointsToggle = false;
+    } //end constructor
+    RulesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RulesPage');
+    };
+    return RulesPage;
+}());
+RulesPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-rules',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n\n		<!-- Overview card -->\n		<div class="rules-card slideExpandUp delay-3">\n			<button class="rules-header" (click)="overviewToggle = !overviewToggle;">\n				Overview\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': overviewToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': overviewToggle,\n				\'hidden\': !overviewToggle, \'hidden1\': tradesToggle}">\n				<p>As the manager of your own Formula One race team, with a starting budget you need to purchase a driver, chassis and power unit for both of your cars. After each F1 race weekend your drivers, chassis and power units will recieve points based on the race results. In addition the value of each part will rise or fall depending on its performance in the race.</p>\n				<p>Just before the start of each Formula One race weekend a lockout will be established, no longer allowing trades or upgrades.</p>\n				<p>\n					<span>Please note:</span><br />\n				 	If either of your cars are missing a part (driver, chassis, power unit), then no points are scored for that car.\n				 </p>\n			</div>\n		</div>\n\n		<!-- trades card -->\n		<div class="rules-card slideExpandUp delay-4">\n			<button class="rules-header" (click)="tradesToggle = !tradesToggle;">\n				Trades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': tradesToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': tradesToggle,\n			\'hidden\': !tradesToggle}">\n				<p>To maximise your score and rise in the rankings, you should always be looking to improve your team by making trades.</p>\n				<p>You start the season with twenty trades. Each time you swap a part, it will cost you one trade.</p>\n				<p>During your first round all trades are free, so experiment with different combinations of drivers, chassis and power units until you are happy with your team.</p> \n				<p>If you\'re running low on trades you can purchase additional trades, look for the + icon on the team page.</p>\n				\n				<p><span>Don\'t forget</span><br />\n					When you make a trade you recieve the value of the traded item.\n				</p>\n			</div>\n		</div>\n\n		<!-- upgrades card -->\n		<div class="rules-card slideExpandUp delay-5">\n			<button class="rules-header" (click)="upgradesToggle = !upgradesToggle;">\n				Upgrades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': upgradesToggle}"></ion-icon>\n			</button>\n\n\n			<div class="rules-content" [ngClass]="{\'showing\': upgradesToggle,\n			\'hidden\': !upgradesToggle}">\n				<p>Purchasing an upgrade will double that parts score in the next round.<p>\n				<span>Please note:</span> <br />\n				If you make an upgrade and then trade out that particular part, you will lose the upgrade!</p>\n			</div>\n		</div>\n		\n		<!-- lockout card -->\n		<div class="rules-card slideExpandUp delay-6">\n			<button class="rules-header" (click)="lockoutToggle = !lockoutToggle;">\n				Lock out\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': lockoutToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': lockoutToggle,\n			\'hidden\': !lockoutToggle}">\n				<p>Just before each race weekend the app will enter a lockout status. During this time you will not be able to make trades or upgrades until the race weekend is completed. The timer shows how long until the next lock out.</p>\n			</div>\n		</div>\n\n		<!-- point card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="pointsToggle = !pointsToggle;">\n				Points\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': pointsToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': pointsToggle,\n			\'hidden\': !pointsToggle}">\n				<p>The points allocated to drivers, chassis and power units after each race weekend is calculated from a combination of results.</p>\n				<h4>Drivers</h4>\n				<p>Drivers points are calculated by their quallifying position, race result and how many positions were gained during the race.</p>\n				<h4>Chassis</h4>\n				<p>Chassis points are calculated by the position each chassis qualified and race result of both chassis.</p>\n				<h4>Power Units</h4>\n				<p>Lastly power unit points are calulated by the best qualifying result of each brand and their race result. </p>\n			</div>\n		</div>\n\n		<!-- misc card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="extraToggle = !extraToggle;">\n				Extra information\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': extraToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': extraToggle,\n			\'hidden\': !extraToggle}">\n				<p>Once the Formula one race results have been released and pushed into the app the dollar values and scores of drivers, chassis, power units and player teams are final.</p>\n				\n				<h4>What happens if a driver is replaced?</h4>\n				<p>If during the Formula One race season a driver is unable to drive and is replaced for a race, the replacment driver will race under the usual drivers alias. Any teams effected by this will automatically be awared the results of the replacment driver after the race.</p>\n			</div>\n		</div>\n\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+], RulesPage);
+
+//# sourceMappingURL=rules.js.map
+
+/***/ }),
+
+/***/ 350:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(119);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ResetPasswordPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ResetPasswordPage = (function () {
+    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
+        this.nav = nav;
+        this.authData = authData;
+        this.formBuilder = formBuilder;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.emailChanged = false;
+        this.passwordChanged = false;
+        this.submitAttempt = false;
+        this.resetPasswordForm = formBuilder.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
+        });
+    } //end constructor
+    ResetPasswordPage.prototype.elementChanged = function (input) {
+        var field = input.ngControl.name;
+        this[field + "Changed"] = true;
+    };
+    /**
+     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
+     *  component while the user waits.
+     *
+     * If the form is invalid it will just log the form value, feel free to handle that as you like.
+     */
+    ResetPasswordPage.prototype.resetPassword = function () {
+        var _this = this;
+        this.submitAttempt = true;
+        if (!this.resetPasswordForm.valid) {
+            console.log(this.resetPasswordForm.value);
+        }
+        else {
+            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
+                var alert = _this.alertCtrl.create({
+                    message: "We just sent you a reset link to your email",
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel',
+                            handler: function () {
+                                _this.nav.pop();
+                            }
+                        }
+                    ]
+                });
+                alert.present();
+            }, function (error) {
+                var errorMessage = error.message;
+                var errorAlert = _this.alertCtrl.create({
+                    message: errorMessage,
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel'
+                        }
+                    ]
+                });
+                errorAlert.present();
+            });
+        }
+    };
+    return ResetPasswordPage;
+}());
+ResetPasswordPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+], ResetPasswordPage);
+
+//# sourceMappingURL=reset-password.js.map
+
+/***/ }),
+
+/***/ 352:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module__ = __webpack_require__(371);
+
+
+
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_20" /* enableProdMode */])();
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 371:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(414);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_fcm__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_home__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_race_race__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_team_team__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_profile_data_profile_data__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_stats_data_stats_data__ = __webpack_require__(66);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
 
 
 
@@ -4291,7 +5093,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 //Providers
 
 
@@ -4308,16 +5109,15 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__["a" /* SignupPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_race_race__["a" /* RacePage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_team_team__["a" /* TeamPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__["a" /* RankingPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__["a" /* RulesPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__["a" /* TourGuidePage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_race_race__["a" /* RacePage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_team_team__["a" /* TeamPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__["a" /* RankingPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__["a" /* RulesPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
@@ -4335,45 +5135,21 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {
                 tabsHideOnSubPages: true,
-            }, {
-                links: [
-                    { loadChildren: '../pages/tour-guide/tour-guide.module#TourGuidePageModule', name: 'TourGuidePage', segment: 'tour-guide', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/race/race.module#RacePageModule', name: 'RacePage', segment: 'race', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/driver-stats/driver-stats.module#DriverStatsPageModule', name: 'DriverStatsPage', segment: 'driver-stats', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/driver-one/driver-one.module#DriverOnePageModule', name: 'DriverOnePage', segment: 'driver-one', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/driver-two/driver-two.module#DriverTwoPageModule', name: 'DriverTwoPage', segment: 'driver-two', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/chassis-stats/chassis-stats.module#ChassisStatsPageModule', name: 'ChassisStatsPage', segment: 'chassis-stats', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/chassis-one/chassis-one.module#ChassisOnePageModule', name: 'ChassisOnePage', segment: 'chassis-one', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/chassis-two/chassis-two.module#ChassisTwoPageModule', name: 'ChassisTwoPage', segment: 'chassis-two', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/pu-stats/pu-stats.module#PuStatsPageModule', name: 'PuStatsPage', segment: 'pu-stats', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/pu-one/pu-one.module#PuOnePageModule', name: 'PuOnePage', segment: 'pu-one', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/pu-two/pu-two.module#PuTwoPageModule', name: 'PuTwoPage', segment: 'pu-two', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/buy-trades/buy-trades.module#BuyTradesPageModule', name: 'BuyTradesPage', segment: 'buy-trades', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/team/team.module#TeamPageModule', name: 'TeamPage', segment: 'team', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/player-team/player-team.module#PlayerTeamPageModule', name: 'PlayerTeamPage', segment: 'player-team', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/ranking/ranking.module#RankingPageModule', name: 'RankingPage', segment: 'ranking', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/rules/rules.module#RulesPageModule', name: 'RulesPage', segment: 'rules', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
-                ]
             }),
             __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["a" /* IonicStorageModule */].forRoot()
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__["a" /* SignupPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_race_race__["a" /* RacePage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_team_team__["a" /* TeamPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_ranking_ranking__["a" /* RankingPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_rules_rules__["a" /* RulesPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_tour_guide_tour_guide__["a" /* TourGuidePage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_race_race__["a" /* RacePage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_team_team__["a" /* TeamPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__["a" /* RankingPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__["a" /* RulesPage */],
             __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
@@ -4395,7 +5171,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_31__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
             __WEBPACK_IMPORTED_MODULE_32__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
             __WEBPACK_IMPORTED_MODULE_33__providers_team_data_team_data__["a" /* TeamDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_34__providers_stats_data_stats_data__["a" /* StatsDataProvider */]
+            __WEBPACK_IMPORTED_MODULE_34__providers_stats_data_stats_data__["a" /* StatsDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_fcm__["a" /* FCM */],
         ]
     })
 ], AppModule);
@@ -4404,272 +5181,20 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 427:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 186,
-	"./af.js": 186,
-	"./ar": 187,
-	"./ar-dz": 188,
-	"./ar-dz.js": 188,
-	"./ar-kw": 189,
-	"./ar-kw.js": 189,
-	"./ar-ly": 190,
-	"./ar-ly.js": 190,
-	"./ar-ma": 191,
-	"./ar-ma.js": 191,
-	"./ar-sa": 192,
-	"./ar-sa.js": 192,
-	"./ar-tn": 193,
-	"./ar-tn.js": 193,
-	"./ar.js": 187,
-	"./az": 194,
-	"./az.js": 194,
-	"./be": 195,
-	"./be.js": 195,
-	"./bg": 196,
-	"./bg.js": 196,
-	"./bn": 197,
-	"./bn.js": 197,
-	"./bo": 198,
-	"./bo.js": 198,
-	"./br": 199,
-	"./br.js": 199,
-	"./bs": 200,
-	"./bs.js": 200,
-	"./ca": 201,
-	"./ca.js": 201,
-	"./cs": 202,
-	"./cs.js": 202,
-	"./cv": 203,
-	"./cv.js": 203,
-	"./cy": 204,
-	"./cy.js": 204,
-	"./da": 205,
-	"./da.js": 205,
-	"./de": 206,
-	"./de-at": 207,
-	"./de-at.js": 207,
-	"./de-ch": 208,
-	"./de-ch.js": 208,
-	"./de.js": 206,
-	"./dv": 209,
-	"./dv.js": 209,
-	"./el": 210,
-	"./el.js": 210,
-	"./en-au": 211,
-	"./en-au.js": 211,
-	"./en-ca": 212,
-	"./en-ca.js": 212,
-	"./en-gb": 213,
-	"./en-gb.js": 213,
-	"./en-ie": 214,
-	"./en-ie.js": 214,
-	"./en-nz": 215,
-	"./en-nz.js": 215,
-	"./eo": 216,
-	"./eo.js": 216,
-	"./es": 217,
-	"./es-do": 218,
-	"./es-do.js": 218,
-	"./es.js": 217,
-	"./et": 219,
-	"./et.js": 219,
-	"./eu": 220,
-	"./eu.js": 220,
-	"./fa": 221,
-	"./fa.js": 221,
-	"./fi": 222,
-	"./fi.js": 222,
-	"./fo": 223,
-	"./fo.js": 223,
-	"./fr": 224,
-	"./fr-ca": 225,
-	"./fr-ca.js": 225,
-	"./fr-ch": 226,
-	"./fr-ch.js": 226,
-	"./fr.js": 224,
-	"./fy": 227,
-	"./fy.js": 227,
-	"./gd": 228,
-	"./gd.js": 228,
-	"./gl": 229,
-	"./gl.js": 229,
-	"./gom-latn": 230,
-	"./gom-latn.js": 230,
-	"./he": 231,
-	"./he.js": 231,
-	"./hi": 232,
-	"./hi.js": 232,
-	"./hr": 233,
-	"./hr.js": 233,
-	"./hu": 234,
-	"./hu.js": 234,
-	"./hy-am": 235,
-	"./hy-am.js": 235,
-	"./id": 236,
-	"./id.js": 236,
-	"./is": 237,
-	"./is.js": 237,
-	"./it": 238,
-	"./it.js": 238,
-	"./ja": 239,
-	"./ja.js": 239,
-	"./jv": 240,
-	"./jv.js": 240,
-	"./ka": 241,
-	"./ka.js": 241,
-	"./kk": 242,
-	"./kk.js": 242,
-	"./km": 243,
-	"./km.js": 243,
-	"./kn": 244,
-	"./kn.js": 244,
-	"./ko": 245,
-	"./ko.js": 245,
-	"./ky": 246,
-	"./ky.js": 246,
-	"./lb": 247,
-	"./lb.js": 247,
-	"./lo": 248,
-	"./lo.js": 248,
-	"./lt": 249,
-	"./lt.js": 249,
-	"./lv": 250,
-	"./lv.js": 250,
-	"./me": 251,
-	"./me.js": 251,
-	"./mi": 252,
-	"./mi.js": 252,
-	"./mk": 253,
-	"./mk.js": 253,
-	"./ml": 254,
-	"./ml.js": 254,
-	"./mr": 255,
-	"./mr.js": 255,
-	"./ms": 256,
-	"./ms-my": 257,
-	"./ms-my.js": 257,
-	"./ms.js": 256,
-	"./my": 258,
-	"./my.js": 258,
-	"./nb": 259,
-	"./nb.js": 259,
-	"./ne": 260,
-	"./ne.js": 260,
-	"./nl": 261,
-	"./nl-be": 262,
-	"./nl-be.js": 262,
-	"./nl.js": 261,
-	"./nn": 263,
-	"./nn.js": 263,
-	"./pa-in": 264,
-	"./pa-in.js": 264,
-	"./pl": 265,
-	"./pl.js": 265,
-	"./pt": 266,
-	"./pt-br": 267,
-	"./pt-br.js": 267,
-	"./pt.js": 266,
-	"./ro": 268,
-	"./ro.js": 268,
-	"./ru": 269,
-	"./ru.js": 269,
-	"./sd": 270,
-	"./sd.js": 270,
-	"./se": 271,
-	"./se.js": 271,
-	"./si": 272,
-	"./si.js": 272,
-	"./sk": 273,
-	"./sk.js": 273,
-	"./sl": 274,
-	"./sl.js": 274,
-	"./sq": 275,
-	"./sq.js": 275,
-	"./sr": 276,
-	"./sr-cyrl": 277,
-	"./sr-cyrl.js": 277,
-	"./sr.js": 276,
-	"./ss": 278,
-	"./ss.js": 278,
-	"./sv": 279,
-	"./sv.js": 279,
-	"./sw": 280,
-	"./sw.js": 280,
-	"./ta": 281,
-	"./ta.js": 281,
-	"./te": 282,
-	"./te.js": 282,
-	"./tet": 283,
-	"./tet.js": 283,
-	"./th": 284,
-	"./th.js": 284,
-	"./tl-ph": 285,
-	"./tl-ph.js": 285,
-	"./tlh": 286,
-	"./tlh.js": 286,
-	"./tr": 287,
-	"./tr.js": 287,
-	"./tzl": 288,
-	"./tzl.js": 288,
-	"./tzm": 289,
-	"./tzm-latn": 290,
-	"./tzm-latn.js": 290,
-	"./tzm.js": 289,
-	"./uk": 291,
-	"./uk.js": 291,
-	"./ur": 292,
-	"./ur.js": 292,
-	"./uz": 293,
-	"./uz-latn": 294,
-	"./uz-latn.js": 294,
-	"./uz.js": 293,
-	"./vi": 295,
-	"./vi.js": 295,
-	"./x-pseudo": 296,
-	"./x-pseudo.js": 296,
-	"./yo": 297,
-	"./yo.js": 297,
-	"./zh-cn": 298,
-	"./zh-cn.js": 298,
-	"./zh-hk": 299,
-	"./zh-hk.js": 299,
-	"./zh-tw": 300,
-	"./zh-tw.js": 300
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 427;
-
-/***/ }),
-
-/***/ 461:
+/***/ 414:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(351);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4686,9 +5211,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen) {
+    function MyApp(platform, statusBar, splashScreen, alertCtrl, fcm) {
         var _this = this;
+        this.alertCtrl = alertCtrl;
+        this.fcm = fcm;
         var config = {
             apiKey: "AIzaSyCZ3g2-drs3byijLtUu3y9YP0ZoeFY5_LI",
             authDomain: "fantasyf1-e3378.firebaseapp.com",
@@ -4715,6 +5243,24 @@ var MyApp = (function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
+            _this.fcm.subscribeToTopic('all');
+            _this.fcm.getToken().then(function (token) {
+                // backend.registerToken(token);
+            });
+            _this.fcm.onNotification().subscribe(function (data) {
+                // console.log("push notification data", data.msg);
+                if (data.wasTapped) {
+                    console.info("Received in background");
+                    alert(data.msg);
+                }
+                else {
+                    console.info("Received in foreground");
+                }
+                ;
+            });
+            _this.fcm.onTokenRefresh().subscribe(function (token) {
+                // backend.registerToken(token);
+            });
             splashScreen.hide();
         });
     }
@@ -4723,24 +5269,279 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__["a" /* FCM */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 48:
+/***/ 459:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 226,
+	"./af.js": 226,
+	"./ar": 227,
+	"./ar-dz": 228,
+	"./ar-dz.js": 228,
+	"./ar-kw": 229,
+	"./ar-kw.js": 229,
+	"./ar-ly": 230,
+	"./ar-ly.js": 230,
+	"./ar-ma": 231,
+	"./ar-ma.js": 231,
+	"./ar-sa": 232,
+	"./ar-sa.js": 232,
+	"./ar-tn": 233,
+	"./ar-tn.js": 233,
+	"./ar.js": 227,
+	"./az": 234,
+	"./az.js": 234,
+	"./be": 235,
+	"./be.js": 235,
+	"./bg": 236,
+	"./bg.js": 236,
+	"./bn": 237,
+	"./bn.js": 237,
+	"./bo": 238,
+	"./bo.js": 238,
+	"./br": 239,
+	"./br.js": 239,
+	"./bs": 240,
+	"./bs.js": 240,
+	"./ca": 241,
+	"./ca.js": 241,
+	"./cs": 242,
+	"./cs.js": 242,
+	"./cv": 243,
+	"./cv.js": 243,
+	"./cy": 244,
+	"./cy.js": 244,
+	"./da": 245,
+	"./da.js": 245,
+	"./de": 246,
+	"./de-at": 247,
+	"./de-at.js": 247,
+	"./de-ch": 248,
+	"./de-ch.js": 248,
+	"./de.js": 246,
+	"./dv": 249,
+	"./dv.js": 249,
+	"./el": 250,
+	"./el.js": 250,
+	"./en-au": 251,
+	"./en-au.js": 251,
+	"./en-ca": 252,
+	"./en-ca.js": 252,
+	"./en-gb": 253,
+	"./en-gb.js": 253,
+	"./en-ie": 254,
+	"./en-ie.js": 254,
+	"./en-nz": 255,
+	"./en-nz.js": 255,
+	"./eo": 256,
+	"./eo.js": 256,
+	"./es": 257,
+	"./es-do": 258,
+	"./es-do.js": 258,
+	"./es.js": 257,
+	"./et": 259,
+	"./et.js": 259,
+	"./eu": 260,
+	"./eu.js": 260,
+	"./fa": 261,
+	"./fa.js": 261,
+	"./fi": 262,
+	"./fi.js": 262,
+	"./fo": 263,
+	"./fo.js": 263,
+	"./fr": 264,
+	"./fr-ca": 265,
+	"./fr-ca.js": 265,
+	"./fr-ch": 266,
+	"./fr-ch.js": 266,
+	"./fr.js": 264,
+	"./fy": 267,
+	"./fy.js": 267,
+	"./gd": 268,
+	"./gd.js": 268,
+	"./gl": 269,
+	"./gl.js": 269,
+	"./gom-latn": 270,
+	"./gom-latn.js": 270,
+	"./he": 271,
+	"./he.js": 271,
+	"./hi": 272,
+	"./hi.js": 272,
+	"./hr": 273,
+	"./hr.js": 273,
+	"./hu": 274,
+	"./hu.js": 274,
+	"./hy-am": 275,
+	"./hy-am.js": 275,
+	"./id": 276,
+	"./id.js": 276,
+	"./is": 277,
+	"./is.js": 277,
+	"./it": 278,
+	"./it.js": 278,
+	"./ja": 279,
+	"./ja.js": 279,
+	"./jv": 280,
+	"./jv.js": 280,
+	"./ka": 281,
+	"./ka.js": 281,
+	"./kk": 282,
+	"./kk.js": 282,
+	"./km": 283,
+	"./km.js": 283,
+	"./kn": 284,
+	"./kn.js": 284,
+	"./ko": 285,
+	"./ko.js": 285,
+	"./ky": 286,
+	"./ky.js": 286,
+	"./lb": 287,
+	"./lb.js": 287,
+	"./lo": 288,
+	"./lo.js": 288,
+	"./lt": 289,
+	"./lt.js": 289,
+	"./lv": 290,
+	"./lv.js": 290,
+	"./me": 291,
+	"./me.js": 291,
+	"./mi": 292,
+	"./mi.js": 292,
+	"./mk": 293,
+	"./mk.js": 293,
+	"./ml": 294,
+	"./ml.js": 294,
+	"./mr": 295,
+	"./mr.js": 295,
+	"./ms": 296,
+	"./ms-my": 297,
+	"./ms-my.js": 297,
+	"./ms.js": 296,
+	"./my": 298,
+	"./my.js": 298,
+	"./nb": 299,
+	"./nb.js": 299,
+	"./ne": 300,
+	"./ne.js": 300,
+	"./nl": 301,
+	"./nl-be": 302,
+	"./nl-be.js": 302,
+	"./nl.js": 301,
+	"./nn": 303,
+	"./nn.js": 303,
+	"./pa-in": 304,
+	"./pa-in.js": 304,
+	"./pl": 305,
+	"./pl.js": 305,
+	"./pt": 306,
+	"./pt-br": 307,
+	"./pt-br.js": 307,
+	"./pt.js": 306,
+	"./ro": 308,
+	"./ro.js": 308,
+	"./ru": 309,
+	"./ru.js": 309,
+	"./sd": 310,
+	"./sd.js": 310,
+	"./se": 311,
+	"./se.js": 311,
+	"./si": 312,
+	"./si.js": 312,
+	"./sk": 313,
+	"./sk.js": 313,
+	"./sl": 314,
+	"./sl.js": 314,
+	"./sq": 315,
+	"./sq.js": 315,
+	"./sr": 316,
+	"./sr-cyrl": 317,
+	"./sr-cyrl.js": 317,
+	"./sr.js": 316,
+	"./ss": 318,
+	"./ss.js": 318,
+	"./sv": 319,
+	"./sv.js": 319,
+	"./sw": 320,
+	"./sw.js": 320,
+	"./ta": 321,
+	"./ta.js": 321,
+	"./te": 322,
+	"./te.js": 322,
+	"./tet": 323,
+	"./tet.js": 323,
+	"./th": 324,
+	"./th.js": 324,
+	"./tl-ph": 325,
+	"./tl-ph.js": 325,
+	"./tlh": 326,
+	"./tlh.js": 326,
+	"./tr": 327,
+	"./tr.js": 327,
+	"./tzl": 328,
+	"./tzl.js": 328,
+	"./tzm": 329,
+	"./tzm-latn": 330,
+	"./tzm-latn.js": 330,
+	"./tzm.js": 329,
+	"./uk": 331,
+	"./uk.js": 331,
+	"./ur": 332,
+	"./ur.js": 332,
+	"./uz": 333,
+	"./uz-latn": 334,
+	"./uz-latn.js": 334,
+	"./uz.js": 333,
+	"./vi": 335,
+	"./vi.js": 335,
+	"./x-pseudo": 336,
+	"./x-pseudo.js": 336,
+	"./yo": 337,
+	"./yo.js": 337,
+	"./zh-cn": 338,
+	"./zh-cn.js": 338,
+	"./zh-hk": 339,
+	"./zh-hk.js": 339,
+	"./zh-tw": 340,
+	"./zh-tw.js": 340
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 459;
+
+/***/ }),
+
+/***/ 52:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4832,22 +5633,22 @@ AuthDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 50:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__race_race__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__team_team__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__rules_rules__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__race_race__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__team_team__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__rules_rules__ = __webpack_require__(349);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5063,8 +5864,8 @@ __decorate([
 TabsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/'<ion-content padding no-bounce>\n  <ion-row class="text-align-right tab-content">\n    <ion-col col-7 *ngIf="userProfile?.teamName">\n      <div class="team-text">\n        {{userProfile?.teamName}}\n      </div>\n    </ion-col>\n    <ion-col col-5>\n      <div *ngIf="raceTime" class="timer-right">\n        <div *ngIf="gameState !== \'lockout\'">\n          <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">\n            <div class="timer-button timer-text timer-card">\n              {{timer.displayTime}}\n              <div class="time-type" style="font-size: 9px;"> \n                <span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>\n              </div>\n            </div>\n          </ion-col>\n        </div>\n        <div *ngIf="gameState == \'lockout\'" class="lockout">\n          <div class="lockout-text">LOCK OUT</div>\n        </div>\n      </div>\n    </ion-col>\n  </ion-row>\n\n	<ion-tabs>\n    <ion-tab [root]="tab1Root" tappable tabTitle="Home" tabIcon="md-home"></ion-tab>\n    <ion-tab [root]="tab2Root" tappable tabTitle="Race" tabIcon="md-speedometer"></ion-tab>\n	  <ion-tab [root]="tab3Root" tappable tabTitle="Team" tabIcon="md-people"></ion-tab>\n    <ion-tab [root]="tab4Root" tappable [enabled]="tabEnabled" [rootParams]="userProfile" tabTitle="Rank" tabIcon="md-trending-up"></ion-tab>\n	  <ion-tab [root]="tab5Root" tappable tabTitle="Rules" tabIcon="md-book"></ion-tab>\n	</ion-tabs>\n</ion-content>\n\n\n<!-- <ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs> -->\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
@@ -5076,16 +5877,16 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 57:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatsDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5123,977 +5924,7 @@ StatsDataProvider = __decorate([
 
 //# sourceMappingURL=stats-data.js.map
 
-/***/ }),
-
-/***/ 62:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverStatsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the DriverStatsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var DriverStatsPage = (function () {
-    function DriverStatsPage(navCtrl, navParams, storage, statsData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.statsData = statsData;
-        this.driverValueChange = 0;
-        console.log("passed driver", this.navParams.data);
-        this.selectedDriver = this.navParams.data;
-        // call local to get round number
-        storage.get('currentRound').then(function (val) {
-            _this.round = val;
-            console.log('1 - The Current Round is: ', _this.round);
-            //call to firebase to retrieve drivers list data 
-            _this.statsData.getStats().on('value', function (snapshot) {
-                var rawList = [];
-                var selectedDriver = [];
-                var arrayHolder = [];
-                var rootNode = snapshot.val();
-                var driversNode = [];
-                var i;
-                //get race result data and find drivers node.
-                for (i = 0; i < rootNode.length; i++) {
-                    if (rootNode[i].drivers) {
-                        arrayHolder = rootNode[i].drivers;
-                        driversNode = Object.keys(arrayHolder).map(function (key) { return arrayHolder[key]; });
-                        selectedDriver.push(driversNode);
-                    }
-                }
-                //loop through all drivers for each round and get selected drivers data
-                for (i = 0; i < selectedDriver.length; i++) {
-                    for (var k = 0; k < selectedDriver[i].length; k++) {
-                        if (selectedDriver[i][k].abrev == _this.selectedDriver) {
-                            rawList.push(selectedDriver[i][k]);
-                        }
-                    }
-                }
-                _this.driverStats = rawList;
-                console.log('Driver stats', _this.driverStats);
-                _this.driverInfo = _this.driverStats[_this.driverStats.length - 1];
-                console.log('Driver stats', _this.driverInfo);
-                //pass driver data to chart
-                _this.chartData(_this.driverStats);
-            });
-        });
-    } //end constructor
-    //add drivers data to chart
-    DriverStatsPage.prototype.chartData = function (driverStats) {
-        var driverPoints = [];
-        var driverValue = [];
-        var roundCounter = [];
-        var qualRaceCounter = [];
-        var qualified = [];
-        var finished = [];
-        var totalPoints = 0;
-        console.log('DriverStatsPage', driverStats);
-        for (var i = 0; i < driverStats.length; i++) {
-            console.log('round stats', driverStats[i]);
-            driverPoints.push(driverStats[i].driverPoints);
-            driverValue.push(parseInt(driverStats[i].driverValue));
-            roundCounter.push([i]);
-            //calc drivers total value change
-            this.driverValueChange = driverStats[0].valChange + driverStats[i].valChange;
-            //exclude round 0 data
-            if (i > 0) {
-                //calc average points per race
-                totalPoints = totalPoints + driverStats[i].driverPoints;
-                console.log('totalPoints', totalPoints);
-                //store qualified and finished data for charts
-                qualRaceCounter.push([i]);
-                qualified.push(driverStats[i].qualified);
-                finished.push(driverStats[i].position);
-            }
-        }
-        this.averagePoints = Math.floor(totalPoints / (driverStats.length - 1));
-        //Drivers points chart
-        this.chartPoints = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasPoints.nativeElement, {
-            type: 'line',
-            data: {
-                labels: roundCounter,
-                datasets: [
-                    {
-                        label: "Points: ",
-                        fill: true,
-                        lineTension: 0.2,
-                        backgroundColor: "rgba(211,20,17,0.5)",
-                        borderColor: "rgba(211,20,17,1)",
-                        borderCapStyle: 'round',
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'round',
-                        pointBorderColor: "rgba(211,20,17,1)",
-                        pointBackgroundColor: "rgba(211,20,17,1)",
-                        pointBorderWidth: 2,
-                        pointStyle: 'circle',
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: driverPoints,
-                        spanGaps: false,
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                            gridLines: {
-                                color: "rgba(0,0,0,1)",
-                                zeroLineColor: "rgba(0,0,0,0.4)",
-                                zeroLineWidth: 2,
-                            },
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                            }
-                        }],
-                    yAxes: [{
-                            gridLines: {
-                                color: "rgba(0,0,0,1)",
-                                zeroLineColor: "rgba(0,0,0,0.4)",
-                                zeroLineWidth: 2,
-                            },
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                            }
-                        }],
-                }
-            }
-        });
-        //Drivers value chart
-        this.chartValue = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasValue.nativeElement, {
-            type: 'line',
-            data: {
-                labels: roundCounter,
-                datasets: [
-                    {
-                        label: "Value: ",
-                        fill: true,
-                        lineTension: 0.2,
-                        backgroundColor: "rgba(29,155,160,0.4)",
-                        borderColor: "rgba(29,155,160,1)",
-                        borderCapStyle: 'round',
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'round',
-                        pointBorderColor: "rgba(29,155,160,1)",
-                        pointBackgroundColor: "rgba(29,155,160,1)",
-                        pointBorderWidth: 2,
-                        pointStyle: 'circle',
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: driverValue,
-                        spanGaps: false,
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                            ticks: {
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                                fontColor: "rgba(255,255,255,0.7)",
-                            }
-                        }],
-                    yAxes: [{
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                                callback: function (value, index, values) {
-                                    if (parseInt(value) >= 1000) {
-                                        value = value / 1000000;
-                                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'M';
-                                    }
-                                    else {
-                                        return '$' + value;
-                                    }
-                                }
-                            }
-                        }]
-                }
-            }
-        });
-    }; //end chart data
-    DriverStatsPage.prototype.ionViewWillEnter = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    DriverStatsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DriverStatsPage');
-    };
-    return DriverStatsPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasPoints'),
-    __metadata("design:type", Object)
-], DriverStatsPage.prototype, "lineCanvasPoints", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasValue'),
-    __metadata("design:type", Object)
-], DriverStatsPage.prototype, "lineCanvasValue", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('barCanvasQualRace'),
-    __metadata("design:type", Object)
-], DriverStatsPage.prototype, "barCanvasQualRace", void 0);
-DriverStatsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-driver-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-stats/driver-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n	  <ion-row *ngIf="driverInfo">\n	    <div class="nav-heading">{{ driverInfo.firstName }} {{ driverInfo.lastName }}</div>\n	  </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <div *ngIf="driverInfo">\n      <ion-row>\n        <ion-col col-3>\n          <div class="horizontal-pad">\n    		    <img class="driver-image" [src]="driverInfo.driverImage" />\n           </div>\n        </ion-col>\n        <ion-col col-6>\n      	  <div class="driver-value">\n            {{ driverInfo.driverValue | currency:\'USD\':true:\'1.0\'}}\n          </div>\n      	  <div class="driver-change">\n            Last value change\n            <span>{{ driverValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n          </div> \n        </ion-col>\n        <ion-col col-3>\n          <div class="driver-points">Average points<span>{{ averagePoints }}</span></div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div class="chart-card">\n      <ion-row>\n        <div class="header-text slideExpandUp delay-3">Points per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasPoints></canvas>\n        </ion-card-content>\n      </ion-card>\n      <ion-row>\n        <div class="header-text slideExpandUp delay-5">Value per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasValue></canvas>\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-stats/driver-stats.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
-], DriverStatsPage);
-
-//# sourceMappingURL=driver-stats.js.map
-
-/***/ }),
-
-/***/ 63:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisStatsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the ChassisStatsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ChassisStatsPage = (function () {
-    function ChassisStatsPage(navCtrl, navParams, storage, statsData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.statsData = statsData;
-        this.chassisValueChange = 0;
-        console.log("passed driver", this.navParams.data);
-        this.selectedChassis = this.navParams.data;
-        // call local to get round number
-        storage.get('currentRound').then(function (val) {
-            _this.round = val;
-            console.log('1 - The Current Round is: ', _this.round);
-            var i;
-            //call to firebase to retrieve drivers list data 
-            _this.statsData.getStats().on('value', function (snapshot) {
-                var rawList = [];
-                var selected = [];
-                var arrayHolder = [];
-                var rootNode = snapshot.val();
-                var chassisNode = [];
-                //get race result data and find chassis node.
-                for (i = 0; i < rootNode.length; i++) {
-                    if (rootNode[i].chassis) {
-                        arrayHolder = rootNode[i].chassis;
-                        chassisNode = Object.keys(arrayHolder).map(function (key) { return arrayHolder[key]; });
-                        selected.push(chassisNode);
-                    }
-                }
-                //loop through all drivers for each round and get selected drivers data
-                for (i = 0; i < selected.length; i++) {
-                    for (var k = 0; k < selected[i].length; k++) {
-                        if (selected[i][k].chassisName == _this.selectedChassis) {
-                            rawList.push(selected[i][k]);
-                        }
-                    }
-                }
-                _this.chassisStats = rawList;
-                _this.chassisInfo = _this.chassisStats[_this.chassisStats.length - 1];
-                //pass driver data to chart
-                _this.chartData(_this.chassisStats);
-            });
-        });
-    } // end constructor
-    //add drivers data to chart
-    ChassisStatsPage.prototype.chartData = function (chassisStats) {
-        var chassisPoints = [];
-        var chassisValue = [];
-        var roundCounter = [];
-        var totalPoints = 0;
-        console.log('chassisStatsPage', chassisStats);
-        for (var i = 0; i < chassisStats.length; i++) {
-            console.log('round stats', chassisStats[i]);
-            chassisPoints.push(chassisStats[i].chassisPoints);
-            chassisValue.push(parseInt(chassisStats[i].chassisValue));
-            roundCounter.push([i]);
-            totalPoints = totalPoints + chassisStats[i].chassisPoints;
-            //calc chassis total value change
-            this.chassisValueChange = chassisStats[0].valChange + chassisStats[i].valChange;
-        }
-        //calc average points per race
-        this.averagePoints = Math.floor(totalPoints / (chassisStats.length - 1));
-        console.log('this.averagePoints', this.averagePoints);
-        console.log('driverValueChange', this.chassisValueChange);
-        console.log('driverPoints', chassisPoints);
-        console.log('driverValue', chassisValue);
-        console.log('roundCounter', roundCounter);
-        //Drivers points chart
-        this.chartPoints = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasPoints.nativeElement, {
-            type: 'line',
-            data: {
-                labels: roundCounter,
-                datasets: [
-                    {
-                        label: "Constructor points",
-                        fill: true,
-                        lineTension: 0.2,
-                        backgroundColor: "rgba(211,20,17,0.5)",
-                        borderColor: "rgba(211,20,17,1)",
-                        borderCapStyle: 'round',
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'round',
-                        pointBorderColor: "rgba(211,20,17,1)",
-                        pointBackgroundColor: "rgba(211,20,17,1)",
-                        pointBorderWidth: 2,
-                        pointStyle: 'circle',
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: chassisPoints,
-                        spanGaps: false,
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                            gridLines: {
-                                color: "rgba(0,0,0,1)",
-                                zeroLineColor: "rgba(0,0,0,0.4)",
-                                zeroLineWidth: 2,
-                            },
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                            }
-                        }],
-                    yAxes: [{
-                            gridLines: {
-                                color: "rgba(0,0,0,1)",
-                                zeroLineColor: "rgba(0,0,0,0.4)",
-                                zeroLineWidth: 2,
-                            },
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                            }
-                        }],
-                }
-            }
-        });
-        //Drivers value chart
-        this.chartValue = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasValue.nativeElement, {
-            type: 'line',
-            data: {
-                labels: roundCounter,
-                datasets: [
-                    {
-                        label: "Constructor value",
-                        fill: true,
-                        lineTension: 0.2,
-                        backgroundColor: "rgba(29,155,160,0.4)",
-                        borderColor: "rgba(29,155,160,1)",
-                        borderCapStyle: 'round',
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'round',
-                        pointBorderColor: "rgba(29,155,160,1)",
-                        pointBackgroundColor: "rgba(29,155,160,1)",
-                        pointBorderWidth: 2,
-                        pointStyle: 'circle',
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: chassisValue,
-                        spanGaps: false,
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                            ticks: {
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                                fontColor: "rgba(255,255,255,0.7)",
-                            }
-                        }],
-                    yAxes: [{
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                                callback: function (value, index, values) {
-                                    if (parseInt(value) >= 1000) {
-                                        value = value / 1000000;
-                                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'M';
-                                    }
-                                    else {
-                                        return '$' + value;
-                                    }
-                                }
-                            }
-                        }]
-                }
-            }
-        });
-    }; //end chart data
-    ChassisStatsPage.prototype.ionViewWillEnter = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    ChassisStatsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ChassisStatsPage');
-    };
-    return ChassisStatsPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasPoints'),
-    __metadata("design:type", Object)
-], ChassisStatsPage.prototype, "lineCanvasPoints", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasValue'),
-    __metadata("design:type", Object)
-], ChassisStatsPage.prototype, "lineCanvasValue", void 0);
-ChassisStatsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-chassis-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-stats/chassis-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="text-center" *ngIf="chassisInfo">{{ chassisInfo.chassisName }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n		<div *ngIf="chassisInfo">\n		  <ion-row>\n	      <ion-col col-3>\n	        <div class="horizontal-pad">\n			      <img class="chassis-image" [src]="chassisInfo.chassisImage" />\n	        </div>\n	      </ion-col>\n	      <ion-col col-6>\n	  		  <div class="chassis-value"> \n	          {{ chassisInfo.chassisValue | currency:\'USD\':true:\'1.0\'}}\n	        </div>\n	  		  <div class="chassis-change">\n	          Last value change\n	          <span>{{ chassisValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n	        </div>\n	      </ion-col>\n	      <ion-col col-3>\n	        <div class="chassis-points">\n	          Average points\n	          <span>{{ averagePoints }}</span>\n	        </div>\n	      </ion-col>\n	    </ion-row>\n		</div>\n\n		<div class="chart-card">\n		  <ion-row>\n		    <div class="header-text slideExpandUp delay-3">Points per round</div>\n		  </ion-row>\n			<ion-card>\n		    <ion-card-content>\n		      <canvas #lineCanvasPoints></canvas>\n		    </ion-card-content>\n		  </ion-card>\n		  <ion-row>\n		    <div class="header-text slideExpandUp delay-5">Value per round</div>\n		  </ion-row>\n		  <ion-card>\n		    <ion-card-content>\n		      <canvas #lineCanvasValue></canvas>\n		    </ion-card-content>\n		  </ion-card>\n		</div>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-stats/chassis-stats.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
-], ChassisStatsPage);
-
-//# sourceMappingURL=chassis-stats.js.map
-
-/***/ }),
-
-/***/ 64:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuStatsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the PuStatsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var PuStatsPage = (function () {
-    function PuStatsPage(navCtrl, navParams, storage, statsData) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.statsData = statsData;
-        this.puValueChange = 0;
-        this.selectedPu = this.navParams.data;
-        // call local to get round number
-        storage.get('currentRound').then(function (val) {
-            _this.round = val;
-            //call to firebase to retrieve drivers list data 
-            _this.statsData.getStats().on('value', function (snapshot) {
-                var rawList = [];
-                var selected = [];
-                var arrayHolder = [];
-                var rootNode = snapshot.val();
-                var puNode = [];
-                var i;
-                //get race result data and find drivers node.
-                for (i = 0; i < rootNode.length; i++) {
-                    if (rootNode[i].powerUnits) {
-                        arrayHolder = rootNode[i].powerUnits;
-                        puNode = Object.keys(arrayHolder).map(function (key) { return arrayHolder[key]; });
-                        selected.push(puNode);
-                    }
-                }
-                //loop through all pu's for each round and get selected drivers data
-                for (i = 0; i < selected.length; i++) {
-                    for (var k = 0; k < selected[i].length; k++) {
-                        if (selected[i][k].puName == _this.selectedPu) {
-                            rawList.push(selected[i][k]);
-                        }
-                    }
-                }
-                _this.puStats = rawList;
-                _this.puInfo = _this.puStats[_this.puStats.length - 1];
-                //pass pu data to chart
-                _this.chartData(_this.puStats);
-            });
-        });
-    } //end constructor
-    //add drivers data to chart
-    PuStatsPage.prototype.chartData = function (puStats) {
-        var puPoints = [];
-        var puValue = [];
-        var roundCounter = [];
-        var totalPoints = 0;
-        for (var i = 0; i < puStats.length; i++) {
-            puPoints.push(puStats[i].puPoints);
-            puValue.push(parseInt(puStats[i].puValue));
-            roundCounter.push([i]);
-            //calc drivers total value change
-            this.puValueChange = puStats[0].valChange + puStats[i].valChange;
-            totalPoints = totalPoints + puStats[i].puPoints;
-        }
-        this.averagePoints = Math.floor(totalPoints / (puStats.length - 1));
-        //Drivers points chart
-        this.chartPoints = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasPoints.nativeElement, {
-            type: 'line',
-            data: {
-                labels: roundCounter,
-                datasets: [
-                    {
-                        label: "Power unit points",
-                        fill: true,
-                        lineTension: 0.2,
-                        backgroundColor: "rgba(211,20,17,0.5)",
-                        borderColor: "rgba(211,20,17,1)",
-                        borderCapStyle: 'round',
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'round',
-                        pointBorderColor: "rgba(211,20,17,1)",
-                        pointBackgroundColor: "rgba(211,20,17,1)",
-                        pointBorderWidth: 2,
-                        pointStyle: 'circle',
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: puPoints,
-                        spanGaps: false,
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                            gridLines: {
-                                color: "rgba(0,0,0,1)",
-                                zeroLineColor: "rgba(0,0,0,0.4)",
-                                zeroLineWidth: 2,
-                            },
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                            }
-                        }],
-                    yAxes: [{
-                            gridLines: {
-                                color: "rgba(0,0,0,1)",
-                                zeroLineColor: "rgba(0,0,0,0.4)",
-                                zeroLineWidth: 2,
-                            },
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                            }
-                        }],
-                }
-            }
-        });
-        //Drivers value chart
-        this.chartValue = new __WEBPACK_IMPORTED_MODULE_4_chart_js__["Chart"](this.lineCanvasValue.nativeElement, {
-            type: 'line',
-            data: {
-                labels: roundCounter,
-                datasets: [
-                    {
-                        label: "Power unit value",
-                        fill: true,
-                        lineTension: 0.2,
-                        backgroundColor: "rgba(29,155,160,0.4)",
-                        borderColor: "rgba(29,155,160,1)",
-                        borderCapStyle: 'round',
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'round',
-                        pointBorderColor: "rgba(29,155,160,1)",
-                        pointBackgroundColor: "rgba(29,155,160,1)",
-                        pointBorderWidth: 2,
-                        pointStyle: 'circle',
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: puValue,
-                        spanGaps: false,
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    display: false,
-                },
-                scales: {
-                    xAxes: [{
-                            ticks: {
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                                fontColor: "rgba(255,255,255,0.7)",
-                            }
-                        }],
-                    yAxes: [{
-                            ticks: {
-                                fontColor: "rgba(255,255,255,0.7)",
-                                fontFamily: "'ubuntu-bold', 'Helvetica', 'Arial', sans-serif",
-                                callback: function (value, index, values) {
-                                    if (parseInt(value) >= 1000) {
-                                        value = value / 1000000;
-                                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'M';
-                                    }
-                                    else {
-                                        return '$' + value;
-                                    }
-                                }
-                            }
-                        }]
-                }
-            }
-        });
-    }; //end chart data
-    PuStatsPage.prototype.ionViewWillEnter = function () {
-        var tabHeader = document.querySelectorAll('.tab-content');
-        if (tabHeader !== null) {
-            tabHeader["0"].style.display = 'none';
-        }
-    };
-    PuStatsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PuStatsPage');
-    };
-    return PuStatsPage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasPoints'),
-    __metadata("design:type", Object)
-], PuStatsPage.prototype, "lineCanvasPoints", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('lineCanvasValue'),
-    __metadata("design:type", Object)
-], PuStatsPage.prototype, "lineCanvasValue", void 0);
-PuStatsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-pu-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-stats/pu-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="text-center" *ngIf="puInfo">{{ puInfo.puName }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="stats-page">\n  <div class="container">\n    <div *ngIf="puInfo">\n      <ion-row>\n        <ion-col col-3>\n          <div class="horizontal-pad">\n  		      <img [src]="puInfo.puImage" />\n          </div>\n        </ion-col>\n        <ion-col col-6>\n    		  <div class="pu-value">\n            {{ puInfo.puValue | currency:\'USD\':true:\'1.0\'}}\n          </div>\n          <div class="pu-change">\n            Last value change\n            <span>{{ puValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n          </div> \n  	    </ion-col>\n  	    <ion-col col-3>\n          <div class="pu-points">\n            Average points\n            <span>{{ averagePoints }}</span>\n          </div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div class="chart-card">\n      <ion-row>\n        <div class="header-text slideExpandUp delay-3">Points per round</div>\n      </ion-row>\n    	<ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasPoints></canvas>\n        </ion-card-content>\n      </ion-card>\n      <ion-row>\n        <div class="header-text slideExpandUp delay-5">Value per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasValue></canvas>\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-stats/pu-stats.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
-], PuStatsPage);
-
-//# sourceMappingURL=pu-stats.js.map
-
-/***/ }),
-
-/***/ 65:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validators_email__ = __webpack_require__(95);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var LoginPage = (function () {
-    function LoginPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
-        this.nav = nav;
-        this.authData = authData;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.emailChanged = false;
-        this.passwordChanged = false;
-        this.submitAttempt = false;
-        this.loginForm = formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_7__validators_email__["a" /* EmailValidator */].isValid])],
-            password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(6), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
-        });
-    }
-    LoginPage.prototype.elementChanged = function (input) {
-        console.log(input);
-        var field = input.ngControl.name;
-        this[field + "Changed"] = true;
-    };
-    LoginPage.prototype.loginUser = function () {
-        var _this = this;
-        this.submitAttempt = true;
-        if (!this.loginForm.valid) {
-            console.log(this.loginForm.value);
-        }
-        else {
-            this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then(function (authData) {
-                _this.nav.setRoot(__WEBPACK_IMPORTED_MODULE_6__tabs_tabs__["a" /* TabsPage */]);
-            }, function (error) {
-                _this.loading.dismiss().then(function () {
-                    var alert = _this.alertCtrl.create({
-                        message: error.message,
-                        buttons: [
-                            {
-                                text: "Ok",
-                                role: 'cancel'
-                            }
-                        ]
-                    });
-                    alert.present();
-                });
-            });
-            // this.loading = this.loadingCtrl.create({
-            //   dismissOnPageChange: true,
-            // });
-            // this.loading.present();
-            this.showLoading();
-        }
-    };
-    LoginPage.prototype.showLoading = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.loading = _this.loadingCtrl.create({
-                spinner: 'crescent'
-            });
-            _this.loading.present()
-                .then(function () {
-                setTimeout(function () {
-                    _this.loading.dismiss();
-                }, 2000);
-                resolve('loaded');
-            });
-        });
-    };
-    LoginPage.prototype.goToSignup = function () {
-        this.nav.push(__WEBPACK_IMPORTED_MODULE_4__signup_signup__["a" /* SignupPage */]);
-    };
-    LoginPage.prototype.goToResetPassword = function () {
-        this.nav.push(__WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__["a" /* ResetPasswordPage */]);
-    };
-    return LoginPage;
-}());
-LoginPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n\n  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Login\n      </button>\n    </ion-card>\n  </form>\n \n  <ion-row col-6 class="center small-layout">\n    <button ion-button block class="create-btn"  (click)="goToSignup()">\n      Create account\n    </button>\n  </ion-row>\n\n  <ion-row col-6 class="center less-margin">\n    <button ion-button block outline class="white-button"  (click)="goToResetPassword()">\n      Forgot password?\n    </button>\n  </ion-row>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
-], LoginPage);
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the ProfileDataProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var ProfileDataProvider = (function () {
-    function ProfileDataProvider(http) {
-        this.http = http;
-        //Create the references
-        this.currentUser = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser;
-        this.userProfile = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/userProfile');
-    }
-    ProfileDataProvider.prototype.getUserProfile = function () {
-        return this.userProfile.child(this.currentUser.uid);
-    };
-    ProfileDataProvider.prototype.getUsersList = function () {
-        return this.userProfile;
-    };
-    ProfileDataProvider.prototype.updateRank = function (rank) {
-        return this.userProfile.child(this.currentUser.uid).update({
-            rank: rank,
-        });
-    };
-    ProfileDataProvider.prototype.updateName = function (teamName) {
-        return this.userProfile.child(this.currentUser.uid).update({
-            teamName: teamName,
-        });
-    };
-    ProfileDataProvider.prototype.updateDOB = function (birthDate) {
-        return this.userProfile.child(this.currentUser.uid).update({
-            birthDate: birthDate,
-        });
-    };
-    ProfileDataProvider.prototype.updateEmail = function (newEmail) {
-        var _this = this;
-        this.currentUser.updateEmail(newEmail).then(function () {
-            _this.userProfile.child(_this.currentUser.uid).update({
-                email: newEmail
-            });
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    ProfileDataProvider.prototype.updatePassword = function (newPassword) {
-        this.currentUser.updatePassword(newPassword).then(function () {
-            console.log("Password Changed");
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    return ProfileDataProvider;
-}());
-ProfileDataProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], ProfileDataProvider);
-
-//# sourceMappingURL=profile-data.js.map
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailValidator; });
-var EmailValidator = (function () {
-    function EmailValidator() {
-    }
-    EmailValidator.isValid = function (control) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(control.value);
-        if (re) {
-            return null;
-        }
-        return { "invalidEmail": true };
-    };
-    return EmailValidator;
-}());
-
-//# sourceMappingURL=email.js.map
-
 /***/ })
 
-},[344]);
+},[352]);
 //# sourceMappingURL=main.js.map

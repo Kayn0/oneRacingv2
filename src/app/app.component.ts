@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import * as firebase from 'firebase';
+import { FCM } from '@ionic-native/fcm';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +19,9 @@ export class MyApp {
   constructor(
     platform: Platform, 
     statusBar: StatusBar,
-    splashScreen: SplashScreen
+    splashScreen: SplashScreen,
+    public alertCtrl: AlertController,
+    private fcm: FCM
    ){
 
     const config = {
@@ -48,6 +51,24 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
+      this.fcm.subscribeToTopic('all');
+
+      this.fcm.getToken().then(token => {
+        // backend.registerToken(token);
+      });
+      this.fcm.onNotification().subscribe(data => {
+        // console.log("push notification data", data.msg);
+        if(data.wasTapped) {
+         console.info("Received in background");
+         alert(data.msg);
+        } else {
+         console.info("Received in foreground");
+        };
+      });
+      this.fcm.onTokenRefresh().subscribe(token => {
+        // backend.registerToken(token);
+      });
+
       splashScreen.hide();
     });
   }

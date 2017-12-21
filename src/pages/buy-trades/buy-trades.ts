@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AdminDataProvider } from '../../providers/admin-data/admin-data';
 import { TeamDataProvider } from '../../providers/team-data/team-data';
@@ -10,7 +10,6 @@ import { TeamDataProvider } from '../../providers/team-data/team-data';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-buy-trades',
   templateUrl: 'buy-trades.html',
@@ -42,17 +41,14 @@ export class BuyTradesPage {
 	  this.teamData.getTheMoney().on('value', (snapshot) => {
 	    this.teamCash = snapshot.val().money;
 	    this.userTrades = snapshot.val().trades;
-	    console.log(this.teamCash, 'woooooo2');
 	  });
 
 	  this.adminData.getGameState().on('value', snapshot => {
 	    this.gameState = snapshot.val().gameState;
-	    console.log(this.gameState);
 	  });
 	} //end constructor
 
   confirmTrade(num) { 
-    console.log('num', num);
     var tradeCost;
     if (num === 5) {
       tradeCost = this.tradeCostFive;

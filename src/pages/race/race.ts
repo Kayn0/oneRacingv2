@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AdminDataProvider } from '../../providers/admin-data/admin-data';
 import { CurrentRoundDataProvider } from '../../providers/current-round-data/current-round-data';
@@ -11,7 +11,6 @@ import { CurrentRoundDataProvider } from '../../providers/current-round-data/cur
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-race',
   templateUrl: 'race.html',

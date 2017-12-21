@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 import { StatsDataProvider } from '../../providers/stats-data/stats-data';
@@ -12,7 +12,6 @@ import { Chart } from 'chart.js';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-chassis-stats',
   templateUrl: 'chassis-stats.html',

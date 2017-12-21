@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "796933852913",
+    "firebase_url": "https://fantasyf1-e3378.firebaseio.com",
+    "project_id": "fantasyf1-e3378",
+    "storage_bucket": "fantasyf1-e3378.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796933852913:android:fecb80e65bccb832",
+        "android_client_info": {
+          "package_name": "com.oneracingleague.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796933852913-v3d8u44vf306adbdp296lt60etbvhclq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuxLspYGisaIQ_j-aYPLoUBbyaPSrzjSo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

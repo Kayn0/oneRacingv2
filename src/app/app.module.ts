@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HttpModule} from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FCM } from '@ionic-native/fcm';
 
 //Auth pages
 import { LoginPage } from '../pages/login/login';
@@ -21,7 +22,6 @@ import { RankingPage } from '../pages/ranking/ranking';
 import { RulesPage } from '../pages/rules/rules';
 
 //Sub pages
-import { TourGuidePage } from '../pages/tour-guide/tour-guide';
 import { BuyTradesPage } from '../pages/buy-trades/buy-trades';
 import { DriverOnePage } from '../pages/driver-one/driver-one';
 import { DriverTwoPage } from '../pages/driver-two/driver-two';
@@ -57,7 +57,6 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     RankingPage,
     RulesPage,
 
-    TourGuidePage,
     BuyTradesPage,
     DriverOnePage,
     DriverTwoPage,
@@ -93,7 +92,6 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     RankingPage,
     RulesPage,
 
-    TourGuidePage,
     BuyTradesPage,
     DriverOnePage,
     DriverTwoPage,
@@ -116,7 +114,8 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     CurrentRoundDataProvider,
     AdminDataProvider,
     TeamDataProvider,
-    StatsDataProvider
+    StatsDataProvider,
+    FCM,
   ]
 })
 export class AppModule {}
