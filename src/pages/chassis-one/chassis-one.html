@@ -82,7 +82,7 @@
 					</ion-col>
 
 					<ion-col class="align-right">
-						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [ngClass]="{'hide-button': this.round < 2}">
+						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [disabled]="currentRound < 2">
 				   		<ion-icon name="stats"></ion-icon>
 				   	</button>
 				   	

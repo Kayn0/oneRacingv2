@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>796933852913-6j5aeckmgd9eb27p2itchihd88nutppc.apps.googleusercontent.com</string>
+	<string>967268565014-qa6ol1ulqd23mbnhntgejtno1g4h0h7n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.796933852913-6j5aeckmgd9eb27p2itchihd88nutppc</string>
+	<string>com.googleusercontent.apps.967268565014-qa6ol1ulqd23mbnhntgejtno1g4h0h7n</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDRq8d2HqJip0VxXQfLgDKqQCiiwPPuKEE</string>
+	<string>AIzaSyB0euC2ZAuENs8C692MU-3qnUmnop0aHKg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>796933852913</string>
+	<string>967268565014</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.oneracingleague.app</string>
 	<key>PROJECT_ID</key>
-	<string>fantasyf1-e3378</string>
+	<string>one-racing-league</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fantasyf1-e3378.appspot.com</string>
+	<string>one-racing-league.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:796933852913:ios:fecb80e65bccb832</string>
+	<string>1:967268565014:ios:fecb80e65bccb832</string>
 	<key>DATABASE_URL</key>
-	<string>https://fantasyf1-e3378.firebaseio.com</string>
+	<string>https://one-racing-league.firebaseio.com</string>
 </dict>
 </plist>

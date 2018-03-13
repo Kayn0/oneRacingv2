@@ -25275,6 +25275,10 @@ ion-col {
   min-height: 90px;
 }
 
+.item-md {
+  padding-left: 10px;
+}
+
 .item-md ion-thumbnail ion-img,
 .item-md ion-thumbnail img {
   width: 40px;
@@ -25352,7 +25356,7 @@ page-ranking .list ion-item.item.item-block {
 
 .list-image {
   height: auto !important;
-  width: 50px !important;
+  width: 60px !important;
 }
 
 .title-val {
@@ -25484,23 +25488,28 @@ page-ranking .list ion-item.item.item-block {
 }
 
 .step-two {
-  top: 26%;
+  top: 36%;
 }
 
 .step-three {
-  top: 29%;
+  top: 36%;
 }
 
 .step-four {
-  top: 21%;
+  top: 38%;
+}
+
+.step-five {
+  top: 15%;
+  position: relative;
 }
 
 .tutorial-text {
   color: #333;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.4;
   margin-right: 6px;
-  padding-left: 4px;
+  padding: 8px;
   position: relative;
   top: 4px;
 }
@@ -28629,8 +28638,8 @@ page-driver-one .driver-name {
 }
 
 page-driver-one .driver-image {
-  max-height: 50px;
-  width: auto !important;
+  height: auto !important;
+  width: 60px !important;
 }
 
 page-driver-one .margin-image {
@@ -29105,9 +29114,8 @@ page-driver-two .driver-name {
 }
 
 page-driver-two .driver-image {
-  max-height: 50px;
-  width: auto;
-  padding-left: 10px;
+  height: auto !important;
+  width: 60px !important;
 }
 
 page-driver-two .margin-image {
@@ -32070,5 +32078,11 @@ page-team .negative::before {
 @media only screen and (min-width: 520px) {
   page-team .add-trade-btn {
     top: 0;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  page-team .step-three {
+    top: 46%;
   }
 }

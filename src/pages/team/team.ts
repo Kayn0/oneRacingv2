@@ -80,7 +80,7 @@ export class TeamPage {
         trades: snapshot.val().trades
       });
       this.userList = rawList;
-      console.log(this.userList, 'lasfjsa');
+      this.teamCash = this.userList["0"].money;
     });
 
     //call firebase to check driver one data
@@ -142,7 +142,6 @@ export class TeamPage {
       });
       this.userDriverTwo = rawList;
       this.userDriverTwo = Object.keys(this.userDriverTwo).map(key => this.userDriverTwo[key]); //convert to array of objects
-      console.log('driverTwo', this.userDriverTwo);
 
       if (this.userDriverTwo.length == 0) {
         this.userDriverTwoEmpty = true;
@@ -175,7 +174,6 @@ export class TeamPage {
 
       this.userChassisOne = rawList;
       this.userChassisOne = Object.keys(this.userChassisOne).map(key => this.userChassisOne[key]); //convert to array of objects
-      console.log('chassisOne', this.userChassisOne);
 
       if (this.userChassisOne.length == 0) {
         this.userChassisOneEmpty = true;
@@ -206,7 +204,6 @@ export class TeamPage {
       });
       this.userChassisTwo = rawList;
       this.userChassisTwo = Object.keys(this.userChassisTwo).map(key => this.userChassisTwo[key]); //convert to array of objects
-      console.log('chassisTwo', this.userChassisTwo);
 
       if (this.userChassisTwo.length == 0) {
         this.userChassisTwoEmpty = true;
@@ -238,7 +235,6 @@ export class TeamPage {
       });
       this.userPuOne = rawList;
       this.userPuOne = Object.keys(this.userPuOne).map(key => this.userPuOne[key]); //convert to array of objects
-      console.log('userPuOne', this.userPuOne);
 
       if (this.userPuOne.length == 0) {
         this.userPuOneEmpty = true;
@@ -271,7 +267,6 @@ export class TeamPage {
 
       this.userPuTwo = rawList;
       this.userPuTwo = Object.keys(this.userPuTwo).map(key => this.userPuTwo[key]); //convert to array of objects
-      console.log('userPuTwo', this.userPuTwo);
 
       if (this.userPuTwo.length == 0) {
         this.userPuTwoEmpty = true;
@@ -281,7 +276,6 @@ export class TeamPage {
     });
 
     this.currentRoundData.getGameState().on('value', snapshot => {
-      console.log('game state Team page:', snapshot.val().gameState);
       this.gameState = snapshot.val().gameState;
     });
 
@@ -308,8 +302,6 @@ export class TeamPage {
         {
           text: 'Yes',
           handler: () => {
-            console.log('Agree clicked');
-            console.log('driverUpgrade', driver);
             var driverTypeId;
             var driverNode;
             //check if user has enough money
@@ -319,8 +311,6 @@ export class TeamPage {
 
               // update driver one
               if (driver == "one") {
-                console.log('this.teamCash', this.teamCash);
-                console.log('this.driverUpgradeCost', this.driverUpgradeCost);
 
                 //update driver node
                 driverTypeId = this.userDriverOne[0].id;
@@ -357,7 +347,6 @@ export class TeamPage {
         {
           text: 'Yes',
           handler: () => {
-            console.log('driverUpgrade', chassis);
             var chassisTypeId;
             var chassisNode;
             //check if user has enough money
@@ -367,8 +356,6 @@ export class TeamPage {
 
               // update chassis one
               if (chassis == "one") {
-                console.log('this.teamCash', this.teamCash);
-                console.log('this.chassisUpgradeCost', this.chassisUpgradeCost);
 
                 chassisTypeId = this.userChassisOne[0].id;
                 chassisNode = '/carOne/chassis/';
@@ -392,7 +379,6 @@ export class TeamPage {
     var decimalSeperator = this.puUpgradeCost;
     decimalSeperator = this.numberWithCommas(decimalSeperator);
 
-    console.log(decimalSeperator, 'decimalSeperator');
     let confirm = this.alertCtrl.create({
       title: 'Upgrade',
       message: 'Are you sure you want to buy a power unit upgrade for $' + decimalSeperator + '?',
@@ -407,9 +393,8 @@ export class TeamPage {
         {
           text: 'Yes',
           handler: () => {
-            console.log('puUpgrade', pu);
-             var puTypeId;
-             var puNode;
+              var puTypeId;
+              var puNode;
             //check if user has enough money
             if (this.teamCash < this.puUpgradeCost) {
               this.outOfMoneyAlert(this.puUpgradeCost);
@@ -447,7 +432,6 @@ export class TeamPage {
   outOfMoneyAlert(upgradeCost) {
     var negVal = (this.teamCash - upgradeCost) * -1;
     negVal = this.numberWithCommas(negVal);
-    console.log(negVal, 'negVal');
     let alert = this.alertCtrl.create({
       title: 'Not enough money',
       subTitle: 'You need an additional $' + negVal + ' to make the trade.',
@@ -455,7 +439,6 @@ export class TeamPage {
     });
     alert.present();
   }
-
 
   numberWithCommas(dollarValue) {
     return dollarValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -499,6 +482,5 @@ export class TeamPage {
     } else {
       this.firstTime = false;
     }
-    console.log("first-timer", this.firstTime);
   }
 }

@@ -335,10 +335,8 @@ export class TeamDataProvider {
 	addTrade(num, tradeCost) {
 		let bankAcc;
 		let tradeCount;
-		
 		this.userMoney.once('value').then(function(snapshot) {
   		bankAcc = parseInt(snapshot.val().money);
-  		console.log(bankAcc, "money");
 			tradeCount = snapshot.val().trades;
 			tradeCount = tradeCount + num;
   		
@@ -352,15 +350,13 @@ export class TeamDataProvider {
 
 	//adds a upgrade to the user for a cost
 	addUpgrade(cost, node, typeID, bank, component) {
-		console.log("cost, car, node, typeID", cost, node, typeID);
 		var updateUpgrade = firebase.database().ref('userProfile/' + this.currentUser + node + typeID);
-		// var userMoney = firebase.database().ref('userProfile/' + this.currentUser);
 		if (component == "driver") {
 			updateUpgrade.update ({
       	driverUpgrade: true
 	    	}).then(() => {
 					this.userMoney.update ({
-	      	money: bank - cost
+	      		money: bank - cost
 	    	});
     	});
 		} else if (component == "chassis") {
@@ -368,7 +364,7 @@ export class TeamDataProvider {
       	chassisUpgrade: true
 	    	}).then(() => {
 					this.userMoney.update ({
-	      	money: bank - cost
+	      		money: bank - cost
 	    	});
     	});
 		} else {
@@ -380,23 +376,6 @@ export class TeamDataProvider {
 	    	});
     	});
 		}
-
-
-			
-
-		// var driverTwoUpdate = firebase.database().ref('userProfile/' + this.currentUser + node + driverTwoId);
-		// this.userMoney.once('value').then(function(snapshot) {
-  // 		bankAcc = parseInt(snapshot.val().money);
-  // 		console.log(bankAcc, "money");
-		// 	tradeCount = snapshot.val().trades;
-		// 	tradeCount = tradeCount + 1;
-  		
-		// }).then(() => {
-		// 	this.userMoney.update ({
-  //     	money: bankAcc - tradeCost,
-  //     	trades: tradeCount,
-  //   	});
-  //   });
 	}
 
 	//updates driver one and two status

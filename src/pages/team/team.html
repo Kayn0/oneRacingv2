@@ -4,7 +4,7 @@
 </ion-header>
 
 <ion-content>
-	<div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime && tutorialStep !== 6 && gameState !== 'lockout'}">
+	<div class="tutorial-overlay" [ngClass]="{'show-tutorial': firstTime && tutorialStep < 6 && gameState !== 'lockout'}">
 		<ion-row [ngClass]="{'show-step': tutorialStep === 1}" class="tutorial-card not-visible step-two">
 			<ion-col col-9>
 				<h4 class="tutorial-text">It's time to start building your team!</h4>
@@ -41,7 +41,7 @@
 			</ion-col>	
 		</ion-row>
 
-		<ion-row [ngClass]="{'show-step': tutorialStep === 5}" class="tutorial-card not-visible step-four">
+		<ion-row [ngClass]="{'show-step': tutorialStep === 5}" class="tutorial-card not-visible step-five">
 			<ion-col col-12>
 				<h4 class="tutorial-text">Lets start by purchasing a driver, click on the driver card for car one.</h4>
 			</ion-col>

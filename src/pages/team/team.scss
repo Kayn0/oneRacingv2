@@ -404,3 +404,12 @@ page-team {
 		}
 	}
 }
+
+@media only screen and (max-width: 340px) {
+
+	page-team {
+		.step-three {
+		  top: 46%;
+		}
+	}
+}

@@ -132,6 +132,10 @@ ion-col {
 	min-height: 90px;
 }
 
+.item-md {
+	padding-left: 10px;
+}
+
 .item-md ion-thumbnail ion-img, 
 .item-md ion-thumbnail img {
   width: 40px;
@@ -201,7 +205,7 @@ page-ranking .list ion-item.item.item-block {
 	
 	.list-image {
     height: auto !important;
-    width: 50px !important;
+    width: 60px !important;
 	}
 
 	.title-val {
@@ -332,23 +336,27 @@ page-ranking .list ion-item.item.item-block {
 	}
 	
 	.step-two {
-		top: 26%;
+		top: 36%;
 	}
 
 	.step-three {
-		top: 29%;
+		top: 36%;
 	}
 
 	.step-four {
-		top: 21%;
+		top: 38%;
+	}
+	.step-five {
+		top: 15%;
+		position: relative;
 	}
 
 	.tutorial-text {
 		color: #333;
 		font-size: 16px;
-		line-height: 20px;
+		line-height: 1.4;
 		margin-right: 6px;
-		padding-left: 4px; 
+		padding: 8px; 
 		position: relative;
 		top: 4px;
 	}
@@ -665,29 +673,11 @@ ion-label.info-panel {
 	}
 	
 	.alert-button-group {
-		// background-color: #eee;
-		// color: #000;
 		color: #fff !important;
 		font-family: 'ubuntu-regular', helvetica, sans-serif;
 		padding: 0!important;
     min-height: 50px;
 	}
-
-	// .alert-wrapper .button-inner {
-	// 	background-color: #fff;
-	// 	border-radius: 2px;
-	// 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
- //  	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-	// 	color: #000;
-	// 	display: inline-block;
-	// 	height: 30px;
-	// 	line-height: 24px;
-	// 	padding: 4px 8px;
-	// 	width: 50px;
-	// 	text-align: center;
-	// 	position: relative; 
-	// 	bottom:8px;
-	// }
 
 	.alert-wrapper .alert-md .alert-button,
 	.alert-wrapper .alert-ios .alert-button {

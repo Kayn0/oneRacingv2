@@ -74,7 +74,7 @@
 				   	</span>
 			   	</ion-col>
 			   	<ion-col class="align-right">
-						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [ngClass]="{'hide-button': this.round < 2}">
+						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [disabled]="currentRound < 2">
 			   			<ion-icon name="stats"></ion-icon>
 			   		</button>
 				   	<button class="cantAfford buy-btn" ion-button (click)="addPU('one', pu);" [disabled]="pu.puName == puNameOne || pu.puValue > (teamCash + userPuOneValue)" [hidden]="gameState == 'lockout'">
