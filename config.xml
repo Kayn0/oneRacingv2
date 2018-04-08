@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.oneracingleague.app" version="3.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>OneRacingLeague</name>
+<widget android-versionCode="30003" id="com.oneracingleague.app" version="3.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>One Racing League</name>
     <description>A fantasy league for Formula One</description>
     <author email="oneracingleague@gmail.com" href="http://www.oneracingleague.com">One Racing League</author>
     <content src="index.html" />
@@ -80,7 +80,7 @@
     </platform>
     <allow-navigation href="http://192.168.0.3:8100" />
     <engine name="android" spec="^6.2.3" />
-    <engine name="ios" spec="^4.5.4" />
+    <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.5" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
     <plugin name="cordova-plugin-fcm" spec="^2.1.2" />

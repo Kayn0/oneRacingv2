@@ -25500,8 +25500,8 @@ page-ranking .list ion-item.item.item-block {
 }
 
 .step-five {
-  top: 15%;
-  position: relative;
+  bottom: 60px;
+  z-index: 101 !important;
 }
 
 .tutorial-text {
@@ -25533,7 +25533,8 @@ button[disabled].tutorial-highlight,
 .tutorial-align-right {
   display: block;
   margin: 0 2px 0 auto;
-  z-index: 100;
+  z-index: 200;
+  position: relative;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
@@ -25541,7 +25542,7 @@ button[disabled].tutorial-highlight,
 .show-step {
   opacity: 1 !important;
   height: auto !important;
-  z-index: 100 !important;
+  z-index: 100;
 }
 
 .not-visible {
@@ -28500,6 +28501,203 @@ page-chassis-two .align-right {
   }
 }
 
+page-custom-league .team-text {
+  display: none;
+}
+
+page-custom-league .back-button {
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  color: #fff;
+}
+
+page-custom-league .toolbar-content {
+  margin-left: 30px;
+}
+
+page-custom-league .toolbar-background {
+  background-color: #d31411;
+}
+
+page-custom-league .container {
+  padding-top: 8px;
+}
+
+page-custom-league ion-list.list {
+  margin: 0 8px;
+}
+
+page-custom-league .searchbar-ios {
+  background: none;
+}
+
+page-custom-league .list ion-item.item.item-block {
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+page-custom-league .list .item-block .item-inner {
+  border-bottom: 0;
+}
+
+page-custom-league .border {
+  border: solid 1px #d31411;
+  border-radius: 2px;
+}
+
+page-custom-league .header-text {
+  margin: 8px auto;
+  border-bottom: 0;
+}
+
+page-custom-league .inline-elem {
+  display: inline;
+}
+
+page-custom-league .right-col {
+  text-align: right;
+}
+
+page-custom-league .rel-position {
+  position: relative;
+}
+
+page-custom-league .team-name {
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  color: #2e2e2e;
+  font-size: 20px;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+page-custom-league .card {
+  border-radius: 2px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 0 16px 0 8px;
+}
+
+page-custom-league .icon-col {
+  color: #d31411;
+  font-size: 32px;
+}
+
+page-custom-league .v-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-custom-league .team-cash {
+  color: grey;
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+page-custom-league .stat {
+  text-align: center;
+  color: #fff;
+  font-family: 'ubuntu-regular', helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+page-custom-league .stat span {
+  display: block;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+page-custom-league .team-btn {
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  bottom: 0;
+  height: 40px;
+  margin: 0.1rem 0.1rem;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
+page-custom-league .add-btn1 {
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+}
+
+page-custom-league .remove-btn {
+  background-color: #d31411;
+  color: #fff;
+  font-size: 16px;
+}
+
+page-custom-league .highlight-item {
+  background-color: #d31411 !important;
+}
+
+page-custom-league .highlight-item .team-name,
+page-custom-league .highlight-item .team-cash,
+page-custom-league .highlight-item .team-trades,
+page-custom-league .highlight-item .team-points,
+page-custom-league .highlight-item .team-rank,
+page-custom-league .highlight-item .points-text,
+page-custom-league .highlight-item .number-points {
+  color: #fff;
+}
+
+page-custom-league .team-trades {
+  color: grey;
+  font-size: 14px;
+}
+
+page-custom-league .team-rank {
+  color: #d31411;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: -5px;
+  text-align: right;
+  width: 100%;
+}
+
+page-custom-league .button-wrapper {
+  position: relative;
+}
+
+page-custom-league .points-text {
+  color: #333;
+  font-size: 15px;
+}
+
+page-custom-league .number-points {
+  color: #d31411;
+  font-size: 15px;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+}
+
+page-custom-league .highlight-item {
+  background-color: #ccc;
+}
+
 page-driver-one .scroll-content {
   margin-bottom: 0 !important;
 }
@@ -31115,6 +31313,177 @@ page-race .driver-position {
   }
 }
 
+page-random-league .team-text {
+  display: none;
+}
+
+page-random-league .back-button {
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  color: #fff;
+}
+
+page-random-league .toolbar-content {
+  margin-left: 30px;
+}
+
+page-random-league .toolbar-background {
+  background-color: #d31411;
+}
+
+page-random-league .container {
+  padding-top: 8px;
+}
+
+page-random-league .mixed-btn {
+  background-color: #d31411;
+  text-transform: none;
+  font-size: 16px;
+  margin: 0 auto 0;
+  padding: 24px;
+}
+
+page-random-league .mech {
+  margin: 0 auto;
+  position: relative;
+  left: calc(50% - 60px);
+  width: 120px;
+}
+
+page-random-league ion-list.list {
+  margin: 0 8px;
+}
+
+page-random-league .searchbar-ios {
+  background: none;
+}
+
+page-random-league .list ion-item.item.item-block {
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+page-random-league .list .item-block .item-inner {
+  border-bottom: 0;
+}
+
+page-random-league .border {
+  border: solid 1px #d31411;
+  border-radius: 2px;
+}
+
+page-random-league .header-text {
+  margin: 8px auto;
+  border-bottom: 0;
+}
+
+page-random-league .inline-elem {
+  display: inline;
+}
+
+page-random-league .right-col {
+  text-align: right;
+}
+
+page-random-league .rel-position {
+  position: relative;
+}
+
+page-random-league .team-name {
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  color: #2e2e2e;
+  font-size: 20px;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+page-random-league .team-cash {
+  color: grey;
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+page-random-league .stat {
+  text-align: center;
+  color: #fff;
+  font-family: 'ubuntu-regular', helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+page-random-league .stat span {
+  display: block;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+page-random-league .team-btn {
+  background-color: #000;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  bottom: 0;
+  color: #fff;
+  height: 40px;
+  margin: 0.1rem 0.1rem;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
+page-random-league .highlight-item {
+  background-color: #d31411 !important;
+}
+
+page-random-league .highlight-item .team-name,
+page-random-league .highlight-item .team-cash,
+page-random-league .highlight-item .team-trades,
+page-random-league .highlight-item .team-points,
+page-random-league .highlight-item .team-rank,
+page-random-league .highlight-item .points-text,
+page-random-league .highlight-item .number-points {
+  color: #fff;
+}
+
+page-random-league .team-trades {
+  color: grey;
+  font-size: 14px;
+}
+
+page-random-league .team-rank {
+  color: #d31411;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: -5px;
+  text-align: right;
+}
+
+page-random-league .button-wrapper {
+  position: relative;
+}
+
+page-random-league .points-text {
+  color: #333;
+  font-size: 15px;
+}
+
+page-random-league .number-points {
+  color: #d31411;
+  font-size: 15px;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+}
+
+page-random-league .highlight-item {
+  background-color: #ccc;
+}
+
 page-ranking .container {
   padding-top: 8px;
 }
@@ -31136,14 +31505,63 @@ page-ranking .list .item-block .item-inner {
   border-bottom: 0;
 }
 
-page-ranking .border {
-  border: solid 1px #d31411;
-  border-radius: 2px;
-}
-
 page-ranking .header-text {
   margin: 8px auto;
   border-bottom: 0;
+}
+
+page-ranking .header-marg {
+  margin-top: 8px;
+}
+
+page-ranking .padding {
+  margin: 16px;
+}
+
+page-ranking .btn-holder {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-ranking .rank-btn {
+  background-color: #000;
+  border-bottom: 3px solid #d31411;
+  height: 60px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  line-height: 20px;
+  white-space: normal;
+  text-transform: none;
+  width: 100%;
+}
+
+page-ranking .btn-row {
+  margin: 20px 0 4px 6px;
+  width: 254px;
+}
+
+page-ranking .btn-col {
+  padding-left: 10px;
+}
+
+page-ranking .row-btn {
+  height: 90px;
+  width: 120px;
 }
 
 page-ranking .inline-elem {
@@ -31156,20 +31574,6 @@ page-ranking .right-col {
 
 page-ranking .rel-position {
   position: relative;
-}
-
-page-ranking .team-name {
-  font-family: 'ubuntu-bold', helvetica, sans-serif;
-  color: #2e2e2e;
-  font-size: 20px;
-  margin-bottom: 4px;
-  text-transform: capitalize;
-}
-
-page-ranking .team-cash {
-  color: grey;
-  font-size: 14px;
-  margin-bottom: 1px;
 }
 
 page-ranking .stat {
@@ -31187,19 +31591,6 @@ page-ranking .stat span {
   margin-top: 4px;
 }
 
-page-ranking .team-btn {
-  background-color: #000;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  bottom: 0;
-  color: #fff;
-  height: 40px;
-  margin: 0.1rem 0.1rem;
-  position: absolute;
-  right: 0;
-  width: 40px;
-}
-
 page-ranking .highlight-item {
   background-color: #d31411 !important;
 }
@@ -31214,37 +31605,16 @@ page-ranking .highlight-item .number-points {
   color: #fff;
 }
 
-page-ranking .team-trades {
-  color: grey;
-  font-size: 14px;
-}
-
-page-ranking .team-rank {
-  color: #d31411;
-  font-family: 'ubuntu-bold', helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  margin-top: -5px;
-  text-align: right;
-}
-
-page-ranking .button-wrapper {
-  position: relative;
-}
-
-page-ranking .points-text {
-  color: #333;
-  font-size: 15px;
-}
-
-page-ranking .number-points {
-  color: #d31411;
-  font-size: 15px;
-  font-family: 'ubuntu-bold', helvetica, sans-serif;
-}
-
-page-ranking .highlight-item {
-  background-color: #ccc;
+@media only screen and (max-width: 330px) {
+  page-ranking .rank-btn {
+    width: calc(100% - 32px);
+  }
+  page-ranking .left-btn {
+    margin-right: 16px;
+  }
+  page-ranking .right-btn {
+    margin-left: 16px;
+  }
 }
 
 page-reset-password form button {
@@ -32084,5 +32454,171 @@ page-team .negative::before {
 @media only screen and (max-width: 340px) {
   page-team .step-three {
     top: 46%;
+  }
+}
+
+page-top-players .team-text {
+  display: none;
+}
+
+page-top-players .back-button {
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  color: #fff;
+}
+
+page-top-players .toolbar-content {
+  margin-left: 30px;
+}
+
+page-top-players .toolbar-background {
+  background-color: #d31411;
+}
+
+page-top-players .container {
+  padding-top: 8px;
+}
+
+page-top-players ion-list.list {
+  margin: 0 8px;
+}
+
+page-top-players .searchbar-ios {
+  background: none;
+}
+
+page-top-players .list ion-item.item.item-block {
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+page-top-players .list .item-block .item-inner {
+  border-bottom: 0;
+}
+
+page-top-players .border {
+  border: solid 1px #d31411;
+  border-radius: 2px;
+}
+
+page-top-players .header-text {
+  margin: 8px auto;
+  border-bottom: 0;
+}
+
+page-top-players .inline-elem {
+  display: inline;
+}
+
+page-top-players .right-col {
+  text-align: right;
+}
+
+page-top-players .rel-position {
+  position: relative;
+}
+
+page-top-players .team-name {
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  color: #2e2e2e;
+  font-size: 20px;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+page-top-players .team-cash {
+  color: grey;
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+page-top-players .stat {
+  text-align: center;
+  color: #fff;
+  font-family: 'ubuntu-regular', helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+page-top-players .stat span {
+  display: block;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+page-top-players .team-btn {
+  background-color: #000;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  bottom: 0;
+  color: #fff;
+  height: 40px;
+  margin: 0.1rem 0.1rem;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
+page-top-players .highlight-item {
+  background-color: #d31411 !important;
+}
+
+page-top-players .highlight-item .team-name,
+page-top-players .highlight-item .team-cash,
+page-top-players .highlight-item .team-trades,
+page-top-players .highlight-item .team-points,
+page-top-players .highlight-item .team-rank,
+page-top-players .highlight-item .points-text,
+page-top-players .highlight-item .number-points {
+  color: #fff;
+}
+
+page-top-players .team-trades {
+  color: grey;
+  font-size: 14px;
+}
+
+page-top-players .team-rank {
+  color: #d31411;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: -5px;
+  text-align: right;
+}
+
+page-top-players .button-wrapper {
+  position: relative;
+}
+
+page-top-players .points-text {
+  color: #333;
+  font-size: 15px;
+}
+
+page-top-players .number-points {
+  color: #d31411;
+  font-size: 15px;
+  font-family: 'ubuntu-bold', helvetica, sans-serif;
+}
+
+page-top-players .highlight-item {
+  background-color: #ccc;
+}
+
+.tab-content {
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 520px) {
+  page-top-players .team-name {
+    max-width: 400px;
   }
 }

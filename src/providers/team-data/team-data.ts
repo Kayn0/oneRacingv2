@@ -14,6 +14,7 @@ export class TeamDataProvider {
 
 	public currentUser: any;
 	public userList: any;
+	public topList: any;
 	public userMoney: any;
 	
 	public chassisOne: any;
@@ -32,6 +33,7 @@ export class TeamDataProvider {
     console.log('Hello TeamDataProvider Provider');
    	this.currentUser = firebase.auth().currentUser.uid;
   	this.userList = firebase.database().ref('userProfile/');
+  	this.topList = firebase.database().ref('userProfile/').limitToFirst(100);
   	this.userMoney = firebase.database().ref('userProfile/' + this.currentUser);
 
   	this.chassisOne = firebase.database().ref('userProfile/' + this.currentUser + '/carOne/chassis');
@@ -51,6 +53,10 @@ export class TeamDataProvider {
 		return this.userList
 	}
 
+	getTopPlayers(): any {
+		return this.topList;
+	}
+
 	getTheMoney(): any {
 		return this.userMoney
 	}
@@ -61,6 +67,10 @@ export class TeamDataProvider {
 
   getChassisTwo(): any {
     return this.chassisTwo;
+  }
+
+  getCustomList(): any {
+  	
   }
 
 	getOtherDriverId(car, driverId): any {

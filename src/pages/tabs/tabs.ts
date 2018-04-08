@@ -35,6 +35,7 @@ export class TabsPage {
   public userCount: number;
   public currentRound: number;
   public hasTeamName:boolean;
+  public userTeam:string;
   public timer: ITimer;
   public timeOfRace;
   public timeNow;
@@ -90,20 +91,24 @@ export class TabsPage {
       console.log('game state-tabs:', snapshot.val().gameState);
       this.gameState = snapshot.val().gameState;
     });
-
+    
     this.profileData.getUserProfile().on('value', (data) => {
       this.userProfile = data.val();
+      
+      console.log(this.userProfile.teamName, "teamName");
+
       if (this.userProfile.teamName) {
         this.tabEnabled = true;
         this.hasTeamName = true;
       } else {
         this.hasTeamName = false;
       }
+      this.userTeam = this.userProfile.teamName; 
+      if (this.hasTeamName === false || this.userTeam === undefined) {
+        this.updateName();
+      }
     });
-    
-    if (this.hasTeamName == false) {
-      this.updateName();
-    }
+   
 
     //get length of user list
     this.profileData.getUsersList().on('value', snapshot => {
@@ -139,7 +144,8 @@ export class TabsPage {
             this.profileData.updateName(data.teamName);
           }
         }
-      ]
+      ],
+      enableBackdropDismiss: false
     });
     alert.present();
   }

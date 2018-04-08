@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -7,11 +7,11 @@ webpackJsonp([0],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reset_password_reset_password__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validators_email__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -113,11 +113,11 @@ LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-login',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n\n  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Login\n      </button>\n    </ion-card>\n  </form>\n \n  <ion-row col-6 class="center small-layout">\n    <button ion-button block class="create-btn"  (click)="goToSignup()">\n      Create account\n    </button>\n  </ion-row>\n\n  <ion-row col-6 class="center less-margin">\n    <button ion-button block outline class="white-button"  (click)="goToResetPassword()">\n      Forgot password?\n    </button>\n  </ion-row>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
         __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
 ], LoginPage);
 
 //# sourceMappingURL=login.js.map
@@ -152,8 +152,8 @@ var EmailValidator = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
@@ -239,8 +239,8 @@ ProfileDataProvider = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverStatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -478,8 +478,8 @@ DriverStatsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-driver-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-stats/driver-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n	  <ion-row *ngIf="driverInfo">\n	    <div class="nav-heading">{{ driverInfo.firstName }} {{ driverInfo.lastName }}</div>\n	  </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <div *ngIf="driverInfo">\n      <ion-row>\n        <ion-col col-3>\n          <div class="horizontal-pad">\n    		    <img class="driver-image" [src]="driverInfo.driverImage" />\n           </div>\n        </ion-col>\n        <ion-col col-6>\n      	  <div class="driver-value">\n            {{ driverInfo.driverValue | currency:\'USD\':true:\'1.0\'}}\n          </div>\n      	  <div class="driver-change">\n            Last value change\n            <span>{{ driverValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n          </div> \n        </ion-col>\n        <ion-col col-3>\n          <div class="driver-points">Average points<span>{{ averagePoints }}</span></div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div class="chart-card">\n      <ion-row>\n        <div class="header-text slideExpandUp delay-3">Points per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasPoints></canvas>\n        </ion-card-content>\n      </ion-card>\n      <ion-row>\n        <div class="header-text slideExpandUp delay-5">Value per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasValue></canvas>\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-stats/driver-stats.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
 ], DriverStatsPage);
@@ -495,8 +495,8 @@ DriverStatsPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisStatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -722,8 +722,8 @@ ChassisStatsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-chassis-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-stats/chassis-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="text-center" *ngIf="chassisInfo">{{ chassisInfo.chassisName }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n		<div *ngIf="chassisInfo">\n		  <ion-row>\n	      <ion-col col-3>\n	        <div class="horizontal-pad">\n			      <img class="chassis-image" [src]="chassisInfo.chassisImage" />\n	        </div>\n	      </ion-col>\n	      <ion-col col-6>\n	  		  <div class="chassis-value"> \n	          {{ chassisInfo.chassisValue | currency:\'USD\':true:\'1.0\'}}\n	        </div>\n	  		  <div class="chassis-change">\n	          Last value change\n	          <span>{{ chassisValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n	        </div>\n	      </ion-col>\n	      <ion-col col-3>\n	        <div class="chassis-points">\n	          Average points\n	          <span>{{ averagePoints }}</span>\n	        </div>\n	      </ion-col>\n	    </ion-row>\n		</div>\n\n		<div class="chart-card">\n		  <ion-row>\n		    <div class="header-text slideExpandUp delay-3">Points per round</div>\n		  </ion-row>\n			<ion-card>\n		    <ion-card-content>\n		      <canvas #lineCanvasPoints></canvas>\n		    </ion-card-content>\n		  </ion-card>\n		  <ion-row>\n		    <div class="header-text slideExpandUp delay-5">Value per round</div>\n		  </ion-row>\n		  <ion-card>\n		    <ion-card-content>\n		      <canvas #lineCanvasValue></canvas>\n		    </ion-card-content>\n		  </ion-card>\n		</div>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-stats/chassis-stats.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
 ], ChassisStatsPage);
@@ -739,8 +739,8 @@ ChassisStatsPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuStatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_chart_js__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -956,8 +956,8 @@ PuStatsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-pu-stats',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-stats/pu-stats.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="text-center" *ngIf="puInfo">{{ puInfo.puName }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="stats-page">\n  <div class="container">\n    <div *ngIf="puInfo">\n      <ion-row>\n        <ion-col col-3>\n          <div class="horizontal-pad">\n  		      <img [src]="puInfo.puImage" />\n          </div>\n        </ion-col>\n        <ion-col col-6>\n    		  <div class="pu-value">\n            {{ puInfo.puValue | currency:\'USD\':true:\'1.0\'}}\n          </div>\n          <div class="pu-change">\n            Last value change\n            <span>{{ puValueChange | currency:\'USD\':true:\'1.0\'}}</span>\n          </div> \n  	    </ion-col>\n  	    <ion-col col-3>\n          <div class="pu-points">\n            Average points\n            <span>{{ averagePoints }}</span>\n          </div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div class="chart-card">\n      <ion-row>\n        <div class="header-text slideExpandUp delay-3">Points per round</div>\n      </ion-row>\n    	<ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasPoints></canvas>\n        </ion-card-content>\n      </ion-card>\n      <ion-row>\n        <div class="header-text slideExpandUp delay-5">Value per round</div>\n      </ion-row>\n      <ion-card>\n        <ion-card-content>\n          <canvas #lineCanvasValue></canvas>\n        </ion-card-content>\n      </ion-card>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-stats/pu-stats.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]])
 ], PuStatsPage);
@@ -966,7 +966,152 @@ PuStatsPage = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 125:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RandomLeaguePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RandomLeaguePage = (function () {
+    function RandomLeaguePage(navCtrl, teamData, statsData, navParams, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.teamData = teamData;
+        this.statsData = statsData;
+        this.navParams = navParams;
+        this.currentRoundData = currentRoundData;
+        this.customLeague = [];
+        this.allUsersCount = 0;
+        this.userData = '';
+        this.pointsLastRound = 0;
+        this.noStats = true;
+        this.userData = this.navParams.data.email;
+        this.userStats = this.navParams.data;
+        this.statsData.getRandomLeague().orderByChild("rank").on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                rawList.push({
+                    id: snapshot.key,
+                    email: snapshot.val().email,
+                    teamName: snapshot.val().teamName,
+                    money: snapshot.val().money,
+                    rank: snapshot.val().rank,
+                    rankDiff: snapshot.val().rankDiff,
+                    totalPoints: snapshot.val().totalPoints,
+                    trades: snapshot.val().trades,
+                    points: snapshot.val().points,
+                    userId: snapshot.val().userId
+                });
+            });
+            _this.customPlayerIds = rawList;
+        });
+        this.teamData.getUsersList().orderByChild("rank").on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                for (var i = 0; i < _this.customPlayerIds.length; i++) {
+                    if (snapshot.key == _this.customPlayerIds[i].userId) {
+                        rawList.push({
+                            id: snapshot.key,
+                            email: snapshot.val().email,
+                            teamName: snapshot.val().teamName,
+                            money: snapshot.val().money,
+                            rank: snapshot.val().rank,
+                            rankDiff: snapshot.val().rankDiff,
+                            totalPoints: snapshot.val().totalPoints,
+                            trades: snapshot.val().trades,
+                            points: snapshot.val().points,
+                        });
+                    }
+                }
+            });
+            _this.customPlayers = rawList;
+        });
+        this.teamData.getUsersList().orderByChild("rank").on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                rawList.push({
+                    id: snapshot.key,
+                    email: snapshot.val().email,
+                    teamName: snapshot.val().teamName,
+                    money: snapshot.val().money,
+                    rank: snapshot.val().rank,
+                    rankDiff: snapshot.val().rankDiff,
+                    totalPoints: snapshot.val().totalPoints,
+                    trades: snapshot.val().trades,
+                    points: snapshot.val().points,
+                });
+            });
+            _this.allUsers = rawList;
+            console.log('Custom league Page', _this.allUsers);
+            _this.allUsersCount = _this.allUsers.length;
+        });
+    } // end constructor
+    RandomLeaguePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RandomLeaguePage');
+    };
+    RandomLeaguePage.prototype.createRandomLeague = function () {
+        console.log(this.allUsers, "allUsers");
+        var randomUsersArray = [];
+        var randomUser;
+        var duplicateCheck = false;
+        for (var i = 0; i < 19; i++) {
+            randomUser = this.allUsers[Math.floor(Math.random() * this.allUsers.length)];
+            if (i > 0) {
+                for (var j = 0; j < randomUsersArray.length; j++) {
+                    if (randomUsersArray[j].email === randomUser.email || this.navParams.data.email === randomUser.email) {
+                        duplicateCheck = true;
+                    }
+                }
+                if (duplicateCheck === false && randomUser.totalPoints !== 0) {
+                    randomUsersArray.push(randomUser);
+                    this.statsData.addRandomLeague(randomUser);
+                }
+                else {
+                    i--;
+                    duplicateCheck = false;
+                }
+            }
+            else {
+                randomUsersArray.push(randomUser);
+                this.statsData.addRandomLeague(randomUser);
+            }
+        }
+        this.statsData.addRandomLeague(this.navParams.data);
+    };
+    return RandomLeaguePage;
+}());
+RandomLeaguePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-random-league',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/random-league/random-league.html"*/'<ion-header>\n  <ion-navbar></ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<div class="container">\n\n	<div class="league-help" *ngIf="customPlayers.length < 1">\n		<img class="mech" src="assets/mixed-mech.png" />\n		<ion-row>\n			<button ion-button class="mixed-btn" (click)="createRandomLeague()">Click to create a random league</button>\n		</ion-row>\n	</div>\n\n 	<div *ngIf="customPlayers.length >= 1">\n	  <ion-row class="header-marg">\n	    <div class="header-text slideExpandUp delay-2">Random league</div>\n	  </ion-row>\n	</div>\n\n	<ion-list *ngFor="let user of customPlayers; let i = index" class="constructor-list pullUp delay-2">\n		<ion-item *ngIf="user.teamName" [ngClass]="{\'highlight-item\': userData === user.email}" id="user-details">\n	   	<ion-row>\n		   	<ion-col>\n			   	<div class="team-name">{{ user.teamName}}</div>\n			  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n		   		<div class="team-trades">Trades: {{ user.trades }}</div>\n		   		<div class="points-text">\n						Total points: \n						<span class="number-points"> \n							{{ user.totalPoints }}\n						</span>\n					</div>\n		   	</ion-col>\n\n		   	<ion-col class="right-col rel-position">\n				  <div class="team-rank">{{ i + 1}}</div>\n				</ion-col>\n			</ion-row>\n		</ion-item>\n	</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/random-league/random-league.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_team_data_team_data__["a" /* TeamDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_team_data_team_data__["a" /* TeamDataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_stats_data_stats_data__["a" /* StatsDataProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]) === "function" && _e || Object])
+], RandomLeaguePage);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=random-league.js.map
+
+/***/ }),
+
+/***/ 133:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -979,35 +1124,18 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 132;
+webpackEmptyAsyncContext.id = 133;
 
 /***/ }),
 
-/***/ 174:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 174;
-
-/***/ }),
-
-/***/ 19:
+/***/ 16:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurrentRoundDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
@@ -1088,17 +1216,430 @@ CurrentRoundDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 218:
+/***/ 175:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/random-league/random-league.module": [
+		480,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 175;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamDataProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the TeamDataProvider provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular DI.
+*/
+var TeamDataProvider = (function () {
+    function TeamDataProvider(http) {
+        this.http = http;
+        console.log('Hello TeamDataProvider Provider');
+        this.currentUser = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser.uid;
+        this.userList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/');
+        this.topList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/').limitToFirst(100);
+        this.userMoney = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser);
+        this.chassisOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/chassis');
+        this.chassisTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/chassis');
+        this.driverOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver');
+        this.driverTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver');
+        this.driverOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver');
+        this.driverTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver');
+        this.puOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/powerUnit');
+        this.puTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/powerUnit');
+    }
+    TeamDataProvider.prototype.getUsersList = function () {
+        return this.userList;
+    };
+    TeamDataProvider.prototype.getTopPlayers = function () {
+        return this.topList;
+    };
+    TeamDataProvider.prototype.getTheMoney = function () {
+        return this.userMoney;
+    };
+    TeamDataProvider.prototype.getChassisOne = function () {
+        return this.chassisOne;
+    };
+    TeamDataProvider.prototype.getChassisTwo = function () {
+        return this.chassisTwo;
+    };
+    TeamDataProvider.prototype.getCustomList = function () {
+    };
+    TeamDataProvider.prototype.getOtherDriverId = function (car, driverId) {
+        var driverNode;
+        if (car == "one") {
+            driverNode = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver' + driverId);
+        }
+        else {
+            driverNode = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver' + driverId);
+        }
+        return driverNode;
+    };
+    //*************//
+    //   Chassis   //
+    //*************//
+    TeamDataProvider.prototype.addChassis = function (chassis, oldChassis, carNum, userPoints) {
+        var _this = this;
+        var chassisDifference;
+        //if first entry
+        if (oldChassis.length == 0) {
+            chassisDifference = -chassis.chassisValue;
+        }
+        else {
+            chassisDifference = oldChassis[0].chassisValue - chassis.chassisValue;
+        }
+        console.log(chassisDifference, 'bankIt1');
+        /* Get players bank balance and add to chassis difference */
+        this.bankIt(chassisDifference, userPoints);
+        if (carNum === 'one') {
+            /* Delete chassis one reference */
+            if (this.chassisOne) {
+                this.chassisOne.remove();
+            }
+            // add chassis to users node
+            return this.chassisOne.push({
+                chassisName: chassis.chassisName,
+                chassisValue: chassis.chassisValue,
+                chassisImage: chassis.chassisImage,
+                chassisPoints: chassis.chassisPoints,
+                position: chassis.position,
+                valChange: chassis.valChange,
+                chassisUpgrade: chassis.chassisUpgrade
+            }).then(function (newEvent) {
+                _this.chassisOne.child(newEvent.key).child('id').set(newEvent.key);
+            });
+        }
+        else {
+            //delete chassis two reference
+            if (this.chassisTwo) {
+                this.chassisTwo.remove();
+            }
+            // create new chassis in firebase
+            return this.chassisTwo.push({
+                chassisName: chassis.chassisName,
+                chassisValue: chassis.chassisValue,
+                chassisImage: chassis.chassisImage,
+                chassisPoints: chassis.chassisPoints,
+                position: chassis.position,
+                valChange: chassis.valChange,
+                chassisUpgrade: chassis.chassisUpgrade
+            }).then(function (newEvent) {
+                _this.chassisTwo.child(newEvent.key).child('id').set(newEvent.key);
+            });
+        }
+    };
+    //*************//
+    // Power units //
+    //*************//
+    TeamDataProvider.prototype.getPuOne = function () {
+        return this.puOne;
+    };
+    TeamDataProvider.prototype.getPuTwo = function () {
+        return this.puTwo;
+    };
+    TeamDataProvider.prototype.addPU = function (powerUnit, oldPu, carNum, userPoints) {
+        var _this = this;
+        var puDifference;
+        //if first entry
+        if (oldPu.length == 0) {
+            puDifference = -powerUnit.puValue;
+        }
+        else {
+            puDifference = oldPu[0].puValue - powerUnit.puValue;
+        }
+        /* Get players bank balance and add to power unit difference */
+        this.bankIt(puDifference, userPoints);
+        if (carNum === 'one') {
+            //delete power unit one reference
+            if (this.puOne) {
+                this.puOne.remove();
+            }
+            // create new power unit in firebase
+            return this.puOne.push({
+                puName: powerUnit.puName,
+                puValue: powerUnit.puValue,
+                puImage: powerUnit.puImage,
+                position: powerUnit.position,
+                puPoints: powerUnit.puPoints,
+                valChange: powerUnit.valChange,
+                posChange: powerUnit.posChange,
+                puUpgrade: powerUnit.puUpgrade
+            }).then(function (newEvent) {
+                _this.puOne.child(newEvent.key).child('id').set(newEvent.key);
+            });
+        }
+        else {
+            //delete power unit two reference
+            if (this.puTwo) {
+                this.puTwo.remove();
+            }
+            // create new power unit in firebase
+            return this.puTwo.push({
+                puName: powerUnit.puName,
+                puValue: powerUnit.puValue,
+                puImage: powerUnit.puImage,
+                position: powerUnit.position,
+                puPoints: powerUnit.puPoints,
+                valChange: powerUnit.valChange,
+                posChange: powerUnit.posChange,
+                puUpgrade: powerUnit.puUpgrade
+            }).then(function (newEvent) {
+                _this.puTwo.child(newEvent.key).child('id').set(newEvent.key);
+            });
+        }
+    };
+    //*************//
+    //   Drivers   //
+    //*************//
+    TeamDataProvider.prototype.getDriverOne = function () {
+        return this.driverOne;
+    };
+    TeamDataProvider.prototype.getDriverTwo = function () {
+        return this.driverTwo;
+    };
+    TeamDataProvider.prototype.addDriver = function (driver, oldDriver, driverNum, userPoints, driverId) {
+        var _this = this;
+        var driverDifference;
+        //if first entry
+        if (oldDriver.length == 0) {
+            driverDifference = -driver.driverValue;
+        }
+        else {
+            driverDifference = oldDriver[0].driverValue - driver.driverValue;
+        }
+        /* Get players bank balance and add to driver difference */
+        this.bankIt(driverDifference, userPoints);
+        var driverRef;
+        if (driverNum === 'one') {
+            driverRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver/' + driverId);
+            //delete driver one reference
+            if (this.driverOne) {
+                this.driverOne.remove();
+            }
+            // add driver one in users profile
+            return this.driverOne.push({
+                firstName: driver.firstName,
+                lastName: driver.lastName,
+                driverValue: driver.driverValue,
+                abrev: driver.abrev,
+                driverImage: driver.driverImage,
+                driverPoints: driver.driverPoints,
+                posChange: driver.posChange,
+                qualified: driver.qualified,
+                valChange: driver.valChange,
+                driverStatus: driver.driverStatus,
+                driverUpgrade: driver.driverUpgrade,
+            }).then(function (newEvent) {
+                _this.driverOne.child(newEvent.key).child('id').set(newEvent.key);
+            }).then(function () {
+                if (driverId == "") {
+                }
+                else {
+                    driverRef.update({
+                        driverStatus: "equal"
+                    });
+                }
+            });
+        }
+        else {
+            driverRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver/' + driverId);
+            //delete driver two reference
+            if (this.driverTwo) {
+                this.driverTwo.remove();
+            }
+            // add driver two in users profile
+            return this.driverTwo.push({
+                firstName: driver.firstName,
+                lastName: driver.lastName,
+                driverValue: driver.driverValue,
+                abrev: driver.abrev,
+                driverImage: driver.driverImage,
+                driverPoints: driver.driverPoints,
+                posChange: driver.posChange,
+                qualified: driver.qualified,
+                valChange: driver.valChange,
+                driverStatus: driver.driverStatus,
+                driverUpgrade: driver.driverUpgrade,
+            }).then(function (newEvent) {
+                _this.driverTwo.child(newEvent.key).child('id').set(newEvent.key);
+            }).then(function () {
+                if (driverId == "") {
+                }
+                else {
+                    driverRef.update({
+                        driverStatus: "equal"
+                    });
+                }
+            });
+        }
+    };
+    /* Get players bank balance and add to chassis difference */
+    /* Get playeres trade count and -1 */
+    TeamDataProvider.prototype.bankIt = function (difference, userPoints) {
+        var _this = this;
+        var bankAcc;
+        var tradeCount;
+        console.log("diff, round", difference, userPoints);
+        this.userMoney.once('value').then(function (snapshot) {
+            bankAcc = parseInt(snapshot.val().money);
+            //if user has no points then don't count trade 
+            if (userPoints != 0) {
+                tradeCount = snapshot.val().trades;
+                tradeCount = tradeCount - 1;
+            }
+            else {
+                tradeCount = snapshot.val().trades;
+            }
+            console.log(bankAcc, "money");
+        }).then(function () {
+            _this.userMoney.update({
+                money: bankAcc + difference,
+                trades: tradeCount,
+            });
+        });
+    };
+    //adds a trade to the user for a cost
+    TeamDataProvider.prototype.addTrade = function (num, tradeCost) {
+        var _this = this;
+        var bankAcc;
+        var tradeCount;
+        this.userMoney.once('value').then(function (snapshot) {
+            bankAcc = parseInt(snapshot.val().money);
+            tradeCount = snapshot.val().trades;
+            tradeCount = tradeCount + num;
+        }).then(function () {
+            _this.userMoney.update({
+                money: bankAcc - tradeCost,
+                trades: tradeCount,
+            });
+        });
+    };
+    //adds a upgrade to the user for a cost
+    TeamDataProvider.prototype.addUpgrade = function (cost, node, typeID, bank, component) {
+        var _this = this;
+        var updateUpgrade = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + node + typeID);
+        if (component == "driver") {
+            updateUpgrade.update({
+                driverUpgrade: true
+            }).then(function () {
+                _this.userMoney.update({
+                    money: bank - cost
+                });
+            });
+        }
+        else if (component == "chassis") {
+            updateUpgrade.update({
+                chassisUpgrade: true
+            }).then(function () {
+                _this.userMoney.update({
+                    money: bank - cost
+                });
+            });
+        }
+        else {
+            updateUpgrade.update({
+                puUpgrade: true
+            }).then(function () {
+                _this.userMoney.update({
+                    money: bank - cost
+                });
+            });
+        }
+    };
+    //updates driver one and two status
+    TeamDataProvider.prototype.updateDriverStatus = function (driver, driverOneId, driverTwoId) {
+        var driverOneUpdate = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver/' + driverOneId);
+        var driverTwoUpdate = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver/' + driverTwoId);
+        if (driver == "driverOne") {
+            driverOneUpdate.update({
+                driverStatus: "first"
+            }).then(function () {
+                driverTwoUpdate.update({
+                    driverStatus: "second"
+                });
+            });
+        }
+        else if (driver == "driverTwo") {
+            driverOneUpdate.update({
+                driverStatus: "second"
+            }).then(function () {
+                driverTwoUpdate.update({
+                    driverStatus: "first"
+                });
+            });
+        }
+        else {
+            driverOneUpdate.update({
+                driverStatus: "equal"
+            }).then(function () {
+                driverTwoUpdate.update({
+                    driverStatus: "equal"
+                });
+            });
+        }
+    };
+    return TeamDataProvider;
+}());
+TeamDataProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], TeamDataProvider);
+
+//# sourceMappingURL=team-data.js.map
+
+/***/ }),
+
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1188,11 +1729,11 @@ SignupPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-signup',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/signup/signup.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Create an account\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="signup">\n  <div class="container">\n    <ion-row>\n      <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n    </ion-row>\n    <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>\n    <ion-card>\n      <ion-item>\n        <ion-label stacked>Email</ion-label>\n        <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n          placeholder="Your email address"\n          [class.invalid]="!signupForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && (emailChanged || submitAttempt)">\n        <p>Please enter a valid email.</p>\n      </ion-item>\n\n      <ion-item>\n        <ion-label stacked>Password</ion-label>\n        <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"\n          placeholder="Your password"\n          [class.invalid]="!signupForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>\n      </ion-item>\n      <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && (passwordChanged || submitAttempt)">\n        <p>Your password needs more than 6 characters.</p>\n      </ion-item>\n\n      <button ion-button block type="submit" class="login-btn">\n        Create an Account\n      </button>\n    </ion-card>\n    </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/signup/signup.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
         __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], SignupPage);
 
@@ -1200,18 +1741,18 @@ SignupPage = __decorate([
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_profile_data_profile_data__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabs_tabs__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1302,8 +1843,8 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="container">\n    <ion-row>\n      <img src="assets/img/logo-car.png" class="welcome-logo logo-car slideRight delay-1" />\n      <img src="assets/img/logo-text1.png" class="welcome-logo logo-text expandOpen delay-2" />\n    </ion-row>\n\n    <ion-row>\n      <ion-card class="welcome-card">\n      <ion-card-header>\n        <div class="welcome-title">Welcome to One Racing League</div>\n      </ion-card-header>\n        <p>Manage your very own Formula One racing team. With a starting budget purchase a driver, chassis and power unit for each of your cars. Points are awarded after each Formula One race weekend.</p>\n      </ion-card>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-4>\n        <button ion-button block class="log-out-btn slideExpandUp delay-4" color="secondary" block (click)="mailto()">\n          <ion-icon name="mail" class="welcome-icon"></ion-icon>\n          Feedback\n        </button>\n      </ion-col>\n\n      <ion-col col-4 class="small-layout slideExpandUp delay-5">\n        <button ion-button block class="log-out-btn" color="secondary" block (click)="termsConditionsAlert();">\n          <ion-icon name="md-clipboard" class="welcome-icon"></ion-icon>\n          T&amp;C\'s\n        </button>\n      </ion-col>\n\n       <ion-col col-4 class="small-layout button-right slideExpandUp delay-6">\n          <button ion-button block class="log-out-btn" color="secondary" block (click)="logMeOut()">\n            <ion-icon name="md-log-out" class="welcome-icon"></ion-icon>\n            Log out\n          </button>\n        </ion-col>\n      </ion-row>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/home/home.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
@@ -1316,160 +1857,16 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 22:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the AdminDataProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var AdminDataProvider = (function () {
-    function AdminDataProvider(http) {
-        this.http = http;
-        // Create a database reference to the driversList node.
-        this.driversList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/drivers');
-        // Create a database reference to the ChassisList node.
-        this.chassisList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/chassis');
-        // Create a database reference to the Power Unit list node.
-        this.puList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/powerUnits');
-        // Create a database reference to the Round data list node.
-        this.gameState = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/gameState');
-    } //end constructor
-    AdminDataProvider.prototype.getImage = function (node, name) {
-        console.log('node', node);
-        console.log('name', name);
-        this.storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.storage().ref(node + name + '.png');
-        return this.storageRef;
-    };
-    AdminDataProvider.prototype.createDriver = function (driverPos, firstName, lastName, abrev, driverValue, image) {
-        var _this = this;
-        return this.driversList.push({
-            position: driverPos,
-            firstName: firstName,
-            lastName: lastName,
-            abrev: abrev,
-            driverValue: driverValue,
-            driverImage: image,
-            driverUpgrade: false
-        }).then(function (newEvent) {
-            _this.driversList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.createChassis = function (chassisPos, chassisName, chassisValue, image) {
-        var _this = this;
-        return this.chassisList.push({
-            position: chassisPos,
-            chassisName: chassisName,
-            chassisValue: chassisValue,
-            chassisImage: image,
-            chassisUpgrade: false
-        }).then(function (newEvent) {
-            _this.chassisList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.createPU = function (puPosition, puName, puValue, image) {
-        var _this = this;
-        return this.puList.push({
-            position: puPosition,
-            puName: puName,
-            puValue: puValue,
-            puImage: image,
-            puUpgrade: false
-        }).then(function (newEvent) {
-            _this.puList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.createRoundData = function (lockoutRound, lockoutDate, lockoutCountry, lockoutTrack, trackLength, laps, lapTime, raceWinner, trackImage) {
-        var _this = this;
-        this.roundDataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/roundData/' + lockoutRound);
-        return this.roundDataList.push({
-            lockoutRound: lockoutRound,
-            lockoutDate: lockoutDate,
-            lockoutCountry: lockoutCountry,
-            lockoutTrack: lockoutTrack,
-            trackLength: trackLength,
-            laps: laps,
-            lapTime: lapTime,
-            raceWinner: raceWinner,
-            trackImage: trackImage
-        }).then(function (newEvent) {
-            _this.roundDataList.child(newEvent.key).child('id').set(newEvent.key);
-        });
-    };
-    AdminDataProvider.prototype.getDriversList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/drivers');
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getChassisList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/chassis');
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getPUList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/powerUnits');
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getRoundDataList = function (round) {
-        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('roundData/' + round);
-        return this.dataList;
-    };
-    AdminDataProvider.prototype.getGameState = function () {
-        console.log("current game state", this.gameState);
-        return this.gameState;
-    };
-    //Used to generate round 0 data.
-    AdminDataProvider.prototype.getInitialDriversList = function () {
-        return this.driversList;
-    };
-    AdminDataProvider.prototype.getInitialChassisList = function () {
-        return this.chassisList;
-    };
-    AdminDataProvider.prototype.getInitialPUList = function () {
-        return this.puList;
-    };
-    return AdminDataProvider;
-}());
-AdminDataProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], AdminDataProvider);
-
-//# sourceMappingURL=admin-data.js.map
-
-/***/ }),
-
-/***/ 220:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RacePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1596,10 +1993,10 @@ var RacePage = (function () {
 }());
 RacePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-race',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/race/race.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding no-bounce>\n  <div class="container">\n    <div *ngIf="roundDataList">\n      <ion-row *ngFor="let round of roundDataList">\n        <ion-col col-8>\n          <div class="round stretchRight delay-2">  \n            Round: {{ round?.lockoutRound }}\n          </div>\n          <div class="location stretchRight delay-3">\n            {{ round?.lockoutTrack }},  {{ round?.lockoutCountry }}\n          </div>\n          <div class="track">\n            <img [src]="round?.trackImage" class="track-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n          </div>\n        </ion-col>\n\n        <ion-col col-4 margin-top class="tall-col">\n          <div class="stat slideExpandUp delay-3">\n            <span>Track length</span> {{ round.trackLength }}\n          </div>\n          <div class="stat slideExpandUp delay-4">\n            <span>Laps</span> {{ round.laps }}\n          </div>\n          <div class="stat slideExpandUp delay-5">\n            <span>Lap record</span> {{ round.lapTime }}\n          </div>\n          <div class="stat slideExpandUp delay-6">\n            <span>Last winner</span> {{ round.raceWinner }}\n          </div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div *ngIf="this.round > 1">\n      <ion-row class="header-marg">\n        <div class="text-center relative-pos">\n          Last Race Results\n        </div>\n      </ion-row>\n      <div padding>\n        <ion-segment mode="md" [(ngModel)]="raceData" class="seg-header">\n          <ion-segment-button value="drivers">\n            Drivers\n          </ion-segment-button>\n          <ion-segment-button value="chassis">\n            Chassis\n          </ion-segment-button>\n          <ion-segment-button value="pu">\n            Power Units\n          </ion-segment-button>\n        </ion-segment>\n      </div>\n\n      <div [ngSwitch]="raceData">\n        <ion-list *ngSwitchCase="\'drivers\'">\n          <ion-item class="relative-pos min-list-height expandUp" *ngFor="let driver of driversList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ driver.position }}</div>\n              </ion-col>\n              <ion-col col-2>\n                <ion-thumbnail item-left>\n                  <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ driver.driverPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'chassis\'">\n          <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let chassis of chassisList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ chassis.position }}</div>\n              </ion-col>\n              <ion-col col-3>\n                <ion-thumbnail >\n                  <img class="chassis-img" [src]="chassis.chassisImage" (load)="loaded1 = true" [ngClass]="{\'img-loaded\':loaded1}" [hidden]="!loaded1" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded1"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ chassis.chassisName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ chassis.chassisPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'pu\'">\n          <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let pu of puList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ pu.position }}</div>\n              </ion-col>\n              <ion-col col-3>\n                <ion-thumbnail>\n                  <img class="pu-img" [src]="pu.puImage" (load)="loaded2 = true" [ngClass]="{\'img-loaded\':loaded2}" [hidden]="!loaded2" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded2"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ pu.puName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ pu.puPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </div>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/race/race.html"*/,
+        selector: 'page-race',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/race/race.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding no-bounce>\n  <div class="container">\n    <div *ngIf="roundDataList">\n      <ion-row *ngFor="let round of roundDataList">\n        <ion-col col-8>\n          <div class="round stretchRight delay-2">  \n            Round: {{ round?.lockoutRound }}\n          </div>\n          <div class="location stretchRight delay-3">\n            {{ round?.lockoutTrack }},  {{ round?.lockoutCountry }}\n          </div>\n          <div class="track">\n            <img [src]="round?.trackImage" class="track-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n          </div>\n        </ion-col>\n\n        <ion-col col-4 margin-top class="tall-col">\n          <div class="stat slideExpandUp delay-3">\n            <span>Track length</span> {{ round.trackLength }}\n          </div>\n          <div class="stat slideExpandUp delay-4">\n            <span>Laps</span> {{ round.laps }}\n          </div>\n          <div class="stat slideExpandUp delay-5">\n            <span>Lap record</span> {{ round.lapTime }}\n          </div>\n          <div class="stat slideExpandUp delay-6" >\n            <span>Last winner</span> {{ round.raceWinner }}\n          </div>\n        </ion-col>\n      </ion-row>\n    </div>\n\n    <div *ngIf="this.round > 1">\n      <ion-row class="header-marg">\n        <div class="text-center relative-pos" *ngFor="let round of roundDataList">\n          Round {{ round?.lockoutRound - 1 }} results\n        </div>\n      </ion-row>\n      <div padding>\n        <ion-segment mode="md" [(ngModel)]="raceData" class="seg-header">\n          <ion-segment-button value="drivers">\n            Drivers\n          </ion-segment-button>\n          <ion-segment-button value="chassis">\n            Chassis\n          </ion-segment-button>\n          <ion-segment-button value="pu">\n            Power Units\n          </ion-segment-button>\n        </ion-segment>\n      </div>\n\n      <div [ngSwitch]="raceData">\n        <ion-list *ngSwitchCase="\'drivers\'">\n          <ion-item class="relative-pos min-list-height expandUp" *ngFor="let driver of driversList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ driver.position }}</div>\n              </ion-col>\n              <ion-col col-2>\n                <ion-thumbnail item-left>\n                  <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ driver.driverPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'chassis\'">\n          <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let chassis of chassisList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ chassis.position }}</div>\n              </ion-col>\n              <ion-col col-3>\n                <ion-thumbnail >\n                  <img class="chassis-img" [src]="chassis.chassisImage" (load)="loaded1 = true" [ngClass]="{\'img-loaded\':loaded1}" [hidden]="!loaded1" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded1"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ chassis.chassisName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ chassis.chassisPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'pu\'">\n          <ion-item class="relative-pos chassis-list-height expandUp" *ngFor="let pu of puList">\n            <ion-row>\n              <ion-col col-2>\n                <div class="driver-position">{{ pu.position }}</div>\n              </ion-col>\n              <ion-col col-3>\n                <ion-thumbnail>\n                  <img class="pu-img" [src]="pu.puImage" (load)="loaded2 = true" [ngClass]="{\'img-loaded\':loaded2}" [hidden]="!loaded2" />\n                  <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded2"></ion-spinner>\n                </ion-thumbnail>\n              </ion-col>\n              <ion-col>\n                <h2 class="list-name">{{ pu.puName }}</h2>\n              </ion-col>\n              <ion-col>\n                 <div class="driver-points">{{ pu.puPoints }}</div>\n              </ion-col>\n            </ion-row>\n          </ion-item>\n        </ion-list>\n      </div>\n    </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/race/race.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */]])
@@ -1609,24 +2006,24 @@ RacePage = __decorate([
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_one_driver_one__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__driver_two_driver_two__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__chassis_one_chassis_one__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chassis_two_chassis_two__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pu_one_pu_one__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pu_two_pu_two__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__buy_trades_buy_trades__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_one_driver_one__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__driver_two_driver_two__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__chassis_one_chassis_one__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chassis_two_chassis_two__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pu_one_pu_one__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pu_two_pu_two__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__buy_trades_buy_trades__ = __webpack_require__(347);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2067,25 +2464,30 @@ TeamPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-team',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/team/team.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n	<div class="tutorial-overlay" [ngClass]="{\'show-tutorial\': firstTime && tutorialStep < 6 && gameState !== \'lockout\'}">\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 1}" class="tutorial-card not-visible step-two">\n			<ion-col col-9>\n				<h4 class="tutorial-text">It\'s time to start building your team!</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 2}" class="tutorial-card not-visible step-two">\n			<ion-col col-9>\n				<h4 class="tutorial-text">This is your available funds.</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 3}" class="tutorial-card not-visible step-three">\n			<ion-col col-9>\n				<h4 class="tutorial-text">This is the amount of trades you currently have, you wont be charged for trades in your first round.</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 4}" class="tutorial-card not-visible step-four">\n			<ion-col col-9>\n				<h4 class="tutorial-text">If your getting low during the season you can buy additional trades here.</h4>\n			</ion-col>\n			<ion-col>\n				<button ion-button color="primary" (click)="nextStep()" class="tutorial-align-right" >Next</button>\n			</ion-col>	\n		</ion-row>\n\n		<ion-row [ngClass]="{\'show-step\': tutorialStep === 5}" class="tutorial-card not-visible step-five">\n			<ion-col col-12>\n				<h4 class="tutorial-text">Lets start by purchasing a driver, click on the driver card for car one.</h4>\n			</ion-col>\n		</ion-row>\n	</div>\n\n	<div class="container margin-bottom">\n	<!-- Info Panel -->\n	<div *ngFor="let user of userList">\n    <ion-row>\n    	<ion-col>\n	      <ion-card [ngClass]="{\'tutorial-highlight\': tutorialStep === 2}" class="relative-pos card-left card-height">\n	     		<img class="bank-img" src="assets/img/bank-icon.png" />\n	      	<div class="text-height">\n	      		<span class="title-text">\n	      			{{user.money | currency:\'USD\':true:\'1.0\'}}\n	      		</span>\n	      	</div>\n	      </ion-card>\n    	</ion-col>\n\n    	<ion-col>\n	      <ion-card [ngClass]="{\'tutorial-highlight\': tutorialStep === 3}" class="relative-pos card-height">\n	     		<img class="trades-img" src="assets/img/trade-icon-dark.png" />\n	      	<div class="text-height">\n	      		Trades: \n	      		<span class="title-text">\n	      			{{user.trades }}\n	      		</span>\n	      	</div>\n				</ion-card>\n			</ion-col>\n			<button ion-button class="add-trade-btn add-btn" [ngClass]="{\'tutorial-highlight\': tutorialStep === 4}" (click)="goToBuyTrades()" [disabled]="gameState == \'lockout\'">+</button>\n  	</ion-row>\n	</div>\n\n	<ion-row class="top-space-lg">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center positive-rel slideExpandUp delay-2">\n			CAR ONE\n			<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		</div>\n	</ion-row>\n	<ion-row class="top-space">\n		<!-- Driver: car one -->\n		<ion-col class="pullUp delay-1">\n			<ion-card tappable (click)="goToDriverOne(firstTime)" [ngClass]="{\'tutorial-highlight\': tutorialStep === 5}" class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userDriverOne" (click)="goToDriverOne()" class="hq-card card-1">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<div class="name">\n					{{user.firstName}}<br />\n				 	{{user.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="user.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ user.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		\n			<button ion-button class="upgrade-btn offset-bg" [hidden]="gameState == \'lockout\' || driverOneUpgrade == true" (click)="confirmDriverAlert(\'one\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Chassis: car one -->\n		<ion-col class="pullUp delay-2">\n			<ion-card tappable (click)="goToChassisOne()" class="hq-card card-2 empty-card" *ngIf="userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userChassisOne" class="hq-card card-2" (click)="goToChassisOne()">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{user.chassisName}}</div>\n				<ion-row>\n					<img [src]="user.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ user.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>	\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n			<button ion-button class="upgrade-btn offset-bg bump-1" [hidden]="gameState == \'lockout\' || chassisOneUpgrade == true" (click)="confirmChassisAlert(\'one\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Pu: car one -->\n		<ion-col class="pullUp delay-5">\n			<ion-card tappable (click)="goToPuOne()" class="hq-card card-3 empty-card" *ngIf="userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power unit</div>\n				</ion-card-header>\n	\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />	    		\n				</ion-row>\n\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userPuOne" class="hq-card card-3" (click)="goToPuOne()">\n				<ion-card-header class="card-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n\n				<div class="name">{{user.puName}}</div>\n				<ion-row>\n					<img [src]="user.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ user.puPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +user.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n			<button ion-button class="upgrade-btn offset-bg bump-2" [hidden]="gameState == \'lockout\' || puOneUpgrade == true" (click)="confirmPuAlert(\'one\');">Upgrade</button>\n		</ion-col>		\n	</ion-row>\n\n	<!-- *********** Car Two **********-->\n	<ion-row class="top-space">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center primary-bg slideExpandUp delay-3">\n			CAR TWO\n			<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		</div>\n	</ion-row>\n\n	<!-- Driver: car two -->\n\n	<ion-row class="top-space">\n		<ion-col class="pullUp delay-4">\n			<ion-card tappable (click)="goToDriverTwo()" class="hq-card card-1" *ngIf="userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />	    		\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userDriverTwo" class="hq-card card-1 pullUp delay-4" (click)="goToDriverTwo()">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<!-- <div class="hide-icon" [ngClass]="{\'fadeIn\': user.driverStatus === \'first\'}">\n		      <ion-icon class="leader" name="star"></ion-icon>\n		    </div> -->\n				<div class="name">\n					{{user.firstName}}<br />\n				 	{{user.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="user.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ user.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n			<button ion-button class="upgrade-btn" [hidden]="gameState == \'lockout\' || driverTwoUpgrade == true" (click)="confirmDriverAlert(\'two\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Chassis: car two -->\n		<ion-col class="pullUp delay-5">\n			<ion-card tappable (click)="goToChassisTwo()" class="hq-card card-2" *ngIf="userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userChassisTwo" class="hq-card card-2" (click)="goToChassisTwo()">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{user.chassisName}}</div>\n				<ion-row>\n					<img [src]="user.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ user.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n			<button ion-button class="upgrade-btn bump-1" [hidden]="gameState == \'lockout\' || chassisTwoUpgrade == true" (click)="confirmChassisAlert(\'two\');">Upgrade</button>\n		</ion-col>\n\n		<!-- Pu: car two -->\n		<ion-col class="pullUp delay-6">\n			<ion-card tappable (click)="goToPuTwo()" class="hq-card card-3" *ngIf="userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />\n				</ion-row>\n				<ion-icon name="md-add-circle" class="car-one-icon"></ion-icon>\n			</ion-card>\n\n			<ion-card *ngFor="let user of userPuTwo" class="hq-card card-3" (click)="goToPuTwo()" >\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<div class="name">{{user.puName}}</div>\n				<ion-row>\n					<img [src]="user.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ user.puPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +user.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: user.valChange < 0}" class="positive val-change"> \n					{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': user.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n			<button ion-button class="upgrade-btn bump-2" [hidden]="gameState == \'lockout\' || puTwoUpgrade == true" (click)="confirmPuAlert(\'two\');">Upgrade</button>\n		</ion-col>\n	</ion-row>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/team/team.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
 ], TeamPage);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=team.js.map
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2412,8 +2814,8 @@ DriverOnePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-driver-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-one/driver-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank">\n            <span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span>\n          </div>    \n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n<div class="tutorial-overlay" [ngClass]="{\'show-tutorial\': firstTime === true && gameState === \'lockout\' && closeTutorial !== true}">\n    <ion-row class="show-step tutorial-card step-one">\n      <ion-col col-9>\n        <h4 class="tutorial-text">Unfortunately trades are not possible while the game is in lockout. Please try again later.</h4>\n      </ion-col>\n      <ion-col>\n        <button ion-button color="primary" (click)="closeOverlay()" class="tutorial-align-right">OK</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class="tutorial-overlay" [ngClass]="{\'show-tutorial\': firstTime === true && gameState !== \'lockout\' && closeTutorial !== true}">\n    <ion-row [ngClass]="{\'show-step\': tutorialStep === 1}" class="tutorial-card not-visible step-two">\n      <ion-col col-9>\n        <h4 class="tutorial-text">Browse through the drivers and add one to your team by clicking on the money icon.</h4>\n      </ion-col>\n      <ion-col>\n        <button ion-button color="primary" (click)="closeOverlay()" class="tutorial-align-right" >OK</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class="container">\n  <!-- Driver one -->\n    <ion-row>\n      <ion-card *ngIf="(userDriverOne != 0)" class="card-layout pullUp delay-3">\n        <div class="relative-pos" *ngFor="let user of userDriverOne">\n          <ion-row> \n            <ion-col col-2 class="margin-image">\n              <img [src]="user.driverImage" class="driver-image" />\n            </ion-col>\n            \n            <ion-col col-7 class="vert-center">\n              <div class="margin-left">\n                <div class="driver-name">\n                  {{user.firstName}} {{user.lastName}}\n                </div>\n                <div class="driver-value">\n                  {{ +user.driverValue | currency:\'USD\':true:\'1.0\' }} \n                </div>\n                <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}" > \n                  {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n                </span>\n              </div>\n            </ion-col>\n\n            <ion-col col-3>\n              <h3 class="points">{{ user.driverPoints }}</h3>\n              <div class="to-bottom align-right">\n                <img class="car-img" src="assets/img/black-car.png" />\n                <div class="car-number">CAR ONE</div>\n              </div>\n            </ion-col>\n          </ion-row>\n        </div>\n      </ion-card>\n    </ion-row>\n\n    <ion-row class="header-marg">\n      <div class="text-center relative-pos slideExpandUp delay-3">\n        Available drivers\n        <ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n      </div>\n    </ion-row>\n\n    <ion-list *ngIf="driversList">\n      <ion-item class="relative-pos min-list-height pullUp delay-{{i}}" *ngFor="let driver of driversList; let i=index" [ngClass]="{\'highlight-one\': driver.abrev == abrevOne ? \'highlight-two\': driver.abrev == abrevTwo}">\n\n        <ion-thumbnail item-left>\n          <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-thumbnail>\n      \n        <ion-row class="v-center">\n          <ion-col col-7>\n            <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n            <h5 class="list-value">\n              {{ driver.driverValue | currency:\'USD\':true:\'1.0\' }}\n            </h5>\n            <h5 [ngClass]="{negative: driver.valChange < 0}" class="positive val-change">\n              {{ driver.valChange | currency:\'USD\':true:\'1.0\' }}\n            </h5>\n          </ion-col>\n\n          <ion-col col-4 class="align-right">\n            <button class="stats-btn" ion-button (click)="goToDriverStats(driver.abrev);" [disabled]="currentRound < 2">\n              <ion-icon name="stats"></ion-icon>\n            </button>\n            <button class="cantAfford buy-btn" ion-button (click)="addDriver(\'one\', driver);" [disabled]="driver.abrev == abrevOne || driver.abrev == abrevTwo ||  driver.driverValue > (teamCash + userDriverOneValue)" [hidden]="gameState == \'lockout\'">\n              <ion-icon><img class="trade-icon" src="assets/img/bank-icon-light.png" /></ion-icon>\n            </button>\n          </ion-col>\n        </ion-row>\n\n        <div *ngIf="driver.abrev == abrevOne || driver.abrev == abrevTwo" class="to-bottom right-tag" >\n          <div class="tag-driver-one" *ngIf="driver.abrev == abrevOne">\n            <div class="tag-text bumpRight">CAR ONE</div>\n            <img class="car-tag slideRight" src="assets/img/black-car.png" [ngClass]="{\'move-it\': animateCar == true }" />\n          </div>\n          <div class="tag-holder-two" *ngIf="driver.abrev == abrevTwo">\n            <div class="tag-text-two bumpRight">CAR TWO</div>\n            <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n          </div>\n        </div>\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-one/driver-one.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -2425,14 +2827,14 @@ DriverOnePage = __decorate([
 
 /***/ }),
 
-/***/ 26:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamDataProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
@@ -2450,375 +2852,136 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /*
-  Generated class for the TeamDataProvider provider.
+  Generated class for the AdminDataProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
-var TeamDataProvider = (function () {
-    function TeamDataProvider(http) {
+var AdminDataProvider = (function () {
+    function AdminDataProvider(http) {
         this.http = http;
-        console.log('Hello TeamDataProvider Provider');
-        this.currentUser = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser.uid;
-        this.userList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/');
-        this.userMoney = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser);
-        this.chassisOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/chassis');
-        this.chassisTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/chassis');
-        this.driverOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver');
-        this.driverTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver');
-        this.driverOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver');
-        this.driverTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver');
-        this.puOne = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/powerUnit');
-        this.puTwo = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/powerUnit');
-    }
-    TeamDataProvider.prototype.getUsersList = function () {
-        return this.userList;
+        // Create a database reference to the driversList node.
+        this.driversList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/drivers');
+        // Create a database reference to the ChassisList node.
+        this.chassisList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/chassis');
+        // Create a database reference to the Power Unit list node.
+        this.puList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/powerUnits');
+        // Create a database reference to the Round data list node.
+        this.gameState = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/gameState');
+    } //end constructor
+    AdminDataProvider.prototype.getImage = function (node, name) {
+        console.log('node', node);
+        console.log('name', name);
+        this.storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.storage().ref(node + name + '.png');
+        return this.storageRef;
     };
-    TeamDataProvider.prototype.getTheMoney = function () {
-        return this.userMoney;
-    };
-    TeamDataProvider.prototype.getChassisOne = function () {
-        return this.chassisOne;
-    };
-    TeamDataProvider.prototype.getChassisTwo = function () {
-        return this.chassisTwo;
-    };
-    TeamDataProvider.prototype.getOtherDriverId = function (car, driverId) {
-        var driverNode;
-        if (car == "one") {
-            driverNode = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver' + driverId);
-        }
-        else {
-            driverNode = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver' + driverId);
-        }
-        return driverNode;
-    };
-    //*************//
-    //   Chassis   //
-    //*************//
-    TeamDataProvider.prototype.addChassis = function (chassis, oldChassis, carNum, userPoints) {
+    AdminDataProvider.prototype.createDriver = function (driverPos, firstName, lastName, abrev, driverValue, image) {
         var _this = this;
-        var chassisDifference;
-        //if first entry
-        if (oldChassis.length == 0) {
-            chassisDifference = -chassis.chassisValue;
-        }
-        else {
-            chassisDifference = oldChassis[0].chassisValue - chassis.chassisValue;
-        }
-        console.log(chassisDifference, 'bankIt1');
-        /* Get players bank balance and add to chassis difference */
-        this.bankIt(chassisDifference, userPoints);
-        if (carNum === 'one') {
-            /* Delete chassis one reference */
-            if (this.chassisOne) {
-                this.chassisOne.remove();
-            }
-            // add chassis to users node
-            return this.chassisOne.push({
-                chassisName: chassis.chassisName,
-                chassisValue: chassis.chassisValue,
-                chassisImage: chassis.chassisImage,
-                chassisPoints: chassis.chassisPoints,
-                position: chassis.position,
-                valChange: chassis.valChange,
-                chassisUpgrade: chassis.chassisUpgrade
-            }).then(function (newEvent) {
-                _this.chassisOne.child(newEvent.key).child('id').set(newEvent.key);
-            });
-        }
-        else {
-            //delete chassis two reference
-            if (this.chassisTwo) {
-                this.chassisTwo.remove();
-            }
-            // create new chassis in firebase
-            return this.chassisTwo.push({
-                chassisName: chassis.chassisName,
-                chassisValue: chassis.chassisValue,
-                chassisImage: chassis.chassisImage,
-                chassisPoints: chassis.chassisPoints,
-                position: chassis.position,
-                valChange: chassis.valChange,
-                chassisUpgrade: chassis.chassisUpgrade
-            }).then(function (newEvent) {
-                _this.chassisTwo.child(newEvent.key).child('id').set(newEvent.key);
-            });
-        }
-    };
-    //*************//
-    // Power units //
-    //*************//
-    TeamDataProvider.prototype.getPuOne = function () {
-        return this.puOne;
-    };
-    TeamDataProvider.prototype.getPuTwo = function () {
-        return this.puTwo;
-    };
-    TeamDataProvider.prototype.addPU = function (powerUnit, oldPu, carNum, userPoints) {
-        var _this = this;
-        var puDifference;
-        //if first entry
-        if (oldPu.length == 0) {
-            puDifference = -powerUnit.puValue;
-        }
-        else {
-            puDifference = oldPu[0].puValue - powerUnit.puValue;
-        }
-        /* Get players bank balance and add to power unit difference */
-        this.bankIt(puDifference, userPoints);
-        if (carNum === 'one') {
-            //delete power unit one reference
-            if (this.puOne) {
-                this.puOne.remove();
-            }
-            // create new power unit in firebase
-            return this.puOne.push({
-                puName: powerUnit.puName,
-                puValue: powerUnit.puValue,
-                puImage: powerUnit.puImage,
-                position: powerUnit.position,
-                puPoints: powerUnit.puPoints,
-                valChange: powerUnit.valChange,
-                posChange: powerUnit.posChange,
-                puUpgrade: powerUnit.puUpgrade
-            }).then(function (newEvent) {
-                _this.puOne.child(newEvent.key).child('id').set(newEvent.key);
-            });
-        }
-        else {
-            //delete power unit two reference
-            if (this.puTwo) {
-                this.puTwo.remove();
-            }
-            // create new power unit in firebase
-            return this.puTwo.push({
-                puName: powerUnit.puName,
-                puValue: powerUnit.puValue,
-                puImage: powerUnit.puImage,
-                position: powerUnit.position,
-                puPoints: powerUnit.puPoints,
-                valChange: powerUnit.valChange,
-                posChange: powerUnit.posChange,
-                puUpgrade: powerUnit.puUpgrade
-            }).then(function (newEvent) {
-                _this.puTwo.child(newEvent.key).child('id').set(newEvent.key);
-            });
-        }
-    };
-    //*************//
-    //   Drivers   //
-    //*************//
-    TeamDataProvider.prototype.getDriverOne = function () {
-        return this.driverOne;
-    };
-    TeamDataProvider.prototype.getDriverTwo = function () {
-        return this.driverTwo;
-    };
-    TeamDataProvider.prototype.addDriver = function (driver, oldDriver, driverNum, userPoints, driverId) {
-        var _this = this;
-        var driverDifference;
-        //if first entry
-        if (oldDriver.length == 0) {
-            driverDifference = -driver.driverValue;
-        }
-        else {
-            driverDifference = oldDriver[0].driverValue - driver.driverValue;
-        }
-        /* Get players bank balance and add to driver difference */
-        this.bankIt(driverDifference, userPoints);
-        var driverRef;
-        if (driverNum === 'one') {
-            driverRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver/' + driverId);
-            //delete driver one reference
-            if (this.driverOne) {
-                this.driverOne.remove();
-            }
-            // add driver one in users profile
-            return this.driverOne.push({
-                firstName: driver.firstName,
-                lastName: driver.lastName,
-                driverValue: driver.driverValue,
-                abrev: driver.abrev,
-                driverImage: driver.driverImage,
-                driverPoints: driver.driverPoints,
-                posChange: driver.posChange,
-                qualified: driver.qualified,
-                valChange: driver.valChange,
-                driverStatus: driver.driverStatus,
-                driverUpgrade: driver.driverUpgrade,
-            }).then(function (newEvent) {
-                _this.driverOne.child(newEvent.key).child('id').set(newEvent.key);
-            }).then(function () {
-                if (driverId == "") {
-                }
-                else {
-                    driverRef.update({
-                        driverStatus: "equal"
-                    });
-                }
-            });
-        }
-        else {
-            driverRef = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver/' + driverId);
-            //delete driver two reference
-            if (this.driverTwo) {
-                this.driverTwo.remove();
-            }
-            // add driver two in users profile
-            return this.driverTwo.push({
-                firstName: driver.firstName,
-                lastName: driver.lastName,
-                driverValue: driver.driverValue,
-                abrev: driver.abrev,
-                driverImage: driver.driverImage,
-                driverPoints: driver.driverPoints,
-                posChange: driver.posChange,
-                qualified: driver.qualified,
-                valChange: driver.valChange,
-                driverStatus: driver.driverStatus,
-                driverUpgrade: driver.driverUpgrade,
-            }).then(function (newEvent) {
-                _this.driverTwo.child(newEvent.key).child('id').set(newEvent.key);
-            }).then(function () {
-                if (driverId == "") {
-                }
-                else {
-                    driverRef.update({
-                        driverStatus: "equal"
-                    });
-                }
-            });
-        }
-    };
-    /* Get players bank balance and add to chassis difference */
-    /* Get playeres trade count and -1 */
-    TeamDataProvider.prototype.bankIt = function (difference, userPoints) {
-        var _this = this;
-        var bankAcc;
-        var tradeCount;
-        console.log("diff, round", difference, userPoints);
-        this.userMoney.once('value').then(function (snapshot) {
-            bankAcc = parseInt(snapshot.val().money);
-            //if user has no points then don't count trade 
-            if (userPoints != 0) {
-                tradeCount = snapshot.val().trades;
-                tradeCount = tradeCount - 1;
-            }
-            else {
-                tradeCount = snapshot.val().trades;
-            }
-            console.log(bankAcc, "money");
-        }).then(function () {
-            _this.userMoney.update({
-                money: bankAcc + difference,
-                trades: tradeCount,
-            });
+        return this.driversList.push({
+            position: driverPos,
+            firstName: firstName,
+            lastName: lastName,
+            abrev: abrev,
+            driverValue: driverValue,
+            driverImage: image,
+            driverUpgrade: false
+        }).then(function (newEvent) {
+            _this.driversList.child(newEvent.key).child('id').set(newEvent.key);
         });
     };
-    //adds a trade to the user for a cost
-    TeamDataProvider.prototype.addTrade = function (num, tradeCost) {
+    AdminDataProvider.prototype.createChassis = function (chassisPos, chassisName, chassisValue, image) {
         var _this = this;
-        var bankAcc;
-        var tradeCount;
-        this.userMoney.once('value').then(function (snapshot) {
-            bankAcc = parseInt(snapshot.val().money);
-            tradeCount = snapshot.val().trades;
-            tradeCount = tradeCount + num;
-        }).then(function () {
-            _this.userMoney.update({
-                money: bankAcc - tradeCost,
-                trades: tradeCount,
-            });
+        return this.chassisList.push({
+            position: chassisPos,
+            chassisName: chassisName,
+            chassisValue: chassisValue,
+            chassisImage: image,
+            chassisUpgrade: false
+        }).then(function (newEvent) {
+            _this.chassisList.child(newEvent.key).child('id').set(newEvent.key);
         });
     };
-    //adds a upgrade to the user for a cost
-    TeamDataProvider.prototype.addUpgrade = function (cost, node, typeID, bank, component) {
+    AdminDataProvider.prototype.createPU = function (puPosition, puName, puValue, image) {
         var _this = this;
-        var updateUpgrade = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + node + typeID);
-        if (component == "driver") {
-            updateUpgrade.update({
-                driverUpgrade: true
-            }).then(function () {
-                _this.userMoney.update({
-                    money: bank - cost
-                });
-            });
-        }
-        else if (component == "chassis") {
-            updateUpgrade.update({
-                chassisUpgrade: true
-            }).then(function () {
-                _this.userMoney.update({
-                    money: bank - cost
-                });
-            });
-        }
-        else {
-            updateUpgrade.update({
-                puUpgrade: true
-            }).then(function () {
-                _this.userMoney.update({
-                    money: bank - cost
-                });
-            });
-        }
+        return this.puList.push({
+            position: puPosition,
+            puName: puName,
+            puValue: puValue,
+            puImage: image,
+            puUpgrade: false
+        }).then(function (newEvent) {
+            _this.puList.child(newEvent.key).child('id').set(newEvent.key);
+        });
     };
-    //updates driver one and two status
-    TeamDataProvider.prototype.updateDriverStatus = function (driver, driverOneId, driverTwoId) {
-        var driverOneUpdate = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carOne/driver/' + driverOneId);
-        var driverTwoUpdate = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/carTwo/driver/' + driverTwoId);
-        if (driver == "driverOne") {
-            driverOneUpdate.update({
-                driverStatus: "first"
-            }).then(function () {
-                driverTwoUpdate.update({
-                    driverStatus: "second"
-                });
-            });
-        }
-        else if (driver == "driverTwo") {
-            driverOneUpdate.update({
-                driverStatus: "second"
-            }).then(function () {
-                driverTwoUpdate.update({
-                    driverStatus: "first"
-                });
-            });
-        }
-        else {
-            driverOneUpdate.update({
-                driverStatus: "equal"
-            }).then(function () {
-                driverTwoUpdate.update({
-                    driverStatus: "equal"
-                });
-            });
-        }
+    AdminDataProvider.prototype.createRoundData = function (lockoutRound, lockoutDate, lockoutCountry, lockoutTrack, trackLength, laps, lapTime, raceWinner, trackImage) {
+        var _this = this;
+        this.roundDataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('/roundData/' + lockoutRound);
+        return this.roundDataList.push({
+            lockoutRound: lockoutRound,
+            lockoutDate: lockoutDate,
+            lockoutCountry: lockoutCountry,
+            lockoutTrack: lockoutTrack,
+            trackLength: trackLength,
+            laps: laps,
+            lapTime: lapTime,
+            raceWinner: raceWinner,
+            trackImage: trackImage
+        }).then(function (newEvent) {
+            _this.roundDataList.child(newEvent.key).child('id').set(newEvent.key);
+        });
     };
-    return TeamDataProvider;
+    AdminDataProvider.prototype.getDriversList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/drivers');
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getChassisList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/chassis');
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getPUList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/' + round + '/powerUnits');
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getRoundDataList = function (round) {
+        this.dataList = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('roundData/' + round);
+        return this.dataList;
+    };
+    AdminDataProvider.prototype.getGameState = function () {
+        console.log("current game state", this.gameState);
+        return this.gameState;
+    };
+    //Used to generate round 0 data.
+    AdminDataProvider.prototype.getInitialDriversList = function () {
+        return this.driversList;
+    };
+    AdminDataProvider.prototype.getInitialChassisList = function () {
+        return this.chassisList;
+    };
+    AdminDataProvider.prototype.getInitialPUList = function () {
+        return this.puList;
+    };
+    return AdminDataProvider;
 }());
-TeamDataProvider = __decorate([
+AdminDataProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
-], TeamDataProvider);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], AdminDataProvider);
 
-var _a;
-//# sourceMappingURL=team-data.js.map
+//# sourceMappingURL=admin-data.js.map
 
 /***/ }),
 
-/***/ 341:
+/***/ 342:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DriverTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__driver_stats_driver_stats__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3130,8 +3293,8 @@ DriverTwoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-driver-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-two/driver-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank">\n            <span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span>\n          </div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n  <div class="container">\n	  <!-- Driver one -->\n	  <ion-row>\n      <ion-card *ngIf="(userDriverTwo != 0)" class="card-layout pullUp delay-3">\n        <div class="relative-pos" *ngFor="let user of userDriverTwo">  \n          <ion-row> \n            <ion-col col-2 class="margin-image">\n              <img [src]="user.driverImage" class="driver-image" />\n            </ion-col>\n            <ion-col col-7 class="vert-center">\n              <div class="margin-left">\n                <div class="driver-name">\n                  {{user.firstName}} {{user.lastName}}\n                </div>\n                <div class="driver-value">\n                  {{ +user.driverValue | currency:\'USD\':true:\'1.0\' }} \n                </div>\n                <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}" > \n                  {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n                </span>\n              </div>\n            </ion-col>\n\n            <ion-col col-3>\n              <h3 class="points">{{ user.driverPoints }}</h3>\n              <div class="to-bottom">\n                <img class="car-img" src="assets/img/red-car.png" />\n                <div class="car-number car-two">CAR TWO</div>\n              </div>\n            </ion-col>\n          </ion-row>\n        </div>\n      </ion-card>\n  </ion-row>\n\n  <ion-row class="header-marg">\n    <div class="text-center relative-pos slideExpandUp delay-3">\n      Available drivers\n      <ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n    </div>\n  </ion-row>\n\n  <ion-list *ngIf="driversList">\n    <ion-item class="relative-pos min-list-height pullUp delay-{{i}}" *ngFor="let driver of driversList; let i=index" [ngClass]="{\'highlight-one\': driver.abrev == abrevOne ? \'highlight-two\': driver.abrev == abrevTwo}">\n\n      <ion-thumbnail item-left>\n        <img class="list-image" [src]="driver.driverImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n        <ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n      </ion-thumbnail>\n\n      <ion-row class="v-center">\n        <ion-col col-7>\n          <h2 class="list-name">{{ driver.firstName }} {{ driver.lastName }}</h2>\n          <h5 class="list-value">\n            {{ driver.driverValue | currency:\'USD\':true:\'1.0\' }}\n          </h5>\n          <h5 [ngClass]="{negative: driver.valChange < 0}" class="val-change positive">\n            {{ driver.valChange | currency:\'USD\':true:\'1.0\' }}\n          </h5>\n        </ion-col>\n\n        <ion-col col-4 class="align-right">\n          <button class="stats-btn" ion-button (click)="goToDriverStats(driver.abrev);" [disabled]="currentRound < 2">\n            <ion-icon name="stats"></ion-icon>\n          </button>\n          <button class="cantAfford buy-btn" ion-button (click)="addDriver(\'two\', driver);" [disabled]="driver.abrev == abrevOne || driver.abrev == abrevTwo ||  driver.driverValue > (teamCash + userDriverTwoValue)" [hidden]="gameState == \'lockout\'">\n            <ion-icon>\n            	<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n\n     	<div *ngIf="driver.abrev == abrevOne || driver.abrev == abrevTwo" class="to-bottom right-tag" >\n        <div class="tag-driver-one" *ngIf="driver.abrev == abrevOne">\n          <div class="tag-text bumpRight">CAR ONE</div>\n          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" [ngClass]="{\'move-it\': animateCar == true }" />\n        </div>\n        <div class="tag-holder-two" *ngIf="driver.abrev == abrevTwo">\n          <div class="tag-text-two bumpRight">CAR TWO</div>\n          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n        </div>\n      </div>\n    </ion-item>\n  </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/driver-two/driver-two.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -3143,17 +3306,17 @@ DriverTwoPage = __decorate([
 
 /***/ }),
 
-/***/ 342:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3436,8 +3599,8 @@ ChassisOnePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-chassis-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-one/chassis-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Chassis one -->\n		<ion-row>\n			<ion-card class="card-layout left pullUp delay-3 card-min-height" *ngIf="(userChassisOne?.length > 0)">\n			  <div class="relative-pos" *ngFor="let user of userChassisOne">\n		  		<ion-row> \n	          <ion-col col-2>\n	            <img class="chassis-image" [src]="user.chassisImage" />\n	          </ion-col>\n\n						<ion-col col-7 class="vert-center">\n					   	<div class="chassis-name"> \n					   		{{user.chassisName}}\n					   	</div>\n\n					   	<div class="chassis-value">\n					   		{{ user?.chassisValue | currency:\'USD\':true:\'1.0\' }}\n              </div>\n      		   	<span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> \n                {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n              </span>\n					  </ion-col>\n\n						<ion-col col-3 class="relative-pos">\n              <h3 class="points"> {{ user.chassisPoints }} </h3>\n							<div class="to-bottom align-right">\n	              <img class="car-img" src="assets/img/black-car.png" />\n	              <div class="car-number">CAR ONE</div>\n	            </div>\n            </ion-col>\n					</ion-row>\n			  </div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3"> \n		  	Available chassis\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="chassisList">\n		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{\'highlight-one\': chassis.chassisName == chassisOneName ? \'highlight-two\': chassis.chassisName == chassisTwoName}">\n		   	\n		   	<ion-thumbnail item-left>\n		   		<img [src]="chassis.chassisImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" class="chassis-size" />\n\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>\n				   	<h5 class="list-value">\n				   		{{ chassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> \n		   	 			{{ chassis.valChange | currency:\'USD\':true:\'1.0\' }}\n		   	 		</span>\n					</ion-col>\n\n					<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [disabled]="currentRound < 2">\n				   		<ion-icon name="stats"></ion-icon>\n				   	</button>\n				   	\n				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis(\'one\', chassis)" [disabled]="chassis.chassisName == chassisOneName || chassis.chassisValue > (teamCash + userChassisOneValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n				  </ion-col>\n			  </ion-row>\n\n			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">\n	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight" src="assets/img/black-car.png" />\n	        </div>\n\n	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">\n	        	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-one/chassis-one.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -3449,17 +3612,17 @@ ChassisOnePage = __decorate([
 
 /***/ }),
 
-/***/ 343:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChassisTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chassis_stats_chassis_stats__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3741,8 +3904,8 @@ ChassisTwoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-chassis-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-two/chassis-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Chassis two -->\n		<ion-row>	\n			<ion-card *ngIf="(userChassisTwo != 0)" class="card-layout left pullUp delay-3 card-min-height">\n			  <div class="relative-pos" *ngFor="let user of userChassisTwo">\n		  		<ion-row> \n	          <ion-col col-2>\n	            <img class="chassis-image" [src]="user.chassisImage" />\n	          </ion-col>\n\n						<ion-col col-7 class="vert-center">\n					   	<div class="chassis-name"> \n					   		{{user.chassisName}}\n					   	</div>\n\n					   	<div class="chassis-value">\n					   		{{ user.chassisValue | currency:\'USD\':true:\'1.0\' }}\n              </div>\n              <span class="positive val-change" [ngClass]="{negative: user.valChange < 0}"> \n	              {{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n	            </span>\n					  </ion-col>\n\n						<ion-col col-3 class="relative-pos">\n              <h3 class="points"> {{ user.chassisPoints }} </h3>\n							<div class="to-bottom align-right">\n	              <img class="car-img" src="assets/img/red-car.png" />\n	              <div class="car-number car-two">CAR TWO</div>\n	            </div>\n            </ion-col>\n					</ion-row>	\n			  </div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n				Available chassis\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="chassisList">\n		  <ion-item class="relative-pos chassis-item-height pullUp delay-{{i}}" *ngFor="let chassis of chassisList; let i=index" [ngClass]="{\'highlight-one\': chassis.chassisName == chassisOneName ? \'highlight-two\': chassis.chassisName == chassisTwoName}">\n		   	\n		   	<ion-thumbnail item-left>\n		   		<img [src]="chassis.chassisImage" class="chassis-size" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ chassis.chassisName }}</h2>\n				   	<h5 class="list-value">\n				   		{{ chassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n\n				   	<span class="positive val-change" [ngClass]="{negative: chassis.valChange < 0}"> \n		   	 			{{ chassis.valChange | currency:\'USD\':true:\'1.0\' }}\n		   	 		</span>\n					</ion-col>\n\n					<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToChassisStats(chassis.chassisName)" [disabled]="currentRound < 2">\n				   		<ion-icon name="stats"></ion-icon>\n				   	</button>\n				   	\n				   	<button class="cantAfford buy-btn" ion-button (click)="addChassis(\'two\', chassis)" [disabled]="chassis.chassisName == chassisTwoName || chassis.chassisValue > (teamCash + userChassisTwoValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n				  </ion-col>\n			  </ion-row>\n\n			  <div *ngIf="chassis.chassisName == chassisOneName || chassis.chassisName == chassisTwoName" class="to-bottom right-tag">\n	        <div class="tag-holder-one" *ngIf="chassis.chassisName == chassisOneName">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" />\n	        </div>\n\n	        <div class="tag-holder-two" *ngIf="chassis.chassisName == chassisTwoName">\n	        	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/chassis-two/chassis-two.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -3754,17 +3917,17 @@ ChassisTwoPage = __decorate([
 
 /***/ }),
 
-/***/ 344:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuOnePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4052,8 +4215,8 @@ PuOnePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-pu-one',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-one/pu-one.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Power unit One -->\n		<ion-row>\n			<ion-card *ngIf="(userPuOne != 0)" class="card-layout left pullUp delay-3">\n			  <div class="relative-pos" *ngFor="let user of userPuOne" (click)="goToPu()">\n				  <ion-row> \n						<ion-col col-2 class="margin-image">\n							<img [src]="user.puImage" class="pu-image" />\n					  </ion-col>\n					  <ion-col col-7 class="vert-center">\n					  	<div class="pu-name"> \n					   		{{user.puName}}\n					   	</div>\n					   	<div class="pu-value">\n					  		{{ user.puValue | currency:\'USD\':true:\'1.0\' }}\n					  	</div>\n					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> \n								{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n							</span>\n					  </ion-col>\n				  	<ion-col col-3 class="relative-pos">\n            	<h3 class="points"> {{ user.puPoints }} </h3>\n            	<div class="to-bottom align-right">\n            		<img class="car-img" src="assets/img/black-car.png" />\n            		<div class="car-number">CAR ONE</div>\n            	</div>\n          	</ion-col>\n					</ion-row>\n		  	</div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n		  	Available power units\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="puList">\n		  <ion-item class="relative-pos pu-item-height pullUp delay-{{i}}" *ngFor="let pu of puList; let i=index" [ngClass]="{\'highlight-one\': pu.puName == puNameOne ? \'highlight-two\': pu.puName == puNameTwo}">\n		   	<ion-thumbnail item-left>\n		   		<img class="margin-image" [src]="pu.puImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ pu.puName }}</h2>\n				  	<h5 class="list-value">\n				   		{{ pu.puValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: pu.valChange < 0}"> \n				   	 	{{ pu.valChange | currency:\'USD\':true:\'1.0\' }}\n				   	</span>\n			   	</ion-col>\n			   	<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [disabled]="currentRound < 2">\n			   			<ion-icon name="stats"></ion-icon>\n			   		</button>\n				   	<button class="cantAfford buy-btn" ion-button (click)="addPU(\'one\', pu);" [disabled]="pu.puName == puNameOne || pu.puValue > (teamCash + userPuOneValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n					</ion-col>\n				</ion-row>\n\n				<div *ngIf="pu.puName == puNameOne || pu.puName == puNameTwo" class="to-bottom right-tag">\n        	<div class="tag-driver-one" *ngIf="pu.puName == puNameOne">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight" src="assets/img/black-car.png" />\n	        </div>\n	        <div class="tag-holder-two" *ngIf="pu.puName == puNameTwo">\n	         	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-one/pu-one.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -4065,17 +4228,17 @@ PuOnePage = __decorate([
 
 /***/ }),
 
-/***/ 345:
+/***/ 346:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PuTwoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pu_stats_pu_stats__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4363,8 +4526,8 @@ PuTwoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-pu-two',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-two/pu-two.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row class="info-header">\n      <ion-col>\n        <ion-card class="relative-pos card-left">\n         <img class="title-icon" src="assets/img/bank-icon.png" />\n          <div class="title-text-bank"><span class="title-val">{{teamCash | currency:\'USD\':true:\'1.0\'}}</span></div>\n        </ion-card>\n      </ion-col>\n      <ion-col>\n        <ion-card class="relative-pos">\n         <img class="trades-icon" src="assets/img/trade-icon-dark.png" />\n          <div class="title-text-trade">Trades: <span class="title-val">{{userTrades}}</span></div>\n        </ion-card>\n      </ion-col>\n  	</ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="child-header">\n	<div class="container">\n		<!-- Power unit two -->\n		<ion-row>\n			<ion-card *ngIf="(userPuTwo != 0)" class="card-layout left pullUp delay-3">\n			  <div class="relative-pos" *ngFor="let user of userPuTwo" (click)="goToPu()"> \n				  <ion-row> \n						<ion-col col-2 class="margin-image">\n							<img [src]="user.puImage" class="pu-image" />\n					  </ion-col>\n					  <ion-col col-7 class="vert-center">\n					  	<div class="pu-name"> \n					   		{{user.puName}}\n					   	</div>\n					   	<div class="pu-value">\n					  		{{ user.puValue | currency:\'USD\':true:\'1.0\' }}\n					  	</div>\n					  	<span class="positive val-change bump" [ngClass]="{negative: user.valChange < 0}"> \n								{{ user.valChange | currency:\'USD\':true:\'1.0\' }}\n							</span>\n					  </ion-col>\n				  	<ion-col col-3 class="relative-pos">\n            	<h3 class="points"> {{ user.puPoints }} </h3>\n            	<div class="to-bottom align-right">\n            		<img class="car-img" src="assets/img/red-car.png" />\n            		<div class="car-number car-two">CAR TWO</div>\n            	</div>\n          	</ion-col>\n					</ion-row>\n		  	</div>\n			</ion-card>\n		</ion-row>\n\n		<ion-row class="header-marg">\n		  <div class="text-center relative-pos slideExpandUp delay-3">\n		  	Available power units\n		  	<ion-icon name="md-information-circle" class="car-help" (click)="carHelp();"></ion-icon>\n		  </div>\n		</ion-row>\n\n		<ion-list *ngIf="puList">\n		  <ion-item class="relative-pos pu-item-height pullUp delay-{{i}}" *ngFor="let pu of puList; let i=index" [ngClass]="{\'highlight-one\': pu.puName == puNameOne ? \'highlight-two\': pu.puName == puNameTwo}">\n		   	<ion-thumbnail item-left>\n		   		<img class="margin-image" [src]="pu.puImage" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	      	<ion-spinner name="crescent" [ngClass]="{\'center-spinner \':true}" *ngIf="!loaded"></ion-spinner>\n		   	</ion-thumbnail>\n\n		   	<ion-row class="v-center">\n			   	<ion-col class="vert-center">\n				  	<h2 class="list-name">{{ pu.puName }}</h2>\n				  	<h5 class="list-value">\n				   		{{ pu.puValue | currency:\'USD\':true:\'1.0\' }}\n				   	</h5>\n				   	<span class="positive val-change" [ngClass]="{negative: pu.valChange < 0}"> \n				   	 	{{ pu.valChange | currency:\'USD\':true:\'1.0\' }}\n				   	</span>\n			   	</ion-col>\n\n			   	<ion-col class="align-right">\n						<button class="stats-btn" ion-button (click)="goToPuStats(pu.puName);" [disabled]="currentRound < 2">\n			   			<ion-icon name="stats"></ion-icon>\n			   		</button>\n				   	<button class="cantAfford buy-btn" ion-button (click)="addPU(\'two\', pu);" [disabled]="pu.puName == puNameTwo || pu.puValue > (teamCash + userPuTwoValue)" [hidden]="gameState == \'lockout\'">\n				   		<ion-icon>\n				   			<img class="trade-icon" src="assets/img/bank-icon-light.png" />\n				   		</ion-icon>\n				   	</button>\n					</ion-col>\n				</ion-row>\n\n				<div *ngIf="pu.puName == puNameOne || pu.puName == puNameTwo" class="to-bottom right-tag">\n        	<div class="tag-driver-one" *ngIf="pu.puName == puNameOne">\n	          <div class="tag-text bumpRight">CAR ONE</div>\n	          <img class="car-tag slideRight delay-mach" src="assets/img/black-car.png" />\n	        </div>\n	        <div class="tag-holder-two" *ngIf="pu.puName == puNameTwo">\n	         	<div class="tag-text-two bumpRight">CAR TWO</div>\n	          <img class="car-tag slideRight" src="assets/img/red-car.png" />\n	        </div>\n	      </div>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/pu-two/pu-two.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
@@ -4376,15 +4539,15 @@ PuTwoPage = __decorate([
 
 /***/ }),
 
-/***/ 346:
+/***/ 347:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyTradesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4511,8 +4674,8 @@ BuyTradesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-buy-trades',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/buy-trades/buy-trades.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-row>\n      <div class="absolute-pos trades-heading">Buy trades</div>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<div class="container">\n  <ion-row>\n    <ion-col>\n      <ion-card class="relative-pos card-left card-height">\n        <img class="bank-img" src="assets/img/bank-icon.png" />\n        <div class="text-height">\n          <span class="title-text">\n            {{teamCash | currency:\'USD\':true:\'1.0\'}}\n          </span>\n        </div>\n      </ion-card>\n    </ion-col>\n    \n    <ion-col>\n      <ion-card class="relative-pos card-height">\n        <img class="trades-img" src="assets/img/trade-icon-dark.png" />\n        <div class="text-height">\n          Trades: \n          <span class="title-text">\n            {{userTrades}}\n          </span>\n        </div>\n      </ion-card>\n    </ion-col>\n  </ion-row>\n\n  <div *ngIf="gameState != \'lockout\'">  \n    <ion-row>\n      <ion-col class="flex-center">\n        <ion-card class="clear-bg">\n          <div id="banner">\n            <div class="no-fill" [ngClass]="{\'fill\': buyOneTrade === 1, \'fill1\': buyThreeTrades === 1, \'fill2\': buyFiveTrades === 1}">\n              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">\n                <path fill="#04ACFF" id="waveShape" class="color-1" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z" fill-opacity="0.5"/>\n              </svg>\n            </div>\n          </div>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col class="flex-center">\n        <div class="trades-center">\n          <div class="trades-counter" [ngClass]="{\'slideDown\': buyOneTrade === 1, \'pullUp\': buyThreeTrades === 1, \'bounce\': buyFiveTrades === 1}"> \n            <span>Trades: {{ userTrades }}</span>\n          </div>\n        </div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col width-33>\n        <div class="trade-button slideExpandUp delay-3" (click)="confirmTrade(1);">\n          <div class="trade-text">Buy one trade</div>\n          <span>$500,000</span>\n        </div>\n      </ion-col>\n\n      <ion-col width-33>\n        <div class="trade-button middle-btn slideExpandUp delay-5" (click)="confirmTrade(3);">\n          <div class="trade-text">Buy three trades</div>\n          <span>1 million</span>\n        </div>\n      </ion-col>\n\n      <ion-col width-33>\n        <div class="trade-button slideExpandUp delay-7" (click)="confirmTrade(5);">\n          <div class="trade-text">Buy five trades</div>\n          <span>2 million</span>\n        </div>\n      </ion-col>\n    </ion-row>\n  </div>\n</div>\n</ion-content>\n\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/buy-trades/buy-trades.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
         __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */]])
@@ -4522,17 +4685,19 @@ BuyTradesPage = __decorate([
 
 /***/ }),
 
-/***/ 347:
+/***/ 348:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RankingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__player_team_player_team__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__top_players_top_players__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__random_league_random_league__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__custom_league_custom_league__ = __webpack_require__(350);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4542,6 +4707,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -4621,8 +4788,18 @@ var RankingPage = (function () {
             }
         }
     } //end constructor
-    RankingPage.prototype.goToPlayerTeam = function (player) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__player_team_player_team__["a" /* PlayerTeamPage */], player);
+    // goToPlayerTeam(player){
+    //   this.navCtrl.push(PlayerTeamPage, player);
+    // }
+    RankingPage.prototype.goToTopPlayers = function (player) {
+        console.log(player, "playa");
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__top_players_top_players__["a" /* TopPlayersPage */], player);
+    };
+    RankingPage.prototype.goToRandomLeague = function (player) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__random_league_random_league__["a" /* RandomLeaguePage */], player);
+    };
+    RankingPage.prototype.goToCustomLeague = function (player) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__custom_league_custom_league__["a" /* CustomLeaguePage */], player);
     };
     RankingPage.prototype.initializeItems = function () {
         this.usersList = this.usersLoadedList;
@@ -4648,20 +4825,20 @@ var RankingPage = (function () {
     RankingPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad RankingPage');
         //scroll to user
-        var target = document.querySelector('#user-details.highlight-item');
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-        });
+        // var target = document.querySelector('#user-details.highlight-item');
+        // target.scrollIntoView({
+        //   behavior: 'smooth',
+        //   block: 'center',
+        // });
     };
     return RankingPage;
 }());
 RankingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-ranking',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n		<ion-row *ngIf="noStats !== true || firstRound !== true" class="header-marg">\n			<ion-col>\n	    	<div class="stat slideExpandUp delay-3">\n        	Last Round<span>{{ pointsLastRound }}</span>\n      	</div>\n      </ion-col>\n\n      <ion-col>\n        <div class="stat slideExpandUp delay-4">\n          Total Score<span>{{userStats.totalPoints}}</span>\n        </div>\n      </ion-col>\n\n      <ion-col>\n        <div class="stat slideExpandUp delay-5">\n          Rank\n          <span>{{userStats.rank}}\n          	<div [ngClass]="{negative: userStats.rankDiff < 0}" class="positive val-change inline-elem"> \n							{{ userStats.rankDiff }}\n						</div>\n					</span>\n        </div>\n      </ion-col>\n	  </ion-row>\n\n	  <ion-row class="header-marg">\n	    <div class="header-text slideExpandUp delay-2">Team Ranking</div>\n	  </ion-row>\n		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>\n		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">\n		  <ion-item *ngIf="user.teamName"\n		   	[ngClass]="{\'highlight-item\': userData === user.email}" id="user-details">\n		   	<ion-row>\n			   	<ion-col>\n				   	<div class="team-name">{{ user.teamName}}</div>\n				  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n			   		<div class="team-trades">Trades: {{ user.trades }}</div>\n			   		<div class="points-text">\n							Total points: \n							<span class="number-points"> \n								{{ user.totalPoints }}\n							</span>\n						</div>\n			   	</ion-col>\n\n			   	<ion-col class="right-col rel-position">\n					  <div class="team-rank">{{ user.rank }}</div>\n	<!-- 						<button class="team-btn" ion-button (click)="goToPlayerTeam(user);">\n		            <ion-icon name="md-people"></ion-icon>\n							</button> -->\n					</ion-col>\n				</ion-row>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/,
+        selector: 'page-ranking',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/'<ion-header>\n  <ion-navbar color="primary">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n\n	<div class="container">\n		<ion-row *ngIf="noStats !== true || firstRound !== true" class="header-marg">\n			<ion-col>\n	    	<div class="stat slideExpandUp delay-3">\n        	Last Round<span>{{ pointsLastRound }}</span>\n      	</div>\n      </ion-col>\n\n      <ion-col >\n        <div class="stat slideExpandUp delay-4">\n          Total Score<span>{{userStats.totalPoints}}</span>\n        </div>\n      </ion-col>\n\n      <ion-col >\n        <div class="stat slideExpandUp delay-5">\n          Rank\n          <span>{{userStats.rank}} / {{ allUsers }}\n          	<div [ngClass]="{negative: userStats.rankDiff < 0}" class="positive val-change inline-elem"> \n							{{ userStats.rankDiff }}\n						</div>\n					</span>\n        </div>\n      </ion-col>\n	  </ion-row>\n		\n<!-- 		<ion-row>\n	  	<div class="header-text slideExpandUp delay-2">Rank</div>\n		</ion-row> -->\n\n	  <div class="btn-holder">\n		  <ion-row class="btn-row">\n			  <ion-col >\n			  	<button ion-button class="rank-btn slideExpandUp delay-2" (click)="goToTopPlayers(userStats)">Best of the best</button>\n				</ion-col>\n			</ion-row>\n\n			<ion-row>\n				<ion-col class="btn-col">\n				  <button class="rank-btn pullUp delay-3 row-btn" ion-button (click)="goToRandomLeague(userStats)">Random league</button>\n				</ion-col>\n				<ion-col class="btn-col">\n				 	<button class="rank-btn pullUp delay-4 row-btn" ion-button (click)="goToCustomLeague(userStats)">Create a league</button>\n				</ion-col>\n			</ion-row>\n		</div>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/ranking/ranking.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
@@ -4671,7 +4848,1083 @@ RankingPage = __decorate([
 
 /***/ }),
 
-/***/ 348:
+/***/ 349:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopPlayersPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TopPlayersPage = (function () {
+    function TopPlayersPage(navCtrl, navParams, teamData, storage, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.teamData = teamData;
+        this.storage = storage;
+        this.currentRoundData = currentRoundData;
+        this.noStats = true;
+        this.pointsLastRound = 0;
+        console.log("passed user", this.navParams.data);
+        this.user = this.navParams.data;
+        this.userData = this.navParams.data.email;
+        this.teamData.getTopPlayers().orderByChild("rank").once('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                rawList.push({
+                    id: snapshot.key,
+                    email: snapshot.val().email,
+                    teamName: snapshot.val().teamName,
+                    money: snapshot.val().money,
+                    rank: snapshot.val().rank,
+                    rankDiff: snapshot.val().rankDiff,
+                    totalPoints: snapshot.val().totalPoints,
+                    trades: snapshot.val().trades,
+                    points: snapshot.val().points,
+                    currentPoints: snapshot.val().currentPoints
+                });
+            });
+            _this.usersList = rawList;
+        });
+    } //end constructor
+    TopPlayersPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RankingPage');
+    };
+    return TopPlayersPage;
+}());
+TopPlayersPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-top-players',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/top-players/top-players.html"*/'<ion-header>\n  <ion-navbar></ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n<div class="container">\n 		<ion-row class="header-marg">\n	    <div class="header-text slideExpandUp delay-2">Best of the best</div>\n	  </ion-row>\n\n		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">\n		  <ion-item *ngIf="user.teamName"\n		   	[ngClass]="{\'highlight-item\': userData === user.email}" id="user-details">\n		   	<ion-row>\n			   	<ion-col>\n				   	<div class="team-name">{{ user.teamName}}</div>\n				  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n			   		<div class="team-trades">Trades: {{ user.trades }}</div>\n			   		<div class="points-text">\n							Total points: \n							<span class="number-points"> \n								{{ user.totalPoints }}\n							</span>\n						</div>\n			   	</ion-col>\n\n			   	<ion-col class="right-col rel-position">\n					  <div class="team-rank">{{ user.rank }}</div>\n					</ion-col>\n				</ion-row>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/top-players/top-players.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], TopPlayersPage);
+
+//# sourceMappingURL=top-players.js.map
+
+/***/ }),
+
+/***/ 350:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomLeaguePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_stats_data_stats_data__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the CustomLeaguePage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var CustomLeaguePage = (function () {
+    function CustomLeaguePage(navCtrl, navParams, teamData, statsData, storage, currentRoundData) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.teamData = teamData;
+        this.statsData = statsData;
+        this.storage = storage;
+        this.currentRoundData = currentRoundData;
+        this.noStats = true;
+        this.pointsLastRound = 0;
+        this.currentRoundData.getCurrentRound().on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snap) {
+                rawList.push({
+                    currentRound: snap.val().currentRound
+                });
+            });
+            _this.round = rawList[0].currentRound;
+            console.log('Ranking - this round:', _this.round);
+            if (_this.round > 1) {
+                _this.round = _this.round - 1;
+                _this.firstRound = false;
+            }
+            else {
+                _this.firstRound = true;
+            }
+        });
+        this.statsData.getCustomLeague().orderByChild("rank").on('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                rawList.push({
+                    id: snapshot.key,
+                    email: snapshot.val().email,
+                    teamName: snapshot.val().teamName,
+                    userId: snapshot.val().userId,
+                    customId: snapshot.val().customId,
+                });
+            });
+            _this.customPlayerIds = rawList;
+        });
+        this.teamData.getUsersList().orderByChild("rank").on('value', function (snapshot) {
+            var custList = [];
+            snapshot.forEach(function (snapshot) {
+                for (var i = 0; i < _this.customPlayerIds.length; i++) {
+                    if (snapshot.key == _this.customPlayerIds[i].userId) {
+                        custList.push({
+                            id: snapshot.key,
+                            email: snapshot.val().email,
+                            teamName: snapshot.val().teamName,
+                            money: snapshot.val().money,
+                            rank: snapshot.val().rank,
+                            rankDiff: snapshot.val().rankDiff,
+                            totalPoints: snapshot.val().totalPoints,
+                            trades: snapshot.val().trades,
+                            points: snapshot.val().points,
+                            customId: snapshot.val().customId,
+                        });
+                    }
+                }
+            });
+            _this.customPlayers = custList;
+            console.log(_this.customPlayers, "cusotm players");
+        });
+        this.teamData.getUsersList().orderByChild("rank").once('value', function (snapshot) {
+            var rawList = [];
+            snapshot.forEach(function (snapshot) {
+                rawList.push({
+                    id: snapshot.key,
+                    email: snapshot.val().email,
+                    teamName: snapshot.val().teamName,
+                    money: snapshot.val().money,
+                    rank: snapshot.val().rank,
+                    rankDiff: snapshot.val().rankDiff,
+                    totalPoints: snapshot.val().totalPoints,
+                    trades: snapshot.val().trades,
+                    points: snapshot.val().points,
+                });
+            });
+            _this.usersList = rawList;
+            _this.usersLoadedList = rawList;
+            console.log('1st: Userslist Ranking Page', _this.usersList);
+            _this.allUsers = _this.usersList.length;
+        });
+        console.log("passed user", this.navParams.data);
+        this.userData = this.navParams.data.email;
+    } //end constructor
+    CustomLeaguePage.prototype.initializeItems = function () {
+        this.usersList = this.usersLoadedList;
+    };
+    CustomLeaguePage.prototype.addToLeague = function (user) {
+        //add user to league
+        console.log(user);
+        if (this.customPlayers.length > 0) {
+            console.log("keep adding");
+            this.statsData.addCustomLeague(user);
+        }
+        else {
+            console.log("first time");
+            this.statsData.addCustomLeague(this.navParams.data);
+            this.statsData.addCustomLeague(user);
+        }
+    };
+    CustomLeaguePage.prototype.removeFromLeague = function (user) {
+        var userNode;
+        for (var i = 0; i < this.customPlayerIds.length; i++) {
+            if (this.customPlayerIds[i].email === user.email) {
+                userNode = this.customPlayerIds[i].customId;
+            }
+        }
+        this.statsData.removeFromLeague(userNode);
+    };
+    CustomLeaguePage.prototype.checkDisabled = function (user) {
+        for (var i = 0; i < this.customPlayers.length; i++) {
+            if (user.id === this.customPlayers[i].id) {
+                console.log("true", user.id);
+                return true;
+            }
+        }
+        return false;
+    };
+    CustomLeaguePage.prototype.getItems = function (searchbar) {
+        this.initializeItems();
+        var searchbarInput = searchbar.srcElement.value;
+        if (!searchbarInput) {
+            return;
+        }
+        this.usersList = this.usersList.filter(function (check) {
+            if (check.teamName && searchbarInput) {
+                if (check.teamName.toLowerCase().indexOf(searchbarInput.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            }
+        });
+    };
+    return CustomLeaguePage;
+}());
+CustomLeaguePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-custom-league',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/custom-league/custom-league.html"*/'<!--\n  Generated template for the CustomLeaguePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n	<ion-navbar></ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n	 	<ion-row class="header-marg">\n	     <div class="header-text slideExpandUp delay-2">Your League</div>\n	  </ion-row>\n	   \n	    <div *ngIf="customPlayers">\n		    <ion-list *ngFor="let user of customPlayers; let i = index" class="constructor-list">\n			  <ion-item *ngIf="user.teamName"\n			   	[ngClass]="{\'highlight-item\': userData === user.email}" id="user-details" class="pullUp delay-3">\n			   	<ion-row>\n				   	<ion-col>\n					   	<div class="team-name">{{ user.teamName}}</div>\n					  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n				   		<div class="team-trades">Trades: {{ user.trades }}</div>\n				   		<div class="points-text">\n								Total points: \n								<span class="number-points"> \n									{{ user.totalPoints }}\n								</span>\n							</div>\n				   	</ion-col>\n\n				   	<ion-col class="right-col rel-position">\n						  <ion-row>\n						  	<div class="team-rank">{{ i + 1 }}</div>\n						  </ion-row>\n						  <ion-row>\n					  		<button class="team-btn remove-btn" (click)="removeFromLeague(user)" [disabled]="user.email === userData">\n					  			<ion-icon name="md-remove-circle"></ion-icon>\n					  		</button>\n					  	</ion-row>\n						</ion-col>\n					</ion-row>\n				</ion-item>\n			</ion-list>\n	  </div>\n\n	  <div *ngIf="customPlayers.length < 1">\n	  	<div class="card pullUp delay-4">\n		  <ion-row>\n		  		<ion-col col-2 class="v-center">\n		  			<ion-icon class="icon-col" name="md-information-circle"></ion-icon>\n		  		</ion-col>\n		  		<ion-col col-10>\n		  			<p>Search the leaderboard, then click to add players to your league.</p>\n		  		</ion-col>\n		  </ion-row>\n		  </div>\n	  </div>\n\n	  <ion-row class="header-marg">\n	    <div class="header-text slideExpandUp delay-5">Leaderboard</div>\n	  </ion-row>\n\n		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>\n		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-6">\n		  <ion-item *ngIf="user.teamName"\n		   	[ngClass]="{\'highlight-item\': userData === user.email}" id="user-details">\n		   	<ion-row>\n			   	<ion-col>\n				   	<div class="team-name">{{ user.teamName}}</div>\n				  	<div class="team-cash">Cash: {{ user.money | currency:\'USD\':true:\'1.0\' }}</div>\n			   		<div class="team-trades">Trades: {{ user.trades }}</div>\n			   		<div class="points-text">\n							Total points: \n							<span class="number-points"> \n								{{ user.totalPoints }}\n							</span>\n						</div>\n			   	</ion-col>\n\n			   	<ion-col class="right-col rel-position">\n					  <ion-row>\n					  	<div class="team-rank">{{ user.rank }}</div>\n					  </ion-row>\n					  <ion-row>\n					  	<button class="team-btn add-btn1" (click)="addToLeague(user)" [disabled]="checkDisabled(user)">\n					  	  <ion-icon name="md-person-add"></ion-icon>\n					  	</button>\n					  </ion-row>\n					</ion-col>\n				</ion-row>\n			</ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/custom-league/custom-league.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_team_data_team_data__["a" /* TeamDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_stats_data_stats_data__["a" /* StatsDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */]])
+], CustomLeaguePage);
+
+//# sourceMappingURL=custom-league.js.map
+
+/***/ }),
+
+/***/ 351:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RulesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the RulesPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var RulesPage = (function () {
+    function RulesPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.overviewToggle = false;
+        this.tradesToggle = false;
+        this.upgradesToggle = false;
+        this.lockoutToggle = false;
+        this.pointsToggle = false;
+    } //end constructor
+    RulesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RulesPage');
+    };
+    return RulesPage;
+}());
+RulesPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-rules',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n\n		<!-- Overview card -->\n		<div class="rules-card slideExpandUp delay-3">\n			<button class="rules-header" (click)="overviewToggle = !overviewToggle;">\n				Overview\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': overviewToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': overviewToggle,\n				\'hidden\': !overviewToggle, \'hidden1\': tradesToggle}">\n				<p>As the manager of your own Formula One race team, with a starting budget you need to purchase a driver, chassis and power unit for both of your cars. After each F1 race weekend your drivers, chassis and power units will recieve points based on the race results. In addition the value of each part will rise or fall depending on its performance in the race.</p>\n				<p>Just before the start of each Formula One race weekend a lockout will be established, no longer allowing trades or upgrades.</p>\n				<p>\n					<span>Please note:</span><br />\n				 	If either of your cars are missing a part (driver, chassis, power unit), then no points are scored for that car.\n				 </p>\n			</div>\n		</div>\n\n		<!-- trades card -->\n		<div class="rules-card slideExpandUp delay-4">\n			<button class="rules-header" (click)="tradesToggle = !tradesToggle;">\n				Trades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': tradesToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': tradesToggle,\n			\'hidden\': !tradesToggle}">\n				<p>To maximise your score and rise in the rankings, you should always be looking to improve your team by making trades.</p>\n				<p>You start the season with twenty trades. Each time you swap a part, it will cost you one trade.</p>\n				<p>During your first round all trades are free, so experiment with different combinations of drivers, chassis and power units until you are happy with your team.</p> \n				<p>If you\'re running low on trades you can purchase additional trades, look for the + icon on the team page.</p>\n				\n				<p><span>Don\'t forget</span><br />\n					When you make a trade you recieve the value of the traded item.\n				</p>\n			</div>\n		</div>\n\n		<!-- upgrades card -->\n		<div class="rules-card slideExpandUp delay-5">\n			<button class="rules-header" (click)="upgradesToggle = !upgradesToggle;">\n				Upgrades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': upgradesToggle}"></ion-icon>\n			</button>\n\n\n			<div class="rules-content" [ngClass]="{\'showing\': upgradesToggle,\n			\'hidden\': !upgradesToggle}">\n				<p>Purchasing an upgrade will double that parts score in the next round.<p>\n				<span>Please note:</span> <br />\n				If you make an upgrade and then trade out that particular part, you will lose the upgrade!</p>\n			</div>\n		</div>\n		\n		<!-- lockout card -->\n		<div class="rules-card slideExpandUp delay-6">\n			<button class="rules-header" (click)="lockoutToggle = !lockoutToggle;">\n				Lock out\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': lockoutToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': lockoutToggle,\n			\'hidden\': !lockoutToggle}">\n				<p>Just before each race weekend the app will enter a lockout status. During this time you will not be able to make trades or upgrades until the race weekend is completed. The timer shows how long until the next lock out.</p>\n			</div>\n		</div>\n\n		<!-- point card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="pointsToggle = !pointsToggle;">\n				Points\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': pointsToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': pointsToggle,\n			\'hidden\': !pointsToggle}">\n				<p>The points allocated to drivers, chassis and power units after each race weekend is calculated from a combination of results.</p>\n				<h4>Drivers</h4>\n				<p>Drivers points are calculated by their quallifying position, race result and how many positions were gained during the race.</p>\n				<h4>Chassis</h4>\n				<p>Chassis points are calculated by the position each chassis qualified and race result of both chassis.</p>\n				<h4>Power Units</h4>\n				<p>Lastly power unit points are calulated by the best qualifying result of each brand and their race result. </p>\n			</div>\n		</div>\n\n		<!-- misc card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="extraToggle = !extraToggle;">\n				Extra information\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': extraToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': extraToggle,\n			\'hidden\': !extraToggle}">\n				<p>Once the Formula one race results have been released and pushed into the app the dollar values and scores of drivers, chassis, power units and player teams are final.</p>\n				\n				<h4>What happens if a driver is replaced?</h4>\n				<p>If during the Formula One race season a driver is unable to drive and is replaced for a race, the replacment driver will race under the usual drivers alias. Any teams effected by this will automatically be awared the results of the replacment driver after the race.</p>\n			</div>\n		</div>\n\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+], RulesPage);
+
+//# sourceMappingURL=rules.js.map
+
+/***/ }),
+
+/***/ 352:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(119);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ResetPasswordPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var ResetPasswordPage = (function () {
+    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
+        this.nav = nav;
+        this.authData = authData;
+        this.formBuilder = formBuilder;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.emailChanged = false;
+        this.passwordChanged = false;
+        this.submitAttempt = false;
+        this.resetPasswordForm = formBuilder.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
+        });
+    } //end constructor
+    ResetPasswordPage.prototype.elementChanged = function (input) {
+        var field = input.ngControl.name;
+        this[field + "Changed"] = true;
+    };
+    /**
+     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
+     *  component while the user waits.
+     *
+     * If the form is invalid it will just log the form value, feel free to handle that as you like.
+     */
+    ResetPasswordPage.prototype.resetPassword = function () {
+        var _this = this;
+        this.submitAttempt = true;
+        if (!this.resetPasswordForm.valid) {
+            console.log(this.resetPasswordForm.value);
+        }
+        else {
+            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
+                var alert = _this.alertCtrl.create({
+                    message: "We just sent you a reset link to your email",
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel',
+                            handler: function () {
+                                _this.nav.pop();
+                            }
+                        }
+                    ]
+                });
+                alert.present();
+            }, function (error) {
+                var errorMessage = error.message;
+                var errorAlert = _this.alertCtrl.create({
+                    message: errorMessage,
+                    buttons: [
+                        {
+                            text: "Ok",
+                            role: 'cancel'
+                        }
+                    ]
+                });
+                errorAlert.present();
+            });
+        }
+    };
+    return ResetPasswordPage;
+}());
+ResetPasswordPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]])
+], ResetPasswordPage);
+
+//# sourceMappingURL=reset-password.js.map
+
+/***/ }),
+
+/***/ 354:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module__ = __webpack_require__(373);
+
+
+
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_20" /* enableProdMode */])();
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 373:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_fcm__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_home__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_race_race__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_team_team__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_top_players_top_players__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_random_league_random_league__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_custom_league_custom_league__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_auth_data_auth_data__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_profile_data_profile_data__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_current_round_data_current_round_data__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_team_data_team_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_stats_data_stats_data__ = __webpack_require__(44);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+//Auth pages
+
+
+
+//Tab pages
+
+
+
+
+
+
+//Sub pages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Providers
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_race_race__["a" /* RacePage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_team_team__["a" /* TeamPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__["a" /* RankingPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__["a" /* RulesPage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__["a" /* PuOnePage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__["a" /* PuTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__["a" /* PlayerTeamPage */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_top_players_top_players__["a" /* TopPlayersPage */],
+            __WEBPACK_IMPORTED_MODULE_30__pages_random_league_random_league__["a" /* RandomLeaguePage */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_custom_league_custom_league__["a" /* CustomLeaguePage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {
+                tabsHideOnSubPages: true,
+            }, {
+                links: [
+                    { loadChildren: '../pages/random-league/random-league.module#RandomLeaguePageModule', name: 'RandomLeaguePage', segment: 'random-league', priority: 'low', defaultHistory: [] }
+                ]
+            }),
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_race_race__["a" /* RacePage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_team_team__["a" /* TeamPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__["a" /* RankingPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__["a" /* RulesPage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__["a" /* PuOnePage */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__["a" /* PuTwoPage */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__["a" /* PlayerTeamPage */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_top_players_top_players__["a" /* TopPlayersPage */],
+            __WEBPACK_IMPORTED_MODULE_30__pages_random_league_random_league__["a" /* RandomLeaguePage */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_custom_league_custom_league__["a" /* CustomLeaguePage */],
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
+            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
+            __WEBPACK_IMPORTED_MODULE_32__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_33__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_34__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_35__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_36__providers_team_data_team_data__["a" /* TeamDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_37__providers_stats_data_stats_data__["a" /* StatsDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_fcm__["a" /* FCM */],
+        ]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 422:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(353);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen, alertCtrl, fcm) {
+        var _this = this;
+        this.alertCtrl = alertCtrl;
+        this.fcm = fcm;
+        var config = {
+            apiKey: "AIzaSyB1HE0-IWi4TtHuKozfJWuacYuOx33e0FY",
+            authDomain: "one-racing-league.firebaseio.com",
+            databaseURL: "https://one-racing-league.firebaseio.com/",
+            storageBucket: "gs://one-racing-league.appspot.com/",
+            messagingSenderId: "967268565014"
+        };
+        __WEBPACK_IMPORTED_MODULE_6_firebase__["initializeApp"](config);
+        this.zone = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]({});
+        var unsubscribe = __WEBPACK_IMPORTED_MODULE_6_firebase__["auth"]().onAuthStateChanged(function (user) {
+            _this.zone.run(function () {
+                if (!user) {
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
+                    unsubscribe();
+                }
+                else {
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */];
+                    unsubscribe();
+                }
+            });
+        });
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            _this.fcm.subscribeToTopic('all');
+            _this.fcm.getToken().then(function (token) {
+                // backend.registerToken(token);
+            });
+            _this.fcm.onNotification().subscribe(function (data) {
+                if (data.wasTapped) {
+                    console.info("Received in background a");
+                    console.log(data, "data");
+                    alert(data.title);
+                }
+                else {
+                    console.info("Received in foreground b");
+                    console.log(data, "data");
+                    alert(data.title);
+                }
+                ;
+            });
+            _this.fcm.onTokenRefresh().subscribe(function (token) {
+                // backend.registerToken(token);
+            });
+            splashScreen.hide();
+        });
+    }
+    return MyApp;
+}());
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/app/app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__["a" /* FCM */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 44:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatsDataProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the StatsDataProvider provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular DI.
+*/
+var StatsDataProvider = (function () {
+    function StatsDataProvider(http) {
+        this.http = http;
+        this.currentUser = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.auth().currentUser.uid;
+        this.stats = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/');
+        this.randomLeague = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/randomLeague/');
+        this.customLeague = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/customLeague/');
+    }
+    StatsDataProvider.prototype.getStats = function () {
+        return this.stats;
+    };
+    StatsDataProvider.prototype.getRandomLeague = function () {
+        return this.randomLeague;
+    };
+    StatsDataProvider.prototype.getCustomLeague = function () {
+        return this.customLeague;
+    };
+    StatsDataProvider.prototype.addCustomLeague = function (user) {
+        var _this = this;
+        if (user.points === undefined) {
+            user.points = 0;
+        }
+        if (user.teamName === undefined) {
+            user.teamName = 'New Team';
+        }
+        return this.customLeague.push({
+            userId: user.id,
+            email: user.email,
+            teamName: user.teamName,
+            money: user.money,
+            rank: user.rank,
+            rankDiff: user.rankDiff,
+            totalPoints: user.totalPoints,
+            trades: user.trades,
+            points: user.points,
+        }).then(function (newEvent) {
+            _this.customLeague.child(newEvent.key).child('customId').set(newEvent.key);
+        });
+    };
+    StatsDataProvider.prototype.addRandomLeague = function (user) {
+        if (user.points === undefined) {
+            user.points = 0;
+        }
+        if (user.teamName === undefined) {
+            user.teamName = 'New Team';
+        }
+        return this.randomLeague.push({
+            userId: user.id,
+            email: user.email,
+            teamName: user.teamName,
+            money: user.money,
+            rank: user.rank,
+            rankDiff: user.rankDiff,
+            totalPoints: user.totalPoints,
+            trades: user.trades,
+            points: user.points,
+        });
+    };
+    StatsDataProvider.prototype.removeFromLeague = function (userNode) {
+        var customPlayer;
+        customPlayer = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('userProfile/' + this.currentUser + '/customLeague/' + userNode);
+        customPlayer.remove();
+    };
+    return StatsDataProvider;
+}());
+StatsDataProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+], StatsDataProvider);
+
+//# sourceMappingURL=stats-data.js.map
+
+/***/ }),
+
+/***/ 461:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 227,
+	"./af.js": 227,
+	"./ar": 228,
+	"./ar-dz": 229,
+	"./ar-dz.js": 229,
+	"./ar-kw": 230,
+	"./ar-kw.js": 230,
+	"./ar-ly": 231,
+	"./ar-ly.js": 231,
+	"./ar-ma": 232,
+	"./ar-ma.js": 232,
+	"./ar-sa": 233,
+	"./ar-sa.js": 233,
+	"./ar-tn": 234,
+	"./ar-tn.js": 234,
+	"./ar.js": 228,
+	"./az": 235,
+	"./az.js": 235,
+	"./be": 236,
+	"./be.js": 236,
+	"./bg": 237,
+	"./bg.js": 237,
+	"./bn": 238,
+	"./bn.js": 238,
+	"./bo": 239,
+	"./bo.js": 239,
+	"./br": 240,
+	"./br.js": 240,
+	"./bs": 241,
+	"./bs.js": 241,
+	"./ca": 242,
+	"./ca.js": 242,
+	"./cs": 243,
+	"./cs.js": 243,
+	"./cv": 244,
+	"./cv.js": 244,
+	"./cy": 245,
+	"./cy.js": 245,
+	"./da": 246,
+	"./da.js": 246,
+	"./de": 247,
+	"./de-at": 248,
+	"./de-at.js": 248,
+	"./de-ch": 249,
+	"./de-ch.js": 249,
+	"./de.js": 247,
+	"./dv": 250,
+	"./dv.js": 250,
+	"./el": 251,
+	"./el.js": 251,
+	"./en-au": 252,
+	"./en-au.js": 252,
+	"./en-ca": 253,
+	"./en-ca.js": 253,
+	"./en-gb": 254,
+	"./en-gb.js": 254,
+	"./en-ie": 255,
+	"./en-ie.js": 255,
+	"./en-nz": 256,
+	"./en-nz.js": 256,
+	"./eo": 257,
+	"./eo.js": 257,
+	"./es": 258,
+	"./es-do": 259,
+	"./es-do.js": 259,
+	"./es.js": 258,
+	"./et": 260,
+	"./et.js": 260,
+	"./eu": 261,
+	"./eu.js": 261,
+	"./fa": 262,
+	"./fa.js": 262,
+	"./fi": 263,
+	"./fi.js": 263,
+	"./fo": 264,
+	"./fo.js": 264,
+	"./fr": 265,
+	"./fr-ca": 266,
+	"./fr-ca.js": 266,
+	"./fr-ch": 267,
+	"./fr-ch.js": 267,
+	"./fr.js": 265,
+	"./fy": 268,
+	"./fy.js": 268,
+	"./gd": 269,
+	"./gd.js": 269,
+	"./gl": 270,
+	"./gl.js": 270,
+	"./gom-latn": 271,
+	"./gom-latn.js": 271,
+	"./he": 272,
+	"./he.js": 272,
+	"./hi": 273,
+	"./hi.js": 273,
+	"./hr": 274,
+	"./hr.js": 274,
+	"./hu": 275,
+	"./hu.js": 275,
+	"./hy-am": 276,
+	"./hy-am.js": 276,
+	"./id": 277,
+	"./id.js": 277,
+	"./is": 278,
+	"./is.js": 278,
+	"./it": 279,
+	"./it.js": 279,
+	"./ja": 280,
+	"./ja.js": 280,
+	"./jv": 281,
+	"./jv.js": 281,
+	"./ka": 282,
+	"./ka.js": 282,
+	"./kk": 283,
+	"./kk.js": 283,
+	"./km": 284,
+	"./km.js": 284,
+	"./kn": 285,
+	"./kn.js": 285,
+	"./ko": 286,
+	"./ko.js": 286,
+	"./ky": 287,
+	"./ky.js": 287,
+	"./lb": 288,
+	"./lb.js": 288,
+	"./lo": 289,
+	"./lo.js": 289,
+	"./lt": 290,
+	"./lt.js": 290,
+	"./lv": 291,
+	"./lv.js": 291,
+	"./me": 292,
+	"./me.js": 292,
+	"./mi": 293,
+	"./mi.js": 293,
+	"./mk": 294,
+	"./mk.js": 294,
+	"./ml": 295,
+	"./ml.js": 295,
+	"./mr": 296,
+	"./mr.js": 296,
+	"./ms": 297,
+	"./ms-my": 298,
+	"./ms-my.js": 298,
+	"./ms.js": 297,
+	"./my": 299,
+	"./my.js": 299,
+	"./nb": 300,
+	"./nb.js": 300,
+	"./ne": 301,
+	"./ne.js": 301,
+	"./nl": 302,
+	"./nl-be": 303,
+	"./nl-be.js": 303,
+	"./nl.js": 302,
+	"./nn": 304,
+	"./nn.js": 304,
+	"./pa-in": 305,
+	"./pa-in.js": 305,
+	"./pl": 306,
+	"./pl.js": 306,
+	"./pt": 307,
+	"./pt-br": 308,
+	"./pt-br.js": 308,
+	"./pt.js": 307,
+	"./ro": 309,
+	"./ro.js": 309,
+	"./ru": 310,
+	"./ru.js": 310,
+	"./sd": 311,
+	"./sd.js": 311,
+	"./se": 312,
+	"./se.js": 312,
+	"./si": 313,
+	"./si.js": 313,
+	"./sk": 314,
+	"./sk.js": 314,
+	"./sl": 315,
+	"./sl.js": 315,
+	"./sq": 316,
+	"./sq.js": 316,
+	"./sr": 317,
+	"./sr-cyrl": 318,
+	"./sr-cyrl.js": 318,
+	"./sr.js": 317,
+	"./ss": 319,
+	"./ss.js": 319,
+	"./sv": 320,
+	"./sv.js": 320,
+	"./sw": 321,
+	"./sw.js": 321,
+	"./ta": 322,
+	"./ta.js": 322,
+	"./te": 323,
+	"./te.js": 323,
+	"./tet": 324,
+	"./tet.js": 324,
+	"./th": 325,
+	"./th.js": 325,
+	"./tl-ph": 326,
+	"./tl-ph.js": 326,
+	"./tlh": 327,
+	"./tlh.js": 327,
+	"./tr": 328,
+	"./tr.js": 328,
+	"./tzl": 329,
+	"./tzl.js": 329,
+	"./tzm": 330,
+	"./tzm-latn": 331,
+	"./tzm-latn.js": 331,
+	"./tzm.js": 330,
+	"./uk": 332,
+	"./uk.js": 332,
+	"./ur": 333,
+	"./ur.js": 333,
+	"./uz": 334,
+	"./uz-latn": 335,
+	"./uz-latn.js": 335,
+	"./uz.js": 334,
+	"./vi": 336,
+	"./vi.js": 336,
+	"./x-pseudo": 337,
+	"./x-pseudo.js": 337,
+	"./yo": 338,
+	"./yo.js": 338,
+	"./zh-cn": 339,
+	"./zh-cn.js": 339,
+	"./zh-hk": 340,
+	"./zh-hk.js": 340,
+	"./zh-tw": 341,
+	"./zh-tw.js": 341
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 461;
+
+/***/ }),
+
+/***/ 479:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4796,709 +6049,15 @@ PlayerTeamPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-player-team',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/player-team/player-team.html"*/'<!--\n  Generated template for the PlayerTeamPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n  <div class="team-text">\n 	 The garage of {{ playerTeam.teamName }}\n 	</div>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n	<div class="container margin-bottom">\n	<!-- Info Panel -->\n	<div>\n    <ion-row>\n    	<ion-col>\n	      <ion-card class="relative-pos card-left card-height">\n	     		<img class="bank-img" src="assets/img/bank-icon.png" />\n	      	<div class="text-height">\n	      		<span class="title-text">\n	      			{{playerTeam.money | currency:\'USD\':true:\'1.0\'}}\n	      		</span>\n	      	</div>\n	      </ion-card>\n    	</ion-col>\n\n    	<ion-col>\n	      <ion-card class="relative-pos card-height">\n	     		<img class="trades-img" src="assets/img/trade-icon-dark.png" />\n	      	<div class="text-height">\n	      		Trades: \n	      		<span class="title-text">\n	      			{{playerTeam.trades }}\n	      		</span>\n	      	</div>\n				</ion-card>\n			</ion-col>\n  	</ion-row>\n	</div>\n\n	<ion-row class="top-space-lg">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center positive-rel slideExpandUp delay-2">\n			CAR ONE\n		</div>\n	</ion-row>\n	<ion-row class="top-space">\n		<!-- Driver: car one -->\n		<ion-col width-33 class="pullUp delay-1">\n			<ion-card class="hq-card card-1 empty-card" *ngIf="userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-1" *ngIf="!userDriverOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Driver</div>\n				</ion-card-header>\n\n				<div class="name">\n					{{carOneDriver.firstName}}<br />\n				 	{{carOneDriver.lastName}}\n				</div>\n\n				<ion-row> \n	        <img [src]="carOneDriver.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n\n			  <ion-row>\n			  	<div class="points">{{ carOneDriver.driverPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOneDriver.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: carOneDriver.valChange < 0}" class="positive val-change"> \n					{{ carOneDriver.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOneDriver.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Chassis: car one -->\n		<ion-col width-33 class="pullUp delay-2">\n			<ion-card class="hq-card card-2 empty-card" *ngIf="userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n\n			</ion-card>\n\n			<ion-card class="hq-card card-2" *ngIf="!userChassisOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{carOneChassis.chassisName}}</div>\n				<ion-row>\n					<img [src]="carOneChassis.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				\n				<ion-row>\n					<div class="points">{{ carOneChassis.chassisPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOneChassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		\n	  		<h5 [ngClass]="{negative: carOneChassis.valChange < 0}" class="positive val-change"> {{ carOneChassis.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>	\n					\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOneChassis.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n\n		<!-- Pu: car one -->\n		<ion-col width-33 class="pullUp delay-5">\n			<ion-card class="hq-card card-3 empty-card" *ngIf="userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power unit</div>\n				</ion-card-header>\n	\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />	    		\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-3" *ngIf="!userPuOneEmpty">\n				<ion-card-header class="card-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n\n				<div class="name">{{carOnePu.puName}}</div>\n				<ion-row>\n					<img [src]="carOnePu.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n            	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-one-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ carOnePu.puPoints }}</div>\n				</ion-row>\n\n				<div class="value">\n					{{ +carOnePu.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n\n				<h5 [ngClass]="{negative: carOnePu.valChange < 0}" class="positive val-change"> \n					{{ carOnePu.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carOnePu.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n		</ion-col>		\n	</ion-row>\n\n	<!-- *********** Car Two **********-->\n	<ion-row class="top-space">\n		<img class="car-bg" src="assets/img/team-car.png" />\n		<div class="text-center primary-bg slideExpandUp delay-3">\n			CAR TWO\n		</div>\n	</ion-row>\n\n	<!-- Driver: car two -->\n		<ion-row class="top-space">\n		<ion-col width-33 class="pullUp delay-4">\n			<ion-card class="hq-card card-1 empty-card" *ngIf="userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="driver-img driver-default" src="assets/img/driver-default.png" />	    		\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-1 pullUp delay-4" *ngIf="!userDriverTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Driver</div>\n				</ion-card-header>\n\n				<div class="name">\n					{{carTwoDriver.firstName}}<br />\n				 	{{carTwoDriver.lastName}}\n				</div>\n				<ion-row> \n	        <img [src]="carTwoDriver.driverImage" class="driver-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	        <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n			  </ion-row>\n			  <ion-row>\n			  	<div class="points">{{ carTwoDriver.driverPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoDriver.driverValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: carTwoDriver.valChange < 0}" class="positive val-change"> \n					{{ carTwoDriver.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoDriver.driverUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Chassis: car two -->\n		<ion-col width-33 class="pullUp delay-5">\n			<ion-card class="hq-card card-2 empty-card" *ngIf="userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="chassis-img chassis-default" src="assets/img/chassis-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-2" *ngIf="!userChassisTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Chassis</div>\n				</ion-card-header>\n				<div class="name">{{carTwoChassis.chassisName}}</div>\n				<ion-row>\n					<img [src]="carTwoChassis.chassisImage" class="chassis-img" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />\n	    		<ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n				</ion-row>\n				<ion-row>\n					<div class="points">{{ carTwoChassis.chassisPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoChassis.chassisValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n	  		<h5 [ngClass]="{negative: carTwoChassis.valChange < 0}" class="positive val-change"> {{ carTwoChassis.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoChassis.chassisUpgrade === true}" name="star"></ion-icon>\n			</ion-card>\n		</ion-col>\n\n		<!-- Pu: car two -->\n		<ion-col width-33 class="pullUp delay-6">\n			<ion-card class="hq-card card-3 empty-card" *ngIf="userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<ion-row>\n					<img class="pu-image pu-default" src="assets/img/pu-default.png" />\n				</ion-row>\n			</ion-card>\n\n			<ion-card class="hq-card card-3" *ngIf="!userPuTwoEmpty">\n				<ion-card-header class="car-two-header">\n					<div>Power Unit</div>\n				</ion-card-header>\n				<div class="name">{{carTwoPu.puName}}</div>\n				<ion-row>\n					<img [src]="carTwoPu.puImage" class="pu-image" (load)="loaded = true" [ngClass]="{\'img-loaded\':loaded}" [hidden]="!loaded" />	\n          <ion-spinner name="crescent" [ngClass]="{\'center-spinner car-two-spinner\':true}" *ngIf="!loaded"></ion-spinner>\n        </ion-row>\n\n        <ion-row>\n					<div class="points">{{ carTwoPu.puPoints }}</div>\n				</ion-row>\n				<div class="value">\n					{{ +carTwoPu.puValue | currency:\'USD\':true:\'1.0\' }}\n				</div>\n				<h5 [ngClass]="{negative: carTwoPu.valChange < 0}" class="positive val-change"> \n					{{ carTwoPu.valChange | currency:\'USD\':true:\'1.0\' }}\n				</h5>\n				<ion-icon class="icon-car-1 hide-icon" [ngClass]="{\'show-icon\': carTwoPu.puUpgrade === true}" name="star"></ion-icon>  \n			</ion-card>\n		</ion-col>\n	</ion-row>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/player-team/player-team.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
 ], PlayerTeamPage);
 
 //# sourceMappingURL=player-team.js.map
 
 /***/ }),
 
-/***/ 349:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RulesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the RulesPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var RulesPage = (function () {
-    function RulesPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.overviewToggle = false;
-        this.tradesToggle = false;
-        this.upgradesToggle = false;
-        this.lockoutToggle = false;
-        this.pointsToggle = false;
-    } //end constructor
-    RulesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RulesPage');
-    };
-    return RulesPage;
-}());
-RulesPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-rules',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<div class="container">\n\n		<!-- Overview card -->\n		<div class="rules-card slideExpandUp delay-3">\n			<button class="rules-header" (click)="overviewToggle = !overviewToggle;">\n				Overview\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': overviewToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': overviewToggle,\n				\'hidden\': !overviewToggle, \'hidden1\': tradesToggle}">\n				<p>As the manager of your own Formula One race team, with a starting budget you need to purchase a driver, chassis and power unit for both of your cars. After each F1 race weekend your drivers, chassis and power units will recieve points based on the race results. In addition the value of each part will rise or fall depending on its performance in the race.</p>\n				<p>Just before the start of each Formula One race weekend a lockout will be established, no longer allowing trades or upgrades.</p>\n				<p>\n					<span>Please note:</span><br />\n				 	If either of your cars are missing a part (driver, chassis, power unit), then no points are scored for that car.\n				 </p>\n			</div>\n		</div>\n\n		<!-- trades card -->\n		<div class="rules-card slideExpandUp delay-4">\n			<button class="rules-header" (click)="tradesToggle = !tradesToggle;">\n				Trades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': tradesToggle}"></ion-icon>\n			</button>\n\n			<div class="rules-content" [ngClass]="{\'showing\': tradesToggle,\n			\'hidden\': !tradesToggle}">\n				<p>To maximise your score and rise in the rankings, you should always be looking to improve your team by making trades.</p>\n				<p>You start the season with twenty trades. Each time you swap a part, it will cost you one trade.</p>\n				<p>During your first round all trades are free, so experiment with different combinations of drivers, chassis and power units until you are happy with your team.</p> \n				<p>If you\'re running low on trades you can purchase additional trades, look for the + icon on the team page.</p>\n				\n				<p><span>Don\'t forget</span><br />\n					When you make a trade you recieve the value of the traded item.\n				</p>\n			</div>\n		</div>\n\n		<!-- upgrades card -->\n		<div class="rules-card slideExpandUp delay-5">\n			<button class="rules-header" (click)="upgradesToggle = !upgradesToggle;">\n				Upgrades\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': upgradesToggle}"></ion-icon>\n			</button>\n\n\n			<div class="rules-content" [ngClass]="{\'showing\': upgradesToggle,\n			\'hidden\': !upgradesToggle}">\n				<p>Purchasing an upgrade will double that parts score in the next round.<p>\n				<span>Please note:</span> <br />\n				If you make an upgrade and then trade out that particular part, you will lose the upgrade!</p>\n			</div>\n		</div>\n		\n		<!-- lockout card -->\n		<div class="rules-card slideExpandUp delay-6">\n			<button class="rules-header" (click)="lockoutToggle = !lockoutToggle;">\n				Lock out\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': lockoutToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': lockoutToggle,\n			\'hidden\': !lockoutToggle}">\n				<p>Just before each race weekend the app will enter a lockout status. During this time you will not be able to make trades or upgrades until the race weekend is completed. The timer shows how long until the next lock out.</p>\n			</div>\n		</div>\n\n		<!-- point card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="pointsToggle = !pointsToggle;">\n				Points\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': pointsToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': pointsToggle,\n			\'hidden\': !pointsToggle}">\n				<p>The points allocated to drivers, chassis and power units after each race weekend is calculated from a combination of results.</p>\n				<h4>Drivers</h4>\n				<p>Drivers points are calculated by their quallifying position, race result and how many positions were gained during the race.</p>\n				<h4>Chassis</h4>\n				<p>Chassis points are calculated by the position each chassis qualified and race result of both chassis.</p>\n				<h4>Power Units</h4>\n				<p>Lastly power unit points are calulated by the best qualifying result of each brand and their race result. </p>\n			</div>\n		</div>\n\n		<!-- misc card -->\n		<div class="rules-card slideExpandUp delay-7">\n			<button class="rules-header" (click)="extraToggle = !extraToggle;">\n				Extra information\n				 <ion-icon class="header-icon" ios="ios-arrow-down-outline" md="ios-arrow-down-outline" [ngClass]="{\'spin\': extraToggle}"></ion-icon>\n			</button>\n			<div class="rules-content" [ngClass]="{\'showing\': extraToggle,\n			\'hidden\': !extraToggle}">\n				<p>Once the Formula one race results have been released and pushed into the app the dollar values and scores of drivers, chassis, power units and player teams are final.</p>\n				\n				<h4>What happens if a driver is replaced?</h4>\n				<p>If during the Formula One race season a driver is unable to drive and is replaced for a race, the replacment driver will race under the usual drivers alias. Any teams effected by this will automatically be awared the results of the replacment driver after the race.</p>\n			</div>\n		</div>\n\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/rules/rules.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-], RulesPage);
-
-//# sourceMappingURL=rules.js.map
-
-/***/ }),
-
-/***/ 350:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__validators_email__ = __webpack_require__(119);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the ResetPasswordPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ResetPasswordPage = (function () {
-    function ResetPasswordPage(nav, authData, formBuilder, alertCtrl, loadingCtrl) {
-        this.nav = nav;
-        this.authData = authData;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.emailChanged = false;
-        this.passwordChanged = false;
-        this.submitAttempt = false;
-        this.resetPasswordForm = formBuilder.group({
-            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__validators_email__["a" /* EmailValidator */].isValid])],
-        });
-    } //end constructor
-    ResetPasswordPage.prototype.elementChanged = function (input) {
-        var field = input.ngControl.name;
-        this[field + "Changed"] = true;
-    };
-    /**
-     * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
-     *  component while the user waits.
-     *
-     * If the form is invalid it will just log the form value, feel free to handle that as you like.
-     */
-    ResetPasswordPage.prototype.resetPassword = function () {
-        var _this = this;
-        this.submitAttempt = true;
-        if (!this.resetPasswordForm.valid) {
-            console.log(this.resetPasswordForm.value);
-        }
-        else {
-            this.authData.resetPassword(this.resetPasswordForm.value.email).then(function (user) {
-                var alert = _this.alertCtrl.create({
-                    message: "We just sent you a reset link to your email",
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel',
-                            handler: function () {
-                                _this.nav.pop();
-                            }
-                        }
-                    ]
-                });
-                alert.present();
-            }, function (error) {
-                var errorMessage = error.message;
-                var errorAlert = _this.alertCtrl.create({
-                    message: errorMessage,
-                    buttons: [
-                        {
-                            text: "Ok",
-                            role: 'cancel'
-                        }
-                    ]
-                });
-                errorAlert.present();
-            });
-        }
-    };
-    return ResetPasswordPage;
-}());
-ResetPasswordPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-reset-password',template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title class="center-text">\n      Reset your password\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="login">\n<div class="container">\n  <ion-row>\n    <img src="assets/img/welcome-logo1.png" class="welcome-logo" />\n  </ion-row>\n  <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>\n  <ion-card>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"\n        placeholder="Your email address"\n        [class.invalid]="!resetPasswordForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>\n    </ion-item>\n    <ion-item class="error-message" *ngIf="!resetPasswordForm.controls.email.valid  && (emailChanged || submitAttempt)">\n      <p>Please enter a valid email.</p>\n    </ion-item>\n\n    <button ion-button block type="submit" class="login-btn">\n      Reset your Password\n    </button>\n    </ion-card>\n  </form>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/reset-password/reset-password.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
-], ResetPasswordPage);
-
-//# sourceMappingURL=reset-password.js.map
-
-/***/ }),
-
-/***/ 352:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module__ = __webpack_require__(371);
-
-
-
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_20" /* enableProdMode */])();
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
-
-/***/ }),
-
-/***/ 371:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(414);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_fcm__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_home__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_race_race__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_team_team__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__ = __webpack_require__(347);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__ = __webpack_require__(346);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__ = __webpack_require__(342);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__ = __webpack_require__(348);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_auth_data_auth_data__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_profile_data_profile_data__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_current_round_data_current_round_data__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_team_data_team_data__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_stats_data_stats_data__ = __webpack_require__(66);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-//Auth pages
-
-
-
-//Tab pages
-
-
-
-
-
-
-//Sub pages
-
-
-
-
-
-
-
-
-
-
-
-//Providers
-
-
-
-
-
-
-var AppModule = (function () {
-    function AppModule() {
-    }
-    return AppModule;
-}());
-AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_race_race__["a" /* RacePage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_team_team__["a" /* TeamPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__["a" /* RankingPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__["a" /* RulesPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__["a" /* PuOnePage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__["a" /* PuTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__["a" /* PlayerTeamPage */],
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {
-                tabsHideOnSubPages: true,
-            }),
-            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["a" /* IonicStorageModule */].forRoot()
-        ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
-        entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_reset_password_reset_password__["a" /* ResetPasswordPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_race_race__["a" /* RacePage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_team_team__["a" /* TeamPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_ranking_ranking__["a" /* RankingPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_rules_rules__["a" /* RulesPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_buy_trades_buy_trades__["a" /* BuyTradesPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_driver_one_driver_one__["a" /* DriverOnePage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_driver_two_driver_two__["a" /* DriverTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_chassis_one_chassis_one__["a" /* ChassisOnePage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_chassis_two_chassis_two__["a" /* ChassisTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_pu_one_pu_one__["a" /* PuOnePage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_pu_two_pu_two__["a" /* PuTwoPage */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_driver_stats_driver_stats__["a" /* DriverStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_chassis_stats_chassis_stats__["a" /* ChassisStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_pu_stats_pu_stats__["a" /* PuStatsPage */],
-            __WEBPACK_IMPORTED_MODULE_28__pages_player_team_player_team__["a" /* PlayerTeamPage */],
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
-            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_29__providers_auth_data_auth_data__["a" /* AuthDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_30__providers_profile_data_profile_data__["a" /* ProfileDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_31__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_32__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_33__providers_team_data_team_data__["a" /* TeamDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_34__providers_stats_data_stats_data__["a" /* StatsDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_8__ionic_native_fcm__["a" /* FCM */],
-        ]
-    })
-], AppModule);
-
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 414:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(351);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen, alertCtrl, fcm) {
-        var _this = this;
-        this.alertCtrl = alertCtrl;
-        this.fcm = fcm;
-        var config = {
-            apiKey: "AIzaSyB1HE0-IWi4TtHuKozfJWuacYuOx33e0FY",
-            authDomain: "one-racing-league.firebaseio.com",
-            databaseURL: "https://one-racing-league.firebaseio.com/",
-            storageBucket: "gs://one-racing-league.appspot.com/",
-            messagingSenderId: "967268565014"
-        };
-        __WEBPACK_IMPORTED_MODULE_6_firebase__["initializeApp"](config);
-        this.zone = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]({});
-        var unsubscribe = __WEBPACK_IMPORTED_MODULE_6_firebase__["auth"]().onAuthStateChanged(function (user) {
-            _this.zone.run(function () {
-                if (!user) {
-                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
-                    unsubscribe();
-                }
-                else {
-                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */];
-                    unsubscribe();
-                }
-            });
-        });
-        platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            _this.fcm.subscribeToTopic('all');
-            _this.fcm.getToken().then(function (token) {
-                // backend.registerToken(token);
-            });
-            _this.fcm.onNotification().subscribe(function (data) {
-                if (data.wasTapped) {
-                    console.info("Received in background a");
-                    console.log(data, "data");
-                    alert(data.title);
-                }
-                else {
-                    console.info("Received in foreground b");
-                    console.log(data, "data");
-                    alert(data.title);
-                }
-                ;
-            });
-            _this.fcm.onTokenRefresh().subscribe(function (token) {
-                // backend.registerToken(token);
-            });
-            splashScreen.hide();
-        });
-    }
-    return MyApp;
-}());
-MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/app/app.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__["a" /* FCM */]])
-], MyApp);
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 459:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 226,
-	"./af.js": 226,
-	"./ar": 227,
-	"./ar-dz": 228,
-	"./ar-dz.js": 228,
-	"./ar-kw": 229,
-	"./ar-kw.js": 229,
-	"./ar-ly": 230,
-	"./ar-ly.js": 230,
-	"./ar-ma": 231,
-	"./ar-ma.js": 231,
-	"./ar-sa": 232,
-	"./ar-sa.js": 232,
-	"./ar-tn": 233,
-	"./ar-tn.js": 233,
-	"./ar.js": 227,
-	"./az": 234,
-	"./az.js": 234,
-	"./be": 235,
-	"./be.js": 235,
-	"./bg": 236,
-	"./bg.js": 236,
-	"./bn": 237,
-	"./bn.js": 237,
-	"./bo": 238,
-	"./bo.js": 238,
-	"./br": 239,
-	"./br.js": 239,
-	"./bs": 240,
-	"./bs.js": 240,
-	"./ca": 241,
-	"./ca.js": 241,
-	"./cs": 242,
-	"./cs.js": 242,
-	"./cv": 243,
-	"./cv.js": 243,
-	"./cy": 244,
-	"./cy.js": 244,
-	"./da": 245,
-	"./da.js": 245,
-	"./de": 246,
-	"./de-at": 247,
-	"./de-at.js": 247,
-	"./de-ch": 248,
-	"./de-ch.js": 248,
-	"./de.js": 246,
-	"./dv": 249,
-	"./dv.js": 249,
-	"./el": 250,
-	"./el.js": 250,
-	"./en-au": 251,
-	"./en-au.js": 251,
-	"./en-ca": 252,
-	"./en-ca.js": 252,
-	"./en-gb": 253,
-	"./en-gb.js": 253,
-	"./en-ie": 254,
-	"./en-ie.js": 254,
-	"./en-nz": 255,
-	"./en-nz.js": 255,
-	"./eo": 256,
-	"./eo.js": 256,
-	"./es": 257,
-	"./es-do": 258,
-	"./es-do.js": 258,
-	"./es.js": 257,
-	"./et": 259,
-	"./et.js": 259,
-	"./eu": 260,
-	"./eu.js": 260,
-	"./fa": 261,
-	"./fa.js": 261,
-	"./fi": 262,
-	"./fi.js": 262,
-	"./fo": 263,
-	"./fo.js": 263,
-	"./fr": 264,
-	"./fr-ca": 265,
-	"./fr-ca.js": 265,
-	"./fr-ch": 266,
-	"./fr-ch.js": 266,
-	"./fr.js": 264,
-	"./fy": 267,
-	"./fy.js": 267,
-	"./gd": 268,
-	"./gd.js": 268,
-	"./gl": 269,
-	"./gl.js": 269,
-	"./gom-latn": 270,
-	"./gom-latn.js": 270,
-	"./he": 271,
-	"./he.js": 271,
-	"./hi": 272,
-	"./hi.js": 272,
-	"./hr": 273,
-	"./hr.js": 273,
-	"./hu": 274,
-	"./hu.js": 274,
-	"./hy-am": 275,
-	"./hy-am.js": 275,
-	"./id": 276,
-	"./id.js": 276,
-	"./is": 277,
-	"./is.js": 277,
-	"./it": 278,
-	"./it.js": 278,
-	"./ja": 279,
-	"./ja.js": 279,
-	"./jv": 280,
-	"./jv.js": 280,
-	"./ka": 281,
-	"./ka.js": 281,
-	"./kk": 282,
-	"./kk.js": 282,
-	"./km": 283,
-	"./km.js": 283,
-	"./kn": 284,
-	"./kn.js": 284,
-	"./ko": 285,
-	"./ko.js": 285,
-	"./ky": 286,
-	"./ky.js": 286,
-	"./lb": 287,
-	"./lb.js": 287,
-	"./lo": 288,
-	"./lo.js": 288,
-	"./lt": 289,
-	"./lt.js": 289,
-	"./lv": 290,
-	"./lv.js": 290,
-	"./me": 291,
-	"./me.js": 291,
-	"./mi": 292,
-	"./mi.js": 292,
-	"./mk": 293,
-	"./mk.js": 293,
-	"./ml": 294,
-	"./ml.js": 294,
-	"./mr": 295,
-	"./mr.js": 295,
-	"./ms": 296,
-	"./ms-my": 297,
-	"./ms-my.js": 297,
-	"./ms.js": 296,
-	"./my": 298,
-	"./my.js": 298,
-	"./nb": 299,
-	"./nb.js": 299,
-	"./ne": 300,
-	"./ne.js": 300,
-	"./nl": 301,
-	"./nl-be": 302,
-	"./nl-be.js": 302,
-	"./nl.js": 301,
-	"./nn": 303,
-	"./nn.js": 303,
-	"./pa-in": 304,
-	"./pa-in.js": 304,
-	"./pl": 305,
-	"./pl.js": 305,
-	"./pt": 306,
-	"./pt-br": 307,
-	"./pt-br.js": 307,
-	"./pt.js": 306,
-	"./ro": 308,
-	"./ro.js": 308,
-	"./ru": 309,
-	"./ru.js": 309,
-	"./sd": 310,
-	"./sd.js": 310,
-	"./se": 311,
-	"./se.js": 311,
-	"./si": 312,
-	"./si.js": 312,
-	"./sk": 313,
-	"./sk.js": 313,
-	"./sl": 314,
-	"./sl.js": 314,
-	"./sq": 315,
-	"./sq.js": 315,
-	"./sr": 316,
-	"./sr-cyrl": 317,
-	"./sr-cyrl.js": 317,
-	"./sr.js": 316,
-	"./ss": 318,
-	"./ss.js": 318,
-	"./sv": 319,
-	"./sv.js": 319,
-	"./sw": 320,
-	"./sw.js": 320,
-	"./ta": 321,
-	"./ta.js": 321,
-	"./te": 322,
-	"./te.js": 322,
-	"./tet": 323,
-	"./tet.js": 323,
-	"./th": 324,
-	"./th.js": 324,
-	"./tl-ph": 325,
-	"./tl-ph.js": 325,
-	"./tlh": 326,
-	"./tlh.js": 326,
-	"./tr": 327,
-	"./tr.js": 327,
-	"./tzl": 328,
-	"./tzl.js": 328,
-	"./tzm": 329,
-	"./tzm-latn": 330,
-	"./tzm-latn.js": 330,
-	"./tzm.js": 329,
-	"./uk": 331,
-	"./uk.js": 331,
-	"./ur": 332,
-	"./ur.js": 332,
-	"./uz": 333,
-	"./uz-latn": 334,
-	"./uz-latn.js": 334,
-	"./uz.js": 333,
-	"./vi": 335,
-	"./vi.js": 335,
-	"./x-pseudo": 336,
-	"./x-pseudo.js": 336,
-	"./yo": 337,
-	"./yo.js": 337,
-	"./zh-cn": 338,
-	"./zh-cn.js": 338,
-	"./zh-hk": 339,
-	"./zh-hk.js": 339,
-	"./zh-tw": 340,
-	"./zh-tw.js": 340
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 459;
-
-/***/ }),
-
-/***/ 52:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5506,7 +6065,7 @@ webpackContext.id = 459;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5598,22 +6157,22 @@ AuthDataProvider = __decorate([
 
 /***/ }),
 
-/***/ 54:
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_profile_data_profile_data__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__race_race__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__team_team__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__ = __webpack_require__(347);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__rules_rules__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_home__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__race_race__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__team_team__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ranking_ranking__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__rules_rules__ = __webpack_require__(351);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5690,6 +6249,7 @@ var TabsPage = (function () {
         });
         this.profileData.getUserProfile().on('value', function (data) {
             _this.userProfile = data.val();
+            console.log(_this.userProfile.teamName, "teamName");
             if (_this.userProfile.teamName) {
                 _this.tabEnabled = true;
                 _this.hasTeamName = true;
@@ -5697,10 +6257,11 @@ var TabsPage = (function () {
             else {
                 _this.hasTeamName = false;
             }
+            _this.userTeam = _this.userProfile.teamName;
+            if (_this.hasTeamName === false || _this.userTeam === undefined) {
+                _this.updateName();
+            }
         });
-        if (this.hasTeamName == false) {
-            this.updateName();
-        }
         //get length of user list
         this.profileData.getUsersList().on('value', function (snapshot) {
             var counter = 0;
@@ -5736,7 +6297,8 @@ var TabsPage = (function () {
                         _this.profileData.updateName(data.teamName);
                     }
                 }
-            ]
+            ],
+            enableBackdropDismiss: false
         });
         alert.present();
     };
@@ -5829,8 +6391,8 @@ __decorate([
 TabsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/'<ion-content padding no-bounce>\n  <ion-row class="text-align-right tab-content">\n    <ion-col col-7 *ngIf="userProfile?.teamName">\n      <div class="team-text">\n        {{userProfile?.teamName}}\n      </div>\n    </ion-col>\n    <ion-col col-5>\n      <div *ngIf="raceTime" class="timer-right">\n        <div *ngIf="gameState !== \'lockout\'">\n          <ion-col class="flex-right" *ngIf="(timer.secondsRemaining && timer.secondsRemaining > 0)">\n            <div class="timer-button timer-text timer-card">\n              {{timer.displayTime}}\n              <div class="time-type" style="font-size: 9px;"> \n                <span>DAYS &nbsp; HRS &nbsp; MINS &nbsp; SECS </span>\n              </div>\n            </div>\n          </ion-col>\n        </div>\n        <div *ngIf="gameState == \'lockout\'" class="lockout">\n          <div class="lockout-text">LOCK OUT</div>\n        </div>\n      </div>\n    </ion-col>\n  </ion-row>\n\n	<ion-tabs>\n    <ion-tab [root]="tab1Root" tappable tabTitle="Home" tabIcon="md-home"></ion-tab>\n    <ion-tab [root]="tab2Root" tappable tabTitle="Race" tabIcon="md-speedometer"></ion-tab>\n	  <ion-tab [root]="tab3Root" tappable tabTitle="Team" tabIcon="md-people"></ion-tab>\n    <ion-tab [root]="tab4Root" tappable [enabled]="tabEnabled" [rootParams]="userProfile" tabTitle="Rank" tabIcon="md-trending-up"></ion-tab>\n	  <ion-tab [root]="tab5Root" tappable tabTitle="Rules" tabIcon="md-book"></ion-tab>\n	</ion-tabs>\n</ion-content>\n\n\n<!-- <ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs> -->\n'/*ion-inline-end:"/Users/Sophie/Desktop/grail/oneRacingApp/src/pages/tabs/tabs.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_3__providers_admin_data_admin_data__["a" /* AdminDataProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_current_round_data_current_round_data__["a" /* CurrentRoundDataProvider */],
@@ -5840,56 +6402,7 @@ TabsPage = __decorate([
 
 //# sourceMappingURL=tabs.js.map
 
-/***/ }),
-
-/***/ 66:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatsDataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the StatsDataProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var StatsDataProvider = (function () {
-    function StatsDataProvider(http) {
-        this.http = http;
-        this.stats = __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref('raceResults/');
-    }
-    StatsDataProvider.prototype.getStats = function () {
-        return this.stats;
-    };
-    return StatsDataProvider;
-}());
-StatsDataProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], StatsDataProvider);
-
-//# sourceMappingURL=stats-data.js.map
-
 /***/ })
 
-},[352]);
+},[354]);
 //# sourceMappingURL=main.js.map

@@ -1,0 +1,97 @@
+<!--
+  Generated template for the CustomLeaguePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar></ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="container">
+	 	<ion-row class="header-marg">
+	     <div class="header-text slideExpandUp delay-2">Your League</div>
+	  </ion-row>
+	   
+	    <div *ngIf="customPlayers">
+		    <ion-list *ngFor="let user of customPlayers; let i = index" class="constructor-list">
+			  <ion-item *ngIf="user.teamName"
+			   	[ngClass]="{'highlight-item': userData === user.email}" id="user-details" class="pullUp delay-3">
+			   	<ion-row>
+				   	<ion-col>
+					   	<div class="team-name">{{ user.teamName}}</div>
+					  	<div class="team-cash">Cash: {{ user.money | currency:'USD':true:'1.0' }}</div>
+				   		<div class="team-trades">Trades: {{ user.trades }}</div>
+				   		<div class="points-text">
+								Total points: 
+								<span class="number-points"> 
+									{{ user.totalPoints }}
+								</span>
+							</div>
+				   	</ion-col>
+
+				   	<ion-col class="right-col rel-position">
+						  <ion-row>
+						  	<div class="team-rank">{{ i + 1 }}</div>
+						  </ion-row>
+						  <ion-row>
+					  		<button class="team-btn remove-btn" (click)="removeFromLeague(user)" [disabled]="user.email === userData">
+					  			<ion-icon name="md-remove-circle"></ion-icon>
+					  		</button>
+					  	</ion-row>
+						</ion-col>
+					</ion-row>
+				</ion-item>
+			</ion-list>
+	  </div>
+
+	  <div *ngIf="customPlayers.length < 1">
+	  	<div class="card pullUp delay-4">
+		  <ion-row>
+		  		<ion-col col-2 class="v-center">
+		  			<ion-icon class="icon-col" name="md-information-circle"></ion-icon>
+		  		</ion-col>
+		  		<ion-col col-10>
+		  			<p>Search the leaderboard, then click to add players to your league.</p>
+		  		</ion-col>
+		  </ion-row>
+		  </div>
+	  </div>
+
+	  <ion-row class="header-marg">
+	    <div class="header-text slideExpandUp delay-5">Leaderboard</div>
+	  </ion-row>
+
+		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>
+		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-6">
+		  <ion-item *ngIf="user.teamName"
+		   	[ngClass]="{'highlight-item': userData === user.email}" id="user-details">
+		   	<ion-row>
+			   	<ion-col>
+				   	<div class="team-name">{{ user.teamName}}</div>
+				  	<div class="team-cash">Cash: {{ user.money | currency:'USD':true:'1.0' }}</div>
+			   		<div class="team-trades">Trades: {{ user.trades }}</div>
+			   		<div class="points-text">
+							Total points: 
+							<span class="number-points"> 
+								{{ user.totalPoints }}
+							</span>
+						</div>
+			   	</ion-col>
+
+			   	<ion-col class="right-col rel-position">
+					  <ion-row>
+					  	<div class="team-rank">{{ user.rank }}</div>
+					  </ion-row>
+					  <ion-row>
+					  	<button class="team-btn add-btn1" (click)="addToLeague(user)" [disabled]="checkDisabled(user)">
+					  	  <ion-icon name="md-person-add"></ion-icon>
+					  	</button>
+					  </ion-row>
+					</ion-col>
+				</ion-row>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

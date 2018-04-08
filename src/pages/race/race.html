@@ -30,7 +30,7 @@
           <div class="stat slideExpandUp delay-5">
             <span>Lap record</span> {{ round.lapTime }}
           </div>
-          <div class="stat slideExpandUp delay-6">
+          <div class="stat slideExpandUp delay-6" >
             <span>Last winner</span> {{ round.raceWinner }}
           </div>
         </ion-col>
@@ -39,8 +39,8 @@
 
     <div *ngIf="this.round > 1">
       <ion-row class="header-marg">
-        <div class="text-center relative-pos">
-          Last Race Results
+        <div class="text-center relative-pos" *ngFor="let round of roundDataList">
+          Round {{ round?.lockoutRound - 1 }} results
         </div>
       </ion-row>
       <div padding>

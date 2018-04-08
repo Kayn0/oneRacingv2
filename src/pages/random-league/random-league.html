@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar></ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div class="container">
+
+	<div class="league-help" *ngIf="customPlayers.length < 1">
+		<img class="mech" src="assets/mixed-mech.png" />
+		<ion-row>
+			<button ion-button class="mixed-btn" (click)="createRandomLeague()">Click to create a random league</button>
+		</ion-row>
+	</div>
+
+ 	<div *ngIf="customPlayers.length >= 1">
+	  <ion-row class="header-marg">
+	    <div class="header-text slideExpandUp delay-2">Random league</div>
+	  </ion-row>
+	</div>
+
+	<ion-list *ngFor="let user of customPlayers; let i = index" class="constructor-list pullUp delay-2">
+		<ion-item *ngIf="user.teamName" [ngClass]="{'highlight-item': userData === user.email}" id="user-details">
+	   	<ion-row>
+		   	<ion-col>
+			   	<div class="team-name">{{ user.teamName}}</div>
+			  	<div class="team-cash">Cash: {{ user.money | currency:'USD':true:'1.0' }}</div>
+		   		<div class="team-trades">Trades: {{ user.trades }}</div>
+		   		<div class="points-text">
+						Total points: 
+						<span class="number-points"> 
+							{{ user.totalPoints }}
+						</span>
+					</div>
+		   	</ion-col>
+
+		   	<ion-col class="right-col rel-position">
+				  <div class="team-rank">{{ i + 1}}</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+	</ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,171 @@
+page-top-players {
+	
+	.team-text {
+		display: none;
+	}
+
+	.back-button {
+		position: absolute;
+		left: 0;
+		z-index: 999;
+		color:  #fff;
+	}
+
+	.toolbar-content {	
+			margin-left: 30px;
+	}
+
+	.toolbar-background {
+		background-color: #d31411;
+	}
+
+	.container {
+		padding-top: 8px;
+	}
+
+	ion-list.list {
+		margin: 0 8px;
+	}
+	
+	.searchbar-ios {
+		background: none;
+	}
+
+	.list ion-item.item.item-block {
+		border-radius: 2px;
+		margin-bottom: 4px;
+	}
+
+	.list .item-block .item-inner {
+		border-bottom:0;
+	}
+
+ 	.border {
+    border: solid 1px #d31411;
+    border-radius: 2px;
+  }
+
+	.header-text {
+		margin: 8px auto;
+		border-bottom: 0;
+	}
+	
+	.inline-elem {
+		display: inline;
+	}
+
+	.right-col {
+		text-align: right;
+	}
+
+	.rel-position {
+		position: relative;
+	}
+
+	.team-name {
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		color: #2e2e2e;
+		font-size: 20px;
+		margin-bottom: 4px;
+		text-transform: capitalize;
+		max-width: 220px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	}
+
+	.team-cash {
+		color: grey;
+		font-size: 14px;
+		margin-bottom: 1px;
+	}
+	
+	.stat {
+		text-align: center;
+		color: #fff;
+		font-family:'ubuntu-regular', helvetica, sans-serif;
+		font-size: 14px;
+    margin-bottom: 16px;
+	}
+
+	.stat span {
+		display: block;
+		font-family:'ubuntu-bold', helvetica, sans-serif;
+		font-size: 18px;
+    margin-top: 4px;
+	}
+	
+	.team-btn {
+		background-color: #000;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+   	bottom: 0;
+		color: #fff;
+		height: 40px;
+		margin: 0.1rem 0.1rem;
+		position: absolute;
+		right: 0;
+		width: 40px;
+	}
+
+
+.highlight-item {
+	background-color: #d31411 !important;
+	.team-name,
+	.team-cash,
+	.team-trades,
+	.team-points,
+	.team-rank,
+	.points-text,
+	.number-points {
+		color: #fff;
+	}
+}
+	.team-trades {
+		color: grey;
+		font-size: 14px;
+	}
+
+	.team-rank {
+		color: #d31411;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+		font-weight: 600;
+		font-size: 28px;
+		margin-top: -5px;
+		text-align: right;
+	}
+	
+	.button-wrapper {
+		position:relative;
+	}
+	
+	.points-text {
+		color: #333;
+		font-size: 15px;
+	}
+	
+	.number-points {
+		color: #d31411;
+		font-size: 15px;
+		font-family: 'ubuntu-bold', helvetica, sans-serif;
+	}
+
+	.highlight-item {
+		background-color: #ccc;
+	}
+}
+
+.tab-content {
+	pointer-events: none;
+}
+
+@media only screen and (min-width: 520px) {
+  page-top-players {
+    .team-name {
+			max-width: 400px;
+		}
+  }
+}
+
+

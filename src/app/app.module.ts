@@ -34,6 +34,9 @@ import { DriverStatsPage } from '../pages/driver-stats/driver-stats';
 import { ChassisStatsPage } from '../pages/chassis-stats/chassis-stats';
 import { PuStatsPage } from '../pages/pu-stats/pu-stats';
 import { PlayerTeamPage } from '../pages/player-team/player-team';
+import { TopPlayersPage } from '../pages/top-players/top-players';
+import { RandomLeaguePage } from '../pages/random-league/random-league';
+import { CustomLeaguePage } from '../pages/custom-league/custom-league';
 
 //Providers
 import { AuthDataProvider } from '../providers/auth-data/auth-data';
@@ -69,6 +72,9 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     ChassisStatsPage,
     PuStatsPage,
     PlayerTeamPage,
+    TopPlayersPage,
+    RandomLeaguePage,
+    CustomLeaguePage,
   ],
   imports: [
     BrowserModule,
@@ -104,6 +110,9 @@ import { StatsDataProvider } from '../providers/stats-data/stats-data';
     ChassisStatsPage,
     PuStatsPage,
     PlayerTeamPage,
+    TopPlayersPage,
+    RandomLeaguePage,
+    CustomLeaguePage,
   ],
   providers: [
     StatusBar,

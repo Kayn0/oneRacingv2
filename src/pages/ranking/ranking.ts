@@ -4,7 +4,9 @@ import { Storage } from '@ionic/storage';
 import { TeamDataProvider } from '../../providers/team-data/team-data';
 import { CurrentRoundDataProvider } from '../../providers/current-round-data/current-round-data';
 
-import { PlayerTeamPage } from '../player-team/player-team';
+import { TopPlayersPage } from '../top-players/top-players';
+import { RandomLeaguePage } from '../random-league/random-league';
+import { CustomLeaguePage } from '../custom-league/custom-league';
 
 /**
  * Generated class for the RankingPage page.
@@ -100,8 +102,21 @@ export class RankingPage {
   	}
   } //end constructor
 
-  goToPlayerTeam(player){
-    this.navCtrl.push(PlayerTeamPage, player);
+  // goToPlayerTeam(player){
+  //   this.navCtrl.push(PlayerTeamPage, player);
+  // }
+
+  goToTopPlayers(player) {
+    console.log(player, "playa");
+    this.navCtrl.push(TopPlayersPage, player);
+  }
+
+  goToRandomLeague(player) {
+    this.navCtrl.push(RandomLeaguePage, player);
+  }
+
+  goToCustomLeague(player) {
+    this.navCtrl.push(CustomLeaguePage, player);
   }
 
   initializeItems(): void {
@@ -133,10 +148,10 @@ export class RankingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RankingPage');
     //scroll to user
-    var target = document.querySelector('#user-details.highlight-item');
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-    });
+    // var target = document.querySelector('#user-details.highlight-item');
+    // target.scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'center',
+    // });
   }
 }

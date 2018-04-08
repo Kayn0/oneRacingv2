@@ -4,6 +4,8 @@
 </ion-header>
 
 <ion-content padding>
+
+
 	<div class="container">
 		<ion-row *ngIf="noStats !== true || firstRound !== true" class="header-marg">
 			<ion-col>
@@ -12,16 +14,16 @@
       	</div>
       </ion-col>
 
-      <ion-col>
+      <ion-col >
         <div class="stat slideExpandUp delay-4">
           Total Score<span>{{userStats.totalPoints}}</span>
         </div>
       </ion-col>
 
-      <ion-col>
+      <ion-col >
         <div class="stat slideExpandUp delay-5">
           Rank
-          <span>{{userStats.rank}}
+          <span>{{userStats.rank}} / {{ allUsers }}
           	<div [ngClass]="{negative: userStats.rankDiff < 0}" class="positive val-change inline-elem"> 
 							{{ userStats.rankDiff }}
 						</div>
@@ -29,35 +31,26 @@
         </div>
       </ion-col>
 	  </ion-row>
+		
+<!-- 		<ion-row>
+	  	<div class="header-text slideExpandUp delay-2">Rank</div>
+		</ion-row> -->
 
-	  <ion-row class="header-marg">
-	    <div class="header-text slideExpandUp delay-2">Team Ranking</div>
-	  </ion-row>
-		<ion-searchbar (ionInput)="getItems($event)" placeholder="Search by team name"></ion-searchbar>
-		<ion-list *ngFor="let user of usersList" class="constructor-list pullUp delay-2">
-		  <ion-item *ngIf="user.teamName"
-		   	[ngClass]="{'highlight-item': userData === user.email}" id="user-details">
-		   	<ion-row>
-			   	<ion-col>
-				   	<div class="team-name">{{ user.teamName}}</div>
-				  	<div class="team-cash">Cash: {{ user.money | currency:'USD':true:'1.0' }}</div>
-			   		<div class="team-trades">Trades: {{ user.trades }}</div>
-			   		<div class="points-text">
-							Total points: 
-							<span class="number-points"> 
-								{{ user.totalPoints }}
-							</span>
-						</div>
-			   	</ion-col>
+	  <div class="btn-holder">
+		  <ion-row class="btn-row">
+			  <ion-col >
+			  	<button ion-button class="rank-btn slideExpandUp delay-2" (click)="goToTopPlayers(userStats)">Best of the best</button>
+				</ion-col>
+			</ion-row>
 
-			   	<ion-col class="right-col rel-position">
-					  <div class="team-rank">{{ user.rank }}</div>
-	<!-- 						<button class="team-btn" ion-button (click)="goToPlayerTeam(user);">
-		            <ion-icon name="md-people"></ion-icon>
-							</button> -->
-					</ion-col>
-				</ion-row>
-			</ion-item>
-		</ion-list>
+			<ion-row>
+				<ion-col class="btn-col">
+				  <button class="rank-btn pullUp delay-3 row-btn" ion-button (click)="goToRandomLeague(userStats)">Random league</button>
+				</ion-col>
+				<ion-col class="btn-col">
+				 	<button class="rank-btn pullUp delay-4 row-btn" ion-button (click)="goToCustomLeague(userStats)">Create a league</button>
+				</ion-col>
+			</ion-row>
+		</div>
 	</div>
 </ion-content>
